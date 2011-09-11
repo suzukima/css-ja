@@ -54,7 +54,7 @@ p, p.testlink + p, p.mtb {
     margin-top: 0.8em
 }
 p + p, p + div.sidefigure + p {
-    text-indent: 2em;
+    text-indent: 1em;
     margin-top: 0
 }
 dd > p:first-child, li > p:first-child {
@@ -85,7 +85,7 @@ img {
 @media all { /* NS < 6 doesn't like borders around inline elements... */
 
     body {
-        line-height: 1.3;
+        line-height: 1.5em;
     }
 
     a:link, a:visited {
