@@ -21,7 +21,7 @@
     div.figure table {
     	margin:auto;
 		}
-		.headernotes { font-size: 80%; border: 1px solid #36C; background-color: #EEF; padding: 1em; }
+		.headernotes { font-size: 80%; border: 1px solid #36C; background-color: #EEF; margin: 0 0 2em 0; padding: 1em; }
   </style>
   <link href="http://www.w3.org/StyleSheets/TR/W3C-WD.css" rel=stylesheet
   type="text/css">
@@ -31,6 +31,8 @@
 		<p>この文章は、<a href="http://www.w3.org/TR/2011/WD-css3-writing-modes-20110901/">CSS Writing Modes Module Level 3(W3C Working Draft 1 September 2011)</a>を、独自に翻訳したものです。</p>
 		<p>この仕様書の正式なものは W3C のサイトにある英語版であり、その著作権は W3C が保有しています。また、翻訳に誤りがある可能性に留意してください。また、読みやすさを考慮して、スタイルやレイアウトを変更している箇所があります。ご注意下さい。</p>
 		<p>文中では日本語組版の用語を用いております。日本語組版については<a href="http://www.w3.org/TR/jlreq/ja/">日本語組版処理の要件（日本語版）</a>に目を通しておくことをおすすめいたします。</p>
+		<p>公開開始日: 2011.09.11</p>
+		<p>更新日: 2011.09.11</p>
 	</div>
 
   <div class=head> <!--begin-logo-->
@@ -107,79 +109,56 @@
    <hr title="Separator for header">
   </div>
 
-  <h2 class="no-num no-toc" id=abstract> Abstract</h2>
+  <h2 class="no-num no-toc" id=abstract> 概要</h2>
 
-  <p>CSS Writing Modes Level 3 defines CSS features to support for various
-   international writing modes, such as left-to-right (e.g. Latin or Indic),
-   right-to-left (e.g. Hebrew or Arabic), bidirectional (e.g. mixed Latin and
-   Arabic) and vertical (e.g. Asian scripts).
+	<p>CSS3 Writing Modesは左から右(ラテン語やインド語)、右から左(ヘブライ語やアラビア語)、双方向(ラテン語とアラビア語の同時使用)、縦組(アジア言語の文章)のような、世界各国の組方向をサポートするCSSの機能を定義している。</p>
 
-  <p>Inherently bottom-to-top scripts are not handled in this version. See <a
-   href="#UTN22" rel=biblioentry>[UTN22]<!--{{UTN22}}--></a> for an
-   explanation of relevant issues.
+	<p>根本的に下から上へ進む文章はこのバージョンでは扱われない。関連する問題は<a href="#UTN22" rel=biblioentry>[UTN22]<!--{{UTN22}}--></a> を参照のこと。</p>
 
-  <h2 class="no-num no-toc" id=status> Status of this document</h2>
+  <h2 class="no-num no-toc" id=status>この文書の位置づけ</h2>
   <!--begin-status-->
 
-  <p><em>This section describes the status of this document at the time of
-   its publication. Other documents may supersede this document. A list of
-   current W3C publications and the latest revision of this technical report
-   can be found in the <a href="http://www.w3.org/TR/">W3C technical reports
-   index at http://www.w3.org/TR/.</a></em>
+  <p><em>このセクションは、公開時点でのこの文書の位置付けについて述べている。他の文書がこの文書を置き換えることがある。W3Cが現在公開しているリストとテクニカルレポートの最新版は、<a href="http://www.w3.org/TR/">W3C technical reports
+	 index (http://www.w3.org/TR/)</a>で見つけることができる。</em></p>
 
-  <p>Publication as a Working Draft does not imply endorsement by the W3C
-   Membership. This is a draft document and may be updated, replaced or
-   obsoleted by other documents at any time. It is inappropriate to cite this
-   document as other than work in progress.
+	<p>Working Draftでの公開は W3Cメンバーの支持を意味するものではない。下書きのドキュメントであり、いつでも更新、他のドキュメントによる置き換えや廃止扱いにされうる。これは、進行中の作業以外のものとしてこのドキュメントを引用することは不適切である。</p>
 
-  <p>The (<a
-   href="http://lists.w3.org/Archives/Public/www-style/">archived</a>) public
-   mailing list <a href="mailto:www-style@w3.org">www-style@w3.org</a> (see
-   <a href="http://www.w3.org/Mail/Request">instructions</a>) is preferred
-   for discussion of this specification. When sending e-mail, please put the
-   text &#8220;css3-writing-modes&#8221; in the subject, preferably like
-   this: &#8220;[<!---->css3-writing-modes<!---->] <em>&hellip;summary of
-   comment&hellip;</em>&#8221;
+  <p>(<a
+   href="http://lists.w3.org/Archives/Public/www-style/">アーカイブされている</a>) 公開メーリングリスト <a href="mailto:www-style@w3.org">www-style@w3.org</a> (<a href="http://www.w3.org/Mail/Request">参加手順はこちら</a>) をこの仕様の議論に推奨している。eメールを送る際には、サブジェクトに &#8220;css3-writing-modes&#8221; を追加してほしい。できれば &#8220;[<!---->css3-writing-modes<!---->] <em>&hellip;summary of
+	 comment&hellip;</em>&#8221;のように。</p>
 
-  <p>This document was produced by the <a
-   href="http://www.w3.org/Style/CSS/members">CSS Working Group</a> (part of
-   the <a href="http://www.w3.org/Style/">Style Activity</a>).
+  <p>このドキュメントは<a
+   href="http://www.w3.org/Style/CSS/members">CSS Working Group</a> (
+	 <a href="http://www.w3.org/Style/">Style Activity</a>の一環)で製作された。</p>
 
-  <p>This document was produced by a group operating under the <a
-   href="http://www.w3.org/Consortium/Patent-Policy-20040205/">5 February
-   2004 W3C Patent Policy</a>. W3C maintains a <a
+  <p>このドキュメントは<a
+   href="http://www.w3.org/Consortium/Patent-Policy-20040205/">2004年2月6日のW3C特許ポリシー</a>に従うグループによって製作された。W3Cはグループの成果を結びつけて作られた<a
    href="http://www.w3.org/2004/01/pp-impl/32061/status"
-   rel=disclosure>public list of any patent disclosures</a> made in
-   connection with the deliverables of the group; that page also includes
-   instructions for disclosing a patent. An individual who has actual
-   knowledge of a patent which the individual believes contains <a
-   href="http://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">Essential
-   Claim(s)</a> must disclose the information in accordance with <a
-   href="http://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">section
-   6 of the W3C Patent Policy</a>.</p>
+	 rel=disclosure>あらゆる開示特許の公開リスト</a>を管理しており、ここには特許開示の指示も含まれている。
+   <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">本質的な特許請求の範囲</a>に含まれると思われる特許について実際の知識を持っている人は、
+	 <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">W3C特許ポリシーの第6章</a>に従い、情報を公開しなければならない。</a></p>
   <!--end-status-->
 
-  <p>The following features are at-risk and may be dropped during CR:
+  <p>以下の機能は抜ける恐れがあるもので、おそらくCRまでには落とされるだろう:
 
   <ul>
-   <li>The &lsquo;<a href="#use-glyph-orientation"><code
-    class=css>use-glyph-orientation</code></a>&rsquo; of &lsquo;<a
+   <li>&lsquo;<a
     href="#text-orientation0"><code
-    class=property>text-orientation</code></a>&rsquo;
-
-   <li>The &lsquo;<code class=css>ascii-digits</code>&rsquo;, &lsquo;<code
+    class=property>text-orientation</code></a>&rsquo;の&lsquo;<a href="#use-glyph-orientation"><code
+		class=css>use-glyph-orientation</code></a>&rsquo;</li> 
+   <li>&lsquo;<a
+    href="#text-combine-horizontal0"><code
+    class=property>text-combine-horizontal</code></a>&rsquo;の値である &lsquo;<code class=css>ascii-digits</code>&rsquo;, &lsquo;<code
     class=css>digits</code>&rsquo;, &lsquo;<code
     class=css>alpha</code>&rsquo;, &lsquo;<code
-    class=css>latin</code>&rsquo;, and &lsquo;<code
-    class=css>alphanumeric</code>&rsquo; values of &lsquo;<a
-    href="#text-combine-horizontal0"><code
-    class=property>text-combine-horizontal</code></a>&rsquo;.
+    class=css>latin</code>&rsquo;, そして &lsquo;<code
+		class=css>alphanumeric</code>&rsquo; </li> 
 
-   <li>The &lsquo;<a href="#text-combine-mode0"><code
-    class=property>text-combine-mode</code></a>&rsquo; property
+   <li>&lsquo;<a href="#text-combine-mode0"><code
+		class=property>text-combine-mode</code></a>&rsquo; プロパティ</li>
   </ul>
 
-  <h2 class="no-num no-toc" id=Contents> Table of Contents</h2>
+  <h2 class="no-num no-toc" id=Contents> 目次</h2>
   <!--begin-toc-->
 
   <ul class=toc>
