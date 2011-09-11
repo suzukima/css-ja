@@ -49,7 +49,7 @@ h1 + h2 {
 }
 
 p, p.testlink + p, p.mtb {
-    text-indent: 0;
+    text-indent: 1em;
     margin-bottom: 0;
     margin-top: 0.8em
 }
