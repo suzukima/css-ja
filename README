@@ -1,1 +1,10 @@
-under construction
+[English]
+This repository is Japanese translations of W3C CSS specification.
+It's published using "github:pages" (http://suzukima.github.com/css-ja/),
+so I maintain "gh-pages" branch.
+Please refer to "gh-pages" branch.
+
+[Japanese]
+このリポジトリでは、W3C CSS仕様の日本語訳を公開しています。
+日本語訳公開には"github:pages"を使っていますので、"gh-pages"ブランチを見て下さい。
+URLは http://suzukima.github.com/css-ja/ です。
