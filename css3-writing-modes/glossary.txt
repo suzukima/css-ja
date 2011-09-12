@@ -1,1 +1,3 @@
 writing-mode 組方向
+inline base direction 文字送り方向
+block flow direction 行送り方向

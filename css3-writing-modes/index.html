@@ -163,13 +163,11 @@
   <!--begin-toc-->
 
   <ul class=toc>
-   <li><a href="#text-flow"><span class=secno>1. </span> Introduction to
-    Writing Modes</a>
+   <li><a href="#text-flow"><span class=secno>1. </span> Writing Modesの紹介</a>
     <ul class=toc>
-     <li><a href="#placement"><span class=secno>1.1. </span> Module
-      Interactions</a>
+     <li><a href="#placement"><span class=secno>1.1. </span> モジュールの関係</a>
 
-     <li><a href="#values"><span class=secno>1.2. </span> Values</a>
+     <li><a href="#values"><span class=secno>1.2. </span> 値について</a>
     </ul>
 
    <li><a href="#text-direction"><span class=secno>2. </span> Inline
@@ -358,105 +356,88 @@
   </ul>
   <!--end-toc-->
 
-  <h2 id=text-flow><span class=secno>1. </span> Introduction to Writing Modes</h2>
+  <h2 id=text-flow><span class=secno>1. </span> Writing Modesの紹介</h2>
 
-  <p>CSS Writing Modes Level 3 defines CSS features to support for various
-   international writing modes, such as left-to-right (e.g. Latin or Indic),
-   right-to-left (e.g. Hebrew or Arabic), bidirectional (e.g. mixed Latin and
-   Arabic) and vertical (e.g. Asian scripts).
+	<p>CSS3 Writing Modesは左から右(ラテン語やインド語)、右から左(ヘブライ語やアラビア語)、双方向(ラテン語とアラビア語の同時使用)、縦書き(アジア言語の文章)のような、世界各国の組方向をサポートするCSSの機能を定義している。</p>
 
-  <p>A <dfn id=writing-mode0>writing mode</dfn> in CSS is determined by the
-   &lsquo;<a href="#writing-mode1"><code
+  <p>CSSの<dfn id=writing-mode0>writing mode</dfn>は、&lsquo;<a href="#writing-mode1"><code
    class=property>writing-mode</code></a>&rsquo;, &lsquo;<a
-   href="#direction0"><code class=property>direction</code></a>&rsquo;, and
+   href="#direction0"><code class=property>direction</code></a>&rsquo;, 
    &lsquo;<a href="#text-orientation0"><code
-   class=property>text-orientation</code></a>&rsquo; properties. It is
-   defined primarily in terms of its <a
-   href="#inline-base-direction"><i>inline base direction</i></a> and <a
-   href="#block-flow-direction"><i>block flow direction</i></a>:
+   class=property>text-orientation</code></a>&rsquo; のプロパティによって決定される。writing modeでは、 
+		<a href="#inline-base-direction"><i>inline base direction(字詰め方向:1つの行で、1つの文字から次の文字へと続く方向)</i></a>と
+		<a href="#block-flow-direction"><i>block flow direction(行送り方向:1つの行から次の行へと続く方向)</i></a>によって定義されている:
 
   <div class=sidebar>
    <div class="figure right"> <a href="diagrams/text-flow-vectors-tb.svg"
-    type="image/svg+xml"> <img alt="Latin-based writing mode" class=landscape
+    type="image/svg+xml"> <img alt="ラテン語を基本としたシステムのwriting mode" class=landscape
     src="diagrams/text-flow-vectors-tb.png"></a>
-    <p class=caption>Latin-based writing mode
+    <p class=caption>ラテン語を基本としたシステムのwriting mode
    </div>
 
    <div class="figure left"> <a
     href="diagrams/text-flow-vectors-lr-reverse.svg" type="image/svg+xml">
-    <img alt="Mongolian-based writing mode" class=landscape
+    <img alt="モンゴル語を基本としたシステムのwriting mode" class=landscape
     src="diagrams/text-flow-vectors-lr-reverse.png"></a>
-    <p class=caption>Mongolian-based writing mode
+    <p class=caption>モンゴル語を基本としたシステムのwriting mode
    </div>
 
    <div class="figure right"> <a href="diagrams/text-flow-vectors-tb.svg"
-    type="image/svg+xml"> <img alt="Han-based writing mode" class=landscape
+    type="image/svg+xml"> <img alt="ハン語を基本としたシステムのwriting mode" class=landscape
     src="diagrams/text-flow-vectors-tb.png"></a> <a
     href="diagrams/text-flow-vectors-rl.svg" type="image/svg+xml"> <img
-    alt="Han-based writing mode" class=landscape
+    alt="ハン語を基本としたシステムのwriting mode" class=landscape
     src="diagrams/text-flow-vectors-rl.png"></a>
-    <p class=caption>Han-based writing mode
+    <p class=caption>ハン語を基本としたシステムのwriting mode
    </div>
   </div>
 
-  <p>The <dfn id=inline-base-direction>inline base direction</dfn> is the
-   primary direction in which content is ordered on a line and defines on
-   which sides the "start" and "end" of a line are. The &lsquo;<a
+	<p><dfn id=inline-base-direction>inline base direction</dfn>は、両端に開始と終了がある行の上に並べられたコンテンツの主方向である。
+	The &lsquo;<a
    href="#direction0"><code class=property>direction</code></a>&rsquo;
-   property specifies the inline base direction of an element and, together
-   with the &lsquo;<a href="#unicode-bidi0"><code
-   class=property>unicode-bidi</code></a>&rsquo; property and the inherent
-   directionality of any text content, determines the ordering of
-   inline-level content within a line.
+   プロパティは要素の字詰め方向を指定し、&lsquo;<a href="#unicode-bidi0"><code
+	 class=property>unicode-bidi</code></a>&rsquo; プロパティやテキスト固有の方向とともに、行内のinline-level contentの順序を決定している。
 
-  <p>The <dfn id=block-flow-direction>block flow direction</dfn> is the
-   direction in which block-level boxes stack and the direction in which line
-   boxes stack within a block container. The &lsquo;<a
+	<p><dfn id=block-flow-direction>block flow direction</dfn>は、
+	ブロックコンテナ内での、ブロックレベルボックスを積む方向や、行ボックスを積む方向である。
+	&lsquo;<a
    href="#writing-mode1"><code class=property>writing-mode</code></a>&rsquo;
-   property determines the block flow direction.
+	 プロパティは行送り方向を決定している。
 
-  <p>A <dfn id=horizontal-writing-mode>horizontal writing mode</dfn> is one
-   with horizontal lines of text, i.e. a downward or upward block flow. A
-   <dfn id=vertical-writing-mode>vertical writing mode</dfn> is one with
-   vertical lines of text, i.e. a leftward or rightward block flow.
+	<p><dfn id=horizontal-writing-mode>horizontal writing mode(横書き)</dfn>
+	はテキストの水平行を持つ。そして上方向や下方向へ行送りする。
+	 <dfn id=vertical-writing-mode>vertical writing mode(縦書き)</dfn>
+	 はテキストの垂直行を持つ。そして右方向か左方向へ行送りする。
 
-  <p class=note>These terms should not be confused with <dfn
-   id=vertical-block-flow>vertical block flow</dfn> (which is a downward or
-   upward block flow) and <dfn id=horizontal-block-flow>horizontal block
-   flow</dfn> (which is leftward or rightward block flow). To avoid
-   confusion, CSS specifications avoid this latter set of terms.
+  <p class=note>これらの言葉は<dfn
+	 id=vertical-block-flow>vertical block flow</dfn> (上方向や下方向への行送り)や
+	 <dfn id=horizontal-block-flow>horizontal block
+	 flow</dfn> (左方向や右方向への行送り)と混同すべきではない。
+	 混乱を避けるため、CSSの仕様ではこの後者の用語セットを用いていない。
 
-  <p>Writing systems typically have one or two native writing modes. Some
-   examples are:
+  <p>Writing systemsは通常1つか2つのnative writing modesを持っている。いくつか例を示す:
 
   <ul>
-   <li>Latin-based systems are typically written using a left-to-right inline
-    direction with a downward (top-to-bottom) block flow direction.
+   <li>ラテン語を基本としたsystemでは、通常下方向(上から下)の行送り方向で、左から右の字詰め方向を使って書かれている。
 
-   <li>Arabic-based systems are typically written using a right-to-left
-    inline direction with a downward (top-to-bottom) block flow direction.
+   <li>アラビア語を基本としたsystemでは、通常下方向(上から下)の行送り方向で、右から左の字詰め方向を使って書かれている。
 
-   <li>Mongolian-based systems are typically written using a top-to-bottom
-    inline direction with a rightward (left-to-right) block flow direction.
+   <li>モンゴル語を基本としたsystemでは、通常右方向(左から右)の行送り方向で、上から下の字詰め方向を使って書かれている。
 
-   <li>Han-based systems are commonly written using a left-to-right inline
-    direction with a downward (top-to-bottom) block flow direction,
-    <strong>or</strong> a top-to-bottom inline direction with a leftward
-    (right-to-left) block flow direction. Many magazines and newspapers will
-    mix these two writing modes on the same page.
+   <li>ハン語を基本としたsystemでは、一般的に下方向(上から下)の行送り方向で、左から右の字詰め方向
+		<strong>か</strong>、左方向(右から左)の行送り方向で、上から下の字詰め方向を使って書かれている。
+		多くの雑誌と新聞は、同一ページにこれら2つのwriting modeを合わせて使うことになるだろう。 
   </ul>
 
-  <p>The &lsquo;<a href="#text-orientation0"><code
-   class=property>text-orientation</code></a>&rsquo; component of the writing
-   mode determines the <a href="#line-orientation"><i>line
-   orientation</i></a> and the <i>typesetting mode</i>, and controls details
-   of text layout such as the <i>glyph orientation</i>.
+  <p>writing modeの &lsquo;<a href="#text-orientation0"><code
+   class=property>text-orientation</code></a>&rsquo; コンポーネントは、 <a href="#line-orientation"><i>line
+	 orientation</i></a> と <i>typesetting mode</i>を決定し、<i>glyph orientation</i>
+	 のようなテキストレイアウトの詳細を制御している。
 
-  <p class=note>See Unicode Technical Note #22 <a href="#UTN22"
+  <p class=note>writing modeとvertical textのさらに深い導入は、Unicode Technical Note #22 <a href="#UTN22"
    rel=biblioentry>[UTN22]<!--{{UTN22}}--></a> (<a
    href="http://fantasai.inkedblade.net/style/discuss/vertical-text/paper">HTML
-   version</a>) for a more in-depth introduction to writing modes and
-   vertical text.
+   version</a>)を参照のこと。 
 
   <h3 id=placement><span class=secno>1.1. </span> Module Interactions</h3>
 
