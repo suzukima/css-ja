@@ -34,7 +34,7 @@
 		<p>文中では日本語組版の用語を用いております。日本語組版については<a href="http://www.w3.org/TR/jlreq/ja/">日本語組版処理の要件（日本語版）</a>に目を通しておくことをおすすめいたします。</p>
 		<p>その他の仕様書の翻訳は、<a href="../">CSS 日本語レイアウト関連仕様 日本語翻訳</a>からご覧下さい。</p>
 		<p>公開開始日: 2011.09.11</p>
-		<p>更新日: 2011.09.11</p>
+     <p>更新日: 2011.09.14</p>
 	</div>
 
   <div class=head> <!--begin-logo-->
@@ -440,33 +440,24 @@
    href="http://fantasai.inkedblade.net/style/discuss/vertical-text/paper">HTML
    version</a>)を参照のこと。 
 
-  <h3 id=placement><span class=secno>1.1. </span> Module Interactions</h3>
+  <h3 id=placement><span class=secno>1.1. </span> モジュールの関係</h3>
 
-  <p>This module replaces and extends the &lsquo;<a
+  <p>このモジュールは<a
+   href="#CSS21" rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a>のセクション8.6と9.10で定義されている &lsquo;<a
    href="#unicode-bidi0"><code class=property>unicode-bidi</code></a>&rsquo;
-   and &lsquo;<a href="#direction0"><code
-   class=property>direction</code></a>&rsquo; features defined in <a
-   href="#CSS21" rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a> sections 8.6
-   and 9.10.
+   と &lsquo;<a href="#direction0"><code
+   class=property>direction</code></a>&rsquo; の機能を置き換え、拡張する。</p>
 
-  <h3 id=values><span class=secno>1.2. </span> Values</h3>
+  <h3 id=values><span class=secno>1.2. </span> 値について</h3>
 
-  <p>This specification follows the <a
+  <p>本仕様は<a href="#CSS21"
+   rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a>に書かれた<a
    href="http://www.w3.org/TR/CSS21/about.html#property-defs">CSS property
-   definition conventions</a> from <a href="#CSS21"
-   rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a>. Value types not defined in
-   this specification are defined in CSS Level 2 Revision 1 <a
-   href="#CSS21" rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a>. Other CSS
-   modules may expand the definitions of these value types: for example <a
-   href="#CSS3COLOR" rel=biblioentry>[CSS3COLOR]<!--{{CSS3COLOR}}--></a>,
-   when combined with this module, expands the definition of the
-   &lt;color&gt; value type as used in this specification.
-
-  <p>In addition to the property-specific values listed in their definitions,
-   all properties defined in this specification also accept the <a
-   href="http://www.w3.org/TR/CSS21/cascade.html#value-def-inherit">inherit</a>
-   keyword as their property value. For readability it has not been repeated
-   explicitly.
+   definition conventions(CSSプロパティの定義規則)</a>に従っている。 本仕様で定義されていない値の型は、CSS Level 2 Revision 1<a href="#CSS21"
+   rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a>で定義されている。<a
+   href="#CSS3COLOR" rel=biblioentry>[CSS3COLOR]<!--{{CSS3COLOR}}--></a>を例に挙げると、このモジュールを組み合わせて使うと、本仕様の中でも &lt;color&gt; の値の型の定義が拡張される。</p>
+  <p>これらの定義にリストアップされたプロパティの固有値に加えて、本仕様で定義されている全プロパティでも、これらのプロパティの値のように <a
+   href="http://www.w3.org/TR/CSS21/cascade.html#value-def-inherit">inherit</a>(キーワード継承)を受け入れる。読みやすさを考慮して、本件は明示的に繰り返さない。</p>
 
   <h2 id=text-direction><span class=secno>2. </span> Inline Direction and
    Bidirectionality</h2>
