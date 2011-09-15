@@ -459,16 +459,11 @@
   <p>これらの定義にリストアップされたプロパティの固有値に加えて、本仕様で定義されている全プロパティでも、これらのプロパティの値のように <a
    href="http://www.w3.org/TR/CSS21/cascade.html#value-def-inherit">inherit</a> keyword(キーワード継承)を受け入れる。読みやすさを考慮して、本件は明示的に繰り返さない。</p>
 
-  <h2 id=text-direction><span class=secno>2. </span> Inline Direction and
-   Bidirectionality</h2>
+  <h2 id=text-direction><span class=secno>2. </span> 字詰め方向と双方向性</h2>
 
-  <p>While the characters in most scripts are written from left to right,
-   certain scripts are written from right to left. In some documents, in
-   particular those written with the Arabic or Hebrew script, and in some
-   mixed-language contexts, text in a single (visually displayed) block may
-   appear with mixed directionality. This phenomenon is called <span
+  <p>ほとんどの文字が左から右に書かれている一方で、いくつかの文字は右から左に書かれている。一部の文章、特にアラビア語かヘブライ語の文字で書かれ、その中に複数言語が混在する文脈があると、単一の(視覚的に表示された)ブロック内のテキストで複数方向が混在することがある。この現象は<span
    class=index-def id=bidirectionality title="bidirectionality (bidi)"><dfn
-   id=bidirectionality0>bidirectionality</dfn></span>, or "bidi" for short.
+   id=bidirectionality0>bidirectionality(双方向性)</dfn></span>, もしくは短く "bidi(バイダイ)"と呼ばれる。</p>
 
   <div class=figure>
    <p><img alt="An example of bidirectional text is a Latin name in an Arabic
@@ -476,57 +471,32 @@
     in the Latin word in the middle are typeset left-to-right."
     src="diagrams/bidi.png">
 
-   <p class=caption>Bidirectionality</p>
+   <p class=caption>双方向性の例</p>
   </div>
 
-  <p>The Unicode standard (<a
+  <p>Unicode standard (<a
    href="http://www.unicode.org/reports/tr9/">Unicode Standard Annex #9</a>)
-   defines a complex algorithm for determining the proper ordering of
-   bidirectional text. The algorithm consists of an implicit part based on
-   character properties, as well as explicit controls for embeddings and
-   overrides. CSS relies on this algorithm to achieve proper bidirectional
-   rendering. The &lsquo;<a href="#direction0"><code
-   class=property>direction</code></a>&rsquo; and &lsquo;<a
+   では、双方向テキストの適切な方向を決定するための複雑なアルゴリズムを定義している。このアルゴリズムは文字のプロパティの他に、埋め込みや上書きの明確なコントロールに基づいた暗黙的な部分で構成されている。CSSは適切な双方向レンダリングを実現するために、このアルゴリズムを頼りにしている。
+&lsquo;<a href="#direction0"><code
+   class=property>direction</code></a>&rsquo; と &lsquo;<a
    href="#unicode-bidi0"><code class=property>unicode-bidi</code></a>&rsquo;
-   properties allow authors to specify how the elements and attributes of a
-   document language map to this algorithm.
+   のプロパティは、作者にドキュメント言語の要素と属性を、このアルゴリズムとどうマッピングするか指定できるようにしている。</p>
 
-  <p>User agents that support bidirectional text must apply the Unicode
-   bidirectional algorithm to every sequence of inline-level boxes
-   uninterrupted by a forced (<a
-   href="http://www.unicode.org/reports/tr9/#Bidirectional_Character_Types">bidi
-   class B</a>) paragraph break or block boundary. This sequence forms the
-   <dfn id=paragraph>paragraph</dfn> unit in the bidirectional algorithm.
+  <p>双方向性をもったテキストをサポートするユーザーエージェントは、強制
+   (<a
+   href="http://www.unicode.org/reports/tr9/#Bidirectional_Character_Types">bidi class B</a>) 改行かブロック境界で中断されない全てのインラインボックスの配列に対しUnicode双方向アルゴリズムを適用しなくてはならない。この配列は双方向アルゴリズムでの<dfn id=paragraph>paragraph(段落)</dfn>単位を形成する。</p>
 
-  <p>Except when the &lsquo;<a href="#plaintext"><code
-   class=css>plaintext</code></a>&rsquo; value of &lsquo;<a
-   href="#unicode-bidi0"><code class=property>unicode-bidi</code></a>&rsquo;
-   is in effect, the paragraph embedding level is set according to the value
-   of the &lsquo;<a href="#direction0"><code
-   class=property>direction</code></a>&rsquo; property of the paragraph's
-   element rather than by the heuristic given in steps P2 and P3 of the
-   Unicode algorithm. The paragraph's element is usually the containing
-   block, but in the case of a paragraph contained by bidi <a
-   href="#isolate">isolation</a> it is the isolating inline element instead.
+  <p>&lsquo;<a
+   href="#unicode-bidi0"><code class=property>unicode-bidi</code></a>&rsquo;の&lsquo;<a href="#plaintext"><code class=css>plaintext</code></a>&rsquo;が有効な場合を除き、段落埋め込みレベルはUnicodeアルゴリズムのP2とP3にあるヒューリスティックに得られたものよりも、むしろ段落中要素の&lsquo;<a href="#direction0"><code
+   class=property>direction</code></a>&rsquo;プロパティの値に応じて設定されている。通常、段落中要素はブロックを含むが、<a href="#isolate">isolation(分離した)</a>バイダイを含む段落では、分離したインライン要素がその代わりとなる。</p>
 
-  <p>Because the base directionality of a text depends on the structure and
-   semantics of the document, the &lsquo;<a href="#direction0"><code
-   class=property>direction</code></a>&rsquo; and &lsquo;<a
-   href="#unicode-bidi0"><code class=property>unicode-bidi</code></a>&rsquo;
-   properties should in most cases be used only to map bidi information in
-   the markup to its corresponding CSS styles. If a document language
-   provides markup features to control bidi, authors and users should use
-   those features and not specify CSS rules to override them.
+  <p>テキストの書字方向が文章の構造と意味に依存していることから、ほとんどの場合
+   &lsquo;<a href="#direction0"><code class=property>direction</code></a>&rsquo;と&lsquo;<a href="#unicode-bidi0"><code class=property>unicode-bidi</code></a>&rsquo;のプロパティは、マークアップ中でのバイダイ情報と、適合するCSSスタイルとを割り当てるべきである。ドキュメント言語がバイダイをコントロールするマークアップ機能を提供するのであれば、作者とユーザーはそれらの機能を使うべきであり、これらを上書きするCSSのルールを指定すべきではない。</p>
 
-  <p>The HTML 4 specification (<a href="#HTML401"
-   rel=biblioentry>[HTML401]<!--{{HTML401}}--></a>, section 8.2) defines
-   bidirectionality behavior for HTML elements. The HTML 4 specification also
-   contains more information on bidirectionality issues.
+  <p>HTML 4の仕様 (<a href="#HTML401"
+   rel=biblioentry>[HTML401]<!--{{HTML401}}--></a>, section 8.2) では、双方向性はHTML要素のふるまいであると定義している。HTML4の仕様には双方向性における問題の詳細情報が含まれている。</p>
 
-  <p class=note>Because HTML UAs can turn off CSS styling, we advise HTML
-   authors to use the HTML &lsquo;<code class=property>dir</code>&rsquo;
-   attribute and &lt;bdo&gt; element to ensure correct bidirectional layout
-   in the absence of a style sheet.
+  <p class=note>HTMLのユーザーエージェントがCSSのスタイル機能をOFFにすることができるので、スタイルシートが無い状態でも正しい双方向レイアウトを保証するため、我々はHTML作者に&lsquo;<code class=property>dir</code>&rsquo;属性と&lt;bdo&gt; 要素を使うよう忠告している。
 
   <h3 id=direction><span class=secno>2.1. </span> Specifying Directionality:
    the &lsquo;<a href="#direction0"><code
