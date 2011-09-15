@@ -185,12 +185,10 @@
      <li><a href="#values"><span class=secno>1.2. </span> 値について</a>
     </ul>
 
-   <li><a href="#text-direction"><span class=secno>2. </span> Inline
-    Direction and Bidirectionality</a>
+   <li><a href="#text-direction"><span class=secno>2. </span> 字詰め方向と双方向性</a>
     <ul class=toc>
-     <li><a href="#direction"><span class=secno>2.1. </span> Specifying
-      Directionality: the &lsquo;<code class=property>direction</code>&rsquo;
-      property</a>
+     <li><a href="#direction"><span class=secno>2.1. </span> 方向の指定:  &lsquo;<code class=property>direction</code>&rsquo;
+      プロパティ</a>
 
      <li><a href="#unicode-bidi"><span class=secno>2.2. </span> Embeddings
       and Overrides: the &lsquo;<code
@@ -512,102 +510,80 @@
 
   <p class=note>HTMLのユーザーエージェントがCSSのスタイル機能をOFFにすることができるので、スタイルシートが無い状態でも正しい双方向レイアウトを保証するため、我々はHTML作者に&lsquo;<code class=property>dir</code>&rsquo;属性と&lt;bdo&gt; 要素を使うよう忠告している。
 
-  <h3 id=direction><span class=secno>2.1. </span> Specifying Directionality:
-   the &lsquo;<a href="#direction0"><code
-   class=property>direction</code></a>&rsquo; property</h3>
+  <h3 id=direction><span class=secno>2.1. </span> 方向の指定: &lsquo;<a href="#direction0"><code
+   class=property>direction</code></a>&rsquo; プロパティ</h3>
 
   <table class=propdef>
    <tbody>
     <tr>
-     <th>Name:
+     <th>名称:
 
      <td><dfn id=direction0>direction</dfn>
 
     <tr>
-     <th>Value:
+     <th>値:
 
      <td>ltr | rtl
 
     <tr>
-     <th>Initial:
+     <th>初期値:
 
      <td>ltr
 
     <tr>
-     <th>Applies to:
+     <th>適用対象:
 
-     <td>all elements
-
-    <tr>
-     <th>Inherited:
-
-     <td>yes
+     <td>全ての要素
 
     <tr>
-     <th>Percentages:
+     <th>継承:
+
+     <td>される
+
+    <tr>
+     <th>パーセンテージ:
 
      <td>N/A
 
     <tr>
-     <th>Media:
+     <th>メディア:
 
      <td>visual
 
     <tr>
-     <th>Computed&#160;value:
+     <th>算出値:
 
-     <td>specified value
+     <td>指定した値
   </table>
 
-  <p>This property specifies the base directionality of text and elements on
-   a line, and the directionality of embeddings and overrides (see &lsquo;<a
-   href="#unicode-bidi0"><code class=property>unicode-bidi</code></a>&rsquo;)
-   for the Unicode bidirectional algorithm. In addition, it affects the
-   ordering of <a href="http://www.w3.org/TR/CSS21/tables.html">table</a>
-   column layout, the direction of horizontal <a
-   href="http://www.w3.org/TR/CSS21/visufx.html#overflow">overflow</a>, and
-   the default alignment of text within a line, and other things that depend
-   on the base inline base direction.
+  <p>このプロパティはテキストと行内の要素の書字方向、Unicode双方向アルゴリズムで使われる埋め込みと上書き (&lsquo;<a
+   href="#unicode-bidi0"><code class=property>unicode-bidi</code></a>&rsquo;を参照) の方向を指定している。加えて、<a href="http://www.w3.org/TR/CSS21/tables.html">table(表)</a>の行レイアウト順序、水平<a href="http://www.w3.org/TR/CSS21/visufx.html#overflow">overflow(はみ出し)</a>の方向、行内のテキストのデフォルトの並べ方、他に字詰めの基本方向に依存するものに作用している。</p>
 
-  <p>Values for this property have the following meanings:
+  <p>このプロパティの値の意味を以下に示す:
 
   <dl>
    <dt><dfn id=ltr>ltr</dfn>
 
-   <dd>Left-to-right directionality.
+   <dd>左から右の方向になる。
 
    <dt><dfn id=rtl>rtl</dfn>
 
-   <dd>Right-to-left directionality.
+   <dd>右から左の方向になる。
   </dl>
 
-  <p class=note>The &lsquo;<a href="#direction0"><code
-   class=property>direction</code></a>&rsquo; property has no effect on bidi
-   reordering when specified on inline elements whose &lsquo;<a
+  <p class=note>&lsquo;<a href="#direction0"><code
+   class=property>direction</code></a>&rsquo;プロパティは、&lsquo;<a
    href="#unicode-bidi0"><code class=property>unicode-bidi</code></a>&rsquo;
-   property's value is &lsquo;<a href="#normal"><code
-   class=css>normal</code></a>&rsquo;.
+   プロパティの値が &lsquo;<a href="#normal"><code class=css>normal</code></a>&rsquo;であるインライン要素に指定されたバイダイの並び替えには何の影響も与えない。</p>
 
-  <p>The value of the &lsquo;<a href="#direction0"><code
-   class=property>direction</code></a>&rsquo; property on the root element is
-   also propagated to the initial containing block and, together with the
-   &lsquo;<a href="#writing-mode1"><code
-   class=property>writing-mode</code></a>&rsquo; property, determines the
-   document's principal writing mode. (See <a
-   href="#principal-writing-mode">below</a>.)
+  <p>ルート要素の&lsquo;<a href="#direction0"><code
+   class=property>direction</code></a>&rsquo;プロパティの値も初期包含ブロックへ伝搬され、&lsquo;<a href="#writing-mode1"><code class=property>writing-mode</code></a>&rsquo;プロパティの値と共にドキュメント全体の基本となる組方向を決定する (<a href="#principal-writing-mode">こちら</a>を参照)。</p>
 
-  <p class=note>Note that the &lsquo;<a href="#direction0"><code
-   class=property>direction</code></a>&rsquo; property of the HTML BODY
-   element is <em>not</em> propagated to the viewport. That special behavior
-   only applies to the background and overflow properties.
+  <p class=note>注: HTML BODY要素の&lsquo;<a href="#direction0"><code
+   class=property>direction</code></a>&rsquo;プロパティはビューポート(コンテンツが表示される領域)に伝搬<em>されない</em>。この特殊な振る舞いはbackgroundとoverflowのプロパティにのみ適用される。</p>
 
-  <p class=note>The &lsquo;<a href="#direction0"><code
-   class=property>direction</code></a>&rsquo; property, when specified for
-   table column elements, is not inherited by cells in the column since
-   columns are not the ancestors of the cells in the document tree. Thus, CSS
-   cannot easily capture the "dir" attribute inheritance rules described in
-   <a href="#HTML401" rel=biblioentry>[HTML401]<!--{{HTML401}}--></a>,
-   section 11.3.2.1.
+  <p class=note>表のcolumn要素に指定された&lsquo;<a href="#direction0"><code
+   class=property>direction</code></a>&rsquo; プロパティは、ドキュメントツリーにおいて列がセルの祖先でないため、列内のセルへは継承されない。このように、CSSは<a href="#HTML401" rel=biblioentry>[HTML401]<!--{{HTML401}}--></a>のsection 11.3.2.1.に書かれている "dir" 属性の継承ルールを簡単に取得することができない。</p>
 
   <h3 id=unicode-bidi><span class=secno>2.2. </span> Embeddings and
    Overrides: the &lsquo;<a href="#unicode-bidi0"><code
