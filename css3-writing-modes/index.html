@@ -190,9 +190,8 @@
      <li><a href="#direction"><span class=secno>2.1. </span> 方向の指定:  &lsquo;<code class=property>direction</code>&rsquo;
       プロパティ</a>
 
-     <li><a href="#unicode-bidi"><span class=secno>2.2. </span> Embeddings
-      and Overrides: the &lsquo;<code
-      class=property>unicode-bidi</code>&rsquo; property</a>
+     <li><a href="#unicode-bidi"><span class=secno>2.2. </span> 埋め込みと上書き: &lsquo;<code
+      class=property>unicode-bidi</code>&rsquo; プロパティ</a>
 
      <li><a href="#bidi-example"><span class=secno>2.3. </span> Example of
       Bidirectional Text</a>
@@ -585,74 +584,62 @@
   <p class=note>表のcolumn要素に指定された&lsquo;<a href="#direction0"><code
    class=property>direction</code></a>&rsquo; プロパティは、ドキュメントツリーにおいて列がセルの祖先でないため、列内のセルへは継承されない。このように、CSSは<a href="#HTML401" rel=biblioentry>[HTML401]<!--{{HTML401}}--></a>のsection 11.3.2.1.に書かれている "dir" 属性の継承ルールを簡単に取得することができない。</p>
 
-  <h3 id=unicode-bidi><span class=secno>2.2. </span> Embeddings and
-   Overrides: the &lsquo;<a href="#unicode-bidi0"><code
-   class=property>unicode-bidi</code></a>&rsquo; property</h3>
+  <h3 id=unicode-bidi><span class=secno>2.2. </span> 埋め込みと上書き: &lsquo;<a href="#unicode-bidi0"><code
+   class=property>unicode-bidi</code></a>&rsquo; プロパティ</h3>
 
   <table class=propdef>
    <tbody>
     <tr>
-     <th>Name:
+     <th>名称:
 
      <td><dfn id=unicode-bidi0>unicode-bidi</dfn>
 
     <tr>
-     <th>Value:
+     <th>値:
 
      <td>normal | embed | [ isolate || bidi-override ] | plaintext
 
     <tr>
-     <th>Initial:
+     <th>初期値:
 
      <td>normal
 
     <tr>
-     <th>Applies to:
+     <th>適用対象:
 
-     <td>all elements, but see prose
-
-    <tr>
-     <th>Inherited:
-
-     <td>no
+     <td>全ての要素(しかしproseを参照のこと)
 
     <tr>
-     <th>Percentages:
+     <th>継承:
+
+     <td>されない
+
+    <tr>
+     <th>パーセンテージ:
 
      <td>N/A
 
     <tr>
-     <th>Media:
+     <th>メディア:
 
      <td>visual
 
     <tr>
-     <th>Computed&#160;value:
+     <th>算出値:
 
-     <td>specified value
+     <td>指定した値
   </table>
 
-  <p>Values for this property have the following meanings:
+  <p>このプロパティの値の意味を以下に示す。
 
   <dl>
    <dt><dfn id=normal>normal</dfn>
 
-   <dd>The element does not open an additional level of embedding with
-    respect to the bidirectional algorithm. For inline elements, implicit
-    reordering works across element boundaries.
+   <dd>この要素は、双方向アルゴリズムに関してはレベルを追加する埋め込み(入れ子)を受け入れない。インライン要素だと、暗黙の並び替えは要素の境界を越えて作用する。
 
    <dt><dfn id=embed>embed</dfn>
 
-   <dd>If the element is inline, this value opens an additional level of
-    embedding with respect to the bidirectional algorithm. The direction of
-    this embedding level is given by the &lsquo;<a href="#direction0"><code
-    class=property>direction</code></a>&rsquo; property. Inside the element,
-    reordering is done implicitly. This corresponds to adding a LRE (U+202A),
-    for &lsquo;<code class=css>direction: ltr</code>&rsquo;, or RLE (U+202B),
-    for &lsquo;<code class=css>direction: rtl</code>&rsquo;, at the start of
-    the element and a PDF (U+202C) at the end of the element. <span
-    class=note>This value has no effect on elements that are not
-    inline.</span>
+   <dd>インライン要素なら、この値は双方向アルゴリズムに関してレベルを追加する埋め込み(入れ子)を受け入れる。この埋め込んだレベルの方向は&lsquo;<a href="#direction0"><code class=property>direction</code></a>&rsquo;プロパティにより与えられる。要素の中では、並び替えは暗黙で行われる。これは、要素の始めだと、&lsquo;<code class=css>direction: ltr</code>&rsquo;に対しては LRE (U+202A)か、&lsquo;<code class=css>direction: rtl</code>&rsquo;に対しては RLE (U+202B)の追加に相当し、要素の終わりでは、 PDF (U+202C) の追加に相当する。<span class=note>この値はインライン要素でない場合、何の影響も及ぼさない。</span>
 
    <dt><dfn id=isolate>isolate</dfn>
 
