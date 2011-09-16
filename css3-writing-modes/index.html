@@ -643,43 +643,21 @@
 
    <dt><dfn id=isolate>isolate</dfn>
 
-   <dd>For the purposes of the Unicode bidirectional algorithm, the contents
-    of the element are considered to be inside a separate, independent
-    paragraph with a base directionality given by the element's &lsquo;<a
-    href="#direction0"><code class=property>direction</code></a>&rsquo;
-    property, and for the purpose of bidi resolution in its containing bidi
-    paragraph (if any), the element itself is treated as if it were an Object
-    Replacement Character (U+FFFC). (If the element is broken across multiple
-    lines, then each box of the element is treated as an Object Replacement
-    Character.)
+   <dd>Unicode双方向アルゴリズムのために、要素のコンテンツは、分離・独立し、&lsquo;<a href="#direction0"><code class=property>direction</code></a>&rsquo;プロパティによって書字方向が指定された段落の中にあるとされている。
+    そして(もし、あれば)バイダイ段落を含むバイダイ解決のために、要素自身がObject Replacement Character (U+FFFC) のように扱われる。(要素が複数行にわたって改行された場合、要素の各ボックスはObject Replacement Characterとして扱われる。)
 
    <dt><dfn id=bidi-override>bidi-override</dfn>
 
-   <dd>For inline elements this creates an override. For block-container
-    elements this creates an override for inline-level descendants not within
-    another block container element. This means that inside the element,
-    reordering is strictly in sequence according to the &lsquo;<a
+   <dd>インライン要素に対しては、この値は上書きを実現する。ブロックコンテナ要素に対しては、この値はその他のブロックコンテナ要素ではなく、そのインラインレベルの子孫への上書きを実現する。これは、要素の中においては、並び替えが&lsquo;<a
     href="#direction0"><code class=property>direction</code></a>&rsquo;
-    property; the implicit part of the bidirectional algorithm is ignored.
-    This corresponds to adding a LRO (U+202D), for &lsquo;<code
-    class=css>direction: ltr</code>&rsquo;, or RLO (U+202E), for &lsquo;<code
-    class=css>direction: rtl</code>&rsquo;, at the start of the element and a
-    PDF (U+202C) at the end of the element.
+    プロパティに従った順序に厳密であることを意味しており、双方向アルゴリズムの暗黙の部分は無視される。これは、要素の始めでは、&lsquo;<code
+    class=css>direction: ltr</code>&rsquo; に対しては LRO (U+202D)が、&lsquo;<code class=css>direction: rtl</code>&rsquo; に対しては RLO (U+202E)の追加に相当し、要素の終わりでは PDF (U+202C) の追加に相当する。
 
    <dt><dfn id=plaintext>plaintext</dfn>
 
    <dd>
-    <p>For the purposes of the Unicode bidirectional algorithm, the base
-     directionality of each bidi paragraph for which the element forms the
-     containing block is determined not by the element's computed &lsquo;<a
-     href="#direction0"><code class=property>direction</code></a>&rsquo; as
-     usual, but by following the heuristic in rules P2 and P3 of the Unicode
-     bidirectional algorithm. For inline elements, this value behaves as for
-     &lsquo;<a href="#isolate"><code class=css>isolate</code></a>&rsquo;,
-     except, as with block containers, the base directionality is determined
-     by following the Unicode heuristic instead of by using the &lsquo;<a
-     href="#direction0"><code class=property>direction</code></a>&rsquo;
-     value.
+    <p>Unicode双方向アルゴリズムのために、要素が形成したブロックを含む各バイダイ段落の書字方向は、通常、要素が計算した&lsquo;<a href="#direction0"><code class=property>direction</code></a>&rsquo;では決定されない。しかし、ヒューリスティックなUnicodeアルゴリズムのルールP2とP3には従う。インライン要素では、ブロックコンテナを除き、この値は &lsquo;<a href="#isolate"><code class=css>isolate</code></a>&rsquo;と同様に振る舞う。字詰め方向は&lsquo;<a
+     href="#direction0"><code class=property>direction</code></a>&rsquo;の値ではなく、Unicodeのヒューリスティックなものを用いて決定される。
   </dl>
 
   <p>The final order of characters within in each bidi paragraph is the same

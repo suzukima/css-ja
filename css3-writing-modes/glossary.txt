@@ -1,4 +1,4 @@
-writing-mode: 組方向
-inline base direction: 文字送り方向
+﻿writing-mode: 組方向
+inline base direction: 字詰め方向
 block flow direction: 行送り方向
 base directionality: 書字方向
