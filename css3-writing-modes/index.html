@@ -835,146 +835,125 @@ english17 18WERBEH
 
   <p>縦書きレイアウトでも双方向テキストレイアウトの処理が必要となる。例えば、時計回りに回転されたアラビア語は、下から上にレイアウトされる。
 
-  <h3 id=writing-mode><span class=secno>3.1. </span> Block Flow Direction:
+  <h3 id=writing-mode><span class=secno>3.1. </span> 行送り方向:
    the &lsquo;<a href="#writing-mode1"><code
-   class=property>writing-mode</code></a>&rsquo; property</h3>
+   class=property>writing-mode</code></a>&rsquo; プロパティ</h3>
 
   <table class=propdef>
    <tbody>
     <tr>
-     <th>Name:
+     <th>名称:
 
      <td><dfn id=writing-mode1>writing-mode</dfn>
 
     <tr>
-     <th>Value:
+     <th>値:
 
      <td>horizontal-tb | vertical-rl | vertical-lr
 
     <tr>
-     <th>Initial:
+     <th>初期値:
 
      <td>horizontal-tb
 
     <tr>
-     <th>Applies to:
+     <th>適用対象:
 
-     <td>All elements except table row groups, table column groups, table
-      rows, and table columns
-
-    <tr>
-     <th>Inherited:
-
-     <td>yes
+     <td>表の行グループ、表の列グループ、表の行、表の列を除く全要素
 
     <tr>
-     <th>Percentages:
+     <th>継承:
+
+     <td>される
+
+    <tr>
+     <th>パーセンテージ:
 
      <td>N/A
 
     <tr>
-     <th>Media:
+     <th>メディア:
 
      <td>visual
 
     <tr>
-     <th>Computed&#160;value:
+     <th>算出値:
 
-     <td>specified value
+     <td>指定した値
   </table>
 
-  <p>This property sets the block flow direction. Possible values:
+  <p>このプロパティは行送り方向を設定する。指定可能な値は以下:
 
   <dl>
    <dt><dfn id=horizontal-tb>horizontal-tb</dfn>
 
-   <dd>Top-to-bottom block flow. The writing mode is horizontal.
+   <dd>行送り方向は上から下。横書き。
 
    <dt><dfn id=vertical-rl>vertical-rl</dfn>
 
-   <dd>Right-to-left block flow. The writing mode is vertical.
+   <dd>行送り方向は右から左。縦書き。
 
    <dt><dfn id=vertical-lr>vertical-lr</dfn>
 
-   <dd>Left-to-right block flow. The writing mode is vertical.
+   <dd>行送り方向は左から右。縦書き。
   </dl>
 
   <p>The &lsquo;<a href="#writing-mode1"><code
-   class=property>writing-mode</code></a>&rsquo; property determines the
-   direction of block flow. This determines the progression of block-level
-   boxes in a block formatting context; the progression of line boxes in a
-   block container that contains inlines; and the progression of rows in a
-   table. By virtue of determining the stacking direction of line boxes, the
+   class=property>writing-mode</code></a>&rsquo;プロパティは行送り方向を決定している。これがブロック書式付けコンテキストにあるブロックレベルボックスの進行を決定している。インラインを含むブロックコンテナのラインボックスの進行と、表の行の進行である。ラインボックスを積む方向が決定されるおかげで、
    &lsquo;<a href="#writing-mode1"><code
-   class=property>writing-mode</code></a>&rsquo; property also determines
-   whether line boxes and thus the writing mode is horizontal or vertical.
+   class=property>writing-mode</code></a>&rsquo;プロパティは、このようにラインボックスが横組なのか縦組なのかも決定している。
 
-  <p>When set on the root element, the &lsquo;<a href="#writing-mode1"><code
-   class=property>writing-mode</code></a>&rsquo; property together with the
+  <p>&lsquo;<a href="#writing-mode1"><code
+   class=property>writing-mode</code></a>&rsquo;プロパティは
    &lsquo;<a href="#direction0"><code
-   class=property>direction</code></a>&rsquo; property determines the <dfn
-   id=principal-writing-mode>principal writing mode</dfn> of the document.
-   This writing mode is used, for example, to determine the default page
-   progression direction. (See <a href="#CSS3PAGE"
-   rel=biblioentry>[CSS3PAGE]<!--{{CSS3PAGE}}--></a>.) The &lsquo;<a
+   class=property>direction</code></a>&rsquo;プロパティと共にroot要素に設定されると、ドキュメント全体の<dfn
+   id=principal-writing-mode>principal writing mode(基本となる組方向)</dfn>を決定する。
+   この組方向は、基本となるページ進行方向を決定したりする。(<a href="#CSS3PAGE"
+   rel=biblioentry>[CSS3PAGE]<!--{{CSS3PAGE}}--></a>を参照) root要素の &lsquo;<a
    href="#writing-mode1"><code class=property>writing-mode</code></a>&rsquo;
-   value of the root element is also propagated to the initial containing
-   block and sets the block flow direction of the initial block formatting
-   context.
+   の値は初期包含ブロックにも伝播し、初期ブロック書式付けコンテキストの行送り方向を設定している。
 
-  <p class=note>Note that the &lsquo;<a href="#writing-mode1"><code
-   class=property>writing-mode</code></a>&rsquo; property of the HTML BODY
-   element is <em>not</em> propagated to the viewport. That special behavior
-   only applies to the background and overflow properties.
+  <p class=note>HTML BODY要素の&lsquo;<a href="#writing-mode1"><code
+   class=property>writing-mode</code></a>&rsquo;プロパティはビューポートに伝播<em>されない</em>ことに注意すること。この特別な振る舞いはbackground と overflow プロパティにのみ適用される。
 
-  <p>If an element has a different block flow direction than its containing
-   block:
+  <p>もし要素がそれを含んでいるブロックと異なる行送り方向を持っていた場合は:
 
   <ul>
-   <li>If the element has a specified &lsquo;<code
-    class=property>display</code>&rsquo; of &lsquo;<code
-    class=css>inline</code>&rsquo;, its &lsquo;<code
-    class=property>display</code>&rsquo; computes to &lsquo;<code
-    class=property>inline-block</code>&rsquo;. <a href="#CSS21"
+   <li>その要素が &lsquo;<code
+    class=property>display</code>&rsquo; を &lsquo;<code
+    class=css>inline</code>&rsquo; にしているのなら、その &lsquo;<code
+    class=property>display</code>&rsquo; は &lsquo;<code
+    class=property>inline-block</code>&rsquo; となる。 <a href="#CSS21"
     rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a>
 
-   <li>If the element has a specified &lsquo;<code
-    class=property>display</code>&rsquo; of &lsquo;<code
-    class=css>run-in</code>&rsquo;, its &lsquo;<code
-    class=property>display</code>&rsquo; computes to &lsquo;<code
-    class=property>block</code>&rsquo;. <a href="#CSS21"
+   <li>その要素が &lsquo;<code
+    class=property>display</code>&rsquo; を &lsquo;<code
+    class=css>run-in</code>&rsquo; にしているのなら、その &lsquo;<code
+    class=property>display</code>&rsquo; は &lsquo;<code
+    class=property>block</code>&rsquo; となる。 <a href="#CSS21"
     rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a>
   </ul>
 
-  <p>If such an element is a block container, then it establishes a new block
-   formatting context.
+  <p>そのような要素がブロックコンテナの場合、新しいブロック書式付けコンテキストを作り出す。
 
-  <p>The content of replaced elements do not rotate due to the writing mode:
-   images, for example, remain upright. However replaced content involving
-   text (such as MathML content or form elements) should match the replaced
-   element's writing mode and line orientation if the UA supports such a
-   vertical writing mode for the replaced content.
+  <p>置き換えられた要素のコンテンツはwriting modeによって回転しない。例では、imageは直立したままである。しかし、ユーザーエージェントがコンテンツを置換する縦書きをサポートしていた場合は、テキストを含む要素(MathMLやform要素など)の置き換えは、置き換えられた要素の組方向と行の向きに一致しなければならない。
 
   <div class=example>
-   <p>In the following example, two block elements (1 and 3) separated by an
-    image (2) are presented in various flow writing modes.</p>
+   <p>下の例は、image(2)によって分割されている2つのブロック要素(1と3)を様々な行送り組方向で示したものである。</p>
 
-   <p>Here is a diagram of horizontal writing mode (<code>writing-mode:
+   <p>横書きの場合 (<code>writing-mode:
     horizontal-tb</code>):</p>
 
    <p><img alt="Diagram of horizontal layout: blocks 1, 2, and 3 are stacked
     top-to-bottom" height=300 src=horizontal.png width=219></p>
 
-   <p>Here is a diagram for the right-to-left vertical writing mode commonly
-    used in East Asia (<code>writing-mode: vertical-rl</code>):</p>
+   <p>一般的に東アジア圏で使われる右から左の縦書きの場合 (<code>writing-mode: vertical-rl</code>):</p>
 
    <p><img alt="Diagram of a right-to-left vertical layout: blocks 1, 2, and
     3 are arranged side by side from right to left" height=191
     src=vertical-rl.png width=297></p>
 
-   <p>And finally, here is a diagram for the left-to-right vertical writing
-    mode used for Manchu and Mongolian (<code>writing-mode:
-    vertical-lr</code>):</p>
+   <p>そして最後に、満州語やモンゴル語で使われる左から右の縦書きの場合 (<code>writing-mode: vertical-lr</code>):</p>
 
    <p><img alt="Diagram of left-to-right vertical layout: blocks 1, 2, and 3
     are arranged side by side from left to right" height=191
@@ -982,10 +961,8 @@ english17 18WERBEH
   </div>
 
   <div class=example>
-   <p>In the following example, some form controls are rendered inside a
-    block with &lsquo;<a href="#vertical-rl"><code
-    class=css>vertical-rl</code></a>&rsquo; writing mode. The form controls
-    are rendered to match the writing mode.
+   <p>以下の例は、&lsquo;<a href="#vertical-rl"><code
+    class=css>vertical-rl</code></a>&rsquo; writing mode のブロック内でいくつかのフォームを表示させたものである。フォームの表示は writing mode と一致している。
 
    <pre>
 <!-- -->&lt;style>
@@ -1010,11 +987,8 @@ english17 18WERBEH
   </div>
 
   <div class=example>
-   <p>In this example, &lsquo;<a href="#writing-mode1"><code
-    class=property>writing-mode</code></a>&rsquo; sets the list markers
-    upright using the &lsquo;<code class=css>::marker</code>&rsquo;
-    pseudo-element. Vertical alignment ensures that longer numbers will still
-    align with the right of the first line of text. <a href="#CSS3LIST"
+   <p>この例は、擬似要素 &lsquo;<code class=css>::marker</code>&rsquo;を使い、&lsquo;<a href="#writing-mode1"><code
+    class=property>writing-mode</code></a>&rsquo; でリストマーカーを直立にしたものである。vertical alignmentは、まだテキストの最初の行の右側に長い数字を配置していくことを保証している。<a href="#CSS3LIST"
     rel=biblioentry>[CSS3LIST]<!--{{CSS3LIST}}--></a>
 
    <pre>::marker { writing-mode: horizontal-tb;
@@ -1026,7 +1000,7 @@ english17 18WERBEH
      upright atop sideways vertical Latin list item text." class=example
      src=vertical-horizontal-list-markers.png>
 
-    <p class=caption>Example of horizontal list markers in a vertical list</p>
+    <p class=caption>垂直リストにおける水平リストマーカーの例</p>
    </div>
   </div>
 

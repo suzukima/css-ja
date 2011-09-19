@@ -2,3 +2,7 @@
 inline base direction: 字詰め方向
 block flow direction: 行送り方向
 base directionality: 書字方向
+block formatting context: ブロック書式付けコンテキスト
+initial containing block: 初期包含ブロック
+principal writing mode: 文書全体の基本となる組方向
+punctuation mark: 句読点
