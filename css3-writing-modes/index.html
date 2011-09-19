@@ -193,8 +193,7 @@
      <li><a href="#unicode-bidi"><span class=secno>2.2. </span> 埋め込みと上書き: &lsquo;<code
       class=property>unicode-bidi</code>&rsquo; プロパティ</a>
 
-     <li><a href="#bidi-example"><span class=secno>2.3. </span> Example of
-      Bidirectional Text</a>
+     <li><a href="#bidi-example"><span class=secno>2.3. </span> 双方向テキストの例</a>
 
      <li><a href="#bidi-box-model"><span class=secno>2.4. </span> Box model
       for inline elements in bidirectional context</a>
@@ -660,59 +659,27 @@
      href="#direction0"><code class=property>direction</code></a>&rsquo;の値ではなく、Unicodeのヒューリスティックなものを用いて決定される。
   </dl>
 
-  <p>The final order of characters within in each bidi paragraph is the same
-   as if the bidi control codes had been added as described above, markup had
-   been stripped, and the resulting character sequence had been passed to an
-   implementation of the Unicode bidirectional algorithm for plain text that
-   produced the same line-breaks as the styled text.
+  <p>各バイダイ段落の中にある文字の最終的な順序は、上記のようにバイダイのコントロールコードが埋め込まれているものと同じであり、マークアップは削除されており、結果として得られる文字の順序は、スタイル付きテキストと同じ改行が生成されたplain text用のUnicode双方向アルゴリズム実装に渡されている。
 
-  <p>In this process, replaced elements with &lsquo;<code class=css>display:
-   inline</code>&rsquo; are treated as neutral characters, unless their
-   &lsquo;<a href="#unicode-bidi0"><code
-   class=property>unicode-bidi</code></a>&rsquo; property has a value other
-   than &lsquo;<a href="#normal"><code
-   class=property>normal</code></a>&rsquo;, in which case they are treated as
-   strong characters in the &lsquo;<a href="#direction0"><code
-   class=property>direction</code></a>&rsquo; specified for the element. All
-   other atomic inline-level boxes are treated as neutral characters always.
+  <p>このプロセスでは、&lsquo;<a href="#unicode-bidi0"><code
+   class=property>unicode-bidi</code></a>&rsquo;プロパティが&lsquo;<a href="#normal"><code class=property>normal</code></a>&rsquo;以外の値、つまり要素に指定された&lsquo;<a href="#direction0"><code class=property>direction</code></a>&rsquo;で強い文字(文字自身に方向を持つ)として扱われるような場合を除き、&lsquo;<code class=css>display:inline</code>&rsquo;で置換される要素はニュートラルな文字(右から左でも、左から右でも使用できる文字)として扱われる。他のアトミックなインラインレベルボックスは全て常にニュートラルな文字として扱われる。
 
-  <p>If an inline element is broken around a bidi paragraph boundary (e.g. if
-   split by a block or forced paragraph break), then the bidi control codes
-   corresponding to the end of the element are added before the interruption
-   and the codes corresponding to the start of the element are added after
-   it. (In other words, any embedding levels or overrides started by the
-   element are closed at the paragraph break and reopened on the other side
-   of it.)
+  <p>インライン要素がバイダイ段落境界の周辺で分解された場合(例えば、ブロックや強制段落改行により分離された場合)、要素の終わりに相当するバイダイのコントロールコードは分解箇所の前に追加され、要素の開始に相当するコントロールコードは分解箇所の後ろに追加される。(言い換えれば、要素のどんな追加レベルや上書きも、段落改行で閉じられ、もう一方で再び開く。)
 
-  <p>Because the Unicode algorithm has a limit of <em title="According to
+  <p>Unicodeアルゴリズムは追加レベルの制限が<em title="According to
    unicode 3.0, chapter 3, section 12, definition BD2. Specifically, page 58
-   here: http://www.unicode.org/unicode/uni2book/ch03.pdf"> 61 levels</em> of
-   embedding, care should be taken not to use <span
+   here: http://www.unicode.org/unicode/uni2book/ch03.pdf"> 61レベル</em>であるため、適切な場合を除き、値が&lsquo;<a href="#normal"><code
+   class=property>normal</code></a>&rsquo;以外の<span
    class=propinst-unicode-bidi>&lsquo;<a href="#unicode-bidi0"><code
-   class=property>unicode-bidi</code></a>&rsquo;</span> with a value other
-   than &lsquo;<a href="#normal"><code
-   class=property>normal</code></a>&rsquo; unless appropriate. In particular,
-   a value of &lsquo;<code class=property>inherit</code>&rsquo; should be
-   used with extreme caution. However, for elements that are, in general,
-   intended to be displayed as blocks, a setting of &lsquo;<code
-   class=css>unicode-bidi: isolate</code>&rsquo; is preferred to keep the
-   element together in case display is changed to inline (see example below).
+   class=property>unicode-bidi</code></a>&rsquo;</span>プロパティを使わないよう注意すること。 特に値が&lsquo;<code class=property>inherit</code>&rsquo;の場合は注意を払うこと。しかし、しかし、一般的に、ブロックとしての表示を意図している要素は、displayをinlineに変更しつつ、要素を維持するため&lsquo;<code
+   class=css>unicode-bidi: isolate</code>&rsquo; とするのが好ましい。(以下のサンプルを参照)
 
-  <h3 id=bidi-example><span class=secno>2.3. </span> Example of Bidirectional
-   Text</h3>
+  <h3 id=bidi-example><span class=secno>2.3. </span> 双方向テキストの例</h3>
 
-  <p>The following example shows an XML document with bidirectional text. It
-   illustrates an important design principle: document language designers
-   should take bidi into account both in the language proper (elements and
-   attributes) and in any accompanying style sheets. The style sheets should
-   be designed so that bidi rules are separate from other style rules, and
-   such rules should not be overridden by other style sheets so that the
-   document language's bidi behavior is preserved.
+  <p>双方向テキストのXMLを使ったXMLドキュメントの例を以下に示す。これは重要な設計原理を説明している。ドキュメント言語の設計者は言語の適正さ(要素と属性)と添付されたスタイルシートの双方で、バイダイを考慮に入れるべきである。スタイルシートはバイダイのルールがスタイルのルールと分離されるように、またドキュメント言語のバイダイの振る舞いが保護されるよう、記述したルールが他のスタイルシートで上書きされないように設計されるべきである。
 
   <div class=example>
-   <p>In this example, lowercase letters stand for inherently left-to-right
-    characters and uppercase letters represent inherently right-to-left
-    characters. The text stream is shown in logical backing store order.</p>
+   <p>この例では、小文字が左から右で使われる文字を表し、大文字が右から左で使われる文字を表す。text streamはバッキングストア内の順で表示される。</p>
 
    <pre class=xml-example><code class=xml>
 &lt;HEBREW&gt;
@@ -726,8 +693,7 @@
 &lt;/ENGLISH&gt;
     </code></pre>
 
-   <p>Since this is arbitrary XML, the style sheet is responsible for setting
-    the writing direction. This is the style sheet:</p>
+   <p>これは任意のXMLであるので、スタイルシートは書字方向の設定に関与している。これはこのようなスタイルシートとなる:</p>
 
    <pre>
 /* Rules for bidi */
@@ -739,23 +705,14 @@ HEBREW, ENGLISH, PAR  {display: block;}
 EMPH                  {font-weight: bold;}
     </pre>
 
-   <p>The HEBREW element is a block with a right-to-left base direction, the
-    ENGLISH element is a block with a left-to-right base direction. The PARs
-    are blocks that inherit the base direction from their parents. Thus, the
-    first two PARs are read starting at the top right, the final three are
-    read starting at the top left. Please note that HEBREW and ENGLISH are
-    chosen as element names for explicitness only; in general, element names
-    should convey structure without reference to language.</p>
+   <p>HEWREW要素は、書字方向が右から左のブロックである。ENGLISH要素は書字方向が左から右のブロックである。PARは親要素から書字方向を継承するブロックである。よって、最初の2つのPARは右上から読まれ、最後の3つPARは左上から読まれる。HEBREWとENGLISHは話をわかりやすくするためだけに選ばれた要素名であることに注意すること。一般的に、要素名は言語を参照せずに構造を伝える必要がある。</p>
 
-   <p>The EMPH element is inline-level, and since its value for <span
+   <p>EMPH要素はインラインレベル要素で、<span
     class=propinst-unicode-bidi>&lsquo;<a href="#unicode-bidi0"><code
-    class=property>unicode-bidi</code></a>&rsquo;</span> is &lsquo;<a
-    href="#normal"><code class=property>normal</code></a>&rsquo; (the initial
-    value), it has no effect on the ordering of the text. The HE-QUO element,
-    on the other hand, creates an embedding.</p>
+    class=property>unicode-bidi</code></a>&rsquo;</span>の値は&lsquo;<a
+    href="#normal"><code class=property>normal</code></a>&rsquo;(初期値)であるので、テキストの順序には影響しない。一方、HE-QUO要素は埋め込みを行う。</p>
 
-   <p>The formatting of this text might look like this if the line length is
-    long:</p>
+   <p>行の長さが長い場合、このテキストの書式は次のようになる:</p>
 
    <pre class=ascii-art>
                5WERBEH 4WERBEH english3 2WERBEH 1WERBEH
@@ -769,10 +726,9 @@ english14 english15 english16
 english17 20WERBEH english19 18WERBEH
     </pre>
 
-   <p>Note that the HE-QUO embedding causes HEBREW18 to be to the right of
-    english19.</p>
+   <p>HE-QUOの埋め込みが、english19の右にHEBREW18を持ってきていることに注意すること。</p>
 
-   <p>If lines have to be broken, it might be more like this:</p>
+   <p>行が改行されているなら、次のようになる:</p>
 
    <pre class=ascii-art>
        2WERBEH 1WERBEH
@@ -793,60 +749,34 @@ english17 18WERBEH
 20WERBEH english19
     </pre>
 
-   <p>Because HEBREW18 must be read before english19, it is on the line above
-    english19. Just breaking the long line from the earlier formatting would
-    not have worked. Note also that the first syllable from english19 might
-    have fit on the previous line, but hyphenation of left-to-right words in
-    a right-to-left context, and vice versa, is usually suppressed to avoid
-    having to display a hyphen in the middle of a line.</p>
+   <p>HEBREW18がenglish19の前で読まれるべきなので、HEBREW18はenglish19の上の行にある。前の書式から長い行を改行するだけではうまくいかない。english19の最初のシラブルは前の行に収まっているが、右から左の方向を持つ文中の左から右の方向を持つ言葉のハイフン、もしくはその逆のハイフンは、通常、行の途中にハイフンを表示させないために抑制されていることに注意すること。</p>
   </div>
   <!-- example -->
 
-  <h3 id=bidi-box-model><span class=secno>2.4. </span> Box model for inline
-   elements in bidirectional context</h3>
+  <h3 id=bidi-box-model><span class=secno>2.4. </span> 双方向文中にあるインライン要素のためのボックスモデル</h3>
 
-  <p>Since bidi reordering can split apart and reorder text that is logically
-   contiguous, bidirectional text can cause an inline boxes to be split and
-   reordered within a line.
+  <p>バイダイの再配置は論理的に連続しているテキストを分割して並び替えできるので、双方向テキスト行中のインラインボックスも分割・並び替えされうる。
 
-  <p class=note>Note that in order to be able to flow inline boxes in a
-   uniform direction (either entirely left-to-right or entirely
-   right-to-left), anonymous inline boxes may have to be created.</p>
+  <p class=note>インラインボックスを同じ方向にフロー(流し込み)できるようにするために(全て左から右か、全て右から左)、匿名のインラインボックスが生成されることに注意すること。</p>
   <!-- CSS2.1 8.6 -->
 
-  <p>For each line box, UAs must take the inline boxes generated for each
-   element and render the margins, borders and padding in visual order (not
-   logical order). The <a href="#start"><i>start</i></a>-most box on the
-   first line box in which the element appears has the <a
-   href="#start"><i>start</i></a> edge's margin, border, and padding; and the
-   end-most box on the last line box in which the element appears has the <a
-   href="#end"><i>end</i></a> edge's margin, border, and padding. For
-   example, in the &lsquo;<a href="#horizontal-tb"><code
-   class=css>horizontal-tb</code></a>&rsquo; writing mode:
+  <p>各ラインボックスのために、ユーザエージェントは各要素に生成されたインラインボックスを取得し、マージン・ボーダー・パディングを表示順序(論理的な順序ではない)に従い描画しなければならない。要素が登場する最初のラインボックスにある<a href="#start"><i>start</i></a>-most box(最初のボックス)は、<a href="#start"><i>start</i></a> edge's margin(開始マージン)、border(ボーダー)、padding(パディング)を持つ。要素が登場する最後のラインボックスにある end-most box(最後のボックス)は、<a
+   href="#end"><i>end</i></a> edge's margin(終了マージン)、 border(ボーダー)、padding(パディング)を持つ。例えば、writing modeプロパティが&lsquo;<a href="#horizontal-tb"><code class=css>horizontal-tb</code></a>&rsquo;の場合:
 
   <ul>
-   <li>When the parent's &lsquo;<a href="#direction0"><code
-    class=property>direction</code></a>&rsquo; property is &lsquo;<a
-    href="#ltr"><code class=css>ltr</code></a>&rsquo;, the left-most
-    generated box of the first line box in which the element appears has the
-    left margin, left border and left padding, and the right-most generated
-    box of the last line box in which the element appears has the right
-    padding, right border and right margin.
+   <li>親要素の&lsquo;<a href="#direction0"><code
+    class=property>direction</code></a>&rsquo;プロパティが&lsquo;<a
+    href="#ltr"><code class=css>ltr</code></a>&rsquo;なら、要素が登場する最初のラインボックスでは、一番左に生成されたボックスは左マージン、左ボーダー、左パディングを持つ。要素が登場する最後のラインボックスでは、一番右に生成されたボックスは右パディング、右ボーダー、右マージンを持つ。
 
-   <li>When the parent's &lsquo;<a href="#direction0"><code
-    class=property>direction</code></a>&rsquo; property is &lsquo;<a
-    href="#rtl"><code class=css>rtl</code></a>&rsquo;, the right-most
-    generated box of the first line box in which the element appears has the
-    right padding, right border and right margin, and the left-most generated
-    box of the last line box in which the element appears has the left
-    margin, left border and left padding.
+   <li>親要素の&lsquo;<a href="#direction0"><code
+    class=property>direction</code></a>&rsquo;プロパティが&lsquo;<a
+    href="#rtl"><code class=css>rtl</code></a>&rsquo;なら、素が登場する最初のラインボックスでは、一番右に生成されたボックスは右マージン、右ボーダー、右パディングを持つ。要素が登場する最後のラインボックスでは、一番左に生成されたほとんどのボックスは左パディング、左ボーダー、左マージンを持つ。
   </ul>
 
-  <p>Analogous rules hold for vertical writing modes.
+  <p>これと似たルールが縦組を保っている。
 
-  <p class=note>The &lsquo;<code
-   class=property>box-decoration-break</code>&rsquo; property can override
-   this behavior to draw box decorations on both sides of each box. <a
+  <p class=note>&lsquo;<code
+   class=property>box-decoration-break</code>&rsquo;プロパティは、各ボックス両サイドにて装飾を描画するために、この振る舞いを上書きすることができる。<a
    href="#CSS3BG" rel=biblioentry>[CSS3BG]<!--{{!CSS3BG}}--></a>
 
   <h2 id=vertical-intro><span class=secno>3. </span> Introduction to Vertical
