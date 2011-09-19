@@ -200,13 +200,12 @@
 
    <li><a href="#vertical-intro"><span class=secno>3. </span> 縦書きの導入</a>
     <ul class=toc>
-     <li><a href="#writing-mode"><span class=secno>3.1. </span> Block Flow
-      Direction: the &lsquo;<code class=property>writing-mode</code>&rsquo;
-      property</a>
+     <li><a href="#writing-mode"><span class=secno>3.1. </span> 行送り方向: &lsquo;<code class=property>writing-mode</code>&rsquo;
+      プロパティ</a>
       <ul class=toc>
        <li><a href="#svg-writing-mode"><span class=secno>3.1.1. </span>
-        SVG1.1 &lsquo;<code class=property>writing-mode</code>&rsquo;
-        Values</a>
+        SVG1.1 の &lsquo;<code class=property>writing-mode</code>&rsquo;
+        の値</a>
       </ul>
     </ul>
 
@@ -835,8 +834,7 @@ english17 18WERBEH
 
   <p>縦書きレイアウトでも双方向テキストレイアウトの処理が必要となる。例えば、時計回りに回転されたアラビア語は、下から上にレイアウトされる。
 
-  <h3 id=writing-mode><span class=secno>3.1. </span> 行送り方向:
-   the &lsquo;<a href="#writing-mode1"><code
+  <h3 id=writing-mode><span class=secno>3.1. </span> 行送り方向: &lsquo;<a href="#writing-mode1"><code
    class=property>writing-mode</code></a>&rsquo; プロパティ</h3>
 
   <table class=propdef>
@@ -1004,20 +1002,17 @@ english17 18WERBEH
    </div>
   </div>
 
-  <h4 id=svg-writing-mode><span class=secno>3.1.1. </span> SVG1.1 &lsquo;<a
+  <h4 id=svg-writing-mode><span class=secno>3.1.1. </span> SVG1.1 の &lsquo;<a
    href="#writing-mode1"><code class=property>writing-mode</code></a>&rsquo;
-   Values</h4>
+   の値</h4>
 
   <p>SVG1.1 <a href="#SVG11" rel=biblioentry>[SVG11]<!--{{!SVG11}}--></a>
-   defines some additional values: &lsquo;<code class=css>lr</code>&rsquo;,
-   &lsquo;<code class=css>lr-tb</code>&rsquo;, &lsquo;<code
+   ではいくつかの値が追加で定義されている: &lsquo;<code class=css>lr</code>&rsquo;, &lsquo;<code class=css>lr-tb</code>&rsquo;, &lsquo;<code
    class=css>rl</code>&rsquo;, &lsquo;<code class=css>rl-tb</code>&rsquo;,
-   &lsquo;<code class=css>tb</code>&rsquo;, and &lsquo;<code
-   class=css>tb-rl</code>&rsquo;.
+   &lsquo;<code class=css>tb</code>&rsquo;, &lsquo;<code
+   class=css>tb-rl</code>&rsquo;である。
 
-  <p>These values are <em>deprecated</em> in any context except SVG1
-   documents. Implementations that wish to support these values in the
-   context of CSS must treat them as follows:
+  <p>これらの値は、SVG1の文章を除くコンテキストでは <em>非推奨</em>とされている。CSSのコンテキストでこれらをサポートする実装は,その値を次の表のように扱う必要がある:
 
   <table class=data>
    <thead>
@@ -1049,30 +1044,17 @@ english17 18WERBEH
      <td>&lsquo;<code class=css>tb-rl</code>&rsquo;
   </table>
 
-  <p class=note>The SVG1.1 values were also present in an older revision of
-   the CSS &lsquo;<a href="#writing-mode1"><code
-   class=property>writing-mode</code></a>&rsquo; specification, which is
-   obsoleted by this specification. The additional &lsquo;<code
-   class=css>tb-lr</code>&rsquo; value of that revision is replaced by
-   &lsquo;<a href="#vertical-lr"><code
-   class=css>vertical-lr</code></a>&rsquo;.
+  <p class=note>SVG1.1の値は、CSS &lsquo;<a href="#writing-mode1"><code class=property>writing-mode</code></a>&rsquo;の以前のリビジョンに存在していて、本仕様で廃止された。以前のリビジョンに存在していた値 &lsquo;<code
+   class=css>tb-lr</code>&rsquo; は、&lsquo;<a href="#vertical-lr"><code
+   class=css>vertical-lr</code></a>&rsquo;に置き換えられる。
 
-  <p>In SVG1.1, these values set the <dfn
-   id=inline-progression-direction>inline progression direction</dfn>, in
-   other words, the direction the current text position advances each time a
-   glyph is added. This is a geometric process that happens <a
-   href="#after"><em>after</em></a> bidi reordering, and thus has no effect
-   on the interpretation of the &lsquo;<a href="#direction0"><code
-   class=property>direction</code></a>&rsquo; property (which is independent
-   of &lsquo;<a href="#writing-mode1"><code
-   class=property>writing-mode</code></a>&rsquo;). (See <a
-   href="http://www.w3.org/TR/SVG/text.html#RelationshipWithBiDirectionality">Relationship
-   with bidirectionality</a>. <a href="#SVG11"
+  <p>SVG1.1では、これらの値が<dfn id=inline-progression-direction>inline progression direction(行内の進行方向)</dfn>を設定している。言い換えると、グリフが追加される度に現在のテキストの位置が進む方向である。これはバイダイの再配置<a
+   href="#after"><em>後</em></a>に起こる幾何学的プロセスなので、 &lsquo;<a href="#direction0"><code
+   class=property>direction</code></a>&rsquo; プロパティ(&lsquo;<a href="#writing-mode1"><code class=property>writing-mode</code></a>&rsquo; から独立している)の解釈には何の影響も及ぼさない。(<a
+   href="http://www.w3.org/TR/SVG/text.html#RelationshipWithBiDirectionality">Relationship with bidirectionality</a>を参照のこと。<a href="#SVG11"
    rel=biblioentry>[SVG11]<!--{{!SVG11}}--></a>)
 
-  <p class=note>There are varying interpretations on whether this process
-   causes "writing-mode: rl" to merely shift the text string or reverse the
-   order of all glyphs in the text.
+  <p class=note>このプロセスが "writing-mode: rl" に対して、単にテキストの文字列をシフトさせているのか、それともテキスト中の全グリフ順序を逆にしているのかは、様々な解釈がある。
 
   <h2 id=inline-alignment><span class=secno>4. </span> Inline-level Alignment</h2>
 
