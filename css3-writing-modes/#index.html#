@@ -198,7 +198,7 @@
      <li><a href="#bidi-box-model"><span class=secno>2.4. </span> 双方向文中にあるインライン要素のためのボックスモデル</a>
     </ul>
 
-   <li><a href="#vertical-intro"><span class=secno>3. </span> 縦書きの導入</a>
+   <li><a href="#vertical-intro"><span class=secno>3. </span> たてがき</a>
     <ul class=toc>
      <li><a href="#writing-mode"><span class=secno>3.1. </span> Block Flow
       Direction: the &lsquo;<code class=property>writing-mode</code>&rsquo;
@@ -779,11 +779,20 @@ english17 18WERBEH
 
   <h2 id=vertical-intro><span class=secno>3. </span> 縦書きの導入</h2>
 
-  <p><em>この章は参考である。</em>
+  <p><em>This subsection is non-normative.</em>
 
-  <p>CSS2.1の双方向テキストサポート拡張に加えて、このモジュールはCSSでの縦書きレイアウトサポートに必要なルールとプロパティを導入している。
+  <p>In addition to extensions to CSS2.1&rsquo;s support for bidirectional
+   text, this module introduces the rules and properties needed to support
+   vertical text layout in CSS.
 
-  <p>主に水平の文字を配置していくラテン系の文字を使用した言語とは違い、中国語や日本語のようなアジア圏の言語は文字を垂直に配置する。下の日本語の例は、同じテキストを水平と垂直それぞれに配置したものである。水平の場合は、テキストは左から右に、そして上から下へ読まれる。垂直の場合は、テキストは上から下へ、そして右から左へ読まれる。左から右へ進む水平の場合における左端からのインデントは、上から下へ進む垂直の場合に変換すると、上端からのインデントになる。
+  <p>Unlike languages that use the Latin script which are primarily laid out
+   horizontally, Asian languages such as Chinese and Japanese can be laid out
+   vertically. The Japanese example below shows the same text laid out
+   horizontally and vertically. In the horizontal case, text is read from
+   left to right, top to bottom. For the vertical case, the text is read top
+   to bottom, right to left. Indentation from the left edge in the
+   left-to-right horizontal case translates to indentation from the top edge
+   in the top-to-bottom vertical case.
 
   <div class=figure>
    <p><img alt="A comparison of horizontal and vertical Japanese shows that
@@ -792,14 +801,23 @@ english17 18WERBEH
     box to the top right. Running headers, however, may remain laid out
     horizontally across the top of the page." src=vert-horiz-comparison.png></p>
 
-   <p class=caption>日本語での縦書きと横書きの比較: i文庫アプリケーション(iOS)</p>
+   <p class=caption>Comparison of vertical and horizontal Japanese: iBunko
+    application (iOS)</p>
   </div>
 
-  <p class=note>中国語と日本語の行は右から左、もしくは上から下へ並べられる。しかしモンゴル語と満州語は左から右へ並べられる。
+  <p class=note>For Chinese and Japanese lines are ordered either right to
+   left or top to bottom, while for Mongolian and Manchu lines are ordered
+   left to right.
 
-  <p>横書きから縦書きへの変更による影響はレイアウトだけではない。組版にも影響を与えている。例えば、spacing boxに含まれる句読点は横書きから縦書きへ変更することができるが、その場合は違うグリフが使われることがある。
+  <p>The change from horizontal to vertical writing can affect not just the
+   layout, but also the typesetting. For example, the position of a
+   punctuation mark within its spacing box can change from the horizontal to
+   the vertical case, and in some cases alternate glyphs are used.
 
-  <p>ラテン文字や、その他普通は横書きされる文字のテキストを含む縦書きのテキストは、その横書きされるテキストを様々な方法で表示することができる。例えば、ラテン文字を横向きに回転させたり、各文字を上向きに並べることができる:
+  <p>Vertical text that includes Latin script text or text from other scripts
+   normally displayed horizontally can display that text in a number of ways.
+   For example, Latin words can be rotated sideways, or each letter can be
+   oriented upright:
 
   <div class=figure>
    <p><img alt="A dictionary definition for &#x30F4;&#x30A3;&#x30EB;&#x30B9;
@@ -807,10 +825,12 @@ english17 18WERBEH
     the letters of the initialisms 'RNA' and 'DNA' upright."
     src=vert-latin-layouts.png></p>
 
-   <p class=caption>日本語縦書き中のラテン文字の例: 大辞林 1.4(iOS)</p>
+   <p class=caption>Examples of Latin in vertical Japanese: Daijirin Viewer
+    1.4 (iOS)</p>
   </div>
 
-  <p>日付の2桁数字のような特殊なケースでは、テキストが縦書き一文字分のキャラクターボックスにぴったり詰めこまれる:
+  <p>In some special cases such as two-digit numbers in dates, text is fit
+   compactly into a single vertical character box:
 
   <div class=figure id=fig-mac>
    <p><img alt="An excerpt from MacFan shows several possible vertical
@@ -820,20 +840,21 @@ english17 18WERBEH
     the date is rotated to match the rotated Latin."
     src=vert-number-layouts.png></p>
 
-   <p class=caption>2010年12月のMac Fan p.49</p>
+   <p class=caption>Mac Fan, December 2010, p.49</p>
   </div>
 
-  <p>レイアウトにはよく縦書きと横書きの要素が混ざったものがある:
+  <p>Layouts often involve a mixture of vertical and horizontal elements:
 
   <div class=figure>
    <p><img alt="Magazines often mix horizontal and vertical layout; for
     example, using one orientation for the main article text and a different
     one for sidebar or illustrative content." src=vert-horiz-combination.png></p>
 
-   <p class=caption>縦書き要素と横書き要素の混合</p>
+   <p class=caption>Mixture of vertical and horizontal elements</p>
   </div>
 
-  <p>縦書きレイアウトでも双方向テキストレイアウトの処理が必要となる。例えば、時計回りに回転されたアラビア語は、下から上にレイアウトされる。
+  <p>Vertical text layouts also need to handle bidirectional text layout;
+   clockwise-rotated Arabic, for example, is laid out bottom-to-top.
 
   <h3 id=writing-mode><span class=secno>3.1. </span> Block Flow Direction:
    the &lsquo;<a href="#writing-mode1"><code
