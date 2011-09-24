@@ -48,7 +48,7 @@
 		<p>文中では日本語組版の用語を用いております。日本語組版については<a href="http://www.w3.org/TR/jlreq/ja/">日本語組版処理の要件（日本語版）</a>に目を通しておくことをおすすめいたします。</p>
 		<p>その他の仕様書の翻訳は、<a href="../">CSS 日本語レイアウト関連仕様 日本語翻訳</a>からご覧下さい。</p>
 		<p>公開開始日: 2011.09.11</p>
-     <p>更新日: 2011.09.19</p>
+     <p>更新日: 2011.09.24</p>
 	</div>
 
   <div class=head> <!--begin-logo-->
@@ -211,17 +211,13 @@
 
    <li><a href="#inline-alignment"><span class=secno>4. </span> インライン要素の配置</a>
     <ul class=toc>
-     <li><a href="#intro-baselines"><span class=secno>4.1. </span>
-      Introduction to Baselines</a>
+     <li><a href="#intro-baselines"><span class=secno>4.1. </span> ベースラインの導入</a>
 
-     <li><a href="#text-baselines"><span class=secno>4.2. </span> Text
-      Baselines</a>
+     <li><a href="#text-baselines"><span class=secno>4.2. </span> テキストのベースライン</a>
 
-     <li><a href="#replaced-baselines"><span class=secno>4.3. </span> Atomic
-      Inline Baselines</a>
+     <li><a href="#replaced-baselines"><span class=secno>4.3. </span> 原子的なインラインベースライン</a>
 
-     <li><a href="#baseline-alignment"><span class=secno>4.4. </span>
-      Baseline Alignment</a>
+     <li><a href="#baseline-alignment"><span class=secno>4.4. </span> ベースラインの配置</a>
     </ul>
 
    <li><a href="#intro-text-layout"><span class=secno>5. </span> Introduction
@@ -756,7 +752,7 @@ english17 18WERBEH
   <p class=note>インラインボックスを同じ方向にフロー(流し込み)できるようにするために(全て左から右か、全て右から左)、匿名のインラインボックスが生成されることに注意すること。</p>
   <!-- CSS2.1 8.6 -->
 
-  <p>各ラインボックスのために、ユーザエージェントは各要素に生成されたインラインボックスを取得し、マージン・ボーダー・パディングを表示順序(論理的な順序ではない)に従い描画しなければならない。要素が登場する最初のラインボックスにある<a href="#start"><i>start</i></a>-most box(最初のボックス)は、<a href="#start"><i>start</i></a> edge's margin(開始マージン)、border(ボーダー)、padding(パディング)を持つ。要素が登場する最後のラインボックスにある end-most box(最後のボックス)は、<a
+  <p>各ラインボックスのために、ユーザーエージェントは各要素に生成されたインラインボックスを取得し、マージン・ボーダー・パディングを表示順序(論理的な順序ではない)に従い描画しなければならない。要素が登場する最初のラインボックスにある<a href="#start"><i>start</i></a>-most box(最初のボックス)は、<a href="#start"><i>start</i></a> edge's margin(開始マージン)、border(ボーダー)、padding(パディング)を持つ。要素が登場する最後のラインボックスにある end-most box(最後のボックス)は、<a
    href="#end"><i>end</i></a> edge's margin(終了マージン)、 border(ボーダー)、padding(パディング)を持つ。例えば、writing modeプロパティが&lsquo;<a href="#horizontal-tb"><code class=css>horizontal-tb</code></a>&rsquo;の場合:
 
   <ul>
@@ -1062,19 +1058,13 @@ english17 18WERBEH
   <h3 id=intro-baselines><span class=secno>4.1. </span> Introduction to
    Baselines</h3>
 
-  <p><em>This section is non-normative.</em>
+  <p><em>本章は参考である。</em>
 
-  <p>A <dfn id=baseline>baseline</dfn> is a line along the <i>inline axis</i>
-   of a line box along which individual glyphs of text are aligned. Baselines
-   guide the design of glyphs in a font (for example, the bottom of most
-   alphabetic glyphs typically align with the alphabetic baseline), and they
-   guide the alignment of glyphs from different fonts or font sizes when
-   typesetting.
+  <p>A <dfn id=baseline>baseline(ベースライン)</dfn>は、テキストの個々のグリフが配置されたラインボックスの<i>inline axis(インライン軸)</i>に沿ったラインである。ベースラインはフォントのグリフをデザインするガイドになり(例えば、大半のアルファベット文字の底は大抵アルファベットのベースラインと一致している)、また、組版時に異なるフォントやフォントサイズのものとグリフをどう配置するかのガイドにもなる。
 
-  <div class=figure> [Picture of alphabetic text in two font sizes with the
-   baseline and emboxes indicated.]</div>
+  <div class=figure> [ベースラインとembox(仮想ボディ)が指定されており、2つのフォントサイズがある中でのアルファベットのテキストの図]</div>
 
-  <p>Different writing systems prefer different baseline tables.
+  <p>異なる表記法は異なるベースラインテーブルを選択する。
 
   <div class=figure>
    <p><img alt="Latin prefers the alphabetic baseline, on top of which most
@@ -1084,117 +1074,78 @@ english17 18WERBEH
     whose glyphs are designed to fill a square, tend to align on their
     bottoms." src=script-preferred-baselines.gif></p>
 
-   <p class=caption>Preferred baselines in various writing systems</p>
+   <p class=caption>さまざまな表記法におけるベースラインの選択</p>
   </div>
 
-  <p>A well-constructed font contains a <dfn id=baseline-table>baseline
-   table</dfn>, which indicates the position of one or more baselines within
-   the font's design coordinate space. (The design coordinate space is scaled
-   with the font size.)
+  <p>うまく構成されたフォントには、フォントデザインの座標空間にある1つ以上のベースラインの位置を示す <dfn id=baseline-table>ベースラインテーブル</dfn>が含まれている(デザイン座標空間はフォントサイズにより見積もられる)。
 
   <div class=figure>
    <p><img alt="" src=baselines.gif></p>
 
-   <p class=caption>In a well-designed mixed-script font, the glyphs are
-    positioned in the coordinate space to harmonize with one another when
-    typeset together. The baseline table is then constructed to match the
-    shape of the glyphs, each baseline positioned to match the glyphs from
-    its preferred scripts.</p>
+   <p class=caption>うまくデザインされた書式混合でのフォントの中では、グリフは、組版するときに一緒の座標空間に配置される。ベースラインテーブルはそのときグリフの形に合うように構成され、各ベースラインは選択された書式のグリフに合うように配置される</p>
   </div>
 
-  <p>The baseline table is a property of the font, and the positions of the
-   various baselines apply to all glyphs in the font.
+  <p>ベースラインテーブルはフォントのプロパティであり、様々なベースラインの位置はフォントの全グリフに適用される。
 
-  <p>Different baseline tables can be provided for alignment in horizontal
-   and vertical text. UAs should use the vertical tables in vertical
-   typesetting modes and the horizontal tables otherwise.
+  <p>縦書きテキストと横書きテキストでは、異なるベースラインテーブルが提供されうる。ユーザーエージェントは、縦組では縦組用のテーブルを、横組では他のテーブルを使うべきである。
 
-  <h3 id=text-baselines><span class=secno>4.2. </span> Text Baselines</h3>
+  <h3 id=text-baselines><span class=secno>4.2. </span> テキストのベースライン</h3>
 
-  <p>In this specification, only the following baselines are considered:
+  <p>この仕様では、以下のベースラインだけが考慮されている:
 
   <dl>
    <dt>alphabetic
 
-   <dd>The <dfn id=alphabetic-baseline>alphabetic baseline</dfn>, which
-    typically aligns with the bottom of uppercase Latin glyphs. In horizontal
-    typographic mode, this is the dominant baseline.
+   <dd>通常、<dfn id=alphabetic-baseline>alphabetic baseline</dfn>はラテン大文字グリフの底辺に沿っている。横書きの活版印刷では、優先されるベースラインである。
 
    <dt>central
 
-   <dd>The <dfn id=central-baseline>central baseline</dfn>, which typically
-    crosses the center of the em box. In vertical typographic mode, this is
-    the dominant baseline. If the font is missing this baseline, it is
-    assumed to be halfway between the ascender (<a
-    href="#over"><i>over</i></a>) and descender (<a
-    href="#under"><i>under</i></a>) edges of the em box.
+   <dd>通常、 <dfn id=central-baseline>central baseline</dfn>は仮想ボディの中心と交わっている。縦書きの活版印刷では、優先されるベースラインである。フォントにこのベースラインが無い場合は、仮想ボディのascender(上端)(<a
+    href="#over"><i>over</i></a>)とdescender(下端)(<a
+    href="#under"><i>under</i></a>)の真ん中であるとみなされる。
   </dl>
 
-  <p class=note>A future CSS module will deal with baselines in more detail
-   and allow the choice of other dominant baselines and alignment options.
+  <p class=note>将来のCSSモジュールでは、さらに細かいベースラインを扱い、他の優先されるベースラインと配置オプションを選択できるようにする予定である。
 
-  <h3 id=replaced-baselines><span class=secno>4.3. </span> Atomic Inline
-   Baselines</h3>
+  <h3 id=replaced-baselines><span class=secno>4.3. </span> 原子的なインラインベースライン</h3>
 
-  <p>If an <a
+  <p>もし <a
    href="http://www.w3.org/TR/CSS21/visuren.html#inline-boxes">atomic
-   inline</a> (such as an inline-block, inline-table, or replaced inline
-   element) is not capable of providing its own baseline information, then
-   the UA synthesizes a baseline table thus:
+   inline(原子的なインライン)</a> (インラインブロックやインラインテーブル、もしくはインライン要素に置き換えられたもの) が自身のベースライン情報を提供出来ない場合は、ユーザーエージェントはこのようにベースラインテーブルを合成する:
 
   <dl>
    <dt>alphabetic
 
-   <dd>The alphabetic baseline is assumed to be at the <a
-    href="#under"><i>under</i></a> margin edge.
+   <dd>alphabetic ベースラインは、<a
+    href="#under"><i>under(下)</i></a> マージン辺にあると仮定される。
 
    <dt>central
 
-   <dd>The central baseline is assumed to be halfway between the <a
-    href="#under"><i>under</i></a> and <a href="#over"><i>over</i></a> margin
-    edges of the box.
+   <dd>central ベースラインは、ボックスの <a
+    href="#under"><i>under(下)</i></a> と <a href="#over"><i>over(上)</i></a> のマージン辺の真ん中にあると仮定される。
   </dl>
 
-  <h3 id=baseline-alignment><span class=secno>4.4. </span> Baseline Alignment</h3>
+  <h3 id=baseline-alignment><span class=secno>4.4. </span> ベースラインの配置</h3>
 
-  <p>The <dfn id=dominant-baseline>dominant baseline</dfn> (which <a
-   href="#text-baselines">can change</a> based on the writing mode) is used
-   in CSS for alignment in two cases:
+  <p>CSSでは、<dfn id=dominant-baseline>dominant baseline(優先ベースライン)</dfn> (writing modeに基づいて<a href="#text-baselines">変更可能</a>) の配置時の使われ方は2つのケースがある:
 
   <ul>
-   <li><strong>Aligning glyphs from different fonts within the same inline
-    box.</strong> The glyphs are aligned by matching up the positions of the
-    dominant baseline in their corresponding fonts.
+   <li><strong>同じインラインボックスに異なるフォントのグリフを配置する場合。</strong> グリフは優先ベースラインの位置に合わせて配置される。
 
-   <li><strong>Aligning a child inline-level box within its parent.</strong>
-    For the &lsquo;<code class=property>vertical-align</code>&rsquo; value of
-    &lsquo;<a href="#baseline"><code class=css>baseline</code></a>&rsquo;,
-    child is aligned to the parent by matching the parent's dominant baseline
-    to the same baseline in the child. (E.g. if the parent's dominant
-    baseline is alphabetic, then the child's alphabetic baseline is matched
-    to the parent's alphabetic baseline, even if the child's dominant
-    baseline is something else.) For values of &lsquo;<code
-    class=css>sub</code>&rsquo;, &lsquo;<code class=css>super</code>&rsquo;,
-    &lsquo;<code class=css>&lt;length&gt;</code>&rsquo;, and &lsquo;<code
-    class=css>&lt;percentage&gt;</code>&rsquo;, the baselines are aligned as
-    for &lsquo;<a href="#baseline"><code
-    class=css>baseline</code></a>&rsquo;, but the child is shifted according
-    to the offset given by its &lsquo;<code
-    class=property>vertical-align</code>&rsquo; value.
+   <li><strong>親の中に子のinline-level boxを配置する場合。</strong>&lsquo;<a href="#baseline"><code class=css>baseline</code></a>&rsquo;の値が&lsquo;<code class=property>vertical-align</code>&rsquo;なら、子は親の箇所に、親の優先ベースラインと子の同じベースラインを一致させ配置される(例えば、親の優先ベースラインがalphabeticの場合、子の優先ベースラインがalphabeticベースライン以外であったとしても、子のalphabeticベースラインは親のalphabeticベースラインに合わされる)。&lsquo;<code class=css>sub</code>&rsquo;, &lsquo;<code class=css>super</code>&rsquo;,
+    &lsquo;<code class=css>&lt;length&gt;</code>&rsquo;, &lsquo;<code
+    class=css>&lt;percentage&gt;</code>&rsquo;の場合、ベースラインは &lsquo;<a href="#baseline"><code class=css>baseline</code></a>&rsquo;と同様に配置されるが、子は、 &lsquo;<code class=property>vertical-align</code>&rsquo; の値により与えられたオフセットに応じてシフトされる。
+
     <div class=example>
-     <p>Given following sample markup:
+     <p>以下のマークアップをして:
 
      <pre>&lt;p&gt;&lt;span class="outer"&gt;Ap &lt;span class="inner"&gt;<i>ji</i>&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;</pre>
 
-     <p>And the following style rule:
+     <p>スタイルが次の場合:
 
      <pre>span.inner { font-size: .75em; }</pre>
 
-     <p>The baseline tables of the parent (<code>.outer</code>) and the child
-      (<code>.inner</code>) will not match up due to the font size
-      difference. Since the dominant baseline is the alphabetic baseline, the
-      child box is aligned to its parent by matching up their alphabetic
-      baselines.
+     <p>親のベースラインテーブル (<code>.outer</code>) と子のベースラインテーブル (<code>.inner</code>) )はフォントサイズが異なるため一致しない。優先ベースラインがalphabeticベースラインなので、子のボックスは親のalphabeticベースラインに合わせて配置される。
 
      <div class=figure>
       <p><img alt="" src=baseline-align-sizes.gif>
@@ -1202,11 +1153,8 @@ english17 18WERBEH
     </div>
 
     <div class=example>
-     <p>If we assign &lsquo;<code class=css>vertical-align:
-      super</code>&rsquo; to the <code>.inner</code> element from the example
-      above, the same rules are used to align the <code>.inner</code> child
-      to its parent; the only difference is in addition to the baseline
-      alignment, the child is shifted to the superscript position.
+     <p>上の例で、 &lsquo;<code class=css>vertical-align:
+      super</code>&rsquo; を <code>.inner</code> の要素に適用した場合、親と同じ配置ルールが子の <code>.inner</code> にも使われる。唯一の違いは、ベースラインの配置に加えて、子が上付き文字の位置にシフトされることである。
 
      <pre>span.inner { vertical-align: super; font-size: .75em; }</pre>
 
