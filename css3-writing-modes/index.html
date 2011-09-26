@@ -220,12 +220,9 @@
      <li><a href="#baseline-alignment"><span class=secno>4.4. </span> ベースラインの配置</a>
     </ul>
 
-   <li><a href="#intro-text-layout"><span class=secno>5. </span> Introduction
-    to Vertical Text Layout</a>
+   <li><a href="#intro-text-layout"><span class=secno>5. </span> 縦書きテキストレイアウトの導入</a>
     <ul class=toc>
-     <li><a href="#text-orientation"><span class=secno>5.1. </span> Orienting
-      Text: the &lsquo;<code class=property>text-orientation</code>&rsquo;
-      property</a>
+     <li><a href="#text-orientation"><span class=secno>5.1. </span> テキストの方向: &lsquo;<code class=property>text-orientation</code>&rsquo; プロパティ</a>
     </ul>
 
    <li><a href="#abstract-box"><span class=secno>6. </span> Abstract Box
@@ -1168,262 +1165,148 @@ english17 18WERBEH
     </div>
   </ul>
 
-  <h2 id=intro-text-layout><span class=secno>5. </span> Introduction to
-   Vertical Text Layout</h2>
+  <h2 id=intro-text-layout><span class=secno>5. </span> 縦書きテキストレイアウトの導入</h2>
 
-  <p>Each writing system has one or more native orientations. Modern scripts
-   can therefore be classified into three orientational categories:
+  <p>どの筆記体型にも本来のテキストの方向が1つ以上ある。ゆえに、近代の書記方法はテキストの方向について3つに分類することができる:
 
   <dl>
-   <dt>horizontal-only
+   <dt>horizontal-only(水平のみ)
 
-   <dd>Scripts that have horizontal, but not vertical, native orientation.
-    Includes: Latin, Arabic, Hebrew, Devanagari
+   <dd>本来のテキストの方向は水平のみであり、垂直はない。ラテン文字、アラビア文字、ヘブライ文字、デーヴァナーガリが該当する。
 
-   <dt>vertical-only
+   <dt>vertical-only(垂直のみ)
 
-   <dd>Scripts that have vertical, but not horizontal, native orientation.
-    Includes: Mongolian, Phags Pa
+   <dd>本来のテキストの方向は垂直のみであり、水平はない。モンゴル文字、パスパ文字が該当する。
 
-   <dt>bi-orientational
+   <dt>bi-orientational(水平と垂直の両方向)
 
-   <dd>Scripts that have both vertical and horizontal native orientation.
-    Includes: Han, Hangul, Japanese Kana
+   <dd>本来のテキスト方向として垂直と水平の両方がある。ハン語の文字、ハングル文字、日本語のかな文字が該当する。
   </dl>
 
-  <p>In modern typographic systems, all glyphs are assigned a horizontal
-   orientation, which is used when laying out text horizontally. To lay out
-   vertical text, the UA needs to transform the text from its horizontal
-   orientation. This transformation is the <dfn
-   id=bi-orientational-transform>bi-orientational transform</dfn>, and there
-   are two types:
+  <p>近代の組版では、全グリフが水平方向に配置される。これはテキストを水平に配置するときに使われている。テキストを垂直に配置するためには、ユーザエージェントはテキストを水平方向から変換する必要がある。この変換は<dfn id=bi-orientational-transform>bi-orientational transform(bi-orientationalにおける変換)</dfn>であり、2つのタイプがある:
 
   <dl>
    <dt>rotate
 
-   <dd>Rotate the glyph from horizontal to vertical <a
+   <dd>水平から垂直にグリフを回転する <a
     href="diagrams/glyph-right.svg" type="image/svg+xml"> <img alt="Rotate
     the glyph from horizontal to vertical" class=figure
     src="diagrams/glyph-right.png"></a>
 
    <dt>translate
 
-   <dd>Translate the glyph from horizontal to vertical <a
+   <dd>水平から垂直にグリフを変換する <a
     href="diagrams/glyph-upright.svg" type="image/svg+xml"> <img
     alt="Translate the glyph from horizontal to vertical" class=figure
     src="diagrams/glyph-upright.png"></a>
   </dl>
 
-  <p>Scripts with a native vertical orientation have an intrinsic
-   bi-orientational transform, which orients them correctly in vertical text:
-   CJK (Chinese/Japanese/Korean) characters translate, that is, they are
-   always upright. Other scripts, such as Mongolian, rotate. (See <a
-   href="#script-orientations">Appendix B</a> for a list of intrinsic
-   bi-orientational transforms.)
+  <p>本来のテキスト方向として縦方向を持つ書記方法には固有のbi-orientational変換があり、それは縦書きでの方向を訂正する。例えばCJK(中国/日本/韓国)の文字変換があり、文字は常に直立状態にされる。モンゴル文字等の他の書記方法では回転させる。(固有の両方向変換は<a href="#script-orientations">付録B</a>を参照)
 
-  <p>Scripts without a native vertical orientation can be either rotated (set
-   sideways) or translated (set upright): the transform used is a stylistic
-   preference depending on the text's usage, rather than a matter of
-   correctness. The &lsquo;<a href="#text-orientation0"><code
-   class=property>text-orientation</code></a>&rsquo; property's &lsquo;<a
-   href="#upright-right"><code class=css>upright-right</code></a>&rsquo; and
-   &lsquo;<a href="#upright"><code class=css>upright</code></a>&rsquo; values
-   are provided to specify rotation vs. translation of horizontal-only text.
+  <p>本来のテキスト方向として縦方向を持たない書記方法は、回転(横倒しにセットされる)か変換(直立状態にセットされる)のどちらも可能である。使用される変換は、正しさよりはむしろテキストの使われ方に応じたスタイルが優先される。&lsquo;<a href="#text-orientation0"><code class=property>text-orientation</code></a>&rsquo; プロパティの &lsquo;<a href="#upright-right"><code class=css>upright-right</code></a>&rsquo; と &lsquo;<a href="#upright"><code class=css>upright</code></a>&rsquo; の値は、水平のみのテキストを回転するのか、それとも変換するのかを指定するために用意されている。
 
-  <p class=note>The &lsquo;<a href="#sideways-left"><code
-   class=css>sideways-left</code></a>&rsquo;, &lsquo;<a
-   href="#sideways-right"><code class=css>sideways-right</code></a>&rsquo;,
-   and &lsquo;<a href="#sideways"><code class=css>sideways</code></a>&rsquo;
-   values of &lsquo;<a href="#text-orientation0"><code
-   class=property>text-orientation</code></a>&rsquo; are provided for
-   decorative layout effects and to work around limitations in CSS support
-   for bottom-to-top scripts.
+  <p class=note> &lsquo;<a href="#text-orientation0"><code
+   class=property>text-orientation</code></a>&rsquo; の値である &lsquo;<a href="#sideways-left"><code class=css>sideways-left</code></a>&rsquo;, &lsquo;<a href="#sideways-right"><code class=css>sideways-right</code></a>&rsquo;, &lsquo;<a href="#sideways"><code class=css>sideways</code></a>&rsquo; は装飾的なレイアウト効果のために、そして下から上へよむ文章のCSSサポート制限を回避するために提供されている。
 
-  <p class=issue>Ideally, punctuation should be either sideways or upright
-   depending on whether the primary script is horizontal-only or vertical.
-   However, this information (which, like the base directionality, is a
-   property of the content) is not available to us. (UTN 22 used the concept
-   of a vertical directionality, given via &lsquo;<a href="#direction0"><code
-   class=property>direction</code></a>&rsquo; or the HTML <code>dir</code>
-   attribute to handle this issue.) The current spec works around this by
-   using the East Asian Width property; but this approach only works if
-   vertical scripts do not share punctuation with horizontal-only scripts.
+  <p class=issue>理想的には、句読点は主要な書記方法が水平のみか垂直かに応じて、横倒しか直立状態にとなるべきである。しかし、この情報(書字方向のようなコンテンツのプロパティ)を我々は利用できない(縦書きのコンセプトが使われているUTN 22では、この問題に対応すべく、&lsquo;<a href="#direction0"><code class=property>direction</code></a>&rsquo; 経由やHTMLの <code>dir</code> 属性で情報が与えられる)。現在の仕様では、East Asian Widthプロパティを使うことで問題に対処している。しかし、このアプローチは縦書きの書記方法が横書きのみの書記方向と句読点を共有していない場合しか有効でない。
 
-  <h3 id=text-orientation><span class=secno>5.1. </span> Orienting Text: the
-   &lsquo;<a href="#text-orientation0"><code
-   class=property>text-orientation</code></a>&rsquo; property</h3>
+  <h3 id=text-orientation><span class=secno>5.1. </span> テキストの方向: &lsquo;<a href="#text-orientation0"><code
+   class=property>text-orientation</code></a>&rsquo; プロパティ</h3>
 
   <table class=propdef>
    <tbody>
     <tr>
-     <th>Name:
+     <th>名称:
 
      <td><dfn id=text-orientation0>text-orientation</dfn>
 
     <tr>
-     <th>Value:
+     <th>値:
 
      <td>upright-right | upright | sideways-right | sideways-left | sideways
       | use-glyph-orientation
 
     <tr>
-     <th>Initial:
+     <th>初期値:
 
      <td>upright-right
 
     <tr>
-     <th>Applies to:
+     <th>適用対象:
 
-     <td>all elements except table row groups, rows, column groups, and
-      columns
-
-    <tr>
-     <th>Inherited:
-
-     <td>yes
+     <td>表の行グループ、表の列グループ、表の行、表の列を除く全要素
 
     <tr>
-     <th>Percentages:
+     <th>継承:
+
+     <td>される
+
+    <tr>
+     <th>パーセンテージ:
 
      <td>N/A
 
     <tr>
-     <th>Media:
+     <th>メディア:
 
      <td>visual
 
     <tr>
-     <th>Computed&#160;value:
+     <th>算出値:
 
-     <td>specified value
+     <td>指定した値
   </table>
 
-  <p>This property specifies the orientation of characters within a line and
-   sets the orientation of the line. Current values only have an effect in
-   vertical writing modes.
+  <p>このプロパティは行中の文字の向きを指定し、行の向きを設定する。現在の値はvertical writing modeの時のみ有効である。
 
-  <p>For readability, the term <a href="#character"><i>character</i></a> is
-   used in place of <em>extended grapheme cluster</em> in this section. See
-   <a href="#character-properties">Characters and Properties</a> for further
-   details.
+  <p>読みやすさを考慮し、本章では<a href="#character"><i>character(文字)</i></a>という言葉を <em>extended grapheme cluster(書記素クラスタ)</em> の意味で使用する。<a href="#character-properties">Characters and Properties</a>に詳細が記述されている。
 
-  <p>Values have the following meanings:
+  <p>この値の意味を以下に示す:
 
   <dl>
    <dt><dfn id=upright-right>upright-right</dfn>
 
    <dd>
-    <p>In vertical writing modes, characters from horizontal-only scripts are
-     set sideways, i.e. 90&deg; clockwise from their standard orientation in
-     horizontal text. Characters from vertical scripts are set with their
-     intrinsic orientation.
+    <p>縦書きでは、horizontal-onlyの表記方法で使われていた文字は横倒しになる。言い換えると、横書きの一般的な文字の向きから90度時計回りに回転される。
 
-    <p>In vertical writing modes, this value puts the element in a
-     <i>vertical typographic mode</i> and is typical for layout of primarily
-     vertical-script text.
+    <p>縦書きでは、この値は<i>vertical typographic mode</i>の要素に設定され、これが縦書きの表記方法の主要なレイアウトの典型例となる。
 
    <dt><dfn id=upright>upright</dfn>
 
    <dd>
-    <p>In vertical writing modes, characters from horizonal-only scripts are
-     rendered upright, i.e. in their standard horizontal orientation. Shaping
-     characters from such scripts are shaped in their isolated forms.
-     Characters from vertical scripts are set with their intrinsic
-     orientation and shaped normally. When available, vertical glyph variants
-     and vertical font metrics are used to set the text. The UA must
-     synthesize vertical font metrics for grapheme clusters that do not have
-     any.
+    <p>縦書きでは、horizontal-onlyの表記方法で使われていた文字は直立状態となる。言い換えると、これは横書きの一般的な文字の向きでである。これらの表記方法からの文字整形は孤立した形となる。垂直の表記方法で使われている文字はそれ固有の文字方向に設定され、形も普通である。可能であれば、縦書き用グリフと縦書きフォントのメトリクスがテキストに設定される。ユーザーエージェントは何も持たない書記素クラスタのために、縦書き用フォントのメトリクスを合成しなければならない。
 
-    <p>For the purposes of bidi reordering, this value causes all characters
-     to be treated as strong LTR. This value causes the used value of
-     &lsquo;<a href="#direction0"><code
-     class=property>direction</code></a>&rsquo; to be &lsquo;<a
-     href="#ltr"><code class=css>ltr</code></a>&rsquo;.
+    <p>バイダイの再配置のために、この値は全ての文字をstrong LTRとして扱わせている。この値は、&lsquo;<a href="#direction0"><code class=property>direction</code></a>&rsquo; の値 &lsquo;<a href="#ltr"><code class=css>ltr</code></a>&rsquo; が使われる原因となっている。
 
-    <p>In vertical writing modes, this value puts the element in a
-     <i>vertical typographic mode</i>.
+    <p>縦書きでは、この値は<i>vertical typographic mode</i>の要素に設定される。
 
    <dt><dfn id=sideways-right>sideways-right</dfn>
 
    <dd>
-    <p>In vertical writing modes, this causes text to be set as if in a
-     horizontal layout (using horizontal glyph variants and metrics), but
-     rotated 90&deg; clockwise. This value puts the element in a
-     <i>horizontal typographic mode</i>.
+    <p>縦書きでは、この値はテキストを水平レイアウト(横書き用グリフとメトリクスを使用する)にセットするが、時計回りに90度回転される。この値は <i>horizontal typographic mode</i>の要素に設定される。
 
    <dt><dfn id=sideways-left>sideways-left</dfn>
 
    <dd>
-    <p>In vertical writing modes, this causes text to be set as if in a
-     horizontal layout (using horizontal glyph variants and metrics), but
-     rotated 90&deg; counter-clockwise. This value puts the element in a
-     <i>horizontal typographic mode</i>.
+    <p>縦書きでは、この値はテキストを水平レイアウト(横書き用グリフとメトリクスを使用する)にセットするが、反時計回りに90度回転される。この値は<i>horizontal typographic mode</i>の要素に設定される。
 
-    <p>If set on a non-replaced inline whose parent is not &lsquo;<a
-     href="#sideways-left"><code class=css>sideways-left</code></a>&rsquo;,
-     this forces bidi isolation: the &lsquo;<a href="#normal"><code
-     class=css>normal</code></a>&rsquo; and &lsquo;<a href="#embed"><code
-     class=css>embed</code></a>&rsquo; values of &lsquo;<a
-     href="#unicode-bidi0"><code
-     class=property>unicode-bidi</code></a>&rsquo; compute to &lsquo;<a
-     href="#isolate"><code class=css>isolate</code></a>&rsquo;, and &lsquo;<a
-     href="#bidi-override"><code class=css>bidi-override</code></a>&rsquo;
-     computes to &lsquo;<code class=css>bidi-override isolate</code>&rsquo;.
-     Layout of text is exactly as for &lsquo;<a href="#sideways-right"><code
-     class=css>sideways-right</code></a>&rsquo; except that the text content
-     and baseline table of each of the element's inline boxes is mirrored
-     around a vertical axis along the center of its content box. The
-     positions of text decorations propagated from an ancestor inline
-     (including the block container's root inline) are not mirrored, but any
-     text decorations introduced by the element are positioned using the
-     mirrored baseline table.
+    <p>親が &lsquo;<a href="#sideways-left"><code class=css>sideways-left</code></a>&rsquo; でないものがインライン非置換要素に設定された場合は、bidi isolationが強制される: &lsquo;<a href="#unicode-bidi0"><code class=property>unicode-bidi</code></a>&rsquo; の値が &lsquo;<a href="#normal"><code class=css>normal</code></a>&rsquo; と &lsquo;<a href="#embed"><code class=css>embed</code></a>&rsquo; なら、算出値は &lsquo;<a href="#isolate"><code class=css>isolate</code></a>&rsquo; となり、&lsquo;<a href="#bidi-override"><code class=css>bidi-override</code></a>&rsquo; なら算出値は &lsquo;<code class=css>bidi-override isolate</code>&rsquo; となる。インラインの先祖(ブロックコンテナのルートインラインを含む)から伝播したテキスト装飾の位置は鏡像関係にならないが、要素によって導入されたテキスト装飾には鏡像関係となったベースラインテーブルを用いて位置付けが行われる。
 
-    <p>Similarly, if an inline child of the element has a &lsquo;<a
-     href="#text-orientation0"><code
-     class=property>text-orientation</code></a>&rsquo; value other than
-     &lsquo;<a href="#sideways-left"><code
-     class=css>sideways-left</code></a>&rsquo;, an analogous transformation
-     (and bidi isolation) is applied.
+    <p>同様に、要素のインライン子要素の &lsquo;<a href="#text-orientation0"><code class=property>text-orientation</code></a>&rsquo; の値が &lsquo;<a href="#sideways-left"><code class=css>sideways-left</code></a>&rsquo; 以外であった場合、相似の変換(そしてbidi isolation)が適用される。
 
    <dt><dfn id=sideways>sideways</dfn>
 
    <dd>
-    <p>This value is equivalent to &lsquo;<a href="#sideways-right"><code
-     class=css>sideways-right</code></a>&rsquo; in &lsquo;<a
-     href="#vertical-rl"><code class=css>vertical-rl</code></a>&rsquo;
-     writing mode and equivalent to &lsquo;<a href="#sideways-left"><code
-     class=css>sideways-left</code></a>&rsquo; in &lsquo;<a
-     href="#vertical-lr"><code class=css>vertical-lr</code></a>&rsquo;
-     writing mode. It can be useful when setting horizontal script text
-     vertically in a primarily horizontal-only document.
+    <p>この値はwriting modeが &lsquo;<a href="#vertical-rl"><code class=css>vertical-rl</code></a>&rsquo; の場合に &lsquo;<a href="#sideways-right"><code class=css>sideways-right</code></a>&rsquo; を指定したとき、またwriting modeが &lsquo;<a href="#vertical-lr"><code class=css>vertical-lr</code></a>&rsquo; の場合に &lsquo;<a href="#sideways-left"><code class=css>sideways-left</code></a>&rsquo; を指定したときと同じである。横組のみのドキュメントを縦組にするときに役立つ。
 
    <dt><dfn id=use-glyph-orientation>use-glyph-orientation</dfn>
 
    <dd>
-    <p><a href="#SVG11" rel=biblioentry>[SVG11]<!--{{!SVG11}}--></a> defines
-     &lsquo;<code class=property>glyph-orientation-vertical</code>&rsquo; and
-     &lsquo;<code class=property>glyph-orientation-horizontal</code>&rsquo;
-     properties that were intended to control text orientation. These
-     properties are <em>deprecated</em> and do not apply to non-SVG elements.
-     If an implementation supports these properties, the &lsquo;<a
-     href="#use-glyph-orientation"><code
-     class=css>use-glyph-orientation</code></a>&rsquo; value when set on SVG
-     elements indicates that the SVG &lsquo;<code
-     class=property>glyph-orientation-vertical</code>&rsquo; and &lsquo;<code
-     class=property>glyph-orientation-horizontal</code>&rsquo; behavior
-     control the layout of text. Such UAs must set &lsquo;<code
-     class=css>text-orientation: glyph-orientation</code>&rsquo; on all <a
-     href="http://www.w3.org/TR/SVG/intro.html#TermTextContentElement">SVG
-     text content elements</a> in their default UA style sheet for SVG.
+    <p><a href="#SVG11" rel=biblioentry>[SVG11]<!--{{!SVG11}}--></a> ではテキストの方向をコントロールすることを目的とした &lsquo;<code class=property>glyph-orientation-vertical</code>&rsquo; プロパティと &lsquo;<code class=property>glyph-orientation-horizontal</code>&rsquo; プロパティを定義している。これらのプロパティは<em>非推奨</em>とされており、非SVGエレメントには適用されない。実装がこれらのプロパティをサポートしている場合、SVG要素に &lsquo;<a href="#use-glyph-orientation"><code class=css>use-glyph-orientation</code></a>&rsquo; が設定されると、SVGの &lsquo;<code class=property>glyph-orientation-vertical</code>&rsquo; プロパティと &lsquo;<code class=property>glyph-orientation-horizontal</code>&rsquo; プロパティがテキストのレイアウトをコントロールする。これらを実装したユーザーエージェントは、SVG用のデフォルトユーザーエージェントスタイルシートとして、 &lsquo;<code class=css>text-orientation: glyph-orientation</code>&rsquo; を全ての<a href="http://www.w3.org/TR/SVG/intro.html#TermTextContentElement">SVGテキストコンテンツ要素</a>に設定しなければならない。
+  
+    <p>その他全てのコンテンツと、glyph orientation プロパティをサポートしていない実装においては、&lsquo;<a href="#use-glyph-orientation"><code class=css>use-glyph-orientation</code></a>&rsquo; は &lsquo;<a href="#upright-right"><code class=css>upright-right</code></a>&rsquo; と同様に振る舞う。
 
-    <p>In all other contexts, and for implementations that do not support the
-     glyph orientation properties, the &lsquo;<a
-     href="#use-glyph-orientation"><code
-     class=css>use-glyph-orientation</code></a>&rsquo; behavior is the same
-     as for &lsquo;<a href="#upright-right"><code
-     class=css>upright-right</code></a>&rsquo;.
-
-    <p class=note>This value is at-risk and may be dropped during CR.
+    <p class=note>この値は抜ける恐れがあるもので、おそらくCRまでには落とされるだろう。
   </dl>
 
   <div class=figure>
@@ -1456,30 +1339,17 @@ english17 18WERBEH
    </table>
 
    <p class=caption>&lsquo;<a href="#text-orientation0"><code
-    class=property>text-orientation</code></a>&rsquo; values (&lsquo;<a
+    class=property>text-orientation</code></a>&rsquo; の値 (&lsquo;<a
     href="#writing-mode1"><code class=property>writing-mode</code></a>&rsquo;
-    is &lsquo;<a href="#vertical-rl"><code
-    class=css>vertical-rl</code></a>&rsquo;)</p>
+    が &lsquo;<a href="#vertical-rl"><code
+    class=css>vertical-rl</code></a>&rsquo; の場合)</p>
   </div>
 
-  <p>The orientation of characters belonging to the Common, Inherited, and
-   Unknown script categories is defined in <a
-   href="#vertical-typesetting-details">Appendix C</a>. <span
-   class=issue>Feedback is requested on those rules.</span>
+    <p>一般的なもの、継承されたもの、未知のカテゴリの文章に属する文字の向きは<a href="#vertical-typesetting-details">Appendix C</a>に定義されている。<span class=issue>このルールに対するフィードバックを募集しています</span>
 
-  <p class=issue>Need a clear normative definition of default character
-   orientation for all Unicode characters that does not rely on data supplied
-   by fonts.
+  <p class=issue>フォントのデータに依存しない全ユニコード文字の向きに関する定義の明快な標準定義が必要である。
 
-  <div class=example>
-   <p>In the following example, the root element of a horizontal-only
-    document is set to use &lsquo;<a href="#sideways"><code
-    class=css>sideways</code></a>&rsquo;. In the rest of the document, the
-    author can just set &lsquo;<a href="#writing-mode1"><code
-    class=property>writing-mode</code></a>&rsquo; without worrying about
-    whether the text is &lsquo;<a href="#vertical-rl"><code
-    class=css>vertical-rl</code></a>&rsquo; or &lsquo;<a
-    href="#vertical-lr"><code class=css>vertical-lr</code></a>&rsquo;.
+   <p>横組のみのドキュメントのルート要素に、 &lsquo;<a href="#sideways"><code class=css>sideways</code></a>&rsquo; が設定された例を以下に示す。著者はテキストが &lsquo;<a href="#vertical-rl"><code class=css>vertical-rl</code></a>&rsquo; か &lsquo;<a href="#vertical-lr"><code class=css>vertical-lr</code></a>&rsquo; かを気にすることなく、ドキュメントの &lsquo;<a href="#writing-mode1"><code class=property>writing-mode</code></a>&rsquo; を適切に設定することができる。
 
    <pre>
       :root { text-orientation: sideways; }
