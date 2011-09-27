@@ -225,14 +225,13 @@
      <li><a href="#text-orientation"><span class=secno>5.1. </span> テキストの方向: &lsquo;<code class=property>text-orientation</code>&rsquo; プロパティ</a>
     </ul>
 
-   <li><a href="#abstract-box"><span class=secno>6. </span> Abstract Box
-    Terminology</a>
+   <li><a href="#abstract-box"><span class=secno>6. </span> 抽象ボックスの用語</a>
     <ul class=toc>
      <li><a href="#abstract-dimensions"><span class=secno>6.1. </span>
-      Logical Dimensions</a>
+      論理的な次元</a>
 
      <li><a href="#abstract-directions"><span class=secno>6.2. </span>
-      Abstract and Physical Directions</a>
+      抽象的で物理的な方向</a>
 
      <li><a href="#line-directions"><span class=secno>6.3. </span>
       Line-relative Directions</a>
@@ -1359,87 +1358,49 @@ english17 18WERBEH
     </pre>
   </div>
 
-  <h2 id=abstract-box><span class=secno>6. </span> Abstract Box Terminology</h2>
+  <h2 id=abstract-box><span class=secno>6. </span> 抽象ボックスの用語</h2>
 
-  <p><a href="#CSS21" rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a> defines
-   the box layout model of CSS in detail. However, it only defines the box
-   model for the &lsquo;<a href="#horizontal-tb"><code
-   class=css>horizontal-tb</code></a>&rsquo; writing mode. CSS box layout in
-   writing modes other than &lsquo;<a href="#horizontal-tb"><code
-   class=css>horizontal-tb</code></a>&rsquo; is analogous to the box layout
-   defined in CSS2.1 if directions and dimensions are abstracted and remapped
-   appropriately. This section defines abstract directional and dimensional
-   terms and their mappings in order to define box layout for other writing
-   modes, and to provide terminology for future specs to define their layout
-   concepts abstractly.
+  <p><a href="#CSS21" rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a> では、ボックスレイアウトモデルが詳細に定義されている。しかし、writing modeが &lsquo;<a href="#horizontal-tb"><code class=css>horizontal-tb</code></a>&rsquo; の場合しか定義していない。方向と次元を抽象的かつ適当に置き換えていれば、&lsquo;<a href="#horizontal-tb"><code class=css>horizontal-tb</code></a>&rsquo; 以外のwriting modeでのCSSボックスレイアウトはCSS2.1のボックスレイアウトと似たものになる。本章では他のwriting mode用ボックスレイアウトを定義するために抽象的な方向と次元の用語、そしてそれらのマッピングを定義し、レイアウトの概念を抽象化する将来の機能のための用語を提供する。
 
-  <h3 id=abstract-dimensions><span class=secno>6.1. </span> Logical
-   Dimensions</h3>
+  <h3 id=abstract-dimensions><span class=secno>6.1. </span> 論理的な次元</h3>
 
   <dl>
    <dt><dfn id=block-flow-dimension>block flow dimension</dfn>
 
-   <dd>The dimension perpendicular to the flow of text with in a line, the
-    <i>vertical dimension</i> in horizontal writing modes, and the
-    <i>horizontal dimension</i> in vertical writing modes.
+   <dd>行のテキスト送り方向に垂直な次元で、横組では<i>vertical dimension(垂直方向の次元)</i>、縦組では<i>horizontal dimension(水平方向の次元)</i>となる。
 
    <dt><dfn id=inline-dimension>inline dimension</dfn>
 
-   <dd>The dimension parallel to the flow of text within a line, i.e. the
-    <i>horizontal dimension</i> in horizontal writing modes, and the
-    <i>vertical dimension</i> in vertical writing modes.
+   <dd>行のテキスト送り方向に水平な次元で、横組では<i>horizontal dimension(水平方向の次元)</i>、縦組では<i>vertical dimension(垂直方向の次元)</i>となる。
 
    <dt><dfn id=inline-axis>inline-axis</dfn>
 
-   <dd>The axis in the block flow dimension, i.e. the <i>vertical axis</i> in
-    horizontal writing modes and the <i>horizontal axis</i> in vertical
-    writing modes.
+   <dd>block flow dimensionの軸。例えば、横組では<i>vertical axis(垂直軸)</i>であり、縦組では<i>horizontal axis(水平軸)</i>となる。
 
    <dt><dfn id=block-axis>block-axis</dfn>
 
-   <dd>The axis in the inline dimension, i.e. the <i>horizontal axis</i> in
-    horizontal writing modes and the <i>vertical axis</i> in vertical writing
-    modes.
+   <dd>inline dimensionの軸。例えば、横組では<i>horizontal axis(水平軸)</i>であり、縦組では<i>vertical axis(垂直軸)</i>となる。
 
    <dt><dfn id=extent>extent</dfn> or <dfn id=logical-height>logical
     height</dfn>
 
    <dt>
 
-   <dd>A measurement in the block flow dimension: refers to the physical
-    height (vertical dimension) in horizontal writing modes, and to the
-    physical width (horizontal dimension) in vertical writing modes.
+   <dd>block flow dimensionの寸法で、横組みでは物理的な高さ(vertical dimension)を参照し、縦組みでは物理的な幅(horizontal dimension)を参照する。
 
    <dt><dfn id=measure>measure</dfn> or <dfn id=logical-width>logical
     width</dfn>
 
    <dt>
 
-   <dd>A measurement in the inline dimension: refers to the physical width
-    (horizontal dimension) in horizontal writing modes, and to the physical
-    height (vertical dimension) in vertical writing modes. (The term <a
-    href="#measure"><i>measure</i></a> derives from its <a
-    href="http://en.wikipedia.org/wiki/Measure_%28typography%29">use in
-    typography</a>.)
+   <dd>inline dimensionの寸法で、横組みでは物理的な幅(horizontal dimension)を参照し、縦組みでは物理的な高さ(vertical dimension)を参照する。(<a href="#measure"><i>measure</i></a> という用語は <a href="http://en.wikipedia.org/wiki/Measure_%28typography%29">typography</a> の用語に由来する)
   </dl>
 
-  <h3 id=abstract-directions><span class=secno>6.2. </span> Abstract and
-   Physical Directions</h3>
+  <h3 id=abstract-directions><span class=secno>6.2. </span> 抽象的で物理的な方向</h3>
 
-  <p>The terms <dfn id=left>left</dfn>, <dfn id=right>right</dfn>, <dfn
-   id=top>top</dfn>, and <dfn id=bottom>bottom</dfn> are always interpreted
-   physically, i.e. with respect to the page independent of writing mode. Two
-   abstract mappings are possible for these directions: line-relative and
-   flow-relative, which are defined below.
+  <p><dfn id=left>left</dfn>, <dfn id=right>right</dfn>, <dfn id=top>top</dfn>, and <dfn id=bottom>bottom</dfn> という用語は、例えばページとは独立した組方向に対しても、常に物理的に解釈される。2つの抽象的なマッピングはこれらの方向を可能にする。line-relativeとflow-relativeである。定義を以下に示す。
 
-  <p>Although they derive from the behavior of text, these directional terms
-   exist even for boxes that do not contain any line boxes: they are
-   calculated directly from the values of the &lsquo;<a
-   href="#writing-mode1"><code class=property>writing-mode</code></a>&rsquo;,
-   &lsquo;<a href="#text-orientation0"><code
-   class=property>text-orientation</code></a>&rsquo;, and &lsquo;<a
-   href="#direction0"><code class=property>direction</code></a>&rsquo;
-   properties.
+  <p>これらの用語はテキストの振る舞いに由来するが、これらの方向を表す言葉はラインボックスを全く含まないボックスのためにも存在している。これらは &lsquo;<a href="#writing-mode1"><code class=property>writing-mode</code></a>&rsquo; プロパティ、&lsquo;<a href="#text-orientation0"><code class=property>text-orientation</code></a>&rsquo; プロパティ、&lsquo;<a href="#direction0"><code class=property>direction</code></a>&rsquo; プロパティの値から直接算出される。
 
   <h3 id=line-directions><span class=secno>6.3. </span> Line-relative
    Directions</h3>
