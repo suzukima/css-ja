@@ -48,7 +48,7 @@
 		<p>文中では日本語組版の用語を用いております。日本語組版については<a href="http://www.w3.org/TR/jlreq/ja/">日本語組版処理の要件（日本語版）</a>に目を通しておくことをおすすめいたします。</p>
 		<p>その他の仕様書の翻訳は、<a href="../">CSS 日本語レイアウト関連仕様 日本語翻訳</a>からご覧下さい。</p>
 		<p>公開開始日: 2011.09.11</p>
-     <p>更新日: 2011.09.26</p>
+     <p>更新日: 2011.09.27</p>
 	</div>
 
   <div class=head> <!--begin-logo-->
@@ -234,13 +234,13 @@
       抽象的で物理的な方向</a>
 
      <li><a href="#line-directions"><span class=secno>6.3. </span>
-      Line-relative Directions</a>
+      行相対の方向</a>
 
      <li><a href="#logical-directions"><span class=secno>6.4. </span>
-      Flow-relative Directions</a>
+      送り相対の方向</a>
 
      <li><a href="#logical-to-physical"><span class=secno>6.5. </span>
-      Abstract-to-Physical Mappings</a>
+      抽象と物理のマッピング</a>
     </ul>
 
    <li><a href="#abstract-layout"><span class=secno>7. </span> Abstract Box
@@ -1402,116 +1402,48 @@ english17 18WERBEH
 
   <p>これらの用語はテキストの振る舞いに由来するが、これらの方向を表す言葉はラインボックスを全く含まないボックスのためにも存在している。これらは &lsquo;<a href="#writing-mode1"><code class=property>writing-mode</code></a>&rsquo; プロパティ、&lsquo;<a href="#text-orientation0"><code class=property>text-orientation</code></a>&rsquo; プロパティ、&lsquo;<a href="#direction0"><code class=property>direction</code></a>&rsquo; プロパティの値から直接算出される。
 
-  <h3 id=line-directions><span class=secno>6.3. </span> Line-relative
-   Directions</h3>
+  <h3 id=line-directions><span class=secno>6.3. </span> 行相対の方向</h3>
 
-  <p>Although the block flow direction given by &lsquo;<a
-   href="#writing-mode1"><code class=property>writing-mode</code></a>&rsquo;
-   determines whether the line is oriented horizontally or vertically, it
-   doesn't say anything about how the contents within the line are arranged.
+  <p>&lsquo;<a href="#writing-mode1"><code class=property>writing-mode</code></a>&rsquo; により決まる行送り方向は、行の方向が水平か垂直かを決定するが、それは行内のコンテンツがどう配置されるかについて何も決定していない。
 
-  <p>The <dfn id=line-relative-directions>line-relative directions</dfn> are
-   <a href="#over"><i>over</i></a>, <a href="#under"><i>under</i></a>, <a
-   href="#line-left"><i>line-left</i></a>, and <a
-   href="#line-right"><i>line-right</i></a>. The <dfn
-   id=line-orientation>line orientation</dfn>, which is given by a
-   combination of &lsquo;<a href="#text-orientation0"><code
-   class=property>text-orientation</code></a>&rsquo; and &lsquo;<a
-   href="#writing-mode1"><code class=property>writing-mode</code></a>&rsquo;,
-   determines which side of the line is the "top" and thus which sides are
-   <dfn id=under>under</dfn> (ascender side) and <dfn id=over>over</dfn>
-   (descender side) the line. The line orientation also affects the
-   interpretation of alignment (&lsquo;<code
-   class=property>vertical-align</code>&rsquo;) in the transverse dimension
-   of the line.
+  <p><dfn id=line-relative-directions>line-relative directions</dfn> には<a href="#over"><i>over</i></a>, <a href="#under"><i>under</i></a>, <a href="#line-left"><i>line-left</i></a>, <a href="#line-right"><i>line-right</i></a>がある。 &lsquo;<a href="#text-orientation0"><code class=property>text-orientation</code></a>&rsquo; と &lsquo;<a href="#writing-mode1"><code class=property>writing-mode</code></a>&rsquo;との組み合わせから得られる <dfn id=line-orientation>line orientation</dfn>は、行のどちら側が "top" であるかを決定する。よって、行の<dfn id=under>under</dfn> (ascender側)と <dfn id=over>over</dfn> (descender側)が決まる。行の方向は行の横軸における配置(&lsquo;<code class=property>vertical-align</code>&rsquo;)に影響する。
 
-  <p>In addition to its <a href="#over"><i>over</i></a> and <a
-   href="#under"><i>under</i></a> sides, a line box, even a
-   vertically-oriented one, also has a "left" and "right" side, which we will
-   call the <a href="#line-left"><i>line-left</i></a> and <a
-   href="#line-right"><i>line-right</i></a> sides of the box (as distinct
-   from the physical left and physical right sides of the box). The <dfn
-   id=line-left>line-left</dfn> edge of a box is nominally the edge from
-   which <abbr title=left-to-right>LTR</abbr> text would start. The <dfn
-   id=line-right>line-right</dfn> edge of a box is nominally the edge from
-   which <abbr title=right-to-left>RTL</abbr> text would start. Depending on
-   the &lsquo;<a href="#writing-mode1"><code
-   class=property>writing-mode</code></a>&rsquo; and &lsquo;<a
-   href="#text-orientation0"><code
-   class=property>text-orientation</code></a>&rsquo; properties, the
-   line-left side of a box could be on the physical left, top, or bottom.
+  <p>行の方向が垂直であるline boxには、<a href="#over"><i>over</i></a> と <a href="#under"><i>under</i></a> に加え、"left" と "right" がある。それらがボックスの端である <a href="#line-left"><i>line-left</i></a> と <a href="#line-right"><i>line-right</i></a> である(行の物理的な左側と右側とは異なる)。ボックスの <dfn id=line-left>line-left</dfn> の端は名目上 <abbr title=left-to-right>LTR</abbr> のテキストが開始される端となっている。ボックスの <dfn id=line-right>line-right</dfn> の端は名目上 <abbr title=right-to-left>RTL</abbr> のテキストが開始される端となっている。 &lsquo;<a href="#writing-mode1"><code class=property>writing-mode</code></a>&rsquo; プロパティと &lsquo;<a href="#text-orientation0"><code class=property>text-orientation</code></a>&rsquo; プロパティによって、ボックスのline-left側は物理的な左、上、下となりうる。
 
   <div class=figure> <a href="diagrams/line-orient-up.svg"
    type="image/svg+xml"> <img alt="Line orientation compass" class=landscape
    src="diagrams/line-orient-up.png"></a>
-   <p class=caption>Line orientation compass</p>
+   <p class=caption>行方向のコンパス</p>
   </div>
 
   <div class=figurepair>
    <div class=figure> <a href="diagrams/line-orient-right.svg"
     type="image/svg+xml"> <img alt="Typical orientation in vertical"
     class=portrait src="diagrams/line-orient-right.png"></a>
-    <p class=caption>Typical orientation in vertical</p>
+    <p class=caption>縦組の典型的な方向</p>
    </div>
 
    <div class=figure> <a href="diagrams/line-orient-left.svg"
     type="image/svg+xml"> <img alt="Line orientation with ''text-orientation:
     sideways-left''" class=portrait src="diagrams/line-orient-left.png"></a>
-    <p class=caption>Line orientation with &lsquo;<code
-     class=css>text-orientation: sideways-left</code>&rsquo;</p>
+    <p class=caption>&lsquo;<code class=css>text-orientation: sideways-left</code>&rsquo; のときの行方向</p>
    </div>
   </div>
 
-  <p class=note>Note also that while the <a href="#over"><i>over</i></a> and
-   <a href="#under"><i>under</i></a> directions often map to the same
-   directions as <a href="#before">before</a> and <a href="#after">after</a>
-   respectively, this mapping is reversed for some combinations of &lsquo;<a
-   href="#writing-mode1"><code class=property>writing-mode</code></a>&rsquo;
-   and &lsquo;<a href="#text-orientation0"><code
-   class=property>text-orientation</code></a>&rsquo;.
+  <p class=note><a href="#over"><i>over</i></a> と <a href="#under"><i>under</i></a> の directions はよく <a href="#before">before</a> と <a href="#after">after</a> を同じ方向にマッピングするが、そのマッピングは &lsquo;<a href="#writing-mode1"><code class=property>writing-mode</code></a>&rsquo; と &lsquo;<a href="#text-orientation0"><code class=property>text-orientation</code></a>&rsquo; の組み合わせによって逆になることに注意すること。
 
-  <h3 id=logical-directions><span class=secno>6.4. </span> Flow-relative
-   Directions</h3>
+  <h3 id=logical-directions><span class=secno>6.4. </span> 送り相対の方向</h3>
 
-  <p>The <dfn id=flow-relative-directions>flow-relative directions</dfn> are
-   <a href="#before">before</a>, <a href="#after">after</a>, <a
-   href="#start">start</a>, and <a href="#end">end</a>. In an <abbr
-   title=left-to-right>LTR</abbr> &lsquo;<a href="#horizontal-tb"><code
-   class=css>horizontal-tb</code></a>&rsquo; writing mode, they correspond to
-   the top, bottom, left, and right directions, respectively.
+  <p><dfn id=flow-relative-directions>flow-relative directions(送り相対の方向)</dfn> は <a href="#before">before</a>, <a href="#after">after</a>, <a href="#start">start</a>, <a href="#end">end</a>からなる。<abbr title=left-to-right>LTR</abbr> &lsquo;でwriting modeが <a href="#horizontal-tb"><code class=css>horizontal-tb</code></a>&rsquo; であれば、対応するdirectionはそれぞれtop、bottom、left、rightとなる。
 
-  <p>The <dfn id=before>before</dfn> edge of a box is nominally the edge that
-   comes earlier in the block progression, as determined by the &lsquo;<a
-   href="#writing-mode1"><code class=property>writing-mode</code></a>&rsquo;
-   property. Similarly the <dfn id=after>after</dfn> edge is the edge that
-   comes later in the progression.
+  <p>ボックスの <dfn id=before>before</dfn> の端は、名目上ブロック進行の手前の端になり、&lsquo;<a href="#writing-mode1"><code class=property>writing-mode</code></a>&rsquo; プロパティで決定される。同様に <dfn id=after>after</dfn> の端はブロック進行の後ろ端になる。
 
-  <p>The <dfn id=start>start</dfn> edge of a box is nominally the edge from
-   which text of its inline base direction will start. For boxes with a used
-   &lsquo;<a href="#direction0"><code
-   class=property>direction</code></a>&rsquo; value of &lsquo;<a
-   href="#ltr"><code class=css>ltr</code></a>&rsquo;, this means the <a
-   href="#line-left"><i>line-left</i></a> edge. For boxes with a used
-   &lsquo;<a href="#direction0"><code
-   class=property>direction</code></a>&rsquo; value of &lsquo;<a
-   href="#rtl"><code class=css>rtl</code></a>&rsquo;, this means the <a
-   href="#line-right"><i>line-right</i></a> edge. The edge opposite the start
-   edge is the <dfn id=end>end</dfn> edge.
+  <p>ボックスの <dfn id=start>start</dfn> の端は、名目上テキストの字詰めが始まる端になる。&lsquo;<a href="#direction0"><code class=property>direction</code></a>&rsquo; の値が &lsquo;<a href="#ltr"><code class=css>ltr</code></a>&rsquo;であるボックスでは、<a href="#line-left"><i>line-left</i></a> の端になる。&lsquo;<a href="#direction0"><code class=property>direction</code></a>&rsquo; の値が &lsquo;<a href="#rtl"><code class=css>rtl</code></a>&rsquo;であるボックスでは、<a href="#line-right"><i>line-right</i></a> の端になる。startの端と向かい合わせが <dfn id=end>end</dfn> の端になる。
 
-  <p class=note>Note that while determining the <a
-   href="#before"><i>before</i></a> and <a href="#after"><i>after</i></a>
-   edges of a box depends only on the &lsquo;<a href="#writing-mode1"><code
-   class=property>writing-mode</code></a>&rsquo; property, determining the <a
-   href="#start"><i>start</i></a> and <a href="#end"><i>end</i></a> edges of
-   a box depends not only on the &lsquo;<a href="#writing-mode1"><code
-   class=property>writing-mode</code></a>&rsquo; property but also the
-   &lsquo;<a href="#direction0"><code
-   class=property>direction</code></a>&rsquo; <em>and</em> &lsquo;<a
-   href="#text-orientation0"><code
-   class=property>text-orientation</code></a>&rsquo; properties.
+  <p class=note> &lsquo;<a href="#writing-mode1"><code class=property>writing-mode</code></a>&rsquo; プロパティだけに依存してボックスの <a href="#before"><i>before</i></a> と <a href="#after"><i>after</i></a> を決定しているが、ボックスの <a href="#start"><i>start</i></a> と <a href="#end"><i>end</i></a> の端は &lsquo;<a href="#writing-mode1"><code class=property>writing-mode</code></a>&rsquo; プロパティだけでなく &lsquo;<a href="#direction0"><code class=property>direction</code></a>&rsquo; プロパティ<em>と</em> &lsquo;<a href="#text-orientation0"><code class=property>text-orientation</code></a>&rsquo; プロパティにも依存していることに注意すること。
 
   <div class=example>
-   <p>An English (LTR-TB) block:</p>
+   <p>英語のブロック (LTR-TB):</p>
 
    <pre class=ascii-art>
                   &lt;----- width / measure  -----&gt;
@@ -1531,7 +1463,7 @@ english17 18WERBEH
   </div>
 
   <div class=example>
-   <p>A vertical Japanese block (TTB-RL):</p>
+   <p>日本語の縦書きブロック (TTB-RL):</p>
 
    <pre class=ascii-art>
                   &lt;----- width / extent ------&gt;
@@ -1551,12 +1483,12 @@ english17 18WERBEH
   </div>
 
   <h3 id=logical-to-physical><span class=secno>6.5. </span>
-   Abstract-to-Physical Mappings</h3>
+   抽象と物理のマッピング</h3>
 
-  <p>The following table summarizes the abstract-to-physical mappings:
+  <p>抽象と物理をマッピングし要約した表を以下に示す:
 
   <table class="complex data">
-   <caption>Abstract-Physical Mapping</caption>
+   <caption>抽象-物理マッピング</caption>
 
    <colgroup class=header></colgroup>
 
