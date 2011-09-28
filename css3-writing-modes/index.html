@@ -1683,64 +1683,27 @@ english17 18WERBEH
      <td colspan=2>bottom
   </table>
 
-  <h2 id=abstract-layout><span class=secno>7. </span> Abstract Box Layout</h2>
+  <h2 id=abstract-layout><span class=secno>7. </span> 抽象的なボックスレイアウト</h2>
 
-  <h3 id=vertical-layout><span class=secno>7.1. </span> Principles of Layout
-   in Vertical Writing Modes</h3>
+  <h3 id=vertical-layout><span class=secno>7.1. </span> 縦組でのレイアウト原則</h3>
 
-  <p>CSS box layout in vertical writing modes is analogous to layout in the
-   horizontal writing modes, following the principles outlined below:
+  <p>縦組でのCSSボックスレイアウトは横組のレイアウトに似ており、以下に示す原則の概要に従う:
 
-  <p>Layout calculation rules (such as those in CSS2.1, Section 10.3) that
-   apply to the horizontal dimension in horizontal writing modes instead
-   apply to the vertical dimension in vertical writing modes. Likewise,
-   layout calculation rules (such as those in CSS2.1, Section 10.6) that
-   apply to the vertical dimension in horizontal writing modes instead apply
-   to the horizontal dimension in vertical writing modes. Thus:
+  <p>横組にて水平次元に適用されるレイアウトの算出ルール(CSS2.1のSection 10.3のものなど)は、縦組の垂直次元へ適用される。同様に、横組にて垂直次元に適用されるレイアウト算出ルール(CSS2.1のSection 10.6のものなど)は、縦組の水平次元に適用される。従って:
 
   <ul>
    <li>
-    <p>Layout rules that refer to the width use the height instead, and vice
-     versa.
+    <p>幅を参照するレイアウトルールは、代わりに高さを使用する。その逆も同様。
 
    <li>
-    <p>Layout rules that refer to the &lsquo;<code
-     class=css>*-left</code>&rsquo; and &lsquo;<code
-     class=css>*-right</code>&rsquo; box properties (border, margin, padding)
-     use &lsquo;<code class=css>*-top</code>&rsquo; and &lsquo;<code
-     class=css>*-bottom</code>&rsquo; instead, and vice versa. Which side of
-     the box the property applies to doesn't change: only which values are
-     inputs to which layout calculations changes. The &lsquo;<code
-     class=property>margin-left</code>&rsquo; property still affects the
-     lefthand margin, for example; however in a &lsquo;<a
-     href="#vertical-rl"><code class=css>vertical-rl</code></a>&rsquo;
-     writing mode it takes part in margin collapsing in place of &lsquo;<code
-     class=property>margin-bottom</code>&rsquo;.</p>
+    <p>&lsquo;<code class=css>*-left</code>&rsquo; と &lsquo;<code class=css>*-right</code>&rsquo; のボックスプロパティ(border, margin, padding)を参照するレイアウトルールは、代わりに &lsquo;<code class=css>*-top</code>&rsquo; と &lsquo;<code class=css>*-bottom</code>&rsquo; を使用する。その逆も同様。ボックスのどちらのサイドのプロパティは、変更せずに適用される。値を入力した側のみレイアウトの算出値が変化する。例えば、&lsquo;<code class=property>margin-left</code>&rsquo; プロパティはまだ左側のマージンに影響している。しかし、writing modeが &lsquo;<a href="#vertical-rl"><code class=css>vertical-rl</code></a>&rsquo; の場合は &lsquo;<code class=property>margin-bottom</code>&rsquo; の代わりにmargin collaspe(マージンの折りたたみ)が発生する。</p>
 
    <li>
-    <p>Layout rules that depend on the &lsquo;<a href="#direction0"><code
-     class=property>direction</code></a>&rsquo; property to choose between
-     left and right (e.g. overflow, overconstraint resolution, the initial
-     value for &lsquo;<code class=property>text-align</code>&rsquo;, table
-     column ordering) are abstracted to the <a href="#start">start</a> and <a
-     href="#end">end</a> sides and applied appropriately.
+    <p>左と右のどちらかを選択する &lsquo;<a href="#direction0"><code class=property>direction</code></a>&rsquo; プロパティに依存するレイアウトルール(例えば、overflow、overconstraint resolution、&lsquo;<code class=property>text-align</code>&rsquo; の初期値、表の列順序)は、<a href="#start">start</a> と <a href="#end">end</a> に抽象化されて、適切に適用される。
   </ul>
 
   <div class=example>
-   <p>For example, in vertical writing modes, table rows are vertical and
-    table columns are horizontal. In a &lsquo;<a href="#vertical-rl"><code
-    class=css>vertical-rl</code></a>&rsquo; &lsquo;<a
-    href="#upright-right"><code class=css>upright-right</code></a>&rsquo;
-    &lsquo;<a href="#rtl"><code class=css>rtl</code></a>&rsquo; table, the
-    first column would be on the bottom (the start side), and the first row
-    on the right (the before side). The table's &lsquo;<code
-    class=property>margin-right</code>&rsquo; and &lsquo;<code
-    class=property>margin-left</code>&rsquo; would collapse with margins
-    before (on the right) and after (on the left) the table, respectively,
-    and if the table had &lsquo;<code class=css>auto</code>&rsquo; values for
-    &lsquo;<code class=property>margin-top</code>&rsquo; and &lsquo;<code
-    class=property>margin-bottom</code>&rsquo; it would be centered
-    vertically within its block flow.
+   <p>例えば、縦組では表の行が垂直で、表の列が水平になる。&lsquo;<a href="#vertical-rl"><code class=css>vertical-rl</code></a>&rsquo; &lsquo;<a href="#upright-right"><code class=css>upright-right</code></a>&rsquo; &lsquo;<a href="#rtl"><code class=css>rtl</code></a>&rsquo;の表では、最初の列が底辺(the start side)になり、最初の行が右(the before side)になる。表の &lsquo;<code class=property>margin-right</code>&rsquo; と &lsquo;<code class=property>margin-left</code>&rsquo; はbefore側(右側)のマージンとafter側(左側)のマージンとしてそれぞれ折りたたまれる。もし表が &lsquo;<code class=property>margin-top</code>&rsquo; と &lsquo;<code class=property>margin-bottom</code>&rsquo; の値を &lsquo;<code class=css>auto</code>&rsquo; としていたなら、行送り方向からみて垂直にセンタリングされる。
 
    <div class=figure>
     <p><a href="diagrams/vertical-table.svg" type="image/svg+xml"> <img
@@ -1749,27 +1712,16 @@ english17 18WERBEH
      columns as described above." class=example
      src="diagrams/vertical-table.png"></a>
 
-    <p class=caption>Table in &lsquo;<a href="#vertical-rl"><code
-     class=css>vertical-rl</code></a>&rsquo; RTL writing mode</p>
+    <p class=caption>&lsquo;<a href="#vertical-rl"><code
+     class=css>vertical-rl</code></a>&rsquo; RTL writing mode での表</p>
    </div>
   </div>
 
-  <p>For features such as text alignment, floating, and list marker
-   positioning, that primarily reference the left or right sides of the line
-   box or its longitudinal parallels and therefore have no top or bottom
-   equivalent, the <a href="#line-left">line left</a> and <a
-   href="#line-right">line right</a> sides are used as the reference for the
-   left and right sides respectively.
+  <p>たとえばテキストの配列、フローティング、リストマーカーの配置のような、主にラインボックスの右側や左側、横方向の平行線を参照するために、topやbottomに相当するものを持っていない機能は、<a href="#line-left">line left</a> と <a href="#line-right">line right</a> を右側と左側としてそれぞれ参照している。
+  
+  <p>同様に、アンダーライン、オーバーライン、baseline alignment (残念ながら名前は &lsquo;<code class=property>vertical-align</code>&rsquo;)のような、主にラインボックスの上側や下側、縦方向の水平線を参照するために、左や右に相当するものをもっていない機能は、<a href="#over">over</a> と <a href="#under">under</a> を上側と下側としてそれぞれ参照している。
 
-  <p>Likewise for features such as underlining, overlining, and baseline
-   alignment (the unfortunately-named &lsquo;<code
-   class=property>vertical-align</code>&rsquo;), that primarily reference the
-   top or bottom sides of the linebox or its transversal parallels and
-   therefore have no left or right equivalent, the <a href="#over">over</a>
-   and <a href="#under">under</a> sides are used as the reference for the top
-   and bottom sides respectively.
-
-  <p>The details of these mappings are provided below.
+  <p>マッピングの詳細は以下を参照のこと。
 
   <h3 id=dimension-mapping><span class=secno>7.2. </span> Dimensional Mapping</h3>
   <!--
