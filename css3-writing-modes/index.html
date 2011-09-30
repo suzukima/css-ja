@@ -1723,7 +1723,7 @@ english17 18WERBEH
 
   <p>マッピングの詳細は以下を参照のこと。
 
-  <h3 id=dimension-mapping><span class=secno>7.2. </span> Dimensional Mapping</h3>
+  <h3 id=dimension-mapping><span class=secno>7.2. </span> 次元のマッピング</h3>
   <!--
   <p>Properties that are named in terms of the x and y axes are
     logical with respect to the block flow direction rather than absolute
@@ -1743,44 +1743,23 @@ english17 18WERBEH
   </ul>
 -->
 
-  <p>Certain properties behave logically as follows:
+  <p>いくつかのプロパティは以下のように論理的に振る舞う:
 
   <ul>
-   <li>The first and second values of the &lsquo;<code
-    class=property>border-spacing</code>&rsquo; property represent spacing
-    between columns and rows respectively, not necessarily the horizontal and
-    vertical spacing respectively. <a href="#CSS21"
-    rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a>
+   <li>&lsquo;<code class=property>border-spacing</code>&rsquo; プロパティの1つめと2つめの値は、それぞれ行と列の間のスペースを表し、水平方向と垂直方向のスペーシングであるとは限らない。<a href="#CSS21" rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a>
 
-   <li>The &lsquo;<code class=property>line-height</code>&rsquo; property
-    always refers to the logical height. <a href="#CSS21"
-    rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a>
+   <li>&lsquo;<code class=property>line-height</code>&rsquo; プロパティは常に論理的な高さを参照している。<a href="#CSS21" rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a>
   </ul>
 
-  <p>The height properties (&lsquo;<code class=property>height</code>&rsquo;,
-   &lsquo;<code class=property>min-height</code>&rsquo;, and &lsquo;<code
-   class=property>max-height</code>&rsquo;) refer to the physical height, and
-   the width properties (&lsquo;<code class=property>width</code>&rsquo;,
-   &lsquo;<code class=property>min-width</code>&rsquo;, and &lsquo;<code
-   class=property>max-width</code>&rsquo;) refer to the physical width.
-   However, the rules used to calculate box dimensions and positions are
-   logical.
-
-  <p>For example, the calculation rules in <a
-   href="http://www.w3.org/TR/CSS21/visudet.html#Computing_widths_and_margins">CSS2.1
-   Section 10.3</a> are used for the inline dimension measurements: they
-   apply to the measure (which could be either the physical width or physical
-   height) and to the the start and end margins, padding, and border.
-   Likewise the calculation rules in <a
-   href="http://www.w3.org/TR/CSS21/visudet.html#Computing_heights_and_margins">CSS2.1
-   Section 10.6</a> are used in the block dimension: they apply to the extent
-   and to the before and after margins, padding, and border. <a href="#CSS21"
-   rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a>
-
-  <p>As a corollary, percentages on the margin and padding properties, which
-   are always calculated with respect to the containing block width in
-   CSS2.1, are calculated with respect to the <a
-   href="#measure"><em>measure</em></a> of the containing block in CSS3.
+  <p>高さのプロパティ(&lsquo;<code class=property>height</code>&rsquo;,
+   &lsquo;<code class=property>min-height</code>&rsquo;, &lsquo;<code
+   class=property>max-height</code>&rsquo;)は物理的な高さを参照しており、幅のプロパティ(&lsquo;<code class=property>width</code>&rsquo;,
+   &lsquo;<code class=property>min-width</code>&rsquo;, &lsquo;<code
+   class=property>max-width</code>&rsquo;)は物理的な幅を参照している。しかし、ボックスの次元を算出する際に使われるルールは論理的なものである。
+  
+  <p><a href="http://www.w3.org/TR/CSS21/visudet.html#Computing_widths_and_margins">CSS2.1 Section 10.3</a>の算出ルールがインライン次元の寸法に使われている場合、そのルールは寸法(物理的な幅または物理的な高さの場合がある)、開始と終了のマージン、およびborderに適用される。同様に、<a href="http://www.w3.org/TR/CSS21/visudet.html#Computing_heights_and_margins">CSS2.1 Section 10.6</a>の算出ルールがブロック次元の寸法に使われている場合、そのルールは範囲、beforeマージン、afterマージン、パディング、borderに適用される。<a href="#CSS21" rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a>
+  
+  <p>当然の結果として、CSS2.1では包含ブロック幅から常に相対的に算出されている、マージンとパディングのプロパティにおけるパーセンテージは、CSS3では包含ブロックの <a href="#measure"><em>measure(寸法)</em></a>から相対的に算出されることになる。
 
   <h3 id=orthogonal-flows><span class=secno>7.3. </span> Orthogonal Flows</h3>
 
