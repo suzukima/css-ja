@@ -6,3 +6,4 @@ block formatting context: ブロック書式付けコンテキスト
 initial containing block: 初期包含ブロック
 principal writing mode: 文書全体の基本となる組方向
 punctuation mark: 句読点
+containing block: 包含ブロック

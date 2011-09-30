@@ -486,7 +486,7 @@
 
   <p>&lsquo;<a
    href="#unicode-bidi0"><code class=property>unicode-bidi</code></a>&rsquo;の&lsquo;<a href="#plaintext"><code class=css>plaintext</code></a>&rsquo;が有効な場合を除き、段落埋め込みレベルはUnicodeアルゴリズムのP2とP3にあるヒューリスティックに得られたものよりも、むしろ段落中要素の&lsquo;<a href="#direction0"><code
-   class=property>direction</code></a>&rsquo;プロパティの値に応じて設定されている。通常、段落中要素はブロックを含むが、<a href="#isolate">isolation(分離した)</a>バイダイを含む段落では、分離したインライン要素がその代わりとなる。</p>
+   class=property>direction</code></a>&rsquo;プロパティの値に応じて設定されている。通常、段落中要素は包含ブロックであるが、<a href="#isolate">isolation(分離した)</a>バイダイを含む段落では、分離したインライン要素がその代わりとなる。</p>
 
   <p>テキストの書字方向が文章の構造と意味に依存していることから、ほとんどの場合
    &lsquo;<a href="#direction0"><code class=property>direction</code></a>&rsquo;と&lsquo;<a href="#unicode-bidi0"><code class=property>unicode-bidi</code></a>&rsquo;のプロパティは、マークアップ中でのバイダイ情報と、適合するCSSスタイルとを割り当てるべきである。ドキュメント言語がバイダイをコントロールするマークアップ機能を提供するのであれば、作者とユーザーはそれらの機能を使うべきであり、これらを上書きするCSSのルールを指定すべきではない。</p>
@@ -643,7 +643,7 @@
    <dt><dfn id=plaintext>plaintext</dfn>
 
    <dd>
-    <p>Unicode双方向アルゴリズムのために、要素が形成したブロックを含む各バイダイ段落の書字方向は、通常、要素が計算した&lsquo;<a href="#direction0"><code class=property>direction</code></a>&rsquo;では決定されない。しかし、ヒューリスティックなUnicodeアルゴリズムのルールP2とP3には従う。インライン要素では、ブロックコンテナを除き、この値は &lsquo;<a href="#isolate"><code class=css>isolate</code></a>&rsquo;と同様に振る舞う。字詰め方向は&lsquo;<a
+    <p>Unicode双方向アルゴリズムのために、要素が包含ブロックを形成するためにあるバイダイ段落の書字方向は、通常、要素が計算した&lsquo;<a href="#direction0"><code class=property>direction</code></a>&rsquo;では決定されない。しかし、ヒューリスティックなUnicodeアルゴリズムのルールP2とP3には従う。インライン要素では、ブロックコンテナを除き、この値は &lsquo;<a href="#isolate"><code class=css>isolate</code></a>&rsquo;と同様に振る舞う。字詰め方向は&lsquo;<a
      href="#direction0"><code class=property>direction</code></a>&rsquo;の値ではなく、Unicodeのヒューリスティックなものを用いて決定される。
   </dl>
 
@@ -905,7 +905,7 @@ english17 18WERBEH
   <p class=note>HTML BODY要素の&lsquo;<a href="#writing-mode1"><code
    class=property>writing-mode</code></a>&rsquo;プロパティはビューポートに伝播<em>されない</em>ことに注意すること。この特別な振る舞いはbackground と overflow プロパティにのみ適用される。
 
-  <p>もし要素がそれを含んでいるブロックと異なる行送り方向を持っていた場合は:
+  <p>もし要素がその包含ブロックと異なる行送り方向を持っていた場合は:
 
   <ul>
    <li>その要素が &lsquo;<code
@@ -1761,25 +1761,20 @@ english17 18WERBEH
   
   <p>当然の結果として、CSS2.1では包含ブロック幅から常に相対的に算出されている、マージンとパディングのプロパティにおけるパーセンテージは、CSS3では包含ブロックの <a href="#measure"><em>measure(寸法)</em></a>から相対的に算出されることになる。
 
-  <h3 id=orthogonal-flows><span class=secno>7.3. </span> Orthogonal Flows</h3>
+  <h3 id=orthogonal-flows><span class=secno>7.3. </span> 直交する流れ</h3>
 
-  <p>When an element has a different &lsquo;<a href="#writing-mode1"><code
-   class=property>writing-mode</code></a>&rsquo; from its containing block
-   two cases are possible:
+  <pある要素が包含ブロックと異なる &lsquo;<a href="#writing-mode1"><code class=property>writing-mode</code></a>&rsquo; を持つケースは2つ考えられる:
 
   <ul>
-   <li>The two writing modes are parallel to each other. (For example,
-    &lsquo;<a href="#vertical-rl"><code
-    class=css>vertical-rl</code></a>&rsquo; and &lsquo;<a
-    href="#vertical-lr"><code class=css>vertical-lr</code></a>&rsquo;).
+   <li>2つのwriting modeがお互い平行である。(例えば &lsquo;<a href="#vertical-rl"><code class=css>vertical-rl</code></a>&rsquo; と &lsquo;<a href="#vertical-lr"><code class=css>vertical-lr</code></a>&rsquo;)
 
-   <li>The two writing modes are perpendicular to each other. (For example,
-    &lsquo;<a href="#horizontal-tb"><code
-    class=css>horizontal-tb</code></a>&rsquo; and &lsquo;<a
-    href="#vertical-rl"><code class=css>vertical-rl</code></a>&rsquo;).
+   <li>2つのwriting modeがお互い垂直である。(例えば &lsquo;<a href="#horizontal-tb"><code class=css>horizontal-tb</code></a>&rsquo; と &lsquo;<a href="#vertical-rl"><code class=css>vertical-rl</code></a>&rsquo;)
+
   </ul>
 
-  <p>To handle the second case, CSS layout calculations are divided into two
+  <p>2つめのケースを取り扱うため、CSSのレイアウト算出は2フェーズに分かれる: ボックスのサイズ決定と、そのflowの中でのボックスの配置である。サイズ決定フェーズ&#8212;ボックスの幅と高さの算出&#8212;ボックスの次元と包含ブロックは、measure(寸法)、extent、包含ブロックのwriting modeに応じて実行された算出値にマッピングされる。
+
+  To handle the second case, CSS layout calculations are divided into two
    phases: sizing a box, and positioning the box within its flow. In the
    sizing phase&#8212;calculating the width and height of the box&#8212;the
    dimensions of the box and the containing block are mapped to the measure
