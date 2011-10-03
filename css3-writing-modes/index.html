@@ -1782,10 +1782,11 @@ english17 18WERBEH
 
   <p>直行する流れでは、反対の事象が発生するようになる。 <a href="#available-extent"><i>available extent</i></a> が定義されるが、<a href="#available-measure"><i>available measure</i></a> は無限になる。このようなケースでは、包含ブロックのmeasureにおけるパーセンテージは定義できないので、初期包含ブロックのサイズがこのようなパーセンテージを計算するための <a href="#fallback-measure"><i>fallback measure</i></a> として代わりに使用される。
 
-  <h4 id=orthogonal-auto><span class=secno>7.3.1. </span> Auto-sizing in
-   Orthogonal Flows</h4>
+  <h4 id=orthogonal-auto><span class=secno>7.3.1. </span> 直行する流れでのオートサイジング</h4>
 
-  <p>If the computed measure of an element establishing an orthogonal flow is
+  <p>直行する流れを構成する要素のmeasureが &lsquo;<code class=css>auto</code>&rsquo; の場合は、measureは初期包含ブロックのavailable measureサイズを使った <a href="#fit-content"><i>fit-content</i></a> (shrink-to-fit(縮めて合わせる)) で計算される。
+
+  If the computed measure of an element establishing an orthogonal flow is
    &lsquo;<code class=css>auto</code>&rsquo;, then the used measure is
    calculated as the <a href="#fit-content"><i>fit-content</i></a>
    (shrink-to-fit) size using the initial containing block's size as the
