@@ -1761,7 +1761,7 @@ english17 18WERBEH
   
   <p>当然の結果として、CSS2.1では包含ブロック幅から常に相対的に算出されている、マージンとパディングのプロパティにおけるパーセンテージは、CSS3では包含ブロックの <a href="#measure"><em>measure(寸法)</em></a>から相対的に算出されることになる。
 
-  <h3 id=orthogonal-flows><span class=secno>7.3. </span> 直交する流れ</h3>
+  <h3 id=orthogonal-flows><span class=secno>7.3. </span> 送り方向が直交する場合</h3>
 
   <pある要素が包含ブロックと異なる &lsquo;<a href="#writing-mode1"><code class=property>writing-mode</code></a>&rsquo; を持つケースは2つ考えられる:
 
@@ -1776,88 +1776,45 @@ english17 18WERBEH
 
   <p>例えば、縦組のブロックが横組のブロックの中に配置されている場合は、小ブロックの物理的高さ(measureである)が算出されるとき、親ブロックの物理的高さはmeasureではなくextentであるにもかかわらず、親ブロックの物理的高さがこの包含ブロックのmeasure算出に利用される。
 
-  <p>auto marginは包含ブロックのwriting modeと矛盾がないように解決されているので、直行する流れを構成するブロックは、ちょうどauto marginを利用する別のブロックレベル要素のように、包含ブロックの中で一度サイズを決定し、整列かセンタリングを実施することができる。
+  <p>auto marginは包含ブロックのwriting modeと矛盾がないように解決されているので、送り方向が直交するブロックは、ちょうどauto marginを利用する別のブロックレベル要素のように、包含ブロックの中で一度サイズを決定し、整列かセンタリングを実施することができる。
 
   <p>CSSにおける包含ブロックでは一般的にmeasureが定義されているが、extentは定義されていない。これは通常CSS2.1で包含ブロックのheightが &lsquo;<code class=css>auto</code>&rsquo; のときに発生する。例を挙げると、<a href="http://www.w3.org/TR/CSS21/visudet.html#blockwidth">10.3.3</a>によって幅が計算されるが、extentはその内容に依存する。このようなケースでは <dfn id=available-measure>available measure</dfn> が包含ブロックのmeasureとして定義される。しかし、<dfn id=available-extent>available extent</dfn>(なければ包含ブロックのextent)は無限になる。
 
-  <p>直行する流れでは、反対の事象が発生するようになる。 <a href="#available-extent"><i>available extent</i></a> が定義されるが、<a href="#available-measure"><i>available measure</i></a> は無限になる。このようなケースでは、包含ブロックのmeasureにおけるパーセンテージは定義できないので、初期包含ブロックのサイズがこのようなパーセンテージを計算するための <a href="#fallback-measure"><i>fallback measure</i></a> として代わりに使用される。
+  <p>送り方向が直交する場合は、反対の事象が発生するようになる。 <a href="#available-extent"><i>available extent</i></a> が定義されるが、<a href="#available-measure"><i>available measure</i></a> は無限になる。このようなケースでは、包含ブロックのmeasureにおけるパーセンテージは定義できないので、初期包含ブロックのサイズがこのようなパーセンテージを計算するための <a href="#fallback-measure"><i>fallback measure</i></a> として代わりに使用される。
 
-  <h4 id=orthogonal-auto><span class=secno>7.3.1. </span> 直行する流れでのオートサイジング</h4>
+  <h4 id=orthogonal-auto><span class=secno>7.3.1. </span> 送り方向が直交する場合のオートサイジング</h4>
 
-  <p>直行する流れを構成する要素のmeasureが &lsquo;<code class=css>auto</code>&rsquo; の場合は、measureは初期包含ブロックのavailable measureサイズを使った <a href="#fit-content"><i>fit-content</i></a> (shrink-to-fit(縮めて合わせる)) で計算される。
+  <p>送り方向が直交する要素のmeasureが &lsquo;<code class=css>auto</code>&rsquo; の場合は、measureは初期包含ブロックのavailable measureサイズを使った <a href="#fit-content"><i>fit-content</i></a> (shrink-to-fit(縮めて合わせる)) で計算される。
 
-  If the computed measure of an element establishing an orthogonal flow is
-   &lsquo;<code class=css>auto</code>&rsquo;, then the used measure is
-   calculated as the <a href="#fit-content"><i>fit-content</i></a>
-   (shrink-to-fit) size using the initial containing block's size as the
-   available measure.
+  <h4 id=orthogonal-multicol><span class=secno>7.3.2. </span> 送り方向が直交する場合のマルチカラムレイアウト</h4>
 
-  <h4 id=orthogonal-multicol><span class=secno>7.3.2. </span> Multi-column
-   Layout in Orthogonal Flows</h4>
-
-  <p>If the UA supports CSS Multi-column Layout <a href="#CSS3COL"
-   rel=biblioentry>[CSS3COL]<!--{{!CSS3COL}}--></a>, then for the case where
-   the element's extent or available extent is defined but the element's
-   measure is &lsquo;<code class=css>auto</code>&rsquo;:
+  <p>ユーザエージェントがマルチカラムをサポートしているなら <a href="#CSS3COL"
+   rel=biblioentry>[CSS3COL]<!--{{!CSS3COL}}--></a>、要素のextentかavailable extentが定義されているが、要素のmeasureが &lsquo;<code class=css>auto</code>&rsquo;の場合は以下のようになる:
 
   <ol>
-   <li>If &lsquo;<code class=property>column-count</code>&rsquo; and
-    &lsquo;<code class=property>column-width</code>&rsquo; are both
-    &lsquo;<code class=css>auto</code>&rsquo;, a used &lsquo;<code
-    class=property>column-width</code>&rsquo; is calculated for the element
-    as the <a href="#fill-available-measure"><i>fill-available
-    measure</i></a> using the <a href="#fallback-measure"><i>fallback
-    measure</i></a> as the <a href="#available-measure"><i>available
-    measure</i></a>.
+   <li>&lsquo;<code class=property>column-count</code>&rsquo; と &lsquo;<code class=property>column-width</code>&rsquo; が両方とも &lsquo;<code class=css>auto</code>&rsquo; なら、使用される &lsquo;<code class=property>column-width</code>&rsquo; は <a href="#available-measure"><i>available measure</i></a> の <a href="#fallback-measure"><i>fallback measure</i></a> として使っている <a href="#fill-available-measure"><i>fill-available measure</i></a> として計算される。
 
-   <li>If the columns' extent is not fixed, the <a
-    href="#fill-available-extent"><i>fill-available extent</i></a> of the
-    element is used.
+   <li>列のextentが固定されていない場合、要素の <a href="#fill-available-extent"><i>fill-available extent</i></a> が使われる。
 
-   <li>The used column-count then follows from filling the resulting columns
-    with the element's content.
+   <li>使用される列数は、要素のコンテンツによって満たされた列から得られる。
   </ol>
 
-  <p>The used measure of the resulting multi-column element is then
-   calculated: if the content neither wraps nor paginates within the
-   multi-column element, then the used measure is the <a
-   href="#max-content-measure"><i>max-content measure</i></a> of the
-   element's contents; else it is calculated from the used column width,
-   column count, and column gap.
+  <p>結果、マルチカラム要素で使用されるmeasureが計算される。マルチカラム要素内で、コンテンツの折り返しや改ページもない場合は、使用されるmeasureは要素のコンテンツの <a href="#max-content-measure"><i>max-content measure</i></a> となる。そうでなければ使用される列幅、列数、列間の幅から計算される。
 
-  <p>The used extent of the element is either the used column extent (if
-   multiple columns were used) or the <a
-   href="#max-content-extent"><i>max-content extent</i></a> of the content.
+  <p>要素で使用されるextentは、使用される列のextent(もし複数カラムが使われて居たなら)か、コンテンツの <a href="#max-content-extent"><i>max-content extent</i></a> のどちらかとなる。
 
-  <p class=note>This should behave the same as the auto-sizing algorithm
-   defined in the previous section, except overflowing content, instead of
-   continuing off the side of the containing block, is wrapped into columns
-   in the flow direction of the containing block, thus avoiding T-shaped
-   documents.
+  <p class=note>これはオーバーフローしたコンテンツを除き、前のセクションで定義したオートサイジングのアルゴリズムと同じ振る舞いをすべきである。包含ブロックの側から離れていこうとする代わりに、包含ブロックの送り方向が列としてひとまとめにされることで、T字型のドキュメントとなるのを回避している。
+  
+  <h4 id=orthogonal-pagination><span class=secno>7.3.3. </span> 送り方向が直交する場合の改ページ</h4>
 
-  <h4 id=orthogonal-pagination><span class=secno>7.3.3. </span> Paginating
-   Orthogonal Flows</h4>
+  <p><em>この章は参考である。</em>
 
-  <p><em>This section is informative.</em>
+  <p>改ページについては、CSS2.1のルールが縦組や送り方向が直交する場合においてもそのまま使われている: ラインボックス内で改ページの機会はなく、改ページはラインボックス間のみである。 しかし、<a href="#CSS3COL" rel=biblioentry>[CSS3COL]<!--{{!CSS3COL}}--></a> をサポートするユーザーエージェントは、列の間(幅が0となる可能性がある)で改行することがある。
 
-  <p>With regards to pagination, the rules in CSS2.1 still hold in vertical
-   writing modes and orthogonal flows: page break opportunities do not occur
-   inside line boxes, only between them. UAs that support <a href="#CSS3COL"
-   rel=biblioentry>[CSS3COL]<!--{{!CSS3COL}}--></a> may break in the
-   (potentially zero-width) gap between columns, however.
-
-  <p>Note that if content spills outside the pagination stream established by
-   the root element, the UA is not required to print such content. Authors
-   wishing to mix writing modes with long streams of text are thus encouraged
-   to use CSS columns to keep all content flowing in the document's
-   pagination direction.
+  <p>もしルート要素によって作られた改ページの流れからコンテンツが外に溢れた場合は、ユーザエージェントはそのコンテンツを表示する必要がないことに注意すること。長いテキストで組方向を混在させたい作者は、ドキュメントの改ページ方向に送られる全てのコンテンツを表示させるために、CSS columnsの利用を推奨する。
 
   <div class=note>
-   <p>In other words, if your document would require two scrollbars on the
-    screen it probably won't all print. Fix your layout, e.g. by using <a
-    href="http://www.w3.org/TR/css3-multicol/">columns</a> so that it all
-    scrolls (and therefore paginates) in one direction if you want to make
-    sure it'll all print. T-shaped documents tend not to print well.
+   <p>言い換えると、あなたのドキュメントが2つのスクロールバーを必要とする場合、その文書はおそらく全て表示されない。全てを確実に表示させたいなら、例えば <a href="http://www.w3.org/TR/css3-multicol/">columns</a> を利用してレイアウトの固定し、全てのスクロール(そして改ページも)を1つの方向にすること。T字型のドキュメントはうまく印刷されない傾向がある。
   </div>
 
   <h3 id=logical-direction-layout><span class=secno>7.4. </span>
