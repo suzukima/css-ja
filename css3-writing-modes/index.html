@@ -1772,47 +1772,15 @@ english17 18WERBEH
 
   </ul>
 
-  <p>2つめのケースを取り扱うため、CSSのレイアウト算出は2フェーズに分かれる: ボックスのサイズ決定と、そのflowの中でのボックスの配置である。サイズ決定フェーズ&#8212;ボックスの幅と高さの算出&#8212;ボックスの次元と包含ブロックは、measure(寸法)、extent、包含ブロックのwriting modeに応じて実行された算出値にマッピングされる。
+  <p>2つめのケースを取り扱うため、CSSのレイアウト算出は2フェーズに分かれる: ボックスのサイズ決定と、そのflowの中でのボックスの配置である。サイズ決定フェーズ&#8212;ボックスの幅と高さの算出を行う&#8212;では、ボックスの次元と包含ブロックが、measure、extent、要素のwriting modeに応じて計算された算出値にマッピングされる。配置フェーズ&#8212;オフセット、マージン、ボーダー、パディングの算出を行う&#8212;では、ボックスの次元と包含ブロックが、measure、extent、包含ブロックのwriting modeに応じて計算された算出値にマッピングされる。
 
-  To handle the second case, CSS layout calculations are divided into two
-   phases: sizing a box, and positioning the box within its flow. In the
-   sizing phase&#8212;calculating the width and height of the box&#8212;the
-   dimensions of the box and the containing block are mapped to the measure
-   and extent and calculations performed accordingly using the writing mode
-   of the element. In the positioning phase&#8212;calculating the positioning
-   offsets, margins, borders, and padding&#8212;the dimensions of the box and
-   its containing block are mapped to the measure and extent and calculations
-   performed according to the writing mode of the containing block.
+  <p>例えば、縦組のブロックが横組のブロックの中に配置されている場合は、小ブロックの物理的高さ(measureである)が算出されるとき、親ブロックの物理的高さはmeasureではなくextentであるにもかかわらず、親ブロックの物理的高さがこの包含ブロックのmeasure算出に利用される。
 
-  <p>For example, if a vertical block is placed inside a horizontal block,
-   then when calculating the physical height (which is the measure) of the
-   child block the physical height of the parent block is used to calculate
-   the measure of the child's containing block, even though the physical
-   height is the extent, not the measure, of the parent block.
+  <p>auto marginは包含ブロックのwriting modeと矛盾がないように解決されているので、直行する流れを構成するブロックは、ちょうどauto marginを利用する別のブロックレベル要素のように、包含ブロックの中で一度サイズを決定し、整列かセンタリングを実施することができる。
 
-  <p>Since auto margins are resolved consistent with the containing block's
-   writing mode, a box establishing an orthogonal flow, can, once sized, be
-   aligned or centered within its containing block just like other
-   block-level elements by using auto margins.
+  <p>CSSにおける包含ブロックでは一般的にmeasureが定義されているが、extentは定義されていない。これは通常CSS2.1で包含ブロックのheightが &lsquo;<code class=css>auto</code>&rsquo; のときに発生する。例を挙げると、<a href="http://www.w3.org/TR/CSS21/visudet.html#blockwidth">10.3.3</a>によって幅が計算されるが、extentはその内容に依存する。このようなケースでは <dfn id=available-measure>available measure</dfn> が包含ブロックのmeasureとして定義される。しかし、<dfn id=available-extent>available extent</dfn>(なければ包含ブロックのextent)は無限になる。
 
-  <p>It is common in CSS for a containing block to have a defined measure,
-   but not a defined extent. This typically happens in CSS2.1 when a
-   containing block has an &lsquo;<code class=css>auto</code>&rsquo; height,
-   for example: its width is given by the calculations in <a
-   href="http://www.w3.org/TR/CSS21/visudet.html#blockwidth">10.3.3</a>, but
-   its extent depends on its contents. In such cases the <dfn
-   id=available-measure>available measure</dfn> is defined as the measure of
-   the containing block; but the <dfn id=available-extent>available
-   extent</dfn>, which would otherwise be the extent of the containing block,
-   is infinite.
-
-  <p>Orthogonal flows allow the opposite to happen: for the <a
-   href="#available-extent"><i>available extent</i></a> to be defined, but
-   the <a href="#available-measure"><i>available measure</i></a> to be
-   infinite. In such cases a percentage of the containing block measure
-   cannot be defined, and thus the initial containing block's size is used
-   instead as a <a href="#fallback-measure"><i>fallback measure</i></a> to
-   calculate such percentages.
+  <p>直行する流れでは、反対の事象が発生するようになる。 <a href="#available-extent"><i>available extent</i></a> が定義されるが、<a href="#available-measure"><i>available measure</i></a> は無限になる。このようなケースでは、包含ブロックのmeasureにおけるパーセンテージは定義できないので、初期包含ブロックのサイズがこのようなパーセンテージを計算するための <a href="#fallback-measure"><i>fallback measure</i></a> として代わりに使用される。
 
   <h4 id=orthogonal-auto><span class=secno>7.3.1. </span> Auto-sizing in
    Orthogonal Flows</h4>
