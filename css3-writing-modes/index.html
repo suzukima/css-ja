@@ -48,7 +48,7 @@
 		<p>文中では日本語組版の用語を用いております。日本語組版については<a href="http://www.w3.org/TR/jlreq/ja/">日本語組版処理の要件（日本語版）</a>に目を通しておくことをおすすめいたします。</p>
 		<p>その他の仕様書の翻訳は、<a href="../">CSS 日本語レイアウト関連仕様 日本語翻訳</a>からご覧下さい。</p>
 		<p>公開開始日: 2011.09.11</p>
-     <p>更新日: 2011.09.27</p>
+     <p>更新日: 2011.10.10</p>
 	</div>
 
   <div class=head> <!--begin-logo-->
@@ -243,39 +243,28 @@
       抽象と物理のマッピング</a>
     </ul>
 
-   <li><a href="#abstract-layout"><span class=secno>7. </span> Abstract Box
-    Layout</a>
+   <li><a href="#abstract-layout"><span class=secno>7. </span> 抽象的なボックスレイアウト</a>
     <ul class=toc>
-     <li><a href="#vertical-layout"><span class=secno>7.1. </span> Principles
-      of Layout in Vertical Writing Modes</a>
+     <li><a href="#vertical-layout"><span class=secno>7.1. </span> 縦組でのレイアウト原則</a>
 
-     <li><a href="#dimension-mapping"><span class=secno>7.2. </span>
-      Dimensional Mapping</a>
+     <li><a href="#dimension-mapping"><span class=secno>7.2. </span> 次元のマッピング</a>
 
-     <li><a href="#orthogonal-flows"><span class=secno>7.3. </span>
-      Orthogonal Flows</a>
+     <li><a href="#orthogonal-flows"><span class=secno>7.3. </span> 送り方向が直行する場合</a>
       <ul class=toc>
-       <li><a href="#orthogonal-auto"><span class=secno>7.3.1. </span>
-        Auto-sizing in Orthogonal Flows</a>
+       <li><a href="#orthogonal-auto"><span class=secno>7.3.1. </span> 送り方向が直交する場合のオートサイジング</a>
 
-       <li><a href="#orthogonal-multicol"><span class=secno>7.3.2. </span>
-        Multi-column Layout in Orthogonal Flows</a>
+       <li><a href="#orthogonal-multicol"><span class=secno>7.3.2. </span> 送り方向が直交する場合のマルチカラムレイアウト</a>
 
-       <li><a href="#orthogonal-pagination"><span class=secno>7.3.3. </span>
-        Paginating Orthogonal Flows</a>
+       <li><a href="#orthogonal-pagination"><span class=secno>7.3.3. </span> 送り方向が直交する場合の改ページ</a>
       </ul>
 
-     <li><a href="#logical-direction-layout"><span class=secno>7.4. </span>
-      Flow-Relative Mappings</a>
+     <li><a href="#logical-direction-layout"><span class=secno>7.4. </span> 送り相対のマッピング</a>
 
-     <li><a href="#line-mappings"><span class=secno>7.5. </span>
-      Line-Relative Mappings</a>
+     <li><a href="#line-mappings"><span class=secno>7.5. </span> 行相対マッピング</a>
 
-     <li><a href="#physical-only"><span class=secno>7.6. </span> Purely
-      Physical Mappings</a>
+     <li><a href="#physical-only"><span class=secno>7.6. </span> 純粋に物理的なマッピング</a>
 
-     <li><a href="#caption-side"><span class=secno>7.7. </span> Table Caption
-      Mappings: the &lsquo;<code class=property>caption-side</code>&rsquo;
+     <li><a href="#caption-side"><span class=secno>7.7. </span> 表題のマッピング: &lsquo;<code class=property>caption-side</code>&rsquo;
       keywords</a>
     </ul>
 
@@ -1889,8 +1878,7 @@ english17 18WERBEH
    <li>&lsquo;<code class=property>box-shadow</code>&rsquo; プロパティと &lsquo;<code class=property>text-shadow</code>&rsquo; プロパティのオフセット
   </ul>
 
-  <h3 id=caption-side><span class=secno>7.7. </span> Table Caption Mappings:
-   the &lsquo;<code class=property>caption-side</code>&rsquo; keywords</h3>
+  <h3 id=caption-side><span class=secno>7.7. </span> 表題のマッピング: &lsquo;<code class=property>caption-side</code>&rsquo; keywords</h3>
 
   <table class=propdef>
    <tbody>
@@ -1900,89 +1888,55 @@ english17 18WERBEH
      <td>&lsquo;<code class=property>caption-side</code>&rsquo;
 
     <tr>
-     <th>New Values:
+     <th>新しい値:
 
      <td>&lsquo;<a href="#before"><code class=css>before</code></a>&rsquo; |
       &lsquo;<a href="#after"><code class=css>after</code></a>&rsquo;
 
     <tr>
-     <th>Initial:
+     <th>初期値:
 
      <td>before
 
     <tr>
-     <th>Applies to:
+     <th>適用範囲:
 
-     <td>same as CSS2.1
-
-    <tr>
-     <th>Inherited:
-
-     <td>same as CSS2.1
+     <td>CSS2.1と同じ
 
     <tr>
-     <th>Percentages:
+     <th>継承:
 
-     <td>same as CSS2.1
-
-    <tr>
-     <th>Media:
-
-     <td>same as CSS2.1
+     <td>CSS2.1と同じ
 
     <tr>
-     <th>Computed&#160;value:
+     <th>パーセンテージ:
 
-     <td>specified value
+     <td>CSS2.1と同じ
+
+    <tr>
+     <th>メディア:
+
+     <td>CSS2.1と同じ
+
+    <tr>
+     <th>算出値:
+
+     <td>指定した値
   </table>
 
-  <p>This module introduces two new values to the &lsquo;<code
-   class=property>caption-side</code>&rsquo; property: &lsquo;<a
-   href="#before"><code class=css>before</code></a>&rsquo; and &lsquo;<a
-   href="#after"><code class=css>after</code></a>&rsquo;, which position the
-   caption before and after the table box, respectively. For tables with
-   &lsquo;<a href="#horizontal-tb"><code
-   class=css>horizontal-tb</code></a>&rsquo; writing mode, they are
-   equivalent to the existing &lsquo;<a href="#top"><code
-   class=css>top</code></a>&rsquo; and &lsquo;<a href="#bottom"><code
-   class=css>bottom</code></a>&rsquo; values, respectively. <a href="#CSS21"
+  <p>このモジュールは新しい2つの値を &lsquo;<code class=property>caption-side</code>&rsquo; プロパティに導入する: &lsquo;<a href="#before"><code class=css>before</code></a>&rsquo; と &lsquo;<a href="#after"><code class=css>after</code></a>&rsquo; である。これらはそれぞれテーブルボックスの前と後ろにキャプションを配置する。&lsquo;<a href="#horizontal-tb"><code class=css>horizontal-tb</code></a>&rsquo; writing modeの表では、これらはそれぞれ &lsquo;<a href="#top"><code class=css>top</code></a>&rsquo; と &lsquo;<a href="#bottom"><code class=css>bottom</code></a>&rsquo; が存在する場合と同じである。<a href="#CSS21"
    rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a>
 
-  <p class=note>For implementations that support the &lsquo;<code
-   class=property>top-outside</code>&rsquo; and &lsquo;<code
-   class=property>bottom-outside</code>&rsquo; model, corresponding
-   &lsquo;<code class=property>before-outside</code>&rsquo; and &lsquo;<code
-   class=property>after-outside</code>&rsquo; will be similarly introduced.
+  <p class=note>&lsquo;<code class=property>top-outside</code>&rsquo; と &lsquo;<code class=property>bottom-outside</code>&rsquo; をサポートする実装のために、&lsquo;<code class=property>before-outside</code>&rsquo; と &lsquo;<code class=property>after-outside</code>&rsquo; への対応も同様に導入されるだろう。
 
-  <p>Implementations that support the &lsquo;<a href="#top"><code
-   class=css>top</code></a>&rsquo; and &lsquo;<a href="#bottom"><code
-   class=css>bottom</code></a>&rsquo; values of the &lsquo;<code
-   class=property>caption-side</code>&rsquo; property but do not support side
-   captions (i.e. &lsquo;<a href="#left"><code
-   class=css>left</code></a>&rsquo; and &lsquo;<a href="#right"><code
-   class=css>right</code></a>&rsquo; captions in horizontal writing modes)
-   must treat &lsquo;<a href="#top"><code class=css>top</code></a>&rsquo; and
-   &lsquo;<a href="#bottom"><code class=css>bottom</code></a>&rsquo; as
-   &lsquo;<a href="#before"><code class=css>before</code></a>&rsquo;, when
-   the table is in a vertical writing mode.
+  <p>&lsquo;<code class=property>caption-side</code>&rsquo; プロパティの値 &lsquo;<a href="#top"><code class=css>top</code></a>&rsquo; と &lsquo;<a href="#bottom"><code class=css>bottom</code></a>&rsquo; をサポートするが、side caption(例えば、横組における &lsquo;<a href="#left"><code class=css>left</code></a>&rsquo; と &lsquo;<a href="#right"><code class=css>right</code></a>&rsquo; のキャプション)をサポートしない実装は、縦組において &lsquo;<a href="#top"><code class=css>top</code></a>&rsquo; と &lsquo;<a href="#bottom"><code class=css>bottom</code></a>&rsquo; を &lsquo;<a href="#before"><code class=css>before</code></a>&rsquo; として扱わなければならない。
 
-  <p>For implementations that do support side captions (i.e. the &lsquo;<a
-   href="#left"><code class=css>left</code></a>&rsquo; and &lsquo;<a
-   href="#right"><code class=css>right</code></a>&rsquo; values from the
-   obsolete CSS&nbsp;2.0 specification <a href="#CSS2"
-   rel=biblioentry>[CSS2]<!--{{CSS2}}--></a>), this module also introduces
-   the &lsquo;<a href="#start"><code class=css>start</code></a>&rsquo; and
-   &lsquo;<a href="#end"><code class=css>end</code></a>&rsquo; values, which
-   behave similarly and which position the caption on the start and end sides
-   of the table box, calculated with respect to the writing mode of the table
-   element. For such implementations, the &lsquo;<a href="#top"><code
-   class=css>top</code></a>&rsquo; and &lsquo;<a href="#bottom"><code
-   class=css>bottom</code></a>&rsquo; values must place the caption on the
-   top and bottom sides of the table box, respectively.
+  <p>side caption(例えば、古い CSS&nbsp;2.0 仕様 <a href="#CSS2"
+   rel=biblioentry>[CSS2]<!--{{CSS2}}--></a>の &lsquo;<a href="#left"><code class=css>left</code></a>&rsquo; と &lsquo;<a href="#right"><code class=css>right</code></a>&rsquo; の値)をサポートする実装では、このモジュールはこれと同様に動作し、table要素のwriting modeを考慮して算出したテーブルボックスのキャプションを、stat sideかend sideに配置するよう、&lsquo;<a href="#start"><code class=css>start</code></a>&rsquo; と &lsquo;<a href="#end"><code class=css>end</code></a>&rsquo; の値を導入する。このような実装のために、&lsquo;<a href="#top"><code class=css>top</code></a>&rsquo; と &lsquo;<a href="#bottom"><code class=css>bottom</code></a>&rsquo; の値はキャプションを表のtop sideとbottom sideにそれぞれ配置すべきである。
 
-  <p class=note>The CSS2.0 side caption model had some <a
-   href="http://lists.w3.org/Archives/Public/www-style/2002Dec/0142.html">problems</a>
-   and will likely have a different definition in CSS3.</p>
+  <p class=note>CSS2.0のside caption model にはいくつかの<a href="http://lists.w3.org/Archives/Public/www-style/2002Dec/0142.html">問題</a>があり、CSS3では異なる定義がされることになるだろう。
+
+
   <!--
 <h3 id="html-attributes">HTML Attributes</h3>
 
