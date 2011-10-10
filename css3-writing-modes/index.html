@@ -1818,49 +1818,28 @@ english17 18WERBEH
   </div>
 
   <h3 id=logical-direction-layout><span class=secno>7.4. </span>
-   Flow-Relative Mappings</h3>
+   送り相対のマッピング</h3>
 
-  <p>Flow-relative directions are calculated with respect to the writing mode
-   of the <em>containing block</em> of the element and used to abstract
-   layout rules related to the box properties (margins, borders, padding) and
-   any properties related to positioning the box within its containing block
-   (&lsquo;<code class=property>float</code>&rsquo;, &lsquo;<code
+  <p>送り相対方向は要素の<em>包含ブロック</em>のwriting modeを考慮して算出され、ボックスプロパティ(margins, borders, padding)に関する相対レイアウトルール、包含ブロック無いのボックス配置に関連する各種プロパティ(&lsquo;<code class=property>float</code>&rsquo;, &lsquo;<code
    class=property>clear</code>&rsquo;, &lsquo;<a href="#top"><code
    class=property>top</code></a>&rsquo;, &lsquo;<a href="#bottom"><code
    class=property>bottom</code></a>&rsquo;, &lsquo;<a href="#left"><code
    class=property>left</code></a>&rsquo;, &lsquo;<a href="#right"><code
-   class=property>right</code></a>&rsquo;) For inline-level elements, the
-   writing mode of the <em>parent element</em> is used instead.
+   class=property>right</code></a>&rsquo;)で使われる。 インライン要素では、<em>親要素</em>のwriting modeが代わりに使われる。
 
-  <p>For example, the margin that is dropped when a box's inline dimension is
-   <a
-   href="http://www.w3.org/TR/CSS21/visudet.html#blockwidth">over-constrained</a>
-   is the end margin as determined by the writing mode of the containing
-   block.
+  <p>例えば、ボックスのインライン次元が <a href="http://www.w3.org/TR/CSS21/visudet.html#blockwidth">over-constrained</a>の時にドロップされるマージンは、包含ブロックのwriting modeによって決定されるend marginである。
 
-  <p>The <a
-   href="http://www.w3.org/TR/CSS21/box.html#collapsing-margins">margin
-   collapsing rules</a> apply exactly with the <em>before margin</em>
-   substituted for the top margin and the <em>after margin</em> substituted
-   for the bottom margin. Similarly the before padding and border are
-   substituted for the top padding and border, and the after padding and
-   border substituted for the bottom padding and border. Note this means only
-   before and after margins ever collapse.
+  <p><a href="http://www.w3.org/TR/CSS21/box.html#collapsing-margins">margin
+   collapsing rules</a> は top margin の代わりに<em>before margin</em> へ、bottom margin の代わりに <em>after margin</em> へ、厳密に適用される。同様に before padding と before border は top padding と top border の代わりに、after padding と after border は bottom padding と bottom borderの代わりとなる。これは毎回のbefore marginとafter marginの折りたたみのみを意味することに注意すること。
 
-  <p>Flow-relative directions are calculated with respect to the writing mode
-   of the element and used to abstract layout related to the element's
-   contents:
+  <p> 送り相対方向は要素のwriting modeを考慮して算出され、要素のコンテンツに関する相対レイアウトに用いられる:
 
   <ul>
-   <li>The initial value of the &lsquo;<code
-    class=property>text-align</code>&rsquo; property aligns to the start edge
-    of the line box.
+   <li>&lsquo;<code class=property>text-align</code>&rsquo; プロパティの初期値はラインボックスのstart edgeを配置する。
 
-   <li>The &lsquo;<code class=property>text-indent</code>&rsquo; property
-    indents from the start edge of the line box.
+   <li>&lsquo;<code class=property>text-indent</code>&rsquo; プロパティはラインボックスのstart edgeからのインデントを行う。
 
-   <li>For tables, the ordering of columns begins on the start side of the
-    table, and the ordering of rows begins on the before side of the table.
+   <li>表では、列の順序づけを表のstart sideで開始し、行の順序づけを表のbefore sideで開始する。
   </ul>
 
   <h3 id=line-mappings><span class=secno>7.5. </span> Line-Relative Mappings</h3>
