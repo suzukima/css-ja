@@ -1842,60 +1842,33 @@ english17 18WERBEH
    <li>表では、列の順序づけを表のstart sideで開始し、行の順序づけを表のbefore sideで開始する。
   </ul>
 
-  <h3 id=line-mappings><span class=secno>7.5. </span> Line-Relative Mappings</h3>
+  <h3 id=line-mappings><span class=secno>7.5. </span> 行相対マッピング</h3>
 
-  <p>The <dfn id=line-relative-directions0>line-relative directions</dfn> are
-   <a href="#over">over</a>, <a href="#under">under</a>, <a
-   href="#line-left">line-left</a>, and <a href="#line-right">line-right</a>.
-   In an <abbr title=left-to-right>LTR</abbr> &lsquo;<a
-   href="#horizontal-tb"><code class=css>horizontal-tb</code></a>&rsquo;
-   writing mode, they correspond to the top, bottom, left, and right
-   directions, respectively.
+  <p><dfn id=line-relative-directions0>line-relative direction(行相対方向)</dfn>には <a href="#over">over</a>, <a href="#under">under</a>, <a href="#line-left">line-left</a>, <a href="#line-right">line-right</a> がある。<abbr title=left-to-right>LTR</abbr> &lsquo;<a href="#horizontal-tb"><code class=css>horizontal-tb</code></a>&rsquo; のwriting modeでは、それぞれtop, bottom, left, right 方向に対応している。
 
-  <p>The line-right and line-left directions are calculated with respect to
-   the writing mode of the element and used to interpret the &lsquo;<a
-   href="#left"><code class=css>left</code></a>&rsquo; and &lsquo;<a
-   href="#right"><code class=css>right</code></a>&rsquo; values of the
-   following properties:
+  <p>line-right direction と line-left direction は要素のwriting modeを考慮して算出され、以下のプロパティの値である &lsquo;<a href="#left"><code class=css>left</code></a>&rsquo; と &lsquo;<a href="#right"><code class=css>right</code></a>&rsquo; の解釈に使用される:
 
   <ul>
-   <li>the &lsquo;<code class=property>text-align</code>&rsquo; property <a
+   <li>&lsquo;<code class=property>text-align</code>&rsquo; プロパティ <a
     href="#CSS21" rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a>
   </ul>
 
-  <p>The line-right and line-left directions are calculated with respect to
-   the writing mode of the <em>containing block</em> of the element and used
-   to interpret the &lsquo;<a href="#left"><code
-   class=css>left</code></a>&rsquo; and &lsquo;<a href="#right"><code
-   class=css>right</code></a>&rsquo; values of the following properties:
+  <p>line-right direcrion と line-left direction は要素の<em>包含ブロック</em>のwriting modeを考慮して算出され、以下のプロパティの値である &lsquo;<a href="#left"><code class=css>left</code></a>&rsquo; と &lsquo;<a href="#right"><code class=css>right</code></a>&rsquo; の解釈に使用される:
 
   <ul>
-   <li>the &lsquo;<code class=property>float</code>&rsquo; property <a
+   <li>&lsquo;<code class=property>float</code>&rsquo; プロパティ <a
     href="#CSS21" rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a>
 
-   <li>the &lsquo;<code class=property>clear</code>&rsquo; property <a
+   <li>&lsquo;<code class=property>clear</code>&rsquo; プロパティ <a
     href="#CSS21" rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a>
   </ul>
 
-  <p>The over and under directions are calculated with respect to the writing
-   mode of the element and used to define the interpretation of the "top"
-   (over edge) and "bottom" (under edge) of the line box as follows:
+  <p>over direction と under direction は要素のwriting modeから算出され、以下のように、ラインボックスの "top" (over edge) と "bottom" (under edge) の解釈を定義するために使用される:
 
   <ul>
-   <li>For the &lsquo;<code class=property>vertical-align</code>&rsquo;
-    property, the "top" of the line box is the over edge; the "bottom" of the
-    line box is the under edge. Positive length and percentage values shift
-    the baseline towards the over edge. <a href="#CSS21"
-    rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a>
+   <li>&lsquo;<code class=property>vertical-align</code>&rsquo; プロパティでは、ラインボックスの "top" は over edgeであり、 "bottom" は under edge である。正の長さとパーセンテージの値は、ベースラインを over edge 方向へシフトする。<a href="#CSS21" rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a>
 
-   <li>For the &lsquo;<code class=property>text-decoration</code>&rsquo;
-    property, the underline is drawn on the under side of the text; the
-    overline is drawn on the over side of the text. <a href="#CSS21"
-    rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a> <span class=note>Note that
-    the CSS Text Module defines this in more detail and provides additional
-    controls for controlling the position of underlines and overlines. <a
-    href="#CSS3TEXT" rel=biblioentry>[CSS3TEXT]<!--{{CSS3TEXT}}--></a></span>
-    
+   <li>&lsquo;<code class=property>text-decoration</code>&rsquo; プロパティでは、underlineがテキストの下側に、overlineがテキストの上側に描かれる。<a href="#CSS21" rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a><span class=note>CSS Text Moduleはこの点を詳しく定義し、underline と overline の配置を制御する機能を提供している。<a href="#CSS3TEXT" rel=biblioentry>[CSS3TEXT]<!--{{CSS3TEXT}}--></a></span>
   </ul>
 
   <h3 id=physical-only><span class=secno>7.6. </span> Purely Physical
