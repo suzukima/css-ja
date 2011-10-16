@@ -1999,42 +1999,18 @@ english17 18WERBEH
   </ul>
 -->
 
-  <h2 id=page-direction><span class=secno>8. </span> Page Flow: the page
-   progression direction</h2>
+  <h2 id=page-direction><span class=secno>8. </span> Page Flow: ページの進行方向</h2>
 
-  <p>In paged media CSS2.1 classifies all pages as either left or right
-   pages. The page progression direction, which determines whether the left
-   or right page in a spread is first in the flow and whether the first page
-   is by default a left or right page, depends on the writing direction as
-   follows:
+  <p>CSS2.1のpaged mediaは全てのページを右ページか左ページに分類している。ページの進行方向は、見開きで最初にめくるページか左か右かを決定し、また最初のページがデフォルトで左か右かを決定している。これらは以下に示すwriting directionに依存する。
 
   <ul>
-   <li>The page progression is right-to-left if the root element's &lsquo;<a
-    href="#writing-mode1"><code class=property>writing-mode</code></a>&rsquo;
-    is &lsquo;<a href="#vertical-rl"><code
-    class=css>vertical-rl</code></a>&rsquo; or if the root element's
-    &lsquo;<a href="#writing-mode1"><code
-    class=property>writing-mode</code></a>&rsquo; is &lsquo;<a
-    href="#horizontal-tb"><code class=css>horizontal-tb</code></a>&rsquo; and
-    its &lsquo;<a href="#direction0"><code
-    class=property>direction</code></a>&rsquo; is &lsquo;<a href="#rtl"><code
-    class=css>rtl</code></a>&rsquo;.
+   <li>ルート要素の &lsquo;<a href="#writing-mode1"><code class=property>writing-mode</code></a>&rsquo; が &lsquo;<a href="#vertical-rl"><code class=css>vertical-rl</code></a>&rsquo; か、同じくルート要素の &lsquo;<a href="#writing-mode1"><code class=property>writing-mode</code></a>&rsquo; が &lsquo;<a href="#horizontal-tb"><code class=css>horizontal-tb</code></a>&rsquo; で &lsquo;<a href="#direction0"><code class=property>direction</code></a>&rsquo; が &lsquo;<a href="#rtl"><code class=css>rtl</code></a>&rsquo; の場合、ページ進行方向は右から左になる。
 
-   <li>The page progression is left-to-right if the root element's &lsquo;<a
-    href="#writing-mode1"><code class=property>writing-mode</code></a>&rsquo;
-    is &lsquo;<a href="#vertical-lr"><code
-    class=css>vertical-lr</code></a>&rsquo; or if the root element's
-    &lsquo;<a href="#writing-mode1"><code
-    class=property>writing-mode</code></a>&rsquo; is &lsquo;<a
-    href="#horizontal-tb"><code class=css>horizontal-tb</code></a>&rsquo; and
-    its &lsquo;<a href="#direction0"><code
-    class=property>direction</code></a>&rsquo; is &lsquo;<a href="#ltr"><code
-    class=css>ltr</code></a>&rsquo;.
+   <li>ルート要素の &lsquo;<a href="#writing-mode1"><code class=property>writing-mode</code></a>&rsquo; が &lsquo;<a href="#vertical-lr"><code class=css>vertical-lr</code></a>&rsquo; の場合か、同じくルート要素の &lsquo;<a href="#writing-mode1"><code class=property>writing-mode</code></a>&rsquo; が &lsquo;<a href="#horizontal-tb"><code class=css>horizontal-tb</code></a>&rsquo; で &lsquo;<a href="#direction0"><code class=property>direction</code></a>&rsquo; が &lsquo;<a href="#ltr"><code class=css>ltr</code></a>&rsquo; の場合、ページ進行方向は左から右になる。
+
   </ul>
 
-  <p>(Unless otherwise overridden, the first page of a document begins on the
-   second half of a spread, e.g. on the right page in a left-to-right page
-   progression.)
+  <p>(無効化されない限り、文書の最初のページは見開きの後半から始まっている。例えば、ページ進行方向が左から右だと、右から始まる。)
 
   <h2 id=text-combine><span class=secno>9. </span> Glyph Composition</h2>
 
