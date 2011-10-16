@@ -2005,18 +2005,16 @@ english17 18WERBEH
   <ul>
    <li>ルート要素の &lsquo;<a href="#writing-mode1"><code class=property>writing-mode</code></a>&rsquo; が &lsquo;<a href="#vertical-rl"><code class=css>vertical-rl</code></a>&rsquo; か、同じくルート要素の &lsquo;<a href="#writing-mode1"><code class=property>writing-mode</code></a>&rsquo; が &lsquo;<a href="#horizontal-tb"><code class=css>horizontal-tb</code></a>&rsquo; で &lsquo;<a href="#direction0"><code class=property>direction</code></a>&rsquo; が &lsquo;<a href="#rtl"><code class=css>rtl</code></a>&rsquo; の場合、ページ進行方向は右から左になる。
 
-   <li>ルート要素の &lsquo;<a href="#writing-mode1"><code class=property>writing-mode</code></a>&rsquo; が &lsquo;<a href="#vertical-lr"><code class=css>vertical-lr</code></a>&rsquo; の場合か、同じくルート要素の &lsquo;<a href="#writing-mode1"><code class=property>writing-mode</code></a>&rsquo; が &lsquo;<a href="#horizontal-tb"><code class=css>horizontal-tb</code></a>&rsquo; で &lsquo;<a href="#direction0"><code class=property>direction</code></a>&rsquo; が &lsquo;<a href="#ltr"><code class=css>ltr</code></a>&rsquo; の場合、ページ進行方向は左から右になる。
+   <li>ルート要素の &lsquo;<a href="#writing-mode1"><code class=property>writing-mode</code></a>&rsquo; が &lsquo;<a href="#vertical-lr"><code class=css>vertical-lr</code></a>&rsquo; か、同じくルート要素の &lsquo;<a href="#writing-mode1"><code class=property>writing-mode</code></a>&rsquo; が &lsquo;<a href="#horizontal-tb"><code class=css>horizontal-tb</code></a>&rsquo; で &lsquo;<a href="#direction0"><code class=property>direction</code></a>&rsquo; が &lsquo;<a href="#ltr"><code class=css>ltr</code></a>&rsquo; の場合、ページ進行方向は左から右になる。
 
   </ul>
 
   <p>(無効化されない限り、文書の最初のページは見開きの後半から始まっている。例えば、ページ進行方向が左から右だと、右から始まる。)
 
-  <h2 id=text-combine><span class=secno>9. </span> Glyph Composition</h2>
+  <h2 id=text-combine><span class=secno>9. </span> グリフの合成</h2>
 
   <h3 id=text-combine-horizontal><span class=secno>9.1. </span>
-   Horizonal-in-Vertical Composition: the &lsquo;<a
-   href="#text-combine-horizontal0"><code
-   class=property>text-combine-horizontal</code></a>&rsquo; property</h3>
+   縦組みでの水平合成: &lsquo;<a href="#text-combine-horizontal0"><code class=property>text-combine-horizontal</code></a>&rsquo; プロパティ</h3>
 
   <table class=propdef>
    <tbody>
@@ -2026,115 +2024,81 @@ english17 18WERBEH
      <td><dfn id=text-combine-horizontal0>text-combine-horizontal</dfn>
 
     <tr>
-     <th>Value:
+     <th>値:
 
      <td>none | all | [ [digits &lt;integer> | ascii-digits &lt;integer> ] ||
       [ alpha &lt;integer> | latin &lt;integer> ] || alphanumeric
       &lt;integer> ]
 
     <tr>
-     <th>Initial:
+     <th>初期値:
 
      <td>none
 
     <tr>
-     <th>Applies to:
+     <th>適用範囲:
 
-     <td>non-replaced inline elements
-
-    <tr>
-     <th>Inherited:
-
-     <td>yes
+     <td>置換不能なインライン要素
 
     <tr>
-     <th>Percentages:
+     <th>継承:
+
+     <td>される
+
+    <tr>
+     <th>パーセンテージ:
 
      <td>N/A
 
     <tr>
-     <th>Media:
+     <th>メディア:
 
      <td>visual
 
     <tr>
-     <th>Computed&#160;value:
+     <th>算出値:
 
-     <td>specified value
+     <td>指定した値
   </table>
 
-  <p>This property allows the combination of multiple characters into the
-   space of a single character. This property only has an effect in vertical
-   writing modes. Values have the following meanings:
+  <p>このプロパティは1文字分のスペースに複数文字を合成可能にするものである。このプロパティは縦組でのみ効果がある。値の意味を以下に示す:
 
   <dl>
    <dt><dfn id=none title="text-combine-horizontal:none">none</dfn>
 
-   <dd>No special processing.
+   <dd>特別な処理を行わない。
 
    <dt><dfn id=all title="text-combine-horizontal:all">all</dfn>
 
-   <dd>In vertical writing mode, attempt to display the text contents of the
-    element horizontally within the vertical line box, ideally within the
-    space of one ideographic character. (See below.) The resulting
-    composition is treated as a single glyph for the purposes of layout and
-    decoration. If the content contains any element boundaries this is
-    treated as &lsquo;<code class=css>text-combine-horizontal:
-    none</code>&rsquo; on the element and any descendants.
+   <dd>縦組においては、縦書きのラインボックス内で、水平方向に要素のテキストコンテンツを、理想的には1表意文字のスペースに納めて表示しようとする(下記参照)。レイアウトと装飾において、合成結果は1つのグリフとして扱われる。コンテンツが任意の要素の境界を含んでいる場合、これは要素とその子孫において &lsquo;<code class=css>text-combine-horizontal: none</code>&rsquo; として扱われる。
 
    <dt><dfn id=digits title="text-combine-horizontal:digits">digits</dfn>
 
-   <dd>Within the element, each sequence of consecutive horizontal digits
-    that has as many or fewer characters than the integer given is treated as
-    if it were in an anonymous inline box with &lsquo;<code
-    class=css>text-combine-horizontal: all</code>&rsquo;. For this property,
-    a <dfn id=horizontal-digit>horizontal digit</dfn> is any character
-    belonging to a Number category (N*) that does not belong to a <a
-    href="#script-orientations">vertical script</a>.
+   <dd>要素内において、与えられた整数と同じかまたは少ない文字数の、水平方向に連続した数字列は、 &lsquo;<code class=css>text-combine-horizontal: all</code>&rsquo; のインラインボックスであるかのように扱われる。このプロパティでは、<dfn id=horizontal-digit>horizontal digit</dfn> は <a href="#script-orientations">vertical script</a> に属していない、Number category (N*)に属する任意の文字である。
 
    <dt><dfn id=ascii-digits
     title="text-combine-horizontal:ascii-digits">ascii-digits</dfn>
 
-   <dd>Within the element, each sequence of consecutive ASCII digits
-    (U+0030&ndash;U+0039) that has as many or fewer characters than the
-    integer given is treated as if it were in an anonymous inline box with
-    &lsquo;<code class=css>text-combine-horizontal: all</code>&rsquo;.
-    <p class=issue>This definition is would replace &lsquo;<code
-     class=css>digits</code>&rsquo; as a simplification.
+   <dd>要素内において、与えられた整数と同じかまたは少ない文字数の、連続するASCII数字(U+0030&ndash;U+0039)は、&lsquo;<code class=css>text-combine-horizontal: all</code>&rsquo; のインラインボックスであるかのように扱われる。<p class=issue>この定義は単純化のために &lsquo;<code class=css>digits</code>&rsquo; へ置き換えられる予定である。
 
    <dt><dfn id=alpha title="text-combine-horizontal:alpha">alpha</dfn>
 
-   <dd>Within the element, each sequence of consecutive horizontal letters
-    that has as many or fewer characters than the integer given is treated as
-    if it were in an anonymous inline box with &lsquo;<code
-    class=css>text-combine-horizontal: all</code>&rsquo;. For this property,
-    a <dfn id=horizonal-letter>horizonal letter</dfn> is any character
-    belonging to a Letter category (L*) that does not belong to a <a
-    href="#script-orientations">vertical script</a>.
+   <dd>要素内において、与えられた整数と同じかまたは少ない文字数の、水平方向に連続した文字列は、&lsquo;<code class=css>text-combine-horizontal: all</code>&rsquo; のインラインボックスであるかのように扱われる。このプロパティでは、<dfn id=horizonal-letter>horizonal letter</dfn> は <a href="#script-orientations">vertical script</a> に属していない、Letter category (L*)に属する任意の文字である。
 
    <dt><dfn id=latin title="text-combine-horizontal:latin">latin</dfn>
 
-   <dd>Within the element, each sequence of Latin letters that has as many or
-    fewer characters than the integer given is treated as if it were in an
-    anonymous inline box with &lsquo;<code class=css>text-combine-horizontal:
-    all</code>&rsquo;. For this property, a <dfn id=latin-letter>Latin
-    letter</dfn> is any character belonging to a Letter category (L*) that
-    also belongs to the Latin script.
-    <p class=issue>This definition is would replace &lsquo;<code
-     class=css>alpha</code>&rsquo; as a simplification.
+   <dd>要素内において、与えられた整数と同じかまたは少ない文字数の、連続するラテン文字列は、 &lsquo;<code class=css>text-combine-horizontal: all</code>&rsquo; のインラインボックスであるかのように扱われる。このプロパティでは、<dfn id=latin-letter>Latin letter</dfn> はラテン文字に属しており、 Letter category (L*)に属する任意の文字である。
+    <p class=issue>この定義は単純化のため &lsquo;<code
+     class=css>alpha</code>&rsquo; へ置き換えられる予定である。
 
    <dt><dfn id=alphanumeric
     title="text-combine-horizontal:alphanumeric">alphanumeric</dfn>
 
-   <dd>Within the element, each sequence of consecutive horizontal digits
-    and/or letters that has as many or fewer characters than the integer
-    given is treated as if it were in an anonymous inline box with
-    &lsquo;<code class=css>text-combine-horizontal: all</code>&rsquo;.
+   <dd>要素内において、与えられた整数と同じかまたは少ない文字数の、水平方向に連続する数字と文字の列は、&lsquo;<code class=css>text-combine-horizontal: all</code>&rsquo; のインラインボックスであるかのように扱われる。
+
   </dl>
 
-  <p class=issue>All values except &lsquo;<code class=css>all</code>&rsquo;
-   and &lsquo;<code class=css>none</code>&rsquo; are marked at-risk. Which
-   ones should we take to CR?
+  <p class=issue>&lsquo;<code class=css>all</code>&rsquo; と &lsquo;<code class=css>none</code>&rsquo; を除く全ての値は仕様から落ちる可能性がある。我々は、CRにどれを採用すべきなのか?
 
   <p>When combining text as for &lsquo;<code
    class=css>text-combine-horizontal: all</code>&rsquo;, the glyphs of the
