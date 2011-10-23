@@ -2100,76 +2100,47 @@ english17 18WERBEH
 
   <p class=issue>&lsquo;<code class=css>all</code>&rsquo; と &lsquo;<code class=css>none</code>&rsquo; を除く全ての値は仕様から落ちる可能性がある。我々は、CRにどれを採用すべきなのか?
 
-  <p>When combining text as for &lsquo;<code
-   class=css>text-combine-horizontal: all</code>&rsquo;, the glyphs of the
-   combined text are stacked horizontally (without line breaks,
-   letter-spacing, etc., but using the specified font settings), similar to
-   the contents of an inline-box with a horizontal writing mode and a
-   line-height of 1em. The effective size of the composition is assumed to be
-   1em square; anything outside the square is not measured for layout
-   purposes. The UA should center the glyphs horizontally and vertically
-   within the measured 1em square. The baseline of the resulting composition
-   chosen such that the square is centered between the text-over and
-   text-under baselines of its parent inline box prior to any baseline
-   alignment shift. For text layout purposes, e.g. bidi ordering,
-   line-breaking, emphasis marks, text-decoration, etc. the resulting
-   composition is treated as a single glyph representing the Object
-   Replacement Character U+FFFC.
+  <p>&lsquo;<code class=css>text-combine-horizontal: all</code>&rsquo; によってテキストが合成されると、テキストが合成されたグリフは、横組でline-heightが1emのインラインボックスのコンテンツのように水平方向にスタックされる(改行やletter-spacing(文字間隔)などを除くが、指定されたフォントの設定を使用する)。合成物の実サイズは1em四方であると仮定され、四角からはみ出たものはレイアウト時に測定されない。ユーザーエージェントはグリフを1emの四角の中で水平および垂直方向にセンタリングすべきである。このような四角で選択される合成物のベースラインは、baseline alignment shiftより先に、親インラインボックスのtext-over baselineとtext-under baselineとの間でセンタリングされる。バイダイ配置、改行、圏点、テキスト装飾などのテキストレイアウト目的で、合成物はObject Replacement CharacterのU+FFFCを表す1つのグリフとして扱われる。
 
-  <p>In some fonts, the ideographic glyphs are given a compressed design such
-   that they are 1em wide but shorter than 1em tall. To accommodate such
-   fonts, the UA may vertically scale the contents of the composition to
-   match the advance height of 水 U+6C34.
+  <p>いくつかのフォントにおいては、表意グリフが、幅1emだが高さ1em未満のような圧縮されたデザインとなっている。そのようなフォントに対応するため、ユーザエージェントは水 U+6C34のadvance heightに合わせて合成物のコンテンツを垂直方向へスケーリングする。
    <!-- 水 U+6C34 was chosen because it is a very basic character common to
     all Han-based scripts, so would have to appear in any usable ideographic
     font; and its shape is very full in both dimensions, so it would be
     unlikely to be shortened in a proportional font -->
    
 
-  <p>Any CSS fullwidth transformations (&lsquo;<code
-   class=css>text-transform: full-width</code>&rsquo; <a href="#CSS3TEXT"
-   rel=biblioentry>[CSS3TEXT]<!--{{CSS3TEXT}}--></a> or &lsquo;<code
-   class=css>font-variant-east-asian-width: full-width</code>&rsquo; <a
-   href="#CSS3FONT" rel=biblioentry>[CSS3FONT]<!--{{CSS3FONT}}--></a>) are
-   turned off for combined text of more than one character.
+  <p>CSSのfullwidth transformation(&lsquo;<code class=css>text-transform: full-width</code>&rsquo; <a href="#CSS3TEXT"
+   rel=biblioentry>[CSS3TEXT]<!--{{CSS3TEXT}}--></a> か &lsquo;<code class=css>font-variant-east-asian-width: full-width</code>&rsquo; <a href="#CSS3FONT" rel=biblioentry>[CSS3FONT]<!--{{CSS3FONT}}--></a>)は、1文字以上の合成テキストのためにオフになる。
 
   <div class=example>
-   <p>In East Asian documents, the &lsquo;<a
-    href="#text-combine-horizontal0"><code
-    class=css>text-combine-horizontal</code></a>&rsquo; effect is often used
-    to display Latin-based strings such as components of a date or letters of
-    an initialism, always in a horizontal writing mode regardless of the
-    writing mode of the line:</p>
+   <p>東アジアのドキュメントでは、&lsquo;<a href="#text-combine-horizontal0"><code class=css>text-combine-horizontal</code></a>&rsquo; の効果が日付の構成文字や頭文字語のようなLatin-baseの文字列表示によく使われており、行の組方向に関係なく横組となる:
 
    <div class=figure>
     <p><img alt="Diagram of tate-chu-yoko, showing the two digits of a date
      set halfwidth side-by-side in a vertical column of text" class=example
      src=tate-chu-yoko.png>
 
-    <p class=caption>Example of horizontal-in-vertical <i
-     lang=ja>tate-chu-yoko</i></p>
+    <p class=caption>horizontal-in-vertical が使われる<i
+     lang=ja>縦中横</i>の例</p>
    </div>
 
-   <p>The figure is the result of the rules</p>
+   <p>この図は以下のCSSの結果である。</p>
 
    <pre>
 <!-- -->date { text-combine-horizontal: digits 2; }
     </pre>
 
-   <p>and the following markup:</p>
+   <p>マークアップは次のようになる:</p>
 
    <pre>
 <!-- -->&lt;date&gt;&#x5E73;&#x6210;20&#x5E74;4&#x6708;16&#x65E5;&#x306B;&lt;/date&gt;
     </pre>
 
-   <p>In Japanese, this effect is known as <i lang=ja>tate-chu-yoko</i>.
+   <p>日本では、この効果は <i lang=ja>縦中横</i>として知られる。
   </div>
 
   <div class=example>
-   <p>The following example shows that applying &lsquo;<code
-    class=css>text-combine-horizontal: digits 2</code>&rsquo; to an entire
-    document, rather than to a segment with a known type of numeric content,
-    can have unintended consequences:
+   <p>以下の例は &lsquo;<code class=css>text-combine-horizontal: digits 2</code>&rsquo; を、数字だと判明しているコンテンツの一部ではなく、ドキュメント全体に適用したもので、意図しない結果を招く可能性がある。
 
    <pre>&lt;p>あれは10,000円ですよ！&lt;/p></pre>
 
@@ -2179,7 +2150,7 @@ english17 18WERBEH
      tate-chu-yoko while the rest of the number is rendered sideways."
      class=example src=bad-tate-chu-yoko.png>
 
-    <p class=caption>Example of mis-applied <i lang=ja>tate-chu-yoko</i></p>
+    <p class=caption><i lang=ja>縦中横</i>の適用失敗例</p>
    </div>
   </div>
 
