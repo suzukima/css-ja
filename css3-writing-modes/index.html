@@ -277,15 +277,15 @@
       class=property>text-combine-horizontal</code>&rsquo; プロパティ</a>
 
      <li><a href="#text-combine-mode"><span class=secno>9.2. </span>
-      Horizonal-in-Vertical Glyph Scaling: the &lsquo;<code
-      class=property>text-combine-mode</code>&rsquo; property</a>
+      縦組における水平方向グリフのスケーリング: &lsquo;<code
+      class=property>text-combine-mode</code>&rsquo; プロパティ</a>
     </ul>
 
-   <li class=no-num><a href="#changes">Changes</a>
+   <li class=no-num><a href="#changes">変更点</a>
     <ul class=toc>
-     <li class=no-num><a href="#recent-changes"> Changes from the May 2011
+     <li class=no-num><a href="#recent-changes"> May 2011
       CSS Writing Modes Module Level 3 <abbr title="Working
-      Draft">WD</abbr></a>
+      Draft">WD</abbr>からの変更点</a>
     </ul>
 
    <li><a href="#conformance"><span class=secno>10. </span> Conformance</a>
@@ -2154,153 +2154,110 @@ english17 18WERBEH
   </div>
 
   <h3 id=text-combine-mode><span class=secno>9.2. </span>
-   Horizonal-in-Vertical Glyph Scaling: the &lsquo;<a
+   縦組における水平方向グリフのスケーリング: &lsquo;<a
    href="#text-combine-mode0"><code
-   class=property>text-combine-mode</code></a>&rsquo; property</h3>
+   class=property>text-combine-mode</code></a>&rsquo; プロパティ</h3>
 
   <table class=propdef>
    <tbody>
     <tr>
-     <th>Name:
+     <th>名称:
 
      <td><dfn id=text-combine-mode0>text-combine-mode</dfn>
 
     <tr>
-     <th>Value:
+     <th>値:
 
      <td>auto | compress | [ no-compress || use-glyphs ]
 
     <tr>
-     <th>Initial:
+     <th>初期値:
 
      <td>auto
 
     <tr>
-     <th>Applies to:
+     <th>適用範囲:
 
-     <td>non-replaced inline elements
-
-    <tr>
-     <th>Inherited:
-
-     <td>yes
+     <td>置換不能なインライン要素
 
     <tr>
-     <th>Percentages:
+     <th>継承:
+
+     <td>される
+
+    <tr>
+     <th>パーセンテージ:
 
      <td>N/A
 
     <tr>
-     <th>Media:
+     <th>メディア:
 
      <td>visual
 
     <tr>
-     <th>Computed&#160;value:
+     <th>算出値
 
-     <td>specified value
+     <td>指定した値
   </table>
 
-  <p>This property controls how multiple characters are combined into the
-   space of a single character when specified to do so via &lsquo;<a
-   href="#text-combine-horizontal0"><code
-   class=property>text-combine-horizontal</code></a>&rsquo;. Values have the
-   following meanings:
+  <p>このプロパティは、&lsquo;<a href="#text-combine-horizontal0"><code class=property>text-combine-horizontal</code></a>&rsquo; を用いて1文字分のスペースへの文字合成が指定されたときに、複数文字がどのように合成されるのかをコントロールする。値の意味を以下に示す:
 
   <dl>
    <dt><dfn id=auto title="text-combine-mode:auto">auto</dfn>
 
-   <dd>If the contents are wider than 1em, the UA must attempt to fit the
-    contents within 1em, but may use any method to do so.
+   <dd>コンテンツが1emより拾い場合、ユーザエージェントはコンテンツを1emにフィットさせようとしなければならないが、そうする際に任意の方法を使用することができる。
 
    <dt><dfn id=compress title="text-combine-mode:compress">compress</dfn>
 
-   <dd>Compress the composition (horizontally) as a whole until it fits
-    within 1em. Do not substitute alternate-width glyphs.
+   <dd>1emに収まるまで水平に圧縮する。代わりの幅のグリフで代替しない。
 
    <dt><dfn id=use-glyphs
     title="text-combine-mode:use-glyphs">use-glyphs</dfn>
 
-   <dd>Attempt to substitute narrower glyphs as necessary to make the
-    composition fit within 1em:
+   <dd>1em内に合成文字を収めるために、必要に応じて狭いグリフで置換しようとする:
     <ul>
-     <li>a two-character composition uses 1/2-em or proportional glyphs
+     <li>2文字の合成文字では1/2emのグリフかプロポーショナルなグリフを使用する
 
-     <li>a three-character composition uses 1/3-em glyphs (if the font
-      supports this feature, else fall back to 1/2-em or proportional glyphs)
-      
+     <li>3文字の合成文字は1/3emのグリフを使用する(もしフォントがこの機能をサポートしていればの場合。そうでなければ1/2emのグリフかプロポーショナルなグリフへフォールバックする)
 
-     <li>etc.
+     <li>など
     </ul>
 
-    <p>Since even fonts that have fractional-width glyphs available do not
-     have such glyphs for all characters, the UA must ensure the expected
-     advance width for &lsquo;<code class=css>use-glyphs</code>&rsquo; by
-     either compressing or padding (equally on both sides) each glyph
-     individually if it does not match the required advance width. (This step
-     does not apply if &lsquo;<code class=css>no-compress</code>&rsquo; is
-     specified.)
+    <p>利用可能な分数幅のグリフを持つフォントでも、全ての文字に対して分数幅グリフを持っているわけではないので、必要とされる送り幅と一致しない場合、ユーザエージェントは個別に各グリフを圧縮するかパディング(両側均等に)して、&lsquo;<code class=css>use-glyphs</code>&rsquo; で想定される送り幅を確保しなければならない。(このステップは &lsquo;<code class=css>no-compress</code>&rsquo; が指定されている場合には適用されない)
 
    <dt><dfn id=no-compress
     title="text-combine-mode:no-compress">no-compress</dfn>
 
-   <dd>Do not compress the composition or perform any glyph substitution in
-    order to make the composition fit within 1em. When combined with
-    &lsquo;<code class=css>use-glyphs</code>&rsquo;, however, this indicates
-    to perform glyph substitution if possible per &lsquo;<code
-    class=css>use-glyphs</code>&rsquo; but not to compress the glyphs if they
-    do not fit the size requirements. This value may cause the glyphs to
-    overflow the line significantly.
+   <dd>合成文字を1emに収めるために、合成文字の圧縮やグリフの置換を実施しない。しかし、&lsquo;<code class=css>use-glyphs</code>&rsquo; で合成するときは、サイズ要求に合わないと &lsquo;<code class=css>use-glyphs</code>&rsquo; ごとにグリフを置換するが、グリフの圧縮は行わない。この値では、グリフが大幅に行をオーバーフローする可能性がある。
   </dl>
 
-  <h2 class=no-num id=changes>Changes</h2>
+  <h2 class=no-num id=changes>変更点</h2>
 
-  <h3 class=no-num id=recent-changes> Changes from the <a
+  <h3 class=no-num id=recent-changes> <a
    href="http://www.w3.org/TR/2011/WD-css3-writing-modes-20110531/">May 2011
-   CSS Writing Modes Module Level 3 <abbr title="Working Draft">WD</abbr></a></h3>
+   CSS Writing Modes Module Level 3 <abbr title="Working Draft">WD</abbr></a> からの変更点</h3>
 
-  <p>Major changes include:
+  <p>主な変更点は次のとおり:
 
   <ul>
-   <li>Redefined which side of a bidi-broken box's border is drawn.
+   <li>壊れたバイダイボックスのボーダーがどちら側に描画されるか再定義
 
-   <li>Altered the allowed combinations of &lsquo;<a
-    href="#unicode-bidi0"><code class=property>unicode-bidi</code></a>&rsquo;
-    values and defined &lsquo;<a href="#plaintext"><code
-    class=css>plaintext</code></a>&rsquo; to use heuristics for inline
-    elements as well.
+   <li> &lsquo;<a href="#unicode-bidi0"><code class=property>unicode-bidi</code></a>&rsquo; で許容される値の組み合わせを変更し、同様にインライン要素で発見的手法を使えるように &lsquo;<a href="#plaintext"><code class=css>plaintext</code></a>&rsquo; を定義
 
-   <li>Renamed &lsquo;<code class=css>vertical-right</code>&rsquo; value of
-    &lsquo;<a href="#text-orientation0"><code
-    class=property>text-orientation</code></a>&rsquo; to &lsquo;<a
-    href="#upright-right"><code class=css>upright-right</code></a>&rsquo;.
+   <li>&lsquo;<a href="#text-orientation0"><code class=property>text-orientation</code></a>&rsquo; の値であった &lsquo;<code class=css>vertical-right</code>&rsquo; の名称を &lsquo;<a href="#upright-right"><code class=css>upright-right</code></a>&rsquo; へ変更
 
-   <li>Renamed &lsquo;<code class=css>rotate</code>&rsquo; values of
-    &lsquo;<a href="#text-orientation0"><code
-    class=property>text-orientation</code></a>&rsquo; to &lsquo;<a
-    href="#sideways"><code class=property>sideways</code></a>&rsquo;.
+   <li>&lsquo;<a href="#text-orientation0"><code class=property>text-orientation</code></a>&rsquo; の値であった &lsquo;<code class=css>rotate</code>&rsquo; の名称を &lsquo;<a href="#sideways"><code class=property>sideways</code></a>&rsquo; へ変更
 
-   <li>Renamed &lsquo;<code class=css>auto</code>&rsquo; value of &lsquo;<a
-    href="#text-orientation0"><code
-    class=property>text-orientation</code></a>&rsquo; to &lsquo;<a
-    href="#use-glyph-orientation"><code
-    class=css>use-glyph-orientation</code></a>&rsquo; and marked it at-risk.
+   <li>&lsquo;<a href="#text-orientation0"><code class=property>text-orientation</code></a>&rsquo; の値であった &lsquo;<code class=css>auto</code>&rsquo; の名称を &lsquo;<a href="#use-glyph-orientation"><code class=css>use-glyph-orientation</code></a>&rsquo; へ変更し、at-risk(仕様から落ちる可能性がある)とした
 
-   <li>Tweaked rules for vertical typesetting to remove references to
-    <code>vrt2</code> feature, fix various errors and omissions in <a
-    href="#vertical-typesetting-details">synthesis rules</a>, etc.
+   <li><code>vrt2</code> 機能への参照を削除するために縦組のためのルールを微調整し、<a href="#vertical-typesetting-details">synthesis rules</a> 等の様々な記述の誤りと記載漏れを修正
 
-   <li>Renamed &lsquo;<code class=property>text-combine</code>&rsquo;
-    property to &lsquo;<a href="#text-combine-horizontal0"><code
-    class=property>text-combine-horizontal</code></a>&rsquo; and added
-    ability to auto-combine by character classes.
+   <li>&lsquo;<code class=property>text-combine</code>&rsquo; プロパティの名称を &lsquo;<a href="#text-combine-horizontal0"><code class=property>text-combine-horizontal</code></a>&rsquo; へ変更し、character class にて auto-combine 機能を追加
 
-   <li>Added &lsquo;<a href="#text-combine-mode0"><code
-    class=property>text-combine-mode</code></a>&rsquo; property to control
-    scaling method used to compose horizontal-in-vertical text.
+   <li>縦組での横方向テキスト合成にて使用する、スケーリング手段をコントロールする &lsquo;<a href="#text-combine-mode0"><code class=property>text-combine-mode</code></a>&rsquo; プロパティを追加
 
-   <li>Added appendix on <a href="#character-properties">Characters and
-    Properties</a>.
+   <li>付録に <a href="#character-properties">文字とプロパティ</a>を追加
   </ul>
 
   <h2 id=conformance><span class=secno>10. </span> Conformance</h2>
