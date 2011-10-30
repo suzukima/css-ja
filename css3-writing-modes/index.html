@@ -2303,19 +2303,10 @@ english17 18WERBEH
   <p>オーサリングツールは、一般的なCSS文法および本モジュールにおける機能の個々の文法に従って構文的に正しくスタイルシートを書き、本モジュールで説明されているスタイルシートの他全ての適合性要件を満たしている場合、CSS Writing Modes Level 3に準拠している。
 
 
-  <h3 id=partial><span class=secno>10.3. </span> Partial Implementations</h3>
+  <h3 id=partial><span class=secno>10.3. </span> 部分的な実装</h3>
 
-  <p>So that authors can exploit the forward-compatible parsing rules to
-   assign fallback values, CSS renderers <strong>must</strong> treat as
-   invalid (and <a
-   href="http://www.w3.org/TR/CSS21/conform.html#ignore">ignore as
-   appropriate</a>) any at-rules, properties, property values, keywords, and
-   other syntactic constructs for which they have no usable level of support.
-   In particular, user agents <strong>must not</strong> selectively ignore
-   unsupported component values and honor supported values in a single
-   multi-value property declaration: if any value is considered invalid (as
-   unsupported values must be), CSS requires that the entire declaration be
-   ignored.
+  <p>ドキュメント制作者がフォールバックの値としてforward-compatible parsing rules(上位互換の解析規則)を活用出来るように、CSSレンダラは規則、プロパティ、プロパティの値、キーワード、その他使用可能なサポートのレベルがない構文要素を、invalid(そして<a href="http://www.w3.org/TR/CSS21/conform.html#ignore">必要に応じて無視</a>)として扱う<strong>必要がある</strong>。特に、ユーザーエージェントは1つの複数値プロパティ宣言において、サポートされていないコンポーネントの値と、尊重されサポートされている値を選択的に無視しては<strong>ならない</strong>。もし任意の値がinvalidと見なされている(サポートされていない値はそうでなければならない)場合、CSSは宣言全体が無視されている必要がある。
+
 
   <h3 id=experimental><span class=secno>10.4. </span> Experimental
    Implementations</h3>
