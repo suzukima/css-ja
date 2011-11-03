@@ -288,22 +288,18 @@
       Draft">WD</abbr>からの変更点</a>
     </ul>
 
-   <li><a href="#conformance"><span class=secno>10. </span> Conformance</a>
+   <li><a href="#conformance"><span class=secno>10. </span> 適合性</a>
     <ul class=toc>
-     <li><a href="#conventions"><span class=secno>10.1. </span> Document
-      Conventions</a>
+     <li><a href="#conventions"><span class=secno>10.1. </span> 文書規約</a>
 
      <li><a href="#conformance-classes"><span class=secno>10.2. </span>
-      Conformance Classes</a>
+      適合クラス</a>
 
-     <li><a href="#partial"><span class=secno>10.3. </span> Partial
-      Implementations</a>
+     <li><a href="#partial"><span class=secno>10.3. </span> 部分的実装</a>
 
-     <li><a href="#experimental"><span class=secno>10.4. </span> Experimental
-      Implementations</a>
+     <li><a href="#experimental"><span class=secno>10.4. </span> 実験的実装</a>
 
-     <li><a href="#testing"><span class=secno>10.5. </span>Non-Experimental
-      Implementations</a>
+     <li><a href="#testing"><span class=secno>10.5. </span> 非実験的実装</a>
 
      <li><a href="#cr-exit-criteria"><span class=secno>10.6. </span> CR Exit
       Criteria</a>
@@ -2303,7 +2299,7 @@ english17 18WERBEH
   <p>オーサリングツールは、一般的なCSS文法および本モジュールにおける機能の個々の文法に従って構文的に正しくスタイルシートを書き、本モジュールで説明されているスタイルシートの他全ての適合性要件を満たしている場合、CSS Writing Modes Level 3に準拠している。
 
 
-  <h3 id=partial><span class=secno>10.3. </span> 部分的な実装</h3>
+  <h3 id=partial><span class=secno>10.3. </span> 部分的実装</h3>
 
   <p>ドキュメント制作者がフォールバックの値としてforward-compatible parsing rules(上位互換の解析規則)を活用出来るように、CSSレンダラは規則、プロパティ、プロパティの値、キーワード、その他使用可能なサポートのレベルがない構文要素を、invalid(そして<a href="http://www.w3.org/TR/CSS21/conform.html#ignore">必要に応じて無視</a>)として扱う<strong>必要がある</strong>。特に、ユーザーエージェントは1つの複数値プロパティ宣言において、サポートされていないコンポーネントの値と、尊重されサポートされている値を選択的に無視しては<strong>ならない</strong>。もし任意の値がinvalidと見なされている(サポートされていない値はそうでなければならない)場合、CSSは宣言全体が無視されている必要がある。
 
