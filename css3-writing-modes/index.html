@@ -2308,19 +2308,12 @@ english17 18WERBEH
   <p>ドキュメント制作者がフォールバックの値としてforward-compatible parsing rules(上位互換の解析規則)を活用出来るように、CSSレンダラは規則、プロパティ、プロパティの値、キーワード、その他使用可能なサポートのレベルがない構文要素を、invalid(そして<a href="http://www.w3.org/TR/CSS21/conform.html#ignore">必要に応じて無視</a>)として扱う<strong>必要がある</strong>。特に、ユーザーエージェントは1つの複数値プロパティ宣言において、サポートされていないコンポーネントの値と、尊重されサポートされている値を選択的に無視しては<strong>ならない</strong>。もし任意の値がinvalidと見なされている(サポートされていない値はそうでなければならない)場合、CSSは宣言全体が無視されている必要がある。
 
 
-  <h3 id=experimental><span class=secno>10.4. </span> Experimental
-   Implementations</h3>
+  <h3 id=experimental><span class=secno>10.4. </span> 実験的実装</h3>
 
-  <p>To avoid clashes with future CSS features, the CSS2.1 specification
-   reserves a <a
-   href="http://www.w3.org/TR/CSS21/syndata.html#vendor-keywords">prefixed
-   syntax</a> for proprietary and experimental extensions to CSS.
+  <p>将来のCSS機能との衝突を避けるために、CSS2.1仕様では、CSSの独自かつ実験的な拡張用に <a href="http://www.w3.org/TR/CSS21/syndata.html#vendor-keywords">prefixed syntax</a> を用意している。
 
-  <p>Prior to a specification reaching the Candidate Recommendation stage in
-   the W3C process, all implementations of a CSS feature are considered
-   experimental. The CSS Working Group recommends that implementations use a
-   vendor-prefixed syntax for such features, including those in W3C Working
-   Drafts. This avoids incompatibilities with future changes in the draft.
+  <p>W3CプロセスのCandidate Recommendation(CR、勧告候補)へ仕様が到達するまでは、CSS機能の全実装は実験的なものとみなされる。CSS Working Group は、実装がそのような機能(W3C Working Draft のものを含む)向けにベンダプレフィックスの構文を使用するよう推奨している。これでドラフトの将来的な仕様変更による非互換性を回避することができる。
+
 
   <h3 id=testing><span class=secno>10.5. </span>Non-Experimental
    Implementations</h3>
