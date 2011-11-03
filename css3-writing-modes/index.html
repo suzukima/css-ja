@@ -2321,53 +2321,35 @@ english17 18WERBEH
    href="http://www.w3.org/Style/CSS/Test/">http://www.w3.org/Style/CSS/Test/</a> ) にある。質問は直接  <a href="http://lists.w3.org/Archives/Public/public-css-testsuite">public-css-testsuite@w3.org</a> メーリングリストまで。
 
 
-  <h3 id=cr-exit-criteria><span class=secno>10.6. </span> CR Exit Criteria</h3>
+  <h3 id=cr-exit-criteria><span class=secno>10.6. </span> CR より先へ進むための基準</h3>
 
-  <p> For this specification to be advanced to Proposed Recommendation, there
-   must be at least two independent, interoperable implementations of each
-   feature. Each feature may be implemented by a different set of products,
-   there is no requirement that all features be implemented by a single
-   product. For the purposes of this criterion, we define the following
-   terms:
+  <p>この仕様を Proposed Recommendation(PR、勧告案)にするためには、各機能で少なくとも2つの独立した、相互運用可能な実装がなくてはならない。各機能は、プロダクトの別のセットによって実装されてもよく、すべての機能が1つの製品で実装される必要はない。この基準のために、我々は以下の用語を定義する:
 
   <dl>
    <dt>independent
 
-   <dd>each implementation must be developed by a different party and cannot
-    share, reuse, or derive from code used by another qualifying
-    implementation. Sections of code that have no bearing on the
-    implementation of this specification are exempt from this requirement.
+   <dd>各実装は異なる団体によって開発されている必要があり、共有、再利用、また別の条件を満たす実装で使用されているコードからの派生はできない。コードの、この仕様の実装に何の関係もない部分は、この要件から免除される。
+
 
    <dt>interoperable
 
-   <dd>passing the respective test case(s) in the official CSS test suite,
-    or, if the implementation is not a Web browser, an equivalent test. Every
-    relevant test in the test suite should have an equivalent test created if
-    such a user agent (UA) is to be used to claim interoperability. In
-    addition if such a UA is to be used to claim interoperability, then there
-    must one or more additional UAs which can also pass those equivalent
-    tests in the same way for the purpose of interoperability. The equivalent
-    tests must be made publicly available for the purposes of peer review.
+   <dd>公式のCSSテストスイート(実装がWebブラウザ出ない場合は、同等のテスト)において、個々のテストケースをパスすること。該当するユーザーエージェント(UA)が相互運用性を主張するために使用される場合、テストスイート内の関連する全てのテストには、同等のテストが作られていなければならない。加えて、そのようなユーザーエージェント相互運用性を主張するために使用される場合、相互運用性のために、同じ方法で同等のテストをパスするユーザーエージェントが1つ以上追加で必要となる。同等のテストは、ペアレビューできるように公開して利用できるようにする必要がある。
 
    <dt>implementation
 
-   <dd>a user agent which:
+   <dd>ユーザーエージェントは
     <ol class=inline>
-     <li>implements the specification.
+     <li>仕様を実装している。
 
-     <li>is available to the general public. The implementation may be a
-      shipping product or other publicly available version (i.e., beta
-      version, preview release, or “nightly build”). Non-shipping product
-      releases must have implemented the feature(s) for a period of at least
-      one month in order to demonstrate stability.
+     <li>一般に公開されている。実装は出荷する製品、もしくは公開され利用可能なバージョンである(例えば、ベータバージョンやプレビュー版、ナイトリービルドなど)。非出荷製品のリリースは、安定性を実証するため少なくとの1ヶ月の期間が機能実装に必要となる。
 
-     <li>is not experimental (i.e., a version specifically designed to pass
-      the test suite and is not intended for normal usage going forward).
+     <li>実験的(例えば、現バージョンがテストスイートをパスすることに特化し、将来的にも通常利用を目的として開発されていない)ではない。
+
     </ol>
   </dl>
 
-  <p>The specification will remain Candidate Recommendation for at least six
-   months.
+  <p>仕様は、少なくとも6ヶ月の間はCandidate Recommendationのままである。
+
 
   <h2 class=no-num id=acknowledgements> Acknowledgements</h2>
 
