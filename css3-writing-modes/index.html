@@ -1330,7 +1330,7 @@ english17 18WERBEH
 
   <p class=issue>フォントのデータに依存しない全ユニコード文字の向きに関する定義の明快な標準定義が必要である。
 
-   <p>横組のみのドキュメントのルート要素に、 &lsquo;<a href="#sideways"><code class=css>sideways</code></a>&rsquo; が設定された例を以下に示す。著者はテキストが &lsquo;<a href="#vertical-rl"><code class=css>vertical-rl</code></a>&rsquo; か &lsquo;<a href="#vertical-lr"><code class=css>vertical-lr</code></a>&rsquo; かを気にすることなく、ドキュメントの &lsquo;<a href="#writing-mode1"><code class=property>writing-mode</code></a>&rsquo; を適切に設定することができる。
+   <p>横組のみのドキュメントのルート要素に、 &lsquo;<a href="#sideways"><code class=css>sideways</code></a>&rsquo; が設定された例を以下に示す。制作者はテキストが &lsquo;<a href="#vertical-rl"><code class=css>vertical-rl</code></a>&rsquo; か &lsquo;<a href="#vertical-lr"><code class=css>vertical-lr</code></a>&rsquo; かを気にすることなく、ドキュメントの &lsquo;<a href="#writing-mode1"><code class=property>writing-mode</code></a>&rsquo; を適切に設定することができる。
 
    <pre>
       :root { text-orientation: sideways; }
@@ -2388,19 +2388,14 @@ english17 18WERBEH
    <li>基底である Space Separator(空白文字) (Zs) から成る書記素クラスタは、Modifier Symbols(合わせ文字) (Sk)とみなされる。これらは基底と同じ East Asian Width プロパティを持っているとみなされる。しかし、シーケンスの最初の結合文字から他のプロパティを取得する。
   </ul>
 
-  <h2 class=no-num id=script-orientations>Appendix B: Bi-orientational
-   Transformations</h2>
+  <h2 class=no-num id=script-orientations>Appendix B: 双方向変換</h2>
 
-  <p><em>This section is normative.</em>
+  <p><em>このセクションは規範である。</em>
 
-  <p>This appendix gives the orientational properties of scripts in Unicode
-   6.0 <a href="#UNICODE" rel=biblioentry>[UNICODE]<!--{{!UNICODE}}--></a>.
-   Any script not listed explicitly is assumed to be <i>horizontal-only</i>.
-   The script classification of Unicode characters is given by <a
-   href="#UAX24" rel=biblioentry>[UAX24]<!--{{!UAX24}}--></a>.
+  <p>この付録では、Unicode 6.0 <a href="#UNICODE" rel=biblioentry>[UNICODE]<!--{{!UNICODE}}--></a> におけるスクリプトの方向プロパティについて書いている。明示的に掲載されていないスクリプトは、水平方向のみであるとみなされる。Unicode 文字のスクリプトの分類は、<a href="#UAX24" rel=biblioentry>[UAX24]<!--{{!UAX24}}--></a> で与えられる。
 
   <table class=data>
-   <caption>Vertical Scripts and their Bi-orientational Transform</caption>
+   <caption>垂直方向のスクリプトと双方向変換</caption>
 
    <thead>
     <tr>
@@ -2475,23 +2470,9 @@ english17 18WERBEH
      <td>translate
   </table>
 
-  <p><strong>Exceptions:</strong> For the purposes of this specification, all
-   fullwidth (F) and wide (W) characters are treated as belonging to a
-   vertical script with a translate bi-orientational transform. All halfwidth
-   (H) characters are treated as belonging to a vertical script with a rotate
-   bi-orientational transform. <a href="#UAX11"
-   rel=biblioentry>[UAX11]<!--{{!UAX11}}--></a> Neutral (N), narrow (Na) and
-   ambiguous (A) Letters (L*) belonging to the Common script are treated as
-   belonging to a horizontal-only script.
+  <p><strong>例外:</strong>この仕様のために、全ての fullwidth (F) と wide (W) の文字は、双方向変換によって translate された垂直方向のスクリプトに属するものとして扱われる。全ての halfwidth (H) 文字は双方向変換で rotate された垂直スクリプトに属する者として扱われる。一般的なスクリプトに属する <a href="#UAX11" rel=biblioentry>[UAX11]<!--{{!UAX11}}--></a> の Neutral (N), narrow (Na), ambiguous (A) Letters (L*) は、水平方向のみのスクリプトに属するものとして扱われる。
 
-  <p class=note>Ogham is also a rotating bi-orientational script, but because
-   it is a bottom-to-top script, for the purposes of this specification it is
-   treated as left-to-right horizontal. A future version of CSS may define
-   proper handling of bottom-to-top scripts. Authors can work around this
-   lack of support with the &lsquo;<a href="#sideways-left"><code
-   class=css>sideways-left</code></a>&rsquo; value of &lsquo;<a
-   href="#text-orientation0"><code
-   class=property>text-orientation</code></a>&rsquo;.
+  <p class=note>オガム文字もまた回転する双方向スクリプトである。しかし、下から上へ進むスクリプトであるため、本仕様の目的のために、左から右への横書きとして扱われる。CSSの将来バージョンでは、下から上へ進むスクリプトを適切な取り扱いが定義される予定である。制作者は &lsquo;<a href="#text-orientation0"><code class=property>text-orientation</code></a>&rsquo; の値である &lsquo;<a href="#sideways-left"><code class=css>sideways-left</code></a>&rsquo; のサポート欠如を回避することができる。
 
   <h2 class=no-num id=vertical-typesetting-details>Appendix C: Vertical
    Typesetting Synthesis</h2>
