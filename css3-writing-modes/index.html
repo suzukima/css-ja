@@ -2474,49 +2474,26 @@ english17 18WERBEH
 
   <p class=note>オガム文字もまた回転する双方向スクリプトである。しかし、下から上へ進むスクリプトであるため、本仕様の目的のために、左から右への横書きとして扱われる。CSSの将来バージョンでは、下から上へ進むスクリプトを適切な取り扱いが定義される予定である。制作者は &lsquo;<a href="#text-orientation0"><code class=property>text-orientation</code></a>&rsquo; の値である &lsquo;<a href="#sideways-left"><code class=css>sideways-left</code></a>&rsquo; のサポート欠如を回避することができる。
 
-  <h2 class=no-num id=vertical-typesetting-details>Appendix C: Vertical
-   Typesetting Synthesis</h2>
+  <h2 class=no-num id=vertical-typesetting-details>Appendix C: 縦組での合成</h2>
 
-  <p>This section defines an algorithm for automatic typesetting of vertical
-   text. For readability, the term <a href="#character"><i>character</i></a>
-   is used in place of <em>extended grapheme cluster</em> in this section.
-   See <a href="#character-properties">Characters and Properties</a> for
-   further details.
+  <p>このセクションでは垂直方向テキストの自動組版のためのアルゴリズムを定義している。本セクションでは読みやすさのため、<em>extended grapheme cluster</em> を <a href="#character"><i>character</i></a> に置き換えて使用している。詳細は <a href="#character-properties">Characters and Properties</a> を参照のこと。
 
-  <p class=issue>This section needs careful review. Please send feedback and
-   suggestions for improvement, particularly for the <a
-   href="http://unicode.org/cldr/utility/list-unicodeset.jsp?a=\p{Block%3DGeneral+Punctuation}%26[%3AGeneral_category%3DPo%3A]%0D%0A&amp;g=">U+2016&ndash;U+205F</a>
-   range.
+  <p class=issue>このセクションは慎重なレビューが必要である。特に <a href="http://unicode.org/cldr/utility/list-unicodeset.jsp?a=\p{Block%3DGeneral+Punctuation}%26[%3AGeneral_category%3DPo%3A]%0D%0A&amp;g=">U+2016&ndash;U+205F</a> の範囲について、改善のためのフィードバックや提案を送ってほしい。
 
-  <p>When &lsquo;<a href="#text-orientation0"><code
-   class=property>text-orientation</code></a>&rsquo; is either &lsquo;<a
-   href="#upright-right"><code class=css>upright-right</code></a>&rsquo; or
-   &lsquo;<a href="#upright"><code class=css>upright</code></a>&rsquo;, the
-   following settings are recommended:
+  <p>&lsquo;<a href="#text-orientation0"><code class=property>text-orientation</code></a>&rsquo; が &lsquo;<a href="#upright-right"><code class=css>upright-right</code></a>&rsquo; か &lsquo;<a href="#upright"><code class=css>upright</code></a>&rsquo; のどちらか一方の場合、以下の設定が推奨される:
 
   <ol>
-   <li>Set any spaces (Zs), connectors (Pc), and bracketing punctuation (Ps,
-    Pe, Pi, Pf) either upright using vertical font settings if available or
-    sideways if they are not.
-    <p class=note>Thus a THREE-PER-EM SPACE (U+2004) can be expected to
-     provide a 1/3-em advance in the inline dimension, and brackets can be
-     expected to encase their contents.</p>
+   <li>spaces(空白) (Zs), connectors(連結用句読記号) (Pc), bracketing punctuation(句読記号、開きと閉じ) (Ps, Pe, Pi, Pf) は、vertical font setting が可能であればそれを使って直立に設定する。vertical font setting が不可能なら設定しない。
+    <p class=note>よって、1/3スペース (U+2004) は、インライン方向に1/3文字文前進し、括弧はコンテンツを包含することが期待できる。</p>
+    
+   <li>East Asian fullwidth(東アジアの文字幅の文字) (F) と wide(ワイド文字) (W) は直立に設定する(もし可能ならvertical font setting を使う)。
 
-   <li>Set East Asian fullwidth (F) and wide (W) characters upright (using
-    vertical font settings if available).
-
-   <li>Set any dashes (Pd) either upright using vertical font settings if
-    available or sideways if they are not.
+   <li>dashes(ダッシュ) (Pd) は、vertical font settingが可能なら直立に設定する。不可能なら設定しない。
     <!-- fullwidth hyphen-minus need to be upright -->
 
-   <li>Set East Asian halfwidth (H) characters sideways (or upright with
-    vertical font settings if possible).
+   <li>East Asian halfwidth(東アジアの半分の文字幅の文字) (H) は横倒しにする(もしくは、可能ならvertical font setting で直立にする)。
 
-   <li>Set any other characters that are assigned to a script (i.e. do not
-    belong to the Common, Inherited, or Unknown scripts) as required by
-    &lsquo;<a href="#text-orientation0"><code
-    class=property>text-orientation</code></a>&rsquo; and <a
-    href="#script-orientations">Appendix B</a>.
+   <li>(例えば、一般的で継承されているものに属していないもの、または未知のスクリプト)に割り当てられているその他の文字を、&lsquo;<a href="#text-orientation0"><code class=property>text-orientation</code></a>&rsquo; と <a href="#script-orientations">Appendix B</a> の要求どおりに設定する。
   </ol>
 
   <p>When &lsquo;<a href="#text-orientation0"><code
