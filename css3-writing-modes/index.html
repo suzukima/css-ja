@@ -2350,72 +2350,42 @@ english17 18WERBEH
   <p>仕様は、少なくとも6ヶ月の間はCandidate Recommendationのままである。
 
 
-  <h2 class=no-num id=acknowledgements> Acknowledgements</h2>
+  <h2 class=no-num id=acknowledgements> 謝辞</h2>
 
   <p>John Daggett, Martin Heijdra, Yasuo Kida, Tatsuo Kobayashi, Toshi
    Kobayashi, Ken Lunde, Nat McCully, Paul Nelson, Kenzou Onozawa, Michel
    Suignard, Taro Yamamoto, Steve Zilles
 
-  <h2 class=no-num id=character-properties>Appendix A. Characters and
-   Properties</h2>
+  <h2 class=no-num id=character-properties>付録 A. 文字とプロパティ</h2>
 
-  <p>Unicode defines three codepoint-level properties that are referenced in
-   CSS Writing Modes:
+  <p>Unicode は、CSS Writing Modesで参照される3つの codepoint-level プロパティを定義している:
 
   <dl>
    <dt><a href="http://www.unicode.org/reports/tr11/#Definitions">East Asian
     width</a>
 
-   <dd>Defined in <a href="#UAX11"
-    rel=biblioentry>[UAX11]<!--{{!UAX11}}--></a> and given as the
-    East_Asian_Width property in the Unicode Character Database <a
-    href="#UAX44" rel=biblioentry>[UAX44]<!--{{!UAX44}}--></a>.
+   <dd><a href="#UAX11" rel=biblioentry>[UAX11]<!--{{!UAX11}}--></a> で定義されており、Unicode Character Database <a href="#UAX44" rel=biblioentry>[UAX44]<!--{{!UAX44}}--></a> の East_Asian_Width プロパティとして与えられる。
 
    <dt><a
     href="http://www.unicode.org/reports/tr44/#General_Category_Values">General
     Category</a>
 
-   <dd>Defined in <a href="#UAX44"
-    rel=biblioentry>[UAX44]<!--{{!UAX44}}--></a> and given as the
-    General_Category property in the Unicode Character Database <a
-    href="#UAX44" rel=biblioentry>[UAX44]<!--{{!UAX44}}--></a>.
+   <dd><a href="#UAX44" rel=biblioentry>[UAX44]<!--{{!UAX44}}--></a> で定義されており、Unicode Character Database <a href="#UAX44" rel=biblioentry>[UAX44]<!--{{!UAX44}}--></a> の General_Category プロパティとして与えられる。
 
    <dt><a href="http://www.unicode.org/reports/tr24/#Values">Script
     property</a>
 
-   <dd>Defined in <a href="#UAX24"
-    rel=biblioentry>[UAX24]<!--{{!UAX24}}--></a> and given as the Script
-    property in the Unicode Character Database <a href="#UAX44"
-    rel=biblioentry>[UAX44]<!--{{!UAX44}}--></a>. (UAs should include any
-    ScriptExtensions.txt assignments in this mapping.)
+   <dd><a href="#UAX24" rel=biblioentry>[UAX24]<!--{{!UAX24}}--></a> で定義されており、Unicode Character Database <a href="#UAX44" rel=biblioentry>[UAX44]<!--{{!UAX44}}--></a> の Script プロパティとして与えられる。(ユーザーエージェントは本マッピングにてどんな ScriptExtension.txt の割り当ても含むべきである。)
   </dl>
 
-  <p id=grapheme-cluster>In several sections (as noted), the term <dfn
-   id=character>character</dfn> is defined as <em>extended grapheme
-   cluster</em> per <a href="#UAX29"
-   rel=biblioentry>[UAX29]<!--{{!UAX29}}--></a>. It is roughly equivalent to
-   what a language user considers to be a character or a basic unit of the
-   script (which might not be a single Unicode codepoint). The UA may further
-   tailor this definition as allowed by Unicode.
+  <p id=grapheme-cluster>いくつかのセクションでは(前述したように)、<dfn id=character>character</dfn> という言葉は<a href="#UAX29" rel=biblioentry>[UAX29]<!--{{!UAX29}}--></a> にて <em>extended grapheme cluster(拡張書記素クラスタ)</em> として定義されている。これは、言語を使う人が文字や文章の基本的な単位と考えているものとほぼ等価である(単一のUnicode codepointではない可能性がある)。ユーザーエージェントはUnicodeで許容されている定義をさらに調整してもよい。
 
-  <p>Unicode defines properties for characters, but for &lsquo;<a
-   href="#text-orientation0"><code
-   class=property>text-orientation</code></a>&rsquo; and <a
-   href="#vertical-typesetting-details">Vertical Typesetting Synthesis</a>,
-   it is necessary to determine the properties of a grapheme cluster. For the
-   purposes of CSS Writing Modes, the properties of a grapheme cluster are
-   given by its base character&#8212;except in two cases:
+  <p>Unicodeは文字のプロパティを定義しているが、&lsquo;<a href="#text-orientation0"><code class=property>text-orientation</code></a>&rsquo; と <a href="#vertical-typesetting-details">Vertical Typesetting Synthesis</a> については、書記素クラスタのプロパティを決定する必要がある。CSS Writing Modes用に、書記素クラスタのプロパティはそのBase Character(先行する文字に結合したりしない文字で、制御文字などでもないもの。基底文字)から与えられる&#8212;次の2つのケースを除いて。
 
   <ul>
-   <li>Grapheme clusters formed with an Enclosing Mark (Me) of the Common
-    script are considered to be Other Symbols (So) in the Common script. They
-    are assumed to have the same Unicode properties as the Replacement
-    Character U+FFFD.
+   <li>一般的なスクリプトの Enclosing Mark(他の文字を囲むための文字) (Me) より成る書記素クラスタは、一般的なスクリプトにおける Other Symbols(その他の記号) (So) とみなされる。これらは Replacement Character(置換文字) U+FFFD と同じ Unicode プロパティを持っているとみなされる。
 
-   <li>Grapheme clusters formed with a Space Separator (Zs) as the base are
-    considered to be Modifier Symbols (Sk). They are assumed to have the same
-    East Asian Width property as the base, but take their other properties
-    from the first combining character in the sequence.
+   <li>基底である Space Separator(空白文字) (Zs) から成る書記素クラスタは、Modifier Symbols(合わせ文字) (Sk)とみなされる。これらは基底と同じ East Asian Width プロパティを持っているとみなされる。しかし、シーケンスの最初の結合文字から他のプロパティを取得する。
   </ul>
 
   <h2 class=no-num id=script-orientations>Appendix B: Bi-orientational
