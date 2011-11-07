@@ -2546,21 +2546,16 @@ english17 18WERBEH
 
   <p class=issue>ScriptExtensions.txt が、上記にリストされているものを例外として、エーゲ数字と共通インド文字を含んでいないのは、ユニコードの間違いである。これが修正されれば、特別な対応は必要ない。
 
-  <h2 class=no-num id=intrinsic-sizing>Appendix D: Intrinsic Dimensions</h2>
+  <h2 class=no-num id=intrinsic-sizing>Appendix D: 本質的な次元</h2>
 
-  <p><em>This section is normative.</em>
+  <p><em>このセクションは規範である。</em>
 
-  <p>CSS layout has several different concepts of automatic sizing that are
-   used in various layout calculations. This section defines some more
-   precise terminology to help connect the layout behaviors of this spec to
-   the calculations used in other modules, and some new keywords for the
-   width and height properties to allow authors to assign elements the
-   dimensions resulting from these size calculations.
+  <p>CSSのレイアウトは、様々なレイアウト計算に使用されている自動サイジングについて、いくつかの異なるコンセプトを持っている。このセクションでは、本仕様にでのレイアウトの振る舞いと他のモジュールで使われている計算とを結びつけられるよう、より正確な用語をいくつか定義する。そして、制作者がこれらのサイズ計算に起因する次元を要素を割り当てることを可能にする、width と height のプロパティための、いくつかの新しいキーワードを定義する。
 
   <table class=propdef>
    <tbody>
     <tr>
-     <th>Properties:
+     <th>プロパティ:
 
      <td>&lsquo;<code class=property>width</code>&rsquo;, &lsquo;<code
       class=property>min-width</code>&rsquo;, &lsquo;<code
@@ -2570,7 +2565,7 @@ english17 18WERBEH
       class=property>max-height</code>&rsquo;
 
     <tr>
-     <th>New Values:
+     <th>新しい値:
 
      <td>&lsquo;<a href="#min-content"><code
       class=css>min-content</code></a>&rsquo; | &lsquo;<a
@@ -2580,45 +2575,44 @@ english17 18WERBEH
       href="#fit-content"><code class=css>fit-content</code></a>&rsquo;
 
     <tr>
-     <th>Initial:
+     <th>初期値:
 
-     <td>as defined in <a href="#CSS21"
-      rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a>
-
-    <tr>
-     <th>Applies to:
-
-     <td>as defined in <a href="#CSS21"
-      rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a>
+     <td><a href="#CSS21"
+      rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a> で定義されている
 
     <tr>
-     <th>Inherited:
+     <th>適用対象:
 
-     <td>as defined in <a href="#CSS21"
-      rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a>
-
-    <tr>
-     <th>Percentages:
-
-     <td>as defined in <a href="#CSS21"
-      rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a>
+     <td><a href="#CSS21"
+      rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a> で定義されている
 
     <tr>
-     <th>Media:
+     <th>継承:
 
-     <td>as defined in <a href="#CSS21"
-      rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a>
+     <td><a href="#CSS21"
+      rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a> で定義されている
 
     <tr>
-     <th>Computed&#160;value:
+     <th>パーセンテージ:
 
-     <td>specified value if keyword specified, else as defined in <a
-      href="#CSS21" rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a>
+     <td><a href="#CSS21"
+      rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a> で定義されている
+
+    <tr>
+     <th>メディア:
+
+     <td><a href="#CSS21"
+      rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a> で定義されている
+
+    <tr>
+     <th>算出値:
+
+     <td>キーワードが指定されていれば指定された値、そうでなければ<a
+      href="#CSS21" rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a> の定義どおり
   </table>
 
-  <p>There are four types of automatically-determined sizes in CSS (which are
-   represented in the width and height properties by the keywords defined
-   above):
+  <p>CSSには自動サイズ決定に4つのタイプがある(上記で定義されているキーワードにより、width と height のプロパティで表されているものである):
+
    <!-- XXX Make these anchors dated once CSS2.1 hits REC, since we might
   decide to fix these gross editorial inconsistencies at some point in
   the errata. -->
@@ -2627,82 +2621,31 @@ english17 18WERBEH
   <dl>
    <dt><dfn id=min-content>min-content</dfn>
 
-   <dd>Called the <i>preferred minimum width</i> in <a
-    href="http://www.w3.org/TR/CSS21/visudet.html#float-width">CSS2.1&sect;10.3.5</a>
-    and the <i>minimum content width</i> in <a
-    href="http://www.w3.org/TR/CSS21/tables.html#auto-table-layout">CSS2.1&sect;5.2.2</a>,
-    the <dfn id=min-content-measure>min-content measure</dfn> is defined
-    roughly as the narrowest measure a box could take while fitting around
-    its contents if <em>all</em> line break opportunities within the box were
-    taken.
+   <dd><a href="http://www.w3.org/TR/CSS21/visudet.html#float-width">CSS2.1&sect;10.3.5</a> にて <i>preferred minimum width(望ましい最小の幅)</i>、<a href="http://www.w3.org/TR/CSS21/tables.html#auto-table-layout">CSS2.1&sect;5.2.2</a> にて <i>minimum content width(最小コンテンツ幅)</i> と呼ばれており、<dfn id=min-content-measure>min-content measure</dfn> は、ボックス内の改行可能な箇所<em>全て</em>で改行した場合、そのコンテンツの周りにフィットしながらボックスをとることができる最小幅の測定値であると大まかに定義されている。
 
    <dt><dfn id=max-content>max-content</dfn>
 
-   <dd>Called the <i>preferred width</i> in <a
-    href="http://www.w3.org/TR/CSS21/visudet.html#float-width">CSS2.1&sect;10.3.5</a>
-    and the <i>maximum cell width</i> in <a
-    href="http://www.w3.org/TR/CSS21/tables.html#auto-table-layout">CSS2.1&sect;5.2.2</a>,
-    the <dfn id=max-content-measure>max-content measure</dfn> is defined
-    roughly as the narrowest measure a box could take while fitting around
-    its contents if <em>none</em> of the optional line break opportunities
-    within the box were taken.
+   <dd><a href="http://www.w3.org/TR/CSS21/visudet.html#float-width">CSS2.1&sect;10.3.5</a> にて <i>preferred width(望ましい幅)</i>、<a href="http://www.w3.org/TR/CSS21/tables.html#auto-table-layout">CSS2.1&sect;5.2.2</a> にて <i>maximum cell width(最大セル幅)</i> と呼ばれており、<dfn id=max-content-measure>max-content measure</dfn> は、ボックス内の改行可能な箇所で<em>全く</em>改行しなかった場合、そのコンテンツの周りにフィットしながらボックスをとることができる最小幅の測定値であると大まかに定義されている。
 
    <dt><dfn id=fill-available>fill-available</dfn>
 
-   <dd>Called the <i>available width</i> in <a
-    href="http://www.w3.org/TR/CSS21/visudet.html#float-width">CSS2.1&sect;10.3.5</a>
-    and computed by the rules in <a
-    href="http://www.w3.org/TR/CSS21/visudet.html#blockwidth">CSS2.1&sect;10.3.3</a>,
-    the <dfn id=fill-available-measure>fill-available measure</dfn> is
-    calculated by subtracting out the element's margins, borders, and padding
-    from the <a href="#available-measure"><i>available measure</i></a> and
-    flooring the result at zero. If the available measure is infinite, then a
-    <dfn id=fallback-measure>fallback measure</dfn> is used in place of the
-    <a href="#available-measure"><i>available measure</i></a> in this
-    calculation. (In the case of orthogonal flows, this is the measure of the
-    initial containing block.) The <dfn
-    id=fill-available-extent>fill-available extent</dfn> is similarly
-    calculated by using the corresponding values from the block dimension.
+   <dd><a href="http://www.w3.org/TR/CSS21/visudet.html#float-width">CSS2.1&sect;10.3.5</a>にて <i>available width(利用可能な幅)</i> と呼ばれ、<a href="http://www.w3.org/TR/CSS21/visudet.html#blockwidth">CSS2.1&sect;10.3.3</a> でのルールによって計算されており、<dfn id=fill-available-measure>fill-available measure</dfn> は <a href="#available-measure"><i>available measure</i></a> から要素のマージン、ボーダー、パディングを差し引いて算出されたものであり、ゼロが一番少ない結果となる。available measure が無限大の場合、この計算では <a href="#available-measure"><i>available measure</i></a> の代わりに <dfn id=fallback-measure>fallback measure</dfn> が用いられる(送り方向が直交する場合、これは初期包含ブロックの測定値になる)。<dfn id=fill-available-extent>fill-available extent</dfn> は同様にブロック次元から対応する値を利用して算出される。
 
    <dt><dfn id=fit-content>fit-content</dfn>
 
-   <dd>Called the <i>shrink-to-fit</i> width in <a
-    href="http://www.w3.org/TR/CSS21/visudet.html#float-width">CSS2.1&sect;10.3.5</a>,
-    and <a href="http://www.w3.org/TR/css3-multicol/#pseudo-algorithm">CSS
-    Multi-column Layout &sect; 3.4</a>, the <dfn
-    id=fit-content-measure>fit-content measure</dfn> is defined as
-    <code>max(<a href="#min-content"><i>min-content</i></a>, min(<a
-    href="#max-content"><i>max-content</i></a>, <a
-    href="#fill-available"><i>fill-available</i></a>))</code> if the
-    available measure is finite, and as the <a
-    href="#max-content"><i>max-content</i></a> measure otherwise. The <dfn
-    id=fit-content-extent>fit-content extent</dfn> is calculated from the
-    same expression applied to the block dimension.
+   <dd><a href="http://www.w3.org/TR/CSS21/visudet.html#float-width">CSS2.1&sect;10.3.5</a> と <a href="http://www.w3.org/TR/css3-multicol/#pseudo-algorithm">CSS Multi-column Layout &sect; 3.4</a> にて <i>shrink-to-fit(ちょうどフィットするサイズに縮んだ幅)</i> と呼ばれており、<dfn id=fit-content-measure>fit-content measure</dfn> は available measure が有限で、<a href="#max-content"><i>max-content</i></a> の測定値がそうでない場合、<code>max(<a href="#min-content"><i>min-content</i></a>, min(<a href="#max-content"><i>max-content</i></a>, <a href="#fill-available"><i>fill-available</i></a>))</code> として定義されている。<dfn id=fit-content-extent>fit-content extent</dfn> はブロック次元に適用されるものと同じ式から算出される。
+     
   </dl>
 
-  <p>For the layout models in CSS2.1, both the <dfn
-   id=min-content-extent>min-content extent</dfn> and <dfn
-   id=max-content-extent>max-content extent</dfn> of non-replaced elements
-   are defined as the content extent as defined (for horizontal writing
-   modes) in <a
-   href="http://www.w3.org/TR/CSS21/visudet.html#normal-block">CSS2.1&sect;10.6.3</a>
-   and <a
-   href="http://www.w3.org/TR/CSS21/tables.html#height-layout">CSS2.1&sect;17.5.3</a>
-   for elements with &lsquo;<code class=css>height: auto</code>&rsquo;.
+  <p>CSS2.1のレイアウトモデルでは、非置換要素の <dfn id=min-content-extent>min-content extent</dfn> と <dfn id=max-content-extent>max-content extent</dfn> の両方がコンテンツの範囲として、<a href="http://www.w3.org/TR/CSS21/visudet.html#normal-block">CSS2.1&sect;10.6.3</a> と <a href="http://www.w3.org/TR/CSS21/tables.html#height-layout">CSS2.1&sect;17.5.3</a>で &lsquo;<code class=css>height: auto</code>&rsquo; とした要素向けに定義されている。
 
-  <p>For replaced elements, the <a href="#min-content"><i>min-content</i></a>
-   and <a href="#max-content"><i>max-content</i></a> sizes are the same and
-   correspond used size of the replaced element according to the &lsquo;<code
-   class=css>auto</code>&rsquo; width and height calculations.
+  <p>置換要素向けには、<a href="#min-content"><i>min-content</i></a> と <a href="#max-content"><i>max-content</i></a> のサイズが同じであり、width と height を &lsquo;<code class=css>auto</code>&rsquo; にして算出した置換要素のサイズと一致している。
 
-  <h3 class=no-num id=multicol-intrinsic> Intrinsic Sizes in Multi-column
-   Layout</h3>
+  <h3 class=no-num id=multicol-intrinsic> マルチカラムレイアウトでの本質的サイズ</h3>
 
-  <p>The <a href="#min-content"><i>min-content</i></a> and <a
-   href="#max-content"><i>max-content</i></a> sizes of a multi-column element
-   are undefined per <a href="#CSS3COL"
-   rel=biblioentry>[CSS3COL]<!--{{!CSS3COL}}--></a>. A future specification
-   may define them. <!-- Sketchbook area. See 
+  <p>マルチカラム要素での <a href="#min-content"><i>min-content</i></a> と <a href="#max-content"><i>max-content</i></a> のサイズは <a href="#CSS3COL" rel=biblioentry>[CSS3COL]<!--{{!CSS3COL}}--></a> で定義されていない。将来仕様では定義されるであろう。
+
+  <!-- Sketchbook area. See 
   http://lists.w3.org/Archives/Public/www-style/2011Apr/0316.html
   http://lists.w3.org/Archives/Public/www-style/2011May/0468.html
   
@@ -2749,12 +2692,12 @@ Intrinsic Sizes for Columns</h4>
   <table class=propdef>
    <tbody>
     <tr>
-     <th>Property:
+     <th>プロパティ:
 
      <td>&lsquo;<code class=property>column-width</code>&rsquo;
 
     <tr>
-     <th>New Values:
+     <th>新しい値:
 
      <td>&lsquo;<a href="#min-content"><code
       class=css>min-content</code></a>&rsquo; | &lsquo;<a
@@ -2764,83 +2707,65 @@ Intrinsic Sizes for Columns</h4>
       href="#fit-content"><code class=css>fit-content</code></a>&rsquo;
 
     <tr>
-     <th>Initial:
+     <th>初期値:
 
-     <td>as defined in <a href="#CSS3COL"
-      rel=biblioentry>[CSS3COL]<!--{{!CSS3COL}}--></a>
-
-    <tr>
-     <th>Applies to:
-
-     <td>as defined in <a href="#CSS3COL"
-      rel=biblioentry>[CSS3COL]<!--{{!CSS3COL}}--></a>
+     <td><a href="#CSS3COL" rel=biblioentry>[CSS3COL]<!--{{!CSS3COL}}--></a> で定義されている
 
     <tr>
-     <th>Inherited:
+     <th>適用対象:
 
-     <td>as defined in <a href="#CSS3COL"
-      rel=biblioentry>[CSS3COL]<!--{{!CSS3COL}}--></a>
-
-    <tr>
-     <th>Percentages:
-
-     <td>as defined in <a href="#CSS3COL"
-      rel=biblioentry>[CSS3COL]<!--{{!CSS3COL}}--></a>
+     <td><a href="#CSS3COL" rel=biblioentry>[CSS3COL]<!--{{!CSS3COL}}--></a> で定義されている
 
     <tr>
-     <th>Media:
+     <th>継承:
 
-     <td>as defined in <a href="#CSS3COL"
-      rel=biblioentry>[CSS3COL]<!--{{!CSS3COL}}--></a>
+     <td><a href="#CSS3COL" rel=biblioentry>[CSS3COL]<!--{{!CSS3COL}}--></a> で定義されている
 
     <tr>
-     <th>Computed&#160;value:
+     <th>パーセンテージ:
 
-     <td>specified value if keyword specified, else as defined in <a
-      href="#CSS3COL" rel=biblioentry>[CSS3COL]<!--{{!CSS3COL}}--></a>
+     <td><a href="#CSS3COL" rel=biblioentry>[CSS3COL]<!--{{!CSS3COL}}--></a> で定義されている
+
+    <tr>
+     <th>メディア:
+
+     <td><a href="#CSS3COL" rel=biblioentry>[CSS3COL]<!--{{!CSS3COL}}--></a> で定義されている
+
+    <tr>
+     <th>算出値:
+
+     <td>キーワードが指定されていれば指定された値、そうでなければ <a href="#CSS3COL" rel=biblioentry>[CSS3COL]<!--{{!CSS3COL}}--></a> の定義どおり
   </table>
 
-  <p>When used as values for <a
-   href="http://www.w3.org/TR/css3-multicol/#cw">&lsquo;<code
-   class=property>column-width</code>&rsquo;</a>, the new keywords specify
-   the optimal column width:
+  <p><a href="http://www.w3.org/TR/css3-multicol/#cw">&lsquo;<code
+   class=property>column-width</code>&rsquo;</a> の値として使用する場合は、新しいキーワードは最適なカラム幅を指定する:
 
   <dl>
    <dt>&lsquo;<a href="#min-content"><code
     class=css>min-content</code></a>&rsquo;
 
-   <dd>Specifies the optimal column width as the <a
-    href="#min-content-measure"><i>min-content measure</i></a> of the
-    multi-column element's contents.
+   <dd>マルチカラム要素コンテンツの <a href="#min-content-measure"><i>min-content measure</i></a> にて最適なカラム幅を指定する。
 
    <dt>&lsquo;<a href="#max-content"><code
     class=css>max-content</code></a>&rsquo;
 
-   <dd>Specifies the optimal column width as the <a
-    href="#max-content-measure"><i>max-content measure</i></a> of the
-    multi-column element's contents.
+   <dd>マルチカラム要素コンテンツの <a href="#max-content-measure"><i>max-content measure</i></a> にて最適なカラム幅を指定する。
 
    <dt>&lsquo;<a href="#fill-available"><code
     class=css>fill-available</code></a>&rsquo;
 
-   <dd>Specifies the optimal column width as the <a
-    href="#fill-available-measure"><i>fill-available measure</i></a> of the
-    multi-column element.
+   <dd>マルチカラム要素の <a
+    href="#fill-available-measure"><i>fill-available measure</i></a> にて最適なカラム幅を指定する。
 
    <dt>&lsquo;<a href="#fit-content"><code
     class=css>fit-content</code></a>&rsquo;
 
-   <dd>Specifies the optimal column width as <code>max(<a
-    href="#min-content"><i>min-content</i></a>, min(<a
-    href="#max-content"><i>max-content</i></a>, <a
-    href="#fill-available"><i>fill-available</i></a>))</code>.
+   <dd><code>max(<a href="#min-content"><i>min-content</i></a>, min(<a href="#max-content"><i>max-content</i></a>, <a href="#fill-available"><i>fill-available</i></a>))</code> にて最適なカラム幅を指定する。
   </dl>
 
-  <h2 class=no-num id=bidi-html> Appendix E: Bidi Rules for HTML</h2>
+  <h2 class=no-num id=bidi-html> Appendix E: HTMLのためのバイダイルール</h2>
 
-  <p>The style sheet rules that would achieve the bidi behaviors specified in
-   <a href="#HTML401" rel=biblioentry>[HTML401]<!--{{HTML401}}--></a> for the
-   HTML Strict doctype are given below:
+  <p>HTML Strict な doctype 向けの <a href="#HTML401" rel=biblioentry>[HTML401]<!--{{HTML401}}--></a> で指定された バイダイの振る舞いを実現するスタイルシートのルールを以下に示す:
 
   <pre>
 /* HTML dir attribute creates an embedding */
@@ -2860,9 +2785,9 @@ h1, h2, h3, h4, h5, h6,
 { unicode-bidi: isolate; }
   </pre>
 
-  <h2 class=no-num id=references> References</h2>
+  <h2 class=no-num id=references> 参考文献</h2>
 
-  <h3 class=no-num id=normative-references> Normative references</h3>
+  <h3 class=no-num id=normative-references> 引用規格</h3>
   <!--begin-normative-->
   <!-- Sorted by label -->
 
@@ -2972,7 +2897,7 @@ h1, h2, h3, h4, h5, h6,
   </dl>
   <!--end-normative-->
 
-  <h3 class=no-num id=other-references> Other references</h3>
+  <h3 class=no-num id=other-references> その他参考文献</h3>
   <!--begin-informative-->
   <!-- Sorted by label -->
 
@@ -3058,7 +2983,7 @@ h1, h2, h3, h4, h5, h6,
   </dl>
   <!--end-informative-->
 
-  <h2 class=no-num id=property-index> Property Index</h2>
+  <h2 class=no-num id=property-index> プロパティインデックス</h2>
   <!--begin-properties-->
 
   <table class=proptable>
