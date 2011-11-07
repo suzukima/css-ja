@@ -48,7 +48,7 @@
 		<p>文中では日本語組版の用語を用いております。日本語組版については<a href="http://www.w3.org/TR/jlreq/ja/">日本語組版処理の要件（日本語版）</a>に目を通しておくことをおすすめいたします。</p>
 		<p>その他の仕様書の翻訳は、<a href="../">CSS 日本語レイアウト関連仕様 日本語翻訳</a>からご覧下さい。</p>
 		<p>公開開始日: 2011.09.11</p>
-     <p>更新日: 2011.11.03</p>
+     <p>更新日: 2011.11.07</p>
 	</div>
 
   <div class=head> <!--begin-logo-->
@@ -304,36 +304,30 @@
      <li><a href="#cr-exit-criteria"><span class=secno>10.6. </span> CR より先へ進むための基準</a>
     </ul>
 
-   <li class=no-num><a href="#acknowledgements"> Acknowledgements</a>
+   <li class=no-num><a href="#acknowledgements"> 謝辞</a>
 
-   <li class=no-num><a href="#character-properties">Appendix A. Characters
-    and Properties</a>
+   <li class=no-num><a href="#character-properties">付録 A. 文字とプロパティ</a>
 
-   <li class=no-num><a href="#script-orientations">Appendix B:
-    Bi-orientational Transformations</a>
+   <li class=no-num><a href="#script-orientations">付録 B: 双方向変換</a>
 
-   <li class=no-num><a href="#vertical-typesetting-details">Appendix C:
-    Vertical Typesetting Synthesis</a>
+   <li class=no-num><a href="#vertical-typesetting-details">付録 C: 縦組での合成</a>
 
-   <li class=no-num><a href="#intrinsic-sizing">Appendix D: Intrinsic
-    Dimensions</a>
+   <li class=no-num><a href="#intrinsic-sizing">付録 D: 本質的な次元</a>
     <ul class=toc>
-     <li class=no-num><a href="#multicol-intrinsic"> Intrinsic Sizes in
-      Multi-column Layout</a>
+     <li class=no-num><a href="#multicol-intrinsic"> マルチカラムレイアウトでの本質的サイズ</a>
     </ul>
 
-   <li class=no-num><a href="#bidi-html"> Appendix E: Bidi Rules for HTML</a>
+   <li class=no-num><a href="#bidi-html"> 付録 E: HTMLのためのバイダイルール</a>
     
 
-   <li class=no-num><a href="#references"> References</a>
+   <li class=no-num><a href="#references"> 参考文献</a>
     <ul class=toc>
-     <li class=no-num><a href="#normative-references"> Normative
-      references</a>
+     <li class=no-num><a href="#normative-references"> 引用規格</a>
 
-     <li class=no-num><a href="#other-references"> Other references</a>
+     <li class=no-num><a href="#other-references"> その他参考</a>
     </ul>
 
-   <li class=no-num><a href="#property-index"> Property Index</a>
+   <li class=no-num><a href="#property-index"> プロパティインデックス</a>
   </ul>
   <!--end-toc-->
 
@@ -2388,7 +2382,7 @@ english17 18WERBEH
    <li>基底である Space Separator(空白文字) (Zs) から成る書記素クラスタは、Modifier Symbols(合わせ文字) (Sk)とみなされる。これらは基底と同じ East Asian Width プロパティを持っているとみなされる。しかし、シーケンスの最初の結合文字から他のプロパティを取得する。
   </ul>
 
-  <h2 class=no-num id=script-orientations>Appendix B: 双方向変換</h2>
+  <h2 class=no-num id=script-orientations>付録 B: 双方向変換</h2>
 
   <p><em>このセクションは規範である。</em>
 
@@ -2474,7 +2468,7 @@ english17 18WERBEH
 
   <p class=note>オガム文字もまた回転する双方向スクリプトである。しかし、下から上へ進むスクリプトであるため、本仕様の目的のために、左から右への横書きとして扱われる。CSSの将来バージョンでは、下から上へ進むスクリプトを適切な取り扱いが定義される予定である。制作者は &lsquo;<a href="#text-orientation0"><code class=property>text-orientation</code></a>&rsquo; の値である &lsquo;<a href="#sideways-left"><code class=css>sideways-left</code></a>&rsquo; のサポート欠如を回避することができる。
 
-  <h2 class=no-num id=vertical-typesetting-details>Appendix C: 縦組での合成</h2>
+  <h2 class=no-num id=vertical-typesetting-details>付録 C: 縦組での合成</h2>
 
   <p>このセクションでは垂直方向テキストの自動組版のためのアルゴリズムを定義している。本セクションでは読みやすさのため、<em>extended grapheme cluster</em> を <a href="#character"><i>character</i></a> に置き換えて使用している。詳細は <a href="#character-properties">Characters and Properties</a> を参照のこと。
 
@@ -2546,7 +2540,7 @@ english17 18WERBEH
 
   <p class=issue>ScriptExtensions.txt が、上記にリストされているものを例外として、エーゲ数字と共通インド文字を含んでいないのは、ユニコードの間違いである。これが修正されれば、特別な対応は必要ない。
 
-  <h2 class=no-num id=intrinsic-sizing>Appendix D: 本質的な次元</h2>
+  <h2 class=no-num id=intrinsic-sizing>付録 D: 本質的な次元</h2>
 
   <p><em>このセクションは規範である。</em>
 
@@ -2763,7 +2757,7 @@ Intrinsic Sizes for Columns</h4>
    <dd><code>max(<a href="#min-content"><i>min-content</i></a>, min(<a href="#max-content"><i>max-content</i></a>, <a href="#fill-available"><i>fill-available</i></a>))</code> にて最適なカラム幅を指定する。
   </dl>
 
-  <h2 class=no-num id=bidi-html> Appendix E: HTMLのためのバイダイルール</h2>
+  <h2 class=no-num id=bidi-html> 付録 E: HTMLのためのバイダイルール</h2>
 
   <p>HTML Strict な doctype 向けの <a href="#HTML401" rel=biblioentry>[HTML401]<!--{{HTML401}}--></a> で指定された バイダイの振る舞いを実現するスタイルシートのルールを以下に示す:
 
@@ -2897,7 +2891,7 @@ h1, h2, h3, h4, h5, h6,
   </dl>
   <!--end-normative-->
 
-  <h3 class=no-num id=other-references> その他参考文献</h3>
+  <h3 class=no-num id=other-references> その他参考</h3>
   <!--begin-informative-->
   <!-- Sorted by label -->
 
