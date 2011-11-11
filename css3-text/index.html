@@ -99,93 +99,50 @@
 
   <p>このCSS3モジュールはテキスト操作のプロパティを定義し、それらの処理モデルを仕様化する。改行、両端揃えと整列、空白の処理、テキストの装飾とテキストの変換をカバーしている。
 
-  <h2 class="no-num no-toc" id=status>Status of This Document</h2>
+  <h2 class="no-num no-toc" id=status>この文書の位置付け</h2>
 
-  <p><em>This section describes the status of this document at the time of
-   its publication. Other documents may supersede this document. A list of
-   current W3C publications and the latest revision of this technical report
-   can be found in the <a href="http://www.w3.org/TR/">W3C technical reports
-   index at http://www.w3.org/TR/.</a></em>
+  <p><em>このセクションは、公開時点でのこの文書の位置付けについて述べている。他の文書がこの文書を置き換えることがある。W3Cが現在公開しているリストとテクニカルレポートの最新版は、<a href="http://www.w3.org/TR/">W3C technical reports
+   index (http://www.w3.org/TR/)</a>で見つけることができる。</em>
 
-  <p>Publication as a Working Draft does not imply endorsement by the W3C
-   Membership. This is a draft document and may be updated, replaced or
-   obsoleted by other documents at any time. It is inappropriate to cite this
-   document as other than work in progress.
+  <p>Working Draftでの公開は W3Cメンバーの支持を意味するものではない。下書きのドキュメントであり、いつでも更新、他のドキュメントによる置き換えや廃止扱いにされうる。これは、進行中の作業以外のものとしてこのドキュメントを引用することは不適切である。
 
-  <p>This CSS module has been produced as a combined effort of the <a
-   href="http://www.w3.org/International/Activity">W3C Internationalization
-   Activity</a>, and the <a href="http://www.w3.org/Style/Activity">Style
-   Activity</a> and is maintained by the <a
-   href="http://www.w3.org/Style/CSS/members">CSS Working Group</a>. It also
-   includes contributions made by participants in the <a
-   href="http://www.w3.org/Style/XSL/Group/">XSL Working Group</a> (<a
-   href="http://cgi.w3.org/MemberAccess/AccessRequest">members only</a>).
+  <p>このCSSモジュールは、<a href="http://www.w3.org/International/Activity">W3C Internationalization Activity</a> と <a href="http://www.w3.org/Style/Activity">Style Activity</a> の協力によって作成されたものであり、<a href="http://www.w3.org/Style/CSS/members">CSS Working Group</a> によってメンテナンスされる。また、<a href="http://www.w3.org/Style/XSL/Group/">XSL Working Group</a> (<a href="http://cgi.w3.org/MemberAccess/AccessRequest">members only</a>) への参加者による貢献も含まれている。
 
-  <p>This document was produced by a group operating under the <a
-   href="http://www.w3.org/Consortium/Patent-Policy-20040205/">5 February
-   2004 W3C Patent Policy</a>. W3C maintains a <a
-   href="http://www.w3.org/2004/01/pp-impl/32061/status"
-   rel=disclosure>public list of any patent disclosures</a> made in
-   connection with the deliverables of the group; that page also includes
-   instructions for disclosing a patent. An individual who has actual
-   knowledge of a patent which the individual believes contains <a
-   href="http://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">Essential
-   Claim(s)</a> must disclose the information in accordance with <a
-   href="http://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">section
-   6 of the W3C Patent Policy</a>.
+  <p>このドキュメントは<a href="http://www.w3.org/Consortium/Patent-Policy-20040205/">2004年2がtう6日のW3C特許ポリシー</a>に従うグループによって製作された。W3Cはグループの成果を結びつけて作られた<a href="http://www.w3.org/2004/01/pp-impl/32061/status" rel=disclosure>あらゆる開示特許の公開リスト</a>を管理しており、ここには特許開示の指示も含まれている。<a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">本質的な特許請求の範囲</a>に含まれると思われる特許について実際の知識を持っている人は、<a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">W3C特許ポリシーの第6章</a>に従い、情報を公開しなければならない。
 
-  <p><strong>Feedback on this draft should be posted to the (<a
-   href="http://lists.w3.org/Archives/Public/www-style/">archived</a>) public
-   mailing list <a
-   href="mailto:www-style@w3.org">www-style@w3.org</a></strong> (see <a
-   href="http://www.w3.org/Mail/Request">instructions</a>) <strong>with
-   <kbd>[css3-text]</kbd> in the subject line.</strong> You are strongly
-   encouraged to complain if you see something stupid in this draft. The
-   editors will do their best to respond to all feedback.
+  <p><strong>本ドラフトへのフィードバックは (<a href="http://lists.w3.org/Archives/Public/www-style/">アーカイブされている</a>) 公開メーリングリスト <a
+   href="mailto:www-style@w3.org">www-style@w3.org</a></strong> (<a
+   href="http://www.w3.org/Mail/Request">参加手順はこちら</a>) へ、<strong> 
+   サブジェクトに <kbd>[css3-text]</kbd> を付けて送るように。</strong> 本ドラフトにおかしな所を見つけたら、文句を言うことが強く推奨されている。エディターは全てのフィードバックに応えられるよう最善を尽くす。
 
-  <p><strong>If you have implemented properties from the <a
-   href="http://www.w3.org/TR/2003/CR-css3-text-20030514/">May 2003 CSS3 Text
-   CR</a></strong> <em>please</em> let us know so we can take that into
-   account as we redraft the spec. You can post to <a
-   href="http://lists.w3.org/Archives/Public/www-style/">www-style</a>
-   (public), post to the <a
-   href="http://lists.w3.org/Archives/Member/w3c-css-wg/">CSS WG mailing
-   list</a> (<a
-   href="http://cgi.w3.org/MemberAccess/AccessRequest">Member-restricted</a>),
-   or <a href="http://fantasai.inkedblade.net/contact">email fantasai
-   directly</a> (personal).
+  <p><strong>もし <a href="http://www.w3.org/TR/2003/CR-css3-text-20030514/">May 2003 CSS3 Text CR</a></strong> を実装しているのであれば、 仕様の書き直しを考慮することができるので、<em>どうか</em>知らせて欲しい。<a href="http://lists.w3.org/Archives/Public/www-style/">www-style</a>(公開)、<a href="http://lists.w3.org/Archives/Member/w3c-css-wg/">CSS WG mailing list</a> (<a href="http://cgi.w3.org/MemberAccess/AccessRequest">メンバー限定</a>)、<a href="http://fantasai.inkedblade.net/contact">email fantasai directly</a> (個人宛)まで。
 
-  <p>The following features are at risk and may be cut from the spec during
-   its CR period if there are no (correct) implementations:
+  <p>以下の機能は落ちる可能性のあるもので、(正しい)実装が1つもない場合、CRまでに切られるかもしれない。
 
   <ul>
-   <li>the &lt;length> values of the &lsquo;<a href="#tab-size0"><code
-    class=property>tab-size</code></a>&rsquo; property
+   <li>&lsquo;<a href="#tab-size0"><code
+    class=property>tab-size</code></a>&rsquo; プロパティ の値 &lt;length> 
 
-   <li>the &lsquo;<a href="#hanging-punctuation0"><code
-    class=property>hanging-punctuation</code></a>&rsquo; property
+   <li>&lsquo;<a href="#hanging-punctuation0"><code
+    class=property>hanging-punctuation</code></a>&rsquo; プロパティ
 
-   <li>the percentage values of &lsquo;<a href="#letter-spacing0"><code
-    class=property>letter-spacing</code></a>&rsquo; and &lsquo;<a
-    href="#word-spacing0"><code class=property>word-spacing</code></a>&rsquo;
-    
+   <li>&lsquo;<a href="#letter-spacing0"><code class=property>letter-spacing</code></a>&rsquo; と &lsquo;<a href="#word-spacing0"><code class=property>word-spacing</code></a>&rsquo; のパーセンテージの値
 
-   <li>the &lsquo;<code class=css>hyphenate-limit-*</code>&rsquo; properties
+   <li>&lsquo;<code class=css>hyphenate-limit-*</code>&rsquo; プロパティ
 
-   <li>the &lsquo;<a href="#text-spacing"><code
-    class=property>text-spacing</code></a>&rsquo; property
+   <li>&lsquo;<a href="#text-spacing"><code class=property>text-spacing</code></a>&rsquo; プロパティ
 
-   <li>the &lsquo;<a href="#text-decoration-skip0"><code
-    class=property>text-decoration-skip</code></a>&rsquo; property /
-    &lsquo;<code class=css>ink</code>&rsquo; value
+   <li>&lsquo;<a href="#text-decoration-skip0"><code
+    class=property>text-decoration-skip</code></a>&rsquo; プロパティ /
+    値 &lsquo;<code class=css>ink</code>&rsquo; 
 
-   <li>the &lsquo;<a href="#text-emphasis-skip0"><code
-    class=property>text-emphasis-skip</code></a>&rsquo; property
+   <li>&lsquo;<a href="#text-emphasis-skip0"><code
+    class=property>text-emphasis-skip</code></a>&rsquo; プロパティ
 
-   <li><span class=issue>audit draft and add more here</span>
+   <li><span class=issue>ドラフトを監査し、さらにここへ追加する</span>
   </ul>
 
-  <h2 class="no-num no-toc" id=contents>Table of Contents</h2>
+  <h2 class="no-num no-toc" id=contents>目次</h2>
   <!--begin-toc-->
 
   <ul class=toc>
