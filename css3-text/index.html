@@ -415,60 +415,29 @@
   </ul>
   <!--end-toc-->
 
-  <h2 id=intro><span class=secno>1. </span> Introduction</h2>
+  <h2 id=intro><span class=secno>1. </span> 導入</h2>
 
-  <p>[document here]
+  <p>[ここに文章を]
 
-  <p class=issue>This draft describes features that are specific to certain
-   scripts. There is an ongoing discussion about where these features belong:
-   in existing CSS properties, in new CSS properties, or perhaps in other
-   specifications.
+  <p class=issue>本ドラフトは特定のスクリプト固有の機能について説明している。これらの機能が属している箇所では継続的な議論がされている: 既存のCSSプロパティ、新規CSSプロパティ、もしかすると他の仕様においても。
 
-  <h3 id=placement><span class=secno>1.1. </span> Module Interactions</h3>
+  <h3 id=placement><span class=secno>1.1. </span> モジュールの作用</h3>
 
-  <p>This module replaces and extends the text-level features defined in <a
-   href="#CSS21" rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a> chapter 16.
+  <p>本モジュールは <a href="#CSS21" rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a> chapter 16 の text-level 機能を置き換え、拡張するものである。
 
-  <h3 id=values><span class=secno>1.2. </span> Values</h3>
+  <h3 id=values><span class=secno>1.2. </span> 値について</h3>
 
-  <p>This specification follows the <a
-   href="http://www.w3.org/TR/CSS21/about.html#property-defs">CSS property
-   definition conventions</a> from <a href="#CSS21"
-   rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a>. Value types not defined in
-   this specification are defined in CSS Level 2 Revision 1 <a
-   href="#CSS21" rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a>. Other CSS
-   modules may expand the definitions of these value types: for example <a
-   href="#CSS3COLOR" rel=biblioentry>[CSS3COLOR]<!--{{CSS3COLOR}}--></a>,
-   when combined with this module, expands the definition of the
-   &lt;color&gt; value type as used in this specification.
+  <p>本仕様は、<a href="#CSS21" rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a> の <a href="http://www.w3.org/TR/CSS21/about.html#property-defs">CSS property
+   definition conventions(CSSプロパティの定義規則)</a> に従う。本仕様で型が定義されていない値は、CSS Level 2 Revision 1 <a href="#CSS21" rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a> で定義されている。他のCSSモジュールはこれら値の型の定義を拡張している: 例えば<a href="#CSS3COLOR" rel=biblioentry>[CSS3COLOR]<!--{{CSS3COLOR}}--></a>は、このモジュールと組み合わせた場合、&lt;color&gt; の値の型をこの仕様で使われているように拡張する。
 
-  <p>In addition to the property-specific values listed in their definitions,
-   all properties defined in this specification also accept the <a
-   href="http://www.w3.org/TR/CSS21/cascade.html#value-def-inherit">inherit</a>
-   keyword as their property value. For readability it has not been repeated
-   explicitly.
+  <p>これらの定義に記載されているプロパティ固有の値に加えて、本仕様で定義されている全プロパティは、これらプロパティの値のように、キーワード<a href="http://www.w3.org/TR/CSS21/cascade.html#value-def-inherit">継承</a>を受け入れる。読みやすさを考慮して、本件は明示的に繰り返さない。
 
-  <h3 id=terms><span class=secno>1.3. </span> Terminology</h3>
+  <h3 id=terms><span class=secno>1.3. </span> 用語</h3>
 
-  <p id=grapheme-cluster>A <dfn id=grapheme-cluster0>grapheme cluster</dfn>
-   is what a language user considers to be a character or a basic unit of the
-   script. The term is described in detail in the Unicode Technical Report:
-   Text Boundaries <a href="#UAX29"
-   rel=biblioentry>[UAX29]<!--{{!UAX29}}--></a>. This specification uses the
-   <em>extended grapheme cluster</em> definition in <a href="#UAX29"
-   rel=biblioentry>[UAX29]<!--{{!UAX29}}--></a> (not the <em>legacy grapheme
-   cluster</em> definition). The UA may further tailor the definition as
-   allowed by Unicode. Within this specification, the ambiguous term <dfn
-   id=character>character</dfn> is used as a friendlier synonym for <a
-   href="#grapheme-cluster0"><i>grapheme cluster</i></a>. See <a
-   href="http://dev.w3.org/csswg/css3-writing-modes/#character-properties">Characters
-   and Properties</a> for how to determine the Unicode properties of a
-   character.
+  <p id=grapheme-cluster>A <dfn id=grapheme-cluster0>書記素クラスタ(grapheme cluster)</dfn>は、言語の使用者が文字かスクリプトの基本的な単位と考えているものである。この用語については Unicode Technical Report: Text Boundaries <a href="#UAX29" rel=biblioentry>[UAX29]<!--{{!UAX29}}--></a> にて詳細が記述されている。本仕様では <a href="#UAX29" rel=biblioentry>[UAX29]<!--{{!UAX29}}--></a> で定義されている <em>拡張書記素クラスタ(extended grapheme cluster)</em> を使用する(<em>legacy grapheme cluster</em> ではない)。ユーザーエージェントはUnicodeで許容されている定義をさらに調整してもよい。本仕様においては、<dfn id=character>文字(character)</dfn> という曖昧な用語が、<a href="#grapheme-cluster0"><i>書記素クラスタ(grapheme cluster)</i></a> の親しみやすい同義語として使用されている。文字の Unicode プロパティ決定方法は <a href="http://dev.w3.org/csswg/css3-writing-modes/#character-properties">Characters and Properties</a> を参照のこと。
 
-  <p id=letter>A <dfn id=letter0>letter</dfn> for the purpose of this
-   specification is a <a href="#character"><i>character</i></a> belonging to
-   one of the Letter or Number general categories in Unicode. <a
-   href="#UAX44" rel=biblioentry>[UAX44]<!--{{!UAX44}}--></a>
+  <p id=letter>本仕様における <dfn id=letter0>letter</dfn> は、Unicodeの 一般的にカテゴリにおける Letter か Number の1つに属する文字である<a href="#UAX44" rel=biblioentry>[UAX44]<!--{{!UAX44}}--></a>。
+
 
   <h2 id=transforming><span class=secno>2. </span> Transforming Text</h2>
 
