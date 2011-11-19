@@ -438,134 +438,106 @@
   <p id=letter>本仕様における <dfn id=letter0>letter</dfn> は、Unicodeの 一般的にカテゴリにおける Letter か Number の1つに属する文字である。<a href="#UAX44" rel=biblioentry>[UAX44]<!--{{!UAX44}}--></a>
 
 
-  <h2 id=transforming><span class=secno>2. </span> Transforming Text</h2>
+  <h2 id=transforming><span class=secno>2. </span> テキストの変換</h2>
 
   <h3 id=text-transform><span class=secno>2.1. </span> <a name=caps-prop></a>
-   Transforming Text: the &lsquo;<a href="#text-transform0"><code
-   class=property>text-transform</code></a>&rsquo; property</h3>
+   テキストの変換: the &lsquo;<a href="#text-transform0"><code
+   class=property>text-transform</code></a>&rsquo; プロパティ</h3>
 
   <table class=propdef>
    <tbody>
     <tr>
-     <th>Name:
+     <th>名称:
 
      <td><dfn id=text-transform0>text-transform</dfn>
 
     <tr>
-     <th>Value:
+     <th>値:
 
      <td>none | [ [ capitalize | uppercase | lowercase ] || full-width ||
       full-size-kana ]
 
     <tr>
-     <th>Initial:
+     <th>初期値:
 
      <td>none
 
     <tr>
-     <th>Applies to:
+     <th>適用対象:
 
-     <td>all elements
-
-    <tr>
-     <th>Inherited:
-
-     <td>yes
+     <td>全ての要素
 
     <tr>
-     <th>Percentages:
+     <th>継承:
+
+     <td>される
+
+    <tr>
+     <th>パーセンテージ:
 
      <td>N/A
 
     <tr>
-     <th>Media:
+     <th>メディア:
 
      <td>visual
 
     <tr>
-     <th>Computed&#160;value:
+     <th>算出値:
 
-     <td>as specified
+     <td>指定されたとおり
   </table>
 
-  <p>This property transforms text for styling purposes. Values have the
-   following meanings:
+  <p>このプロパティはスタイリング目的でテキストを変換する。値には以下の意味がある:
+
 
   <dl>
    <dt><dfn id=none title="text-transform:none">&lsquo;<code
     class=css>none</code>&rsquo;</dfn>
 
-   <dd>No effects.
+   <dd>影響なし。
 
    <dt><dfn id=capitalize title="text-transform:capitalize">&lsquo;<code
     class=css>capitalize</code>&rsquo;</dfn>
 
-   <dd>Puts the first <a href="#character"><i>character</i></a> of each word
-    in titlecase; other characters are unaffected.
+   <dd> 各単語の最初の<a href="#character"><i>文字</i></a>をtitlecase(先頭を大文字にする書き方)とし、それ以外の文字には影響なし。
 
    <dt><dfn id=uppercase title="text-transform:uppercase">&lsquo;<code
     class=css>uppercase</code>&rsquo;</dfn>
 
-   <dd>Puts all characters in uppercase.
+   <dd>全ての文字を大文字にする。
 
    <dt><dfn id=lowercase title="text-transform:lowercase">&lsquo;<code
     class=css>lowercase</code>&rsquo;</dfn>
 
-   <dd>Puts all characters in lowercase.
+   <dd>全ての文字を小文字にする。
 
    <dt><dfn id=full-width title="text-transform:full-width">&lsquo;<code
     class=css>full-width</code>&rsquo;</dfn>
 
-   <dd>Puts all characters in fullwidth form. If the character does not have
-    a corresponding fullwidth form, it is left as is. This value is typically
-    used to typeset Latin characters and digits like ideographic characters.
+   <dd>全ての文字を全角にする。文字に対応する全角文字が無い場合は、そのまま残される。この値は通常、表意文字のようなラテン文字と数字の組版で使用される。
 
    <dt><dfn id=full-size-kana
     title="text-transform:full-size-kana">&lsquo;<code
     class=css>full-size-kana</code>&rsquo;</dfn>
 
-   <dd>Converts all small Kana characters to normal Kana. This value is
-    typically used for ruby annotation text, where all small Kana should be
-    drawn as large Kana.
+   <dd>小さいカナ文字を通常のカナに置き換える。この値は通常、ルビの注釈テキストに使用される。そこでは、全ての小さいカナ文字が大きなカナ文字として描画されるべきである。
   </dl>
 
-  <p>The case mapping rules for the character repertoire specified by the
-   Unicode Standard can be found on the Unicode Consortium Web site <a
-   href="#UNICODE" rel=biblioentry>[UNICODE]<!--{{!UNICODE}}--></a>. The UA
-   must use the full case mappings for Unicode characters, including any
-   conditional casing rules, as defined in Default Case Algorithm section. If
-   (and only if) the content language of the element is known, then any
-   applicable language-specific rules must be used as well. (See <a
-   href="http://www.unicode.org/Public/UNIDATA/SpecialCasing.txt">SpecialCasing.txt</a>)
-   
+  <p>Unicode Standard で指定された文字レパートリーのケースマッピング(大文字小文字の変換)ルールは、Unicode Consortium Web site<a href="#UNICODE" rel=biblioentry>[UNICODE]<!--{{!UNICODE}}--></a> で見つけることができる。ユーザーエージェントはDefault Case Algorithm のセクションで定義されている条件付きケースマッピングを含む、Unicode文字に対する完全なケースマッピングを使用する必要がある。もし(そしてそのときに限り)、要素のコンテンツの言語が既知のものである場合、該当する言語固有のルールも同様に使用する必要がある(<a href="http://www.unicode.org/Public/UNIDATA/SpecialCasing.txt">SpecialCasing.txt</a> を参照のこと)。
 
-  <p>The definition of "word" used for &lsquo;<code
-   class=css>capitalize</code>&rsquo; is UA-dependent; <a href="#UAX29"
-   rel=biblioentry>[UAX29]<!--{{!UAX29}}--></a> is suggested (but not
-   required) for determining such word boundaries. Authors should not expect
-   &lsquo;<code class=css>capitalize</code>&rsquo; to follow
-   language-specific titlecasing conventions (such as skipping articles in
-   English).
+  <p>&lsquo;<code class=css>capitalize</code>&rsquo; で使用される "word" の定義はユーザーエージェント依存である<a href="#UAX29" rel=biblioentry>[UAX29]<!--{{!UAX29}}--></a>。これはこのような単語の境界を決定するために示されている(しかし必要ではない)。制作者は、言語固有の titlecase 規則(例えば、英語ではarticleをスキップする)をフォローするために、&lsquo;<code class=css>capitalize</code>&rsquo; に期待すべきではない。
+
    <!-- www-style notes that UAX29 won't work for 'Tis and similar, so
       the UA might want to use UAX29 to split into words, but skip forward
       past any starting non-letters (as an example of why UAX29 is not ideal) -->
    
 
-  <p>The definition of fullwidth and halfwidth forms can be found on the
-   Unicode consortium web site at <a href="#UAX11"
-   rel=biblioentry>[UAX11]<!--{{!UAX11}}--></a>. The mapping to fullwidth
-   form is defined by taking code points with the &lt;wide&gt; tag in their
-   Decomposition_Mapping in <a href="#UAX44"
-   rel=biblioentry>[UAX44]<!--{{!UAX44}}--></a> and mapping their
-   decomposition (minus the &lt;wide&gt; tag) back to the original code
-   point.
+  <p>全角と半角の定義は Unicode consortium のWebサイト<a href="#UAX11" rel=biblioentry>[UAX11]<!--{{!UAX11}}--></a> にある。全角へのマッピングは、<a href="#UAX44" rel=biblioentry>[UAX44]<!--{{!UAX44}}--></a> にて、その文字の Decomposition_Mapping(分解マッピング) にある &lt;wide&gt; タグ付きコードポイントを取得することと、分解したもの( &lt;wide&gt; タグを取り除いたもの)を元のコードポイントに戻すマッピングにより定義されている。
 
-  <p>The mappings for small Kana to normal Kana are defined in <a
-   href="#small-kana">Small Kana Mappings</a>.
+  <p>小さいカナ文字から通常のカナ文字へのマッピングは <a href="#small-kana">Small Kana Mappings</a> で定義されている。
 
-  <p>When multiple values are specified and therefore multiple
-   transformations need to be applied, they are applied in the following
-   order:
+  <p>複数の値が指定され、複数のの変換が適用される必要のある場合、それらは以下の順番で適用される:
 
   <ol>
    <li>&lsquo;<code class=css>capitalize</code>&rsquo;, &lsquo;<code
