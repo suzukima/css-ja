@@ -30,7 +30,7 @@
 		<p>文中では日本語組版の用語を用いております。日本語組版については<a href="http://www.w3.org/TR/jlreq/ja/">日本語組版処理の要件（日本語版）</a>に目を通しておくことをおすすめいたします。</p>
 		<p>その他の仕様書の翻訳は、<a href="../">CSS 日本語レイアウト関連仕様 日本語翻訳</a>からご覧下さい。</p>
 		<p>公開開始日: 2011.11.09</p>
-     <p>更新日: 2011.11.09</p>
+     <p>更新日: 2011.11.20</p>
 	</div>
 
   <div class=head> <!--begin-logo-->
@@ -155,12 +155,11 @@
      <li><a href="#terms"><span class=secno>1.3. </span> 用語について</a>
     </ul>
 
-   <li><a href="#transforming"><span class=secno>2. </span> Transforming
-    Text</a>
+   <li><a href="#transforming"><span class=secno>2. </span> テキストの変換</a>
     <ul class=toc>
      <li><a href="#text-transform"><span class=secno>2.1. </span>
-      Transforming Text: the &lsquo;<code
-      class=property>text-transform</code>&rsquo; property</a>
+      テキストの変換: the &lsquo;<code
+      class=property>text-transform</code>&rsquo; プロパティ</a>
     </ul>
 
    <li><a href="#white-space-processing"><span class=secno>3. </span> White
@@ -537,7 +536,7 @@
 
   <p>小さいカナ文字から通常のカナ文字へのマッピングは <a href="#small-kana">Small Kana Mappings</a> で定義されている。
 
-  <p>複数の値が指定され、複数のの変換が適用される必要のある場合、それらは以下の順番で適用される:
+  <p>複数の値が指定され、複数の変換が適用される必要のある場合、以下の順番で適用される:
 
   <ol>
    <li>&lsquo;<code class=css>capitalize</code>&rsquo;, &lsquo;<code
@@ -549,43 +548,19 @@
    <li>&lsquo;<code class=css>full-size-kana</code>&rsquo;
   </ol>
 
-  <p>Text transformation happens after <a href="#white-space-rules">white
-   space processing</a>, which means that &lsquo;<code
-   class=css>full-width</code>&rsquo; transforms only preserved U+0020 spaces
-   to U+3000.
+  <p>テキスト変換は、 U+0020 の空白を U+3000 へ保存するだけの &lsquo;<code class=css>full-width</code>&rsquo; 変換である<a href="#white-space-rules">空白処理</a>の後に行う。
 
   <div class=example>
-   <p>The following example converts the ASCII characters in abbreviations in
-    Japanese to their fullwidth variants so that they lay out and line break
-    like ideographs:
+   <p>以下は、レイアウトと改行が表意文字のようになるように、日本語の略語中のASCII文字を全角の異体字へ変換する例である:
 
    <pre>abbr:lang(ja) { text-transform: full-width; }</pre>
   </div>
 
-  <p class=issue>All-caps text sometimes has special typographic
-   considerations. For example: Punctuation and number glyphs might be
-   adjusted for the higher "center of gravity" (see the <a
-   href="http://www.microsoft.com/typography/otspec/features_ae.htm#case">case</a>
-   feature in OpenType). Should we turn that on by default, as they suggest?
-   Or spacing might be adjusted for the increased visual weight of the glyphs
-   (see the <a
-   href="http://www.microsoft.com/typography/otspec/features_ae.htm#cpsp">cpsp</a>
-   feature in OpenType). Should we turn that on when &lsquo;<a
-   href="#letter-spacing0"><code
-   class=property>letter-spacing</code></a>&rsquo; is &lsquo;<code
-   class=css>normal</code>&rsquo;?
+  <p class=issue>全て大文字のテキストには、特別なタイポグラフィーの考慮事項がある。例えば、句読点と数字のグリフは "center of gravity" (OpenType の <a href="http://www.microsoft.com/typography/otspec/features_ae.htm#case">case</a> 機能を参照)が高い位置に調整されることがある。我々はここに書かれているように、これをデフォルトでオンにするべきなのか？または空白がグリフの視覚的増量のために調整されることがある(OpenTypeの <a href="http://www.microsoft.com/typography/otspec/features_ae.htm#cpsp">cpsp</a> 機能を参照)。我々は &lsquo;<a href="#letter-spacing0"><code class=property>letter-spacing</code></a>&rsquo; が &lsquo;<code class=css>normal</code>&rsquo; の時、それをオンにすべきなのか？
 
-  <p class=issue>A more complicated problem is the <a
-   href="http://blogs.msdn.com/b/michkap/archive/2006/08/18/706383.aspx">greek
-   uppercasing rules</a> which actually alter the diacritics. How should we
-   handle that?
+  <p class=issue>さらに複雑な問題は、実際に発音区別記号を変更する<a href="http://blogs.msdn.com/b/michkap/archive/2006/08/18/706383.aspx">ギリシャ文字の大文字化ルール</a>である。我々はこれをどう扱えばいいのか？
 
-  <p class=note>A future level of CSS may introduce the ability to create
-   custom mapping tables for less common text transforms, such as by
-   &lsquo;<a href="#text-transform0"><code
-   class=css>@text-transform</code></a>&rsquo; rule similar to &lsquo;<code
-   class=css>@counter-style</code>&rsquo; from <a href="#CSS3LIST"
-   rel=biblioentry>[CSS3LIST]<!--{{CSS3LIST}}--></a>.
+  <p class=note>将来のCSSでは、<a href="#CSS3LIST" rel=biblioentry>[CSS3LIST]<!--{{CSS3LIST}}--></a>にある &lsquo;<code class=css>@counter-style</code>&rsquo; に似たルールである&lsquo;<a href="#text-transform0"><code class=css>@text-transform</code></a>&rsquo; のように、あまり一般的ではないテキスト変換カスタムマッピングテーブルを作る機能が導入されるかもしれない。
 
   <h2 id=white-space-processing><span class=secno>3. </span> White Space
    Processing</h2>
