@@ -562,44 +562,17 @@
 
   <p class=note>将来のCSSでは、<a href="#CSS3LIST" rel=biblioentry>[CSS3LIST]<!--{{CSS3LIST}}--></a>にある &lsquo;<code class=css>@counter-style</code>&rsquo; に似たルールである&lsquo;<a href="#text-transform0"><code class=css>@text-transform</code></a>&rsquo; のように、あまり一般的ではないテキスト変換カスタムマッピングテーブルを作る機能が導入されるかもしれない。
 
-  <h2 id=white-space-processing><span class=secno>3. </span> White Space
-   Processing</h2>
+  <h2 id=white-space-processing><span class=secno>3. </span> 空白の処理</h2>
 
-  <p>The source text of a document often contains formatting that is not
-   relevant to the final rendering: for example, breaking the source into
-   segments (lines) for ease of editing or adding white space characters such
-   as tabs and spaces to indent the source code. CSS white space processing
-   allows the author to control interpretation of such formatting: to
-   preserve or collapse it away when rendering the document.
+  <p>ドキュメントの元となるテキストには、多くの場合、最終的なレンダリングに関わりのないフォーマットが含まれている。例えば、ソースコードをインデントするタブやスペースのように空白文字の編集や追加を容易にするため、元のテキストをセグメント(複数行)ごとに分割するなどである。CSSの空白処理では、ドキュメントのレンダリング時に空白をそのままにしたり重ねたりすることで、制作者がそれらのフォーマットの解釈を制御することができる。
 
-  <p id=segment-normalization> In the document source, segments can be
-   delimited by carriage returns (U+000D), linefeeds (U+000A) or a
-   combination (U+000D U+000A), or by some other mechanism, such as the SGML
-   RECORD-START and RECORD-END tokens. If no segmentation rules are specified
-   for the document language, each line feed (U+000A), carriage return
-   (U+000D) and CRLF sequence (U+000D U+000A) in the text is considered a
-   segment break. (This default rule also applies to generated content.) In
-   CSS, each such segment break is treated as a single line feed character
-   (U+000A).
+  <p id=segment-normalization>ドキュメントの元テキストでは、セグメントは carriage returns(行頭復帰) (U+000D)、linefeeds(改行) (U+000A)、combination(前2つの組み合わせ) (U+000D U+000A) や、SGML の RECORD-START と RECORD-END トークンを使うようなその他のメカニズムで区切られている。もしドキュメント言語にセグメントを区切るルールが指定されていない場合、テキストの line feed (U+000A)、carriage return、(U+000D)、CRLF (U+000D U+000A)がセグメントを分けるものとして見なされる(このデフォルトルールは生成されたコンテンツに適用される)。CSSでは、これらセグメントを分割するものは1つの改行文字(U+000A)として扱われる。
 
-  <p>White space processing in CSS interprets white space characters only for
-   rendering: it has no effect on the underlying document data.
+  <p>CSSの空白処理は、空白文字をレンダリングのためだけに解釈する。内在するドキュメントデータへの影響はない。
 
-  <p class=note>Note that the document parser may have not only normalized
-   segment breaks, but also collapsed other space characters or otherwise
-   processed white space according to markup rules. Because CSS processing
-   occurs <em>after</em> the parsing stage, it is not possible to restore
-   these characters for styling. Therefore, some of the behavior specified
-   below can be affected by these limitations and may be user agent
-   dependent.
+  <p class=note>ドキュメントのパーサはセグメント分割をノーマライズするだけでなく、他の空白文字と重ね合わせたり、マークアップのルールに従って空白を処理することがあることに注意すること。CSSの処理はパースの<em>後</em>に行われるので、スタイリングのための文字を元に戻すことはできない。よって、後ほど定義される振る舞いのいくつかは、これらの制限に影響されうるし、ユーザーエージェントに依存することもある。
 
-  <p>Control characters (Unicode class Cc) other than tab (U+0009), line feed
-   (U+000A), space (U+0020), and the bidi formatting characters
-   (U+202<var>x</var>) should be rendered as invisible zero-width characters.
-   UAs may instead treat them as visible characters. (Note, however, that
-   this will usually result in them being rendered as missing glyphs.) <span
-   class=issue>What's the line-breaking behavior? Effects on joining? Can we
-   just copy the behavior of some zero-width Unicode character?</span>
+  <p>tab(タブ) (U+0009)、line feed(改行) (U+000A)、space(空白) (U+0020)、バイダイのフォーマット用文字 (U+202<var>x</var>) 以外の制御文字(Unicode class Cc) は幅ゼロの見えない文字としてレンダリングされるべきである。ユーザーエージェントはそれらを見える文字として扱うことができる(しかし、これは通常見えない文字が行方不明のグリフとしてレンダリングされる結果となることに注意すること)。<span class=issue>改行の振る舞いとは何か？結合の影響は？いくつかのゼロ幅のUnicode文字の振る舞いをコピーすることはできるのか？</span>
 
   <h3 id=white-space-collapsing><span class=secno>3.1. </span> White Space
    Collapsing: the &lsquo;<a href="#text-space-collapse"><code
