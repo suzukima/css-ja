@@ -564,129 +564,110 @@
 
   <h2 id=white-space-processing><span class=secno>3. </span> 空白の処理</h2>
 
-  <p>ドキュメントの元となるテキストには、多くの場合、最終的なレンダリングに関わりのないフォーマットが含まれている。例えば、ソースコードをインデントするタブやスペースのように空白文字の編集や追加を容易にするため、元のテキストをセグメント(複数行)ごとに分割するなどである。CSSの空白処理では、ドキュメントのレンダリング時に空白をそのままにしたり重ねたりすることで、制作者がそれらのフォーマットの解釈を制御することができる。
+  <p>ドキュメントの元となるテキストには、多くの場合、最終的なレンダリングに関わりのないフォーマットが含まれている。例えば、ソースコードをインデントするタブやスペースのように空白文字の編集や追加を容易にするため、元のテキストをセグメント(複数行)ごとに分割するなどである。CSSの空白処理では、ドキュメントのレンダリング時に空白をそのままにしたり結合したりすることで、制作者がそれらのフォーマットの解釈を制御することができる。
 
   <p id=segment-normalization>ドキュメントの元テキストでは、セグメントは carriage returns(行頭復帰) (U+000D)、linefeeds(改行) (U+000A)、combination(前2つの組み合わせ) (U+000D U+000A) や、SGML の RECORD-START と RECORD-END トークンを使うようなその他のメカニズムで区切られている。もしドキュメント言語にセグメントを区切るルールが指定されていない場合、テキストの line feed (U+000A)、carriage return、(U+000D)、CRLF (U+000D U+000A)がセグメントを分けるものとして見なされる(このデフォルトルールは生成されたコンテンツに適用される)。CSSでは、これらセグメントを分割するものは1つの改行文字(U+000A)として扱われる。
 
   <p>CSSの空白処理は、空白文字をレンダリングのためだけに解釈する。内在するドキュメントデータへの影響はない。
 
-  <p class=note>ドキュメントのパーサはセグメント分割をノーマライズするだけでなく、他の空白文字と重ね合わせたり、マークアップのルールに従って空白を処理することがあることに注意すること。CSSの処理はパースの<em>後</em>に行われるので、スタイリングのための文字を元に戻すことはできない。よって、後ほど定義される振る舞いのいくつかは、これらの制限に影響されうるし、ユーザーエージェントに依存することもある。
+  <p class=note>ドキュメントのパーサはセグメント分割をノーマライズするだけでなく、他の空白文字と結合させたり、マークアップのルールに従って空白を処理することがあることに注意すること。CSSの処理はパースの<em>後</em>に行われるので、スタイリングのための文字を元に戻すことはできない。よって、後ほど定義される振る舞いのいくつかは、これらの制限に影響されうるし、ユーザーエージェントに依存することもある。
 
   <p>tab(タブ) (U+0009)、line feed(改行) (U+000A)、space(空白) (U+0020)、バイダイのフォーマット用文字 (U+202<var>x</var>) 以外の制御文字(Unicode class Cc) は幅ゼロの見えない文字としてレンダリングされるべきである。ユーザーエージェントはそれらを見える文字として扱うことができる(しかし、これは通常見えない文字が行方不明のグリフとしてレンダリングされる結果となることに注意すること)。<span class=issue>改行の振る舞いとは何か？結合の影響は？いくつかのゼロ幅のUnicode文字の振る舞いをコピーすることはできるのか？</span>
 
-  <h3 id=white-space-collapsing><span class=secno>3.1. </span> White Space
-   Collapsing: the &lsquo;<a href="#text-space-collapse"><code
-   class=property>text-space-collapse</code></a>&rsquo; property</h3>
+  <h3 id=white-space-collapsing><span class=secno>3.1. </span> 空白文字の結合: &lsquo;<a href="#text-space-collapse"><code
+   class=property>text-space-collapse</code></a>&rsquo; プロパティ</h3>
 
-  <p class=issue>This section is still under discussion and may change in
-   future drafts.
+  <p class=issue>このセクションは議論中であり、将来のドラフトで変更の可能性がある。
 
   <table class=propdef>
    <tbody>
     <tr>
-     <th>Name:
+     <th>名称:
 
      <td><dfn id=text-space-collapse>text-space-collapse</dfn>
 
     <tr>
-     <th>Value:
+     <th>値:
 
      <td>collapse | discard | [ [preserve | preserve-breaks] && [ trim-inner
       || consume-before || consume-after ]
 
     <tr>
-     <th>Initial:
+     <th>初期値:
 
      <td>collapse
 
     <tr>
-     <th>Applies to:
+     <th>適用対象:
 
-     <td>all elements
-
-    <tr>
-     <th>Inherited:
-
-     <td>yes
+     <td>全ての要素
 
     <tr>
-     <th>Percentages:
+     <th>継承:
+
+     <td>される
+
+    <tr>
+     <th>パーセンテージ:
 
      <td>N/A
 
     <tr>
-     <th>Media:
+     <th>メディア:
 
      <td>visual
 
     <tr>
-     <th>Computed&#160;value:
+     <th>算出値:
 
-     <td>specified value
+     <td>指定されたとおり
   </table>
 
-  <p class=issue>Need a property name
+  <p class=issue>プロパティ名が必要
 
-  <p>This property declares whether and how <a
-   href="#white-space-processing">white space</a> inside the element is
-   collapsed. Values have the following meanings, which must be interpreted
-   according to the <a href="#white-space-rules">white space processing
-   rules</a>:
+  <p>このプロパティは要素内の<a href="#white-space-processing">空白</a>が結合されるか否か、そしてどのように結合するのかを宣言する。値には、<a href="#white-space-rules">white space processing rules(空白処理のルール)</a> に従って解釈されなければならない、以下の意味がある:
 
   <dl>
    <dt><dfn id=collapse0 title="white-space:collapse">&lsquo;<code
     class=css>collapse</code>&rsquo;</dfn>
 
-   <dd>This value directs user agents to collapse sequences of white space
-    into a single character (or <a href="#line-break-transform">in some
-    cases</a>, no character).
+   <dd>この値は、空白の列を1文字(<a href="#line-break-transform">あるケースでは</a>文字なし)に結合するようユーザーエージェントへ指示する。
 
    <dt><dfn id=preserve title="white-space:preserve">&lsquo;<code
     class=css>preserve</code>&rsquo;</dfn>
 
-   <dd>This value prevents user agents from collapsing sequences of white
-    space. Line feeds are preserved as forced line breaks.
+   <dd>この値は、ユーザエージェントが空白列を結合できないようにする。行送りは強制改行として保持される。
 
    <dt><dfn id=preserve-breaks
     title="white-space:preserve-breaks">&lsquo;<code
     class=css>preserve-breaks</code>&rsquo;</dfn>
 
-   <dd>This value collapses white space as for &lsquo;<code
-    class=css>collapse</code>&rsquo;, but preserves line feeds as forced line
-    breaks.
+   <dd>この値は、&lsquo;<code class=css>collapse</code>&rsquo; のように空白を結合する。しかし、行送りは強制改行として保持する。
 
    <dt><dfn id=discard title="white-space:discard">&lsquo;<code
     class=css>discard</code>&rsquo;</dfn>
 
-   <dd>This value directs user agents to "discard" all white space in the
-    element.
+   <dd>この値は、要素内の全空白を"discard(捨てる)"ようユーザーエージェントへ指示する。
 
    <dt><dfn id=trim-inner title="white-space:trim-inner">&lsquo;<code
     class=css>trim-inner</code>&rsquo;</dfn>
 
-   <dd>For block containers this value directs UAs to discard all whitespace
-    at the beginning of the element up to and including the last line feed
-    before the first non-white-space character in the element as well as to
-    discard all white space at the end of the element starting with the first
-    line feed after the last non-white-space character in the element. For
-    other elements this value directs UAs to discard all whitespace at the
-    beginning and end of the element.
+   <dd>ブロックコンテナにおいてこの値は、要素開始点の手前と、要素内の最初の非空白文字の前にある最後の行送りを含む全空白を捨てるようユーザーエージェントへ指示する。また、要素内の最後の非空白文字の後に続く最初の行送りで始まる要素の終わりの全空白も捨てるようユーザーエージェントへ指示する。その他の要素においてこの値は、要素の開始点と終了点の全空白を捨てるようユーザーエージェントへ指示する。
 
    <dt><dfn id=consume-before title="white-space:consume-before">&lsquo;<code
     class=css>consume-before</code>&rsquo;</dfn>
 
-   <dd>This value directs the UA to collapse all collapsible whitespace
-    immediately before the start of the element.
+   <dd>この値は、要素開始点の直前にある結合可能な全ての空白を結合するようユーザーエージェントへ指示する。
 
    <dt><dfn id=consume-after title="white-space:consume-after">&lsquo;<code
     class=css>consume-after</code>&rsquo;</dfn>
 
-   <dd>This value directs the UA to collapse all collapsible whitespace
-    immediately after the end of the element.
+   <dd>この値は、要素終了点の直後にある結合可能な全ての空白を結合するようユーザーエージェントへ指示する。
+
   </dl>
 
   <div class=example>
-   <p>The following style rules implement MathML's white space processing:
+   <p>以下に示すスタイルルールは、MathMLの空白処理を実装している:
 
    <pre>
 <!-- -->@namespace m "http://www.w3.org/1998/Math/MathML";
@@ -698,14 +679,8 @@
 <!-- -->}</pre>
   </div>
 
-  <p class=issue>It's been pointed out that &lsquo;<code
-   class=css>trim-inner</code>&rsquo;, &lsquo;<code
-   class=css>consume-before</code>&rsquo;, and &lsquo;<code
-   class=css>consume-after</code>&rsquo; won't work well because &lsquo;<a
-   href="#text-space-collapse"><code
-   class=property>text-space-collapse</code></a>&rsquo; is inherited, meaning
-   that inserting a &lt;span> or &gt;div> would cause more white space to be
-   removed than otherwise.
+  <p class=issue>&lsquo;<a href="#text-space-collapse"><code class=property>text-space-collapse</code></a>&rsquo; が継承されるため、&lsquo;<code class=css>trim-inner</code>&rsquo;, &lsquo;<code
+   class=css>consume-before</code>&rsquo;, &lsquo;<code class=css>consume-after</code>&rsquo; がうまく機能しないことが指摘されている。これは&lt;span> or &lt;div> を挿入すると、そうでない場合と比較して多くの空白が削除されうることを意味している。
 
   <h3 id=tab-size><span class=secno>3.2. </span> Tab Character Size: the
    &lsquo;<a href="#tab-size0"><code
