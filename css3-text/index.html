@@ -30,7 +30,7 @@
 		<p>文中では日本語組版の用語を用いております。日本語組版については<a href="http://www.w3.org/TR/jlreq/ja/">日本語組版処理の要件（日本語版）</a>に目を通しておくことをおすすめいたします。</p>
 		<p>その他の仕様書の翻訳は、<a href="../">CSS 日本語レイアウト関連仕様 日本語翻訳</a>からご覧下さい。</p>
 		<p>公開開始日: 2011.11.09</p>
-     <p>更新日: 2011.11.20</p>
+     <p>更新日: 2011.12.02</p>
 	</div>
 
   <div class=head> <!--begin-logo-->
@@ -682,56 +682,52 @@
   <p class=issue>&lsquo;<a href="#text-space-collapse"><code class=property>text-space-collapse</code></a>&rsquo; が継承されるため、&lsquo;<code class=css>trim-inner</code>&rsquo;, &lsquo;<code
    class=css>consume-before</code>&rsquo;, &lsquo;<code class=css>consume-after</code>&rsquo; がうまく機能しないことが指摘されている。これは&lt;span> or &lt;div> を挿入すると、そうでない場合と比較して多くの空白が削除されうることを意味している。
 
-  <h3 id=tab-size><span class=secno>3.2. </span> Tab Character Size: the
-   &lsquo;<a href="#tab-size0"><code
-   class=property>tab-size</code></a>&rsquo; property</h3>
+  <h3 id=tab-size><span class=secno>3.2. </span>タブ文字のサイズ: &lsquo;<a href="#tab-size0"><code class=property>tab-size</code></a>&rsquo; プロパティ</h3>
 
   <table class=propdef>
    <tbody>
     <tr>
-     <th>Name:
+     <th>名称:
 
      <td><dfn id=tab-size0>tab-size</dfn>
 
     <tr>
-     <th>Value:
+     <th>値:
 
      <td>&lt;integer&gt; | &lt;length&gt;
 
     <tr>
-     <th>Initial:
+     <th>初期値:
 
      <td>8
 
     <tr>
-     <th>Applies to:
+     <th>適用対象:
 
-     <td>block containers
-
-    <tr>
-     <th>Inherited:
-
-     <td>yes
+     <td>ブロックコンテナ
 
     <tr>
-     <th>Percentages:
+     <th>継承:
+
+     <td>される
+
+    <tr>
+     <th>パーセンテージ:
 
      <td>N/A
 
     <tr>
-     <th>Media:
+     <th>メディア:
 
      <td>visual
 
     <tr>
-     <th>Computed&#160;value:
+     <th>算出値:
 
-     <td>specified value
+     <td>指定されたとおり
   </table>
 
-  <p>This property determines the measure of the tab character (U+0009) when
-   rendered. Integers represent the measure in space characters (U+0020).
-   Negative integers are not allowed.
+  <p>このプロパティは描画時のタブ文字(U+0009)の幅を決定する。整数値は空白文字(U+0020)の幅で表される。譜の整数値は禁止されている。
 
   <h3 id=white-space-rules><span class=secno>3.3. </span> The White Space
    Processing Rules</h3>
