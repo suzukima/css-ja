@@ -729,67 +729,37 @@
 
   <p>このプロパティは描画時のタブ文字(U+0009)の幅を決定する。整数値は空白文字(U+0020)の幅で表される。負の整数値は禁止されている。
 
-  <h3 id=white-space-rules><span class=secno>3.3. </span> The White Space
-   Processing Rules</h3>
+  <h3 id=white-space-rules><span class=secno>3.3. </span> 空白処理のルール</h3>
 
-  <p>White space processing affects only spaces (U+0020), tabs (U+0009), and
-   (<a href="#segment-normalization">post-normalization</a>) line feeds
-   (U+00A0).
+  <p>空白処理はスペース(U+0020)、タブ(U+0009)、(<a href="#segment-normalization">post-normalization</a>) line feeds (U+00A0) のみに作用する。
 
-  <p>For each inline (including anonymous inlines) within an inline
-   formatting context, white space characters are handled as follows,
-   ignoring bidi formatting characters as if they were not there:
+  <p>インラインのフォーマッティングされたコンテキストに含まれる各インライン要素(匿名のインラインを含む)のために、空白文字は以下のように扱われ、バイダイのフォーマッティング文字が存在しないのかのように無視する。
 
   <ul>
    <li id=collapse>
-    <p>If &lsquo;<a href="#text-space-collapse"><code
-     class=property>text-space-collapse</code></a>&rsquo; is set to
-     &lsquo;<code class=css>collapse</code>&rsquo; or &lsquo;<code
-     class=css>preserve-breaks</code>&rsquo;, white space characters are
-     considered <dfn id=collapsible>collapsible</dfn> and are processed by
-     performing the following steps:</p>
+    <p>&lsquo;<a href="#text-space-collapse"><code class=property>text-space-collapse</code></a>&rsquo; が &lsquo;<code class=css>collapse</code>&rsquo; か &lsquo;<code class=css>preserve-breaks</code>&rsquo; に設定されている場合は、空白文字は <dfn id=collapsible>collapsible(圧縮可能)</dfn>とみなされ、以下のステップで処理される:
 
     <ol>
-     <li>All spaces and tabs immediately preceding or following a line feed
-      character are removed.
+     <li>行送り文字の直前もしくは直後にある全てのスペースとタブは取り除かれる。
 
-     <li>If &lsquo;<a href="#text-space-collapse"><code
-      class=property>text-space-collapse</code></a>&rsquo; is not
-      &lsquo;<code class=css>preserve-breaks</code>&rsquo;, line feed
-      characters are transformed for rendering according to the <a
-      href="#line-break-transform">line feed transformation rules</a>.
+     <li>&lsquo;<a href="#text-space-collapse"><code class=property>text-space-collapse</code></a>&rsquo; が &lsquo;<code class=css>preserve-breaks</code>&rsquo; でなければ、行送り文字はレンダリングのために<a href="#line-break-transform">line feed transformation rules</a>に従って変換される。
 
-     <li>Every tab is converted to a space (U+0020).
+     <li>全てのタブはスペース(U+0020)に変換される。
 
-     <li>Any space immediately following another collapsible space
-      &mdash;even one outside the boundary of the inline&mdash;is removed.
-      However, if removing this space would eliminate a line breaking
-      opportunity in the text, that opportunity is still considered to exist.
+     <li>他の結合されたスペースの直後にある空白&mdash;インラインの両境界の1つ外側&mdash;にある空白は除去される。しかし、空白の除去によりテキストの改行機会が失われる場合は、この改行機会がそのまま存在するものとみなされる。
 
-     <li>A collapsible space immediately preceding an element with
-      &lsquo;<code class=css>consume-before</code>&rsquo; is removed. Such
-      removed spaces do not indicate a line breaking opportunity in the text.
-      
+     <li>&lsquo;<code class=css>consume-before</code>&rsquo; である要素の直前にある結合可能なスペースは除去される。除去されたスペースがテキストにおいて改行機会を示すことはない。
 
-     <li>Any collapsible spaces after the end of an element with &lsquo;<code
-      class=css>consume-after</code>&rsquo; are removed. Such removed spaces
-      do not indicate a line breaking opportunity in the text.
+     <li> &lsquo;<code class=css>consume-after</code>&rsquo; である要素の終わりの後ろにある結合可能なスペースは取り除かれる。除去されたスペースがテキストにおいて改行機会を示すことはない。
+
     </ol>
 
    <li>
-    <p>If &lsquo;<a href="#text-space-collapse"><code
-     class=property>text-space-collapse</code></a>&rsquo; is set to
-     &lsquo;<code class=css>preserve</code>&rsquo;, any sequence of spaces
-     unbroken by an element boundary is treated as a sequence of non-breaking
-     spaces. However, a line breaking opportunity exists at the end of the
-     sequence.
+    <p>&lsquo;<a href="#text-space-collapse"><code class=property>text-space-collapse</code></a>&rsquo; が &lsquo;<code class=css>preserve</code>&rsquo; に設定されている場合、要素の境界で分割されないスペース列は non-breaking spaces(ノーブレークスペース)として扱われる。しかし、改行機会はスペース列の終わりに存在する。
 
    <li>
-    <p>If &lsquo;<a href="#text-space-collapse"><code
-     class=property>text-space-collapse</code></a>&rsquo; is set to
-     &lsquo;<code class=css>discard</code>&rsquo;, the first white space
-     character in every white space sequence is converted to a zero width
-     non-joiner (U+200C) and the rest of the sequence is removed.</p>
+    <p>&lsquo;<a href="#text-space-collapse"><code class=property>text-space-collapse</code></a>&rsquo; が &lsquo;<code class=css>discard</code>&rsquo; に設定されている場合、全ての空白列における最初の空白文字が zero width non-joiner(ゼロ幅非接合子) (U+200C)に置き換えられ、残りの空白列は除去される。</p>
+
   </ul>
 
   <p>Then, the entire block is rendered. Inlines are laid out, taking bidi
