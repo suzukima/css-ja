@@ -30,7 +30,7 @@
 		<p>文中では日本語組版の用語を用いております。日本語組版については<a href="http://www.w3.org/TR/jlreq/ja/">日本語組版処理の要件（日本語版）</a>に目を通しておくことをおすすめいたします。</p>
 		<p>その他の仕様書の翻訳は、<a href="../">CSS 日本語レイアウト関連仕様 日本語翻訳</a>からご覧下さい。</p>
 		<p>公開開始日: 2011.11.09</p>
-     <p>更新日: 2011.12.04</p>
+     <p>更新日: 2011.12.13</p>
 	</div>
 
   <div class=head> <!--begin-logo-->
@@ -762,36 +762,22 @@
 
   </ul>
 
-  <p>Then, the entire block is rendered. Inlines are laid out, taking bidi
-   reordering into account, and wrapping as specified by the &lsquo;<a
-   href="#text-wrap0"><code class=property>text-wrap</code></a>&rsquo;
-   property.
+  <p>その結果、ブロック全体がレンダリングされる。インラインはバイダイの再配置を考慮し、 &lsquo;<a href="#text-wrap0"><code class=property>text-wrap</code></a>&rsquo; プロパティの指定通りにラッピングするようにレイアウトされる。
 
-  <p>As each line is laid out,
+  <p>各行がレイアウトされるため、
 
   <ol>
-   <li>A sequence of collapsible spaces at the beginning of a line is
-    removed.
+   <li>行の頭から連続する結合スペースは削除される。
 
-   <li>Each tab is rendered as a horizontal shift that lines up the start
-    edge of the next glyph with the next tab stop. Tab stops occur at points
-    that are multiples of the width of a space (U+0020) rendered in the
-    block's font from the block's starting content edge. How many spaces is
-    given by the &lsquo;<a href="#tab-size0"><code
-    class=property>tab-size</code></a>&rsquo; property.
+   <li>各タブは、次のグリフの開始点となる次のタブストップまでグリフ水平シフトとしてレンダリングされる。タブストップは、ブロックのコンテンツ開始端から、ブロックで使われているフォントでレンダリングされるスペース (U+0020) の幅の倍数となるポイントで発生する。 いくつのスペース幅になるかは、&lsquo;<a href="#tab-size0"><code class=property>tab-size</code></a>&rsquo; プロパティで指定される。
 
-   <li>A sequence of collapsible spaces at the end of a line is removed.
+   <li>行の最後の連続する結合スペースは削除される。
 
-   <li>If spaces or tabs at the end of a line are non-collapsible but have
-    &lsquo;<a href="#text-wrap0"><code
-    class=property>text-wrap</code></a>&rsquo; set to &lsquo;<code
-    class=property>normal</code>&rsquo; or &lsquo;<code
-    class=property>avoid</code>&rsquo; the UA may visually collapse their
-    character advance widths.
+   <li>行最後のスペースかタブが結合不可だが、&lsquo;<a href="#text-wrap0"><code class=property>text-wrap</code></a>&rsquo; が  &lsquo;<code class=property>normal</code>&rsquo; か &lsquo;<code class=property>avoid</code>&rsquo; に設定されている場合、ユーザーエージェントはそれらの幅を視覚的に結合することがある。
+
   </ol>
 
-  <p>White space that was not removed during the white space processing steps
-   is called <dfn id=preserved>preserved</dfn> white space.
+  <p>空白処理ステップで除去されなかった空白は、 <dfn id=preserved>preserved</dfn> white space と呼ばれる。
 
   <div class=example>
    <h4 id=egbidiwscollapse><span class=secno>3.3.1. </span> Example of
