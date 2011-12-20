@@ -30,7 +30,7 @@
 		<p>文中では日本語組版の用語を用いております。日本語組版については<a href="http://www.w3.org/TR/jlreq/ja/">日本語組版処理の要件（日本語版）</a>に目を通しておくことをおすすめいたします。</p>
 		<p>その他の仕様書の翻訳は、<a href="../">CSS 日本語レイアウト関連仕様 日本語翻訳</a>からご覧下さい。</p>
 		<p>公開開始日: 2011.11.09</p>
-     <p>更新日: 2011.12.13</p>
+     <p>更新日: 2011.12.20</p>
 	</div>
 
   <div class=head> <!--begin-logo-->
@@ -162,33 +162,30 @@
       class=property>text-transform</code>&rsquo; プロパティ</a>
     </ul>
 
-   <li><a href="#white-space-processing"><span class=secno>3. </span> White
-    Space Processing</a>
+   <li><a href="#white-space-processing"><span class=secno>3. </span> 空白の処理</a>
     <ul class=toc>
      <li><a href="#white-space-collapsing"><span class=secno>3.1. </span>
-      White Space Collapsing: the &lsquo;<code
-      class=property>text-space-collapse</code>&rsquo; property</a>
+      空白文字の結合: &lsquo;<code
+      class=property>text-space-collapse</code>&rsquo; プロパティ</a>
 
-     <li><a href="#tab-size"><span class=secno>3.2. </span> Tab Character
-      Size: the &lsquo;<code class=property>tab-size</code>&rsquo;
-      property</a>
+     <li><a href="#tab-size"><span class=secno>3.2. </span> タブ文字のサイズ: the &lsquo;<code class=property>tab-size</code>&rsquo;
+      プロパティ</a>
 
-     <li><a href="#white-space-rules"><span class=secno>3.3. </span> The
-      White Space Processing Rules</a>
+     <li><a href="#white-space-rules"><span class=secno>3.3. </span> 空白処理のルール</a>
       <ul class=toc>
        <li><a href="#egbidiwscollapse"><span class=secno>3.3.1. </span>
-        Example of bidirectionality with white space collapsing</a>
+        スペース結合のある双方向性の例</a>
 
        <li><a href="#line-break-transform"><span class=secno>3.3.2. </span>
-        Line Feed Transformation Rules</a>
+        改行変換のルール</a>
 
        <li><a href="#white-space-summary"><span class=secno>3.3.3. </span>
-        Informative Summary of White Space Collapsing Effects</a>
+        空白結合による影響の要約</a>
       </ul>
 
-     <li><a href="#white-space"><span class=secno>3.4. </span> White Space
-      and Text Wrapping Shorthand: the &lsquo;<code
-      class=property>white-space</code>&rsquo; property</a>
+     <li><a href="#white-space"><span class=secno>3.4. </span> 空白文字と
+      テキスト折り返しの簡略表記: the &lsquo;<code
+      class=property>white-space</code>&rsquo; プロパティ</a>
     </ul>
 
    <li><a href="#line-breaking"><span class=secno>4. </span> Line Breaking
@@ -827,7 +824,7 @@
    <li>改行を含んだ連続する空白文字の前か後にある zero width space は、連続する空白文字全体を zero width space へ結合する。
   </ul>
 
-  <h3 id=white-space><span class=secno>3.4. </span> 空白文字とテキストをラッピングする簡潔な表現: &lsquo;<a href="#white-space0"><code
+  <h3 id=white-space><span class=secno>3.4. </span> 空白文字とテキスト折り返しの簡略表記: &lsquo;<a href="#white-space0"><code
    class=property>white-space</code></a>&rsquo; プロパティ</h3>
 
   <table class=propdef>
@@ -874,7 +871,7 @@
   </table>
 
   <p>&lsquo;<a href="#white-space0"><code
-   class=property>white-space</code></a>&rsquo; プロパティは &lsquo;<a href="#text-space-collapse"><code class=property>text-space-collapse</code></a>&rsquo; プロパティと &lsquo;<a href="#text-wrap0"><code class=property>text-wrap</code></a>&rsquo; プロパティの簡潔表現である。全ての組み合わせが表現できるわけではない。値の意味を以下に示す:
+   class=property>white-space</code></a>&rsquo; プロパティは &lsquo;<a href="#text-space-collapse"><code class=property>text-space-collapse</code></a>&rsquo; プロパティと &lsquo;<a href="#text-wrap0"><code class=property>text-wrap</code></a>&rsquo; プロパティの簡略表記である。全ての組み合わせが表現できるわけではない。値の意味を以下に示す:
   
   <dl>
    <dt><dfn id=normal title="white-space:normal">&lsquo;<code
@@ -953,7 +950,7 @@
 
      <td>保たれる
 
-     <td>折り返さない
+     <td>なし
 
     <tr>
      <th>nowrap
@@ -962,7 +959,7 @@
 
      <td>結合される
 
-     <td>折り返さない
+     <td>なし
 
     <tr>
      <th>pre-wrap
