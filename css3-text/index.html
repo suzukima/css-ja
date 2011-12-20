@@ -827,111 +827,99 @@
    <li>改行を含んだ連続する空白文字の前か後にある zero width space は、連続する空白文字全体を zero width space へ結合する。
   </ul>
 
-  <h3 id=white-space><span class=secno>3.4. </span> White Space and Text
-   Wrapping Shorthand: the &lsquo;<a href="#white-space0"><code
-   class=property>white-space</code></a>&rsquo; property</h3>
+  <h3 id=white-space><span class=secno>3.4. </span> 空白文字とテキストをラッピングする簡潔な表現: &lsquo;<a href="#white-space0"><code
+   class=property>white-space</code></a>&rsquo; プロパティ</h3>
 
   <table class=propdef>
    <tbody>
     <tr>
-     <th>Name:
+     <th>名称:
 
      <td><dfn id=white-space0>white-space</dfn>
 
     <tr>
-     <th>Value:
+     <th>値:
 
      <td>normal | pre | nowrap | pre-wrap | pre-line
 
     <tr>
-     <th>Initial:
+     <th>初期値:
 
-     <td>not defined for shorthand properties
-
-    <tr>
-     <th>Applies to:
-
-     <td>all elements
+     <td>shorthandプロパティには定義されていない
 
     <tr>
-     <th>Inherited:
+     <th>適用対象:
 
-     <td>yes
+     <td>全ての要素
 
     <tr>
-     <th>Percentages:
+     <th>継承:
+
+     <td>される
+
+    <tr>
+     <th>パーセンテージ:
 
      <td>N/A
 
     <tr>
-     <th>Media:
+     <th>メディア:
 
      <td>visual
 
     <tr>
-     <th>Computed&#160;value:
+     <th>算出値:
 
-     <td>see individual properties
+     <td>個々の特性を参照
   </table>
 
-  <p>The &lsquo;<a href="#white-space0"><code
-   class=property>white-space</code></a>&rsquo; property is a shorthand for
-   the &lsquo;<a href="#text-space-collapse"><code
-   class=property>text-space-collapse</code></a>&rsquo; and &lsquo;<a
-   href="#text-wrap0"><code class=property>text-wrap</code></a>&rsquo;
-   properties. Not all combinations are represented. Values have the
-   following meanings:
-
+  <p>&lsquo;<a href="#white-space0"><code
+   class=property>white-space</code></a>&rsquo; プロパティは &lsquo;<a href="#text-space-collapse"><code class=property>text-space-collapse</code></a>&rsquo; プロパティと &lsquo;<a href="#text-wrap0"><code class=property>text-wrap</code></a>&rsquo; プロパティの簡潔表現である。全ての組み合わせが表現できるわけではない。値の意味を以下に示す:
+  
   <dl>
    <dt><dfn id=normal title="white-space:normal">&lsquo;<code
     class=css>normal</code>&rsquo;</dfn>
 
-   <dd>Sets &lsquo;<a href="#text-space-collapse"><code
-    class=property>text-space-collapse</code></a>&rsquo; to &lsquo;<code
-    class=css>collapse</code>&rsquo; and &lsquo;<a href="#text-wrap0"><code
-    class=property>text-wrap</code></a>&rsquo; to &lsquo;<code
-    class=css>normal</code>&rsquo;
+   <dd> &lsquo;<a href="#text-space-collapse"><code
+    class=property>text-space-collapse</code></a>&rsquo; を &lsquo;<code class=css>collapse</code>&rsquo; に、&lsquo;<a href="#text-wrap0"><code class=property>text-wrap</code></a>&rsquo; を &lsquo;<code class=css>normal</code>&rsquo; に設定する。
 
    <dt><dfn id=pre title="white-space:pre">&lsquo;<code
     class=css>pre</code>&rsquo;</dfn>
 
-   <dd>Sets &lsquo;<a href="#text-space-collapse"><code
-    class=property>text-space-collapse</code></a>&rsquo; to &lsquo;<code
-    class=css>preserve</code>&rsquo; and &lsquo;<a href="#text-wrap0"><code
-    class=property>text-wrap</code></a>&rsquo; to &lsquo;<code
-    class=css>none</code>&rsquo;
+   <dd>&lsquo;<a href="#text-space-collapse"><code class=property>text-space-collapse</code></a>&rsquo; を &lsquo;<code
+    class=css>preserve</code>&rsquo; に、&lsquo;<a href="#text-wrap0"><code
+    class=property>text-wrap</code></a>&rsquo; を &lsquo;<code
+    class=css>none</code>&rsquo; に設定する。
 
    <dt><dfn id=nowrap title="white-space:nowrap">&lsquo;<code
     class=css>nowrap</code>&rsquo;</dfn>
 
-   <dd>Sets &lsquo;<a href="#text-space-collapse"><code
-    class=property>text-space-collapse</code></a>&rsquo; to &lsquo;<code
-    class=css>collapse</code>&rsquo; and &lsquo;<a href="#text-wrap0"><code
-    class=property>text-wrap</code></a>&rsquo; to &lsquo;<code
-    class=css>none</code>&rsquo;
+   <dd>&lsquo;<a href="#text-space-collapse"><code
+    class=property>text-space-collapse</code></a>&rsquo; を &lsquo;<code
+    class=css>collapse</code>&rsquo; に、 &lsquo;<a href="#text-wrap0"><code
+    class=property>text-wrap</code></a>&rsquo; を &lsquo;<code
+    class=css>none</code>&rsquo; に設定する。
 
    <dt><dfn id=pre-wrap title="white-space:pre-wrap">&lsquo;<code
     class=css>pre-wrap</code>&rsquo;</dfn>
 
-   <dd>Sets &lsquo;<a href="#text-space-collapse"><code
-    class=property>text-space-collapse</code></a>&rsquo; to &lsquo;<code
-    class=css>preserve</code>&rsquo; and &lsquo;<a href="#text-wrap0"><code
-    class=property>text-wrap</code></a>&rsquo; to &lsquo;<code
-    class=css>normal</code>&rsquo;
+   <dd>&lsquo;<a href="#text-space-collapse"><code
+    class=property>text-space-collapse</code></a>&rsquo; を &lsquo;<code
+    class=css>preserve</code>&rsquo; に、&lsquo;<a href="#text-wrap0"><code
+    class=property>text-wrap</code></a>&rsquo; を &lsquo;<code
+    class=css>normal</code>&rsquo; に設定する。
 
    <dt><dfn id=pre-line title="white-space:pre-line">&lsquo;<code
     class=css>pre-line</code>&rsquo;</dfn>
 
-   <dd>Sets &lsquo;<a href="#text-space-collapse"><code
-    class=property>text-space-collapse</code></a>&rsquo; to &lsquo;<code
-    class=css>preserve-breaks</code>&rsquo; and &lsquo;<a
-    href="#text-wrap0"><code class=property>text-wrap</code></a>&rsquo; to
-    &lsquo;<code class=css>normal</code>&rsquo;
+   <dd>&lsquo;<a href="#text-space-collapse"><code
+    class=property>text-space-collapse</code></a>&rsquo; を &lsquo;<code
+    class=css>preserve-breaks</code>&rsquo; に、&lsquo;<a
+    href="#text-wrap0"><code class=property>text-wrap</code></a>&rsquo; を
+    &lsquo;<code class=css>normal</code>&rsquo; に設定する。
   </dl>
 
-  <p>The following informative table summarizes the behavior of various
-   &lsquo;<a href="#white-space0"><code
-   class=property>white-space</code></a>&rsquo; values:
+  <p>以下に参考として示す表は、&lsquo;<a href="#white-space0"><code class=property>white-space</code></a>&rsquo; の値に応じた振る舞いを要約したものである:
 
   <table class=data>
    <colgroup class=header></colgroup>
@@ -942,57 +930,57 @@
     <tr>
      <th>
 
-     <th>New Lines
+     <th>改行
 
-     <th>Spaces and Tabs
+     <th>スペースとタブ
 
-     <th>Text Wrapping
+     <th>テキストの折り返し
 
    <tbody>
     <tr>
      <th>normal
 
-     <td>Collapse
+     <td>結合される
 
-     <td>Collapse
+     <td>結合される
 
-     <td>Wrap
+     <td>折り返される
 
     <tr>
      <th>pre
 
-     <td>Preserve
+     <td>保たれる
 
-     <td>Preserve
+     <td>保たれる
 
-     <td>No wrap
+     <td>折り返さない
 
     <tr>
      <th>nowrap
 
-     <td>Collapse
+     <td>結合される
 
-     <td>Collapse
+     <td>結合される
 
-     <td>No wrap
+     <td>折り返さない
 
     <tr>
      <th>pre-wrap
 
-     <td>Preserve
+     <td>保たれる
 
-     <td>Preserve
+     <td>保たれる
 
-     <td>Wrap
+     <td>折り返される
 
     <tr>
      <th>pre-line
 
-     <td>Preserve
+     <td>保たれる
 
-     <td>Collapse
+     <td>結合される
 
-     <td>Wrap
+     <td>折り返される
   </table>
 
   <h2 id=line-breaking><span class=secno>4. </span> Line Breaking and Word
