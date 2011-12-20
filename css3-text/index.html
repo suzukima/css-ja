@@ -636,13 +636,13 @@
    <dt><dfn id=preserve title="white-space:preserve">&lsquo;<code
     class=css>preserve</code>&rsquo;</dfn>
 
-   <dd>この値は、ユーザエージェントが空白列を結合できないようにする。行送りは強制改行として保持される。
+   <dd>この値は、ユーザエージェントが空白列を結合できないようにする。改行は強制改行として保持される。
 
    <dt><dfn id=preserve-breaks
     title="white-space:preserve-breaks">&lsquo;<code
     class=css>preserve-breaks</code>&rsquo;</dfn>
 
-   <dd>この値は、&lsquo;<code class=css>collapse</code>&rsquo; のように空白を結合する。しかし、行送りは強制改行として保持する。
+   <dd>この値は、&lsquo;<code class=css>collapse</code>&rsquo; のように空白を結合する。しかし、改行は強制改行として保持する。
 
    <dt><dfn id=discard title="white-space:discard">&lsquo;<code
     class=css>discard</code>&rsquo;</dfn>
@@ -652,7 +652,7 @@
    <dt><dfn id=trim-inner title="white-space:trim-inner">&lsquo;<code
     class=css>trim-inner</code>&rsquo;</dfn>
 
-   <dd>ブロックコンテナにおいてこの値は、要素開始点の手前と、要素内の最初の非空白文字の前にある最後の行送りを含む全空白を捨てるようユーザーエージェントへ指示する。また、要素内の最後の非空白文字の後に続く最初の行送りで始まる要素の終わりの全空白も捨てるようユーザーエージェントへ指示する。その他の要素においてこの値は、要素の開始点と終了点の全空白を捨てるようユーザーエージェントへ指示する。
+   <dd>ブロックコンテナにおいてこの値は、要素開始点の手前と、要素内の最初の非空白文字の前にある最後の改行を含む全空白を捨てるようユーザーエージェントへ指示する。また、要素内の最後の非空白文字の後に続く最初の改行で始まる要素の終わりの全空白も捨てるようユーザーエージェントへ指示する。その他の要素においてこの値は、要素の開始点と終了点の全空白を捨てるようユーザーエージェントへ指示する。
 
    <dt><dfn id=consume-before title="white-space:consume-before">&lsquo;<code
     class=css>consume-before</code>&rsquo;</dfn>
@@ -740,9 +740,9 @@
     <p>&lsquo;<a href="#text-space-collapse"><code class=property>text-space-collapse</code></a>&rsquo; が &lsquo;<code class=css>collapse</code>&rsquo; か &lsquo;<code class=css>preserve-breaks</code>&rsquo; に設定されている場合は、空白文字は <dfn id=collapsible>collapsible(圧縮可能)</dfn>とみなされ、以下のステップで処理される:
 
     <ol>
-     <li>行送り文字の直前もしくは直後にある全てのスペースとタブは取り除かれる。
+     <li>改行文字の直前もしくは直後にある全てのスペースとタブは取り除かれる。
 
-     <li>&lsquo;<a href="#text-space-collapse"><code class=property>text-space-collapse</code></a>&rsquo; が &lsquo;<code class=css>preserve-breaks</code>&rsquo; でなければ、行送り文字はレンダリングのために<a href="#line-break-transform">line feed transformation rules</a>に従って変換される。
+     <li>&lsquo;<a href="#text-space-collapse"><code class=property>text-space-collapse</code></a>&rsquo; が &lsquo;<code class=css>preserve-breaks</code>&rsquo; でなければ、改行文字はレンダリングのために<a href="#line-break-transform">line feed transformation rules</a>に従って変換される。
 
      <li>全てのタブはスペース(U+0020)に変換される。
 
@@ -801,33 +801,21 @@
    <p>AとBとの間には2つのスペースがあるが、BとCとの間にはスペースがないことに注意すること。これは開始タグと終了タグの内側にスペースを置く代わりに、要素の外側へスペースを配置すること、言い換えると、明示的な埋め込みレベルに頼る代わりに、暗黙の双方向性をあてにすることがいちばんの回避策である。</p>
   </div>
 
-  <h4 id=line-break-transform><span class=secno>3.3.2. </span> Line Feed
-   Transformation Rules</h4>
+  <h4 id=line-break-transform><span class=secno>3.3.2. </span> 改行変換のルール</h4>
 
-  <p>When line feeds are <a href="#collapse">collapsible</a>, they are either
-   transformed into a space (U+0020) or removed depending on the context
-   before and after the line break.
+  <p>改行が<a href="#collapse">collapsible(結合可能)</a>である場合、改行前後のコンテキストに応じて、space(スペース) (U+0020)へ変換されるか、削除される。
 
-  <p class=note>Note that the white space processing rules have already
-   removed any tabs and spaces after the line feed before these checks take
-   place.
+  <p class=note>これらのチェックが行われる前に、空白処理のルールが改行文字の後ろにあるタブとスペースを削除済みであることに注意すること。
 
   <ul>
-   <li>If the character immediately before or immediately after the line feed
-    is the zero width space character (U+200B), then the line feed is
-    removed.
+   <li>改行直前もしくは改行直後の文字がzero width space character(幅ゼロの空白文字)  (U+200B) である場合、改行は削除される。
 
-   <li>Otherwise, if the East Asian Width property <a href="#UAX11"
-    rel=biblioentry>[UAX11]<!--{{!UAX11}}--></a> of both the character before
-    and after the line feed is F, W, or H (not A), and neither side is
-    Hangul, then the line feed is removed.
+   <li>そうでなければ、改行直前および改行直後の文字のEast Asian Width プロパティ <a href="#UAX11" rel=biblioentry>[UAX11]<!--{{!UAX11}}--></a> が F か W か H (Aではない)であり、かつどちらもハングル文字である場合、改行文字は削除される。
 
-   <li>Otherwise, the line feed is converted to a space (U+0020).
+   <li>そうでなければ、改行文字は space(スペース) (U+0020)に変換される。
   </ul>
 
-  <p class=issue>Comments on how well this would work in practice would be
-   very much appreciated, particularly from people who work with Thai and
-   similar scripts.
+  <p class=issue>これは実際にどの程度うまく動いているかというコメント、特にタイおよびそれと同様の文字を使って働いている人からのものは非常にありがたい。
 
   <h4 id=white-space-summary><span class=secno>3.3.3. </span> Informative
    Summary of White Space Collapsing Effects</h4>
