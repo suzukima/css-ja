@@ -817,18 +817,14 @@
 
   <p class=issue>これは実際にどの程度うまく動いているかというコメント、特にタイおよびそれと同様の文字を使って働いている人からのものは非常にありがたい。
 
-  <h4 id=white-space-summary><span class=secno>3.3.3. </span> Informative
-   Summary of White Space Collapsing Effects</h4>
+  <h4 id=white-space-summary><span class=secno>3.3.3. </span>空白結合による影響の要約</h4>
 
   <ul>
-   <li>Consecutive white space collapses into a single space.
+   <li>連続する空白は1つの空白に縮小される。
 
-   <li>A sequence of newlines and other white space between two Chinese,
-    Japanese, or Yi characters collapses into nothing.
+   <li>2つの中国語文字、日本語文字、イ語の文字の間にある連続する改行と空白は、何もない文字に結合される。
 
-   <li>A zero width space before or after a white space sequence containing a
-    newline causes the entire sequence of white space to collapse into a zero
-    width space.
+   <li>改行を含んだ連続する空白文字の前か後にある zero width space は、連続する空白文字全体を zero width space へ結合する。
   </ul>
 
   <h3 id=white-space><span class=secno>3.4. </span> White Space and Text
