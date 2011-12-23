@@ -30,7 +30,7 @@
 		<p>文中では日本語組版の用語を用いております。日本語組版については<a href="http://www.w3.org/TR/jlreq/ja/">日本語組版処理の要件（日本語版）</a>に目を通しておくことをおすすめいたします。</p>
 		<p>その他の仕様書の翻訳は、<a href="../">CSS 日本語レイアウト関連仕様 日本語翻訳</a>からご覧下さい。</p>
 		<p>公開開始日: 2011.11.09</p>
-     <p>更新日: 2011.12.20</p>
+     <p>更新日: 2011.12.23</p>
 	</div>
 
   <div class=head> <!--begin-logo-->
@@ -980,53 +980,26 @@
      <td>折り返される
   </table>
 
-  <h2 id=line-breaking><span class=secno>4. </span> Line Breaking and Word
-   Boundaries</h2>
+  <h2 id=line-breaking><span class=secno>4. </span> 改行と単語の境界</h2>
 
-  <p>In most writing systems, in the absence of hyphenation a line break
-   occurs only at word boundaries. Many writing systems use spaces or
-   punctuation to explicitly separate words, and line break opportunities can
-   be identified by these characters. Scripts such as Thai, Lao, and Khmer,
-   however, do not use spaces or punctuation to separate words. Although the
-   zero width space (U+200B) can be used as an explicit word delimiter in
-   these scripts, this practice is not common. As a result, a lexical
-   resource is needed to correctly identify break points in such texts.
+  <p>ほとんどの書記体系において、ハイフンが無い場合、改行は単語の境界で発生する。多くの筆記体系では、単語の分かれ目を明示化するためにスペースや句読点を用い、改行可能かどうかの判断も、これらの文字で識別可能である。しかし、タイ語、ラオ語、クメール語の文章においては、単語の分かれ目としてスペースや句読点を用いていない。ゼロ幅のスペース (U+200B)をこれらの文章における単語の境界文字として用いることもできるが、この方法は一般的ではない。よって、これらのテキストにおいて正しい分割ポイントを識別するためには、語彙のリソースが必要となる。
 
-  <p>In several other writing systems, (including Chinese, Japanese, Yi, and
-   sometimes also Korean) a line break opportunity is based on character
-   boundaries, not word boundaries. In these systems a line can break
-   anywhere <em>except</em> between certain character combinations.
-   Additionally the level of strictness in these restrictions can vary with
-   the typesetting style.
+  <p>その他いくつかの筆記体系(中国語、日本語、イ語、時には韓国語)においては、改行の機会は単語の境界ではなく、文字の境界に基づいている。これらの筆記体系において、特定文字コンビの間を除く任意の場所で改行することができる。加えて、これらの制約の厳密さは組版のスタイルによって変更することができる。
 
-  <p>CSS does not fully define where line breaking opportunities occur,
-   however some controls are provided to distinguish common variations.
+  <p>CSSは改行機会の出現場所について完全な定義をしていない。しかし一般的なバリエーションを識別するためのいくつかの制御方法を提供している。
 
-  <p class=note>Further information on line breaking conventions can be found
-   in <a href="#JLREQ" rel=biblioentry>[JLREQ]<!--{{JLREQ}}--></a> and <a
-   href="#JIS4051" rel=biblioentry>[JIS4051]<!--{{JIS4051}}--></a> for
-   Japanese, <a href="#ZHMARK" rel=biblioentry>[ZHMARK]<!--{{ZHMARK}}--></a>
-   for Chinese, and in <a href="#UAX14"
-   rel=biblioentry>[UAX14]<!--{{!UAX14}}--></a> for all scripts in Unicode.
+  <p class=note>改行の規則についての詳細情報は、日本語については <a href="#JLREQ" rel=biblioentry>[JLREQ]<!--{{JLREQ}}--></a> と <a href="#JIS4051" rel=biblioentry>[JIS4051]<!--{{JIS4051}}--></a> で、中国語については  <a href="#ZHMARK" rel=biblioentry>[ZHMARK]<!--{{ZHMARK}}--></a> で、Unicode が対象とする全文章については <a href="#UAX14" rel=biblioentry>[UAX14]<!--{{!UAX14}}--></a> で見ることができる。
    <!-- The CSS Working Group notes that although UAX 14 contains a wealth of
       information about line breaking conventions, a literal implementation
       of its algorithm has been found to be inadequate in multiple situations. -->
 
-  <p class=issue>Any guidance for appropriate references here would be much
-   appreciated.
+  <p class=issue>適切なリファレンスを教えていただけると非常にありがたい。
 
-  <p class=issue>Information on line-breaking in the absence of dictionaries:
-   <a
-   href="http://lists.w3.org/Archives/Public/www-style/2011Feb/0126.html">for
-   Thai</a>
+  <p class=issue><a href="http://lists.w3.org/Archives/Public/www-style/2011Feb/0126.html">タイ語にて</a>辞書が無い場合に改行をどうするのかの情報。
 
-  <p>Floated and absolutely-positioned elements do not introduce a line
-   breaking opportunity. The line breaking behavior of a replaced element is
-   equivalent to that of a Latin character.
+  <p>フロートや絶対位置指定を用いた要素には改行機会が導入されない。置き換えられた要素における改行のふるまいは、ラテン文字のふるまいと同等になる。
 
-  <p class=issue>It is not clear whether this section handles Southeast Asian
-   scripts well. Additionally, some guidance should be provided on how to
-   break or not break Southeast Asian in the absence of a dictionary.
+  <p class=issue>このセクションにて、東南アジアの文章をうまく扱えるかどうかははっきりしていない。辞書がないときに東アジアの文章をどう改行するか/しないかのガイダンスが提供されるべきである。
 
   <h3 id=line-break><span class=secno>4.1. </span> Line Breaking Strictness:
    the &lsquo;<a href="#line-break0"><code
