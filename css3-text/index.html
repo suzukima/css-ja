@@ -188,16 +188,13 @@
       class=property>white-space</code>&rsquo; プロパティ</a>
     </ul>
 
-   <li><a href="#line-breaking"><span class=secno>4. </span> Line Breaking
-    and Word Boundaries</a>
+   <li><a href="#line-breaking"><span class=secno>4. </span> 改行と単語の境界</a>
     <ul class=toc>
-     <li><a href="#line-break"><span class=secno>4.1. </span> Line Breaking
-      Strictness: the &lsquo;<code class=property>line-break</code>&rsquo;
-      property</a>
+     <li><a href="#line-break"><span class=secno>4.1. </span> 改行の厳密さ: &lsquo;<code class=property>line-break</code>&rsquo;
+      プロパティ</a>
 
-     <li><a href="#word-break"><span class=secno>4.2. </span> Word Breaking
-      Rules: the &lsquo;<code class=property>word-break</code>&rsquo;
-      property</a>
+     <li><a href="#word-break"><span class=secno>4.2. </span> 単語分割ルール: &lsquo;<code class=property>word-break</code>&rsquo;
+      プロパティ</a>
     </ul>
 
    <li><a href="#hyphenation"><span class=secno>5. </span>Hyphenation</a>
@@ -1125,83 +1122,75 @@
 
   <p class=note>CSSWGは、将来において改行をより細かく制御する仕様がハイエンドの出版要件を満たすために必要となることを認識している。
 
-  <h3 id=word-break><span class=secno>4.2. </span> Word Breaking Rules: the
-   &lsquo;<a href="#word-break0"><code
-   class=property>word-break</code></a>&rsquo; property</h3>
+  <h3 id=word-break><span class=secno>4.2. </span> 単語分割ルール: &lsquo;<a href="#word-break0"><code
+   class=property>word-break</code></a>&rsquo; プロパティ</h3>
 
   <table class=propdef>
    <tbody>
     <tr>
-     <th>Name:
+     <th>名称:
 
      <td><dfn id=word-break0>word-break</dfn>
 
     <tr>
-     <th>Value:
+     <th>値:
 
      <td>normal | keep-all | break-all
 
     <tr>
-     <th>Initial:
+     <th>初期値:
 
      <td>normal
 
     <tr>
-     <th>Applies to:
+     <th>適用対象:
 
-     <td>all elements
-
-    <tr>
-     <th>Inherited:
-
-     <td>yes
+     <td>全ての要素
 
     <tr>
-     <th>Percentages:
+     <th>継承:
+
+     <td>される
+
+    <tr>
+     <th>パーセンテージ:
 
      <td>N/A
 
     <tr>
-     <th>Media:
+     <th>メディア:
 
      <td>visual
 
     <tr>
-     <th>Computed&#160;value:
+     <th>算出値:
 
-     <td>specified value
+     <td>指定された値
   </table>
 
-  <p>This property specifies line break opportunities within words. Values
-   have the following meanings:
+  <p>このプロパティは単語中の改行機会を指定する。値の意味を以下に示す:
+
 
   <dl>
    <dt><dfn id=normal1 title="word-break:normal">&lsquo;<code
     class=css>normal</code>&rsquo;</dfn>
 
-   <dd>Break lines according to their usual rules.
+   <dd>一般的なルールに従い改行する。
 
    <dt><dfn id=break-all title="word-break:break-all">&lsquo;<code
     class=css>break-all</code>&rsquo;</dfn>
 
-   <dd>Lines may break between any two characters within words. Hyphenation
-    is not applied. This option is used mostly in a context where the text is
-    predominantly using CJK characters with few non-CJK excerpts and it is
-    desired that the text be better distributed on each line.
+   <dd>単語内の任意の2文字の間で改行されることがある。ハイフンには適用されない。このオプションは主にCJKの文字を使いながら、CJK以外の文字を少し引用するようなテキストのあるコンテキストで主に使われており、テキストが各行にうまく分配されるのが望ましい。
 
    <dt><dfn id=keep-all title="word-break:keep-all">&lsquo;<code
     class=css>keep-all</code>&rsquo;</dfn>
 
-   <dd>Lines may break only at <a href="#word-separator">word separators</a>
-    and other explicit break opportunities. Otherwise this option is
-    equivalent to &lsquo;<code class=css>normal</code>&rsquo;. This option is
-    mostly used where the presence of word separator characters still creates
-    line-breaking opportunities, as in Korean.
+   <dd><a href="#word-separator">word separators</a>および明確な改行機会の箇所のみで改行されることがある。そうでなければ、このオプションは &lsquo;<code class=css>normal</code>&rsquo; と同等である。このオプションは韓国語のように、単語分割文字の存在が改行機会を作り出しているようなところで主に使われている。
+
   </dl>
 
-  <p>When shaping scripts such as Arabic are allowed to break within words
-   due to &lsquo;<code class=css>break-all</code>&rsquo;, the characters must
-   still be shaped as if the word were not broken.
+  <p>アラビア語のような文章整形において、&lsquo;<code class=css>break-all</code>&rsquo;により単語内での改行が許容されている場合、単語が分割されていなかったかのように文字が整形される必要がある。
+
 
   <h2 id=hyphenation><span class=secno>5. </span>Hyphenation</h2>
 
