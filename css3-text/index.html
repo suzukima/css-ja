@@ -30,7 +30,7 @@
 		<p>文中では日本語組版の用語を用いております。日本語組版については<a href="http://www.w3.org/TR/jlreq/ja/">日本語組版処理の要件（日本語版）</a>に目を通しておくことをおすすめいたします。</p>
 		<p>その他の仕様書の翻訳は、<a href="../">CSS 日本語レイアウト関連仕様 日本語翻訳</a>からご覧下さい。</p>
 		<p>公開開始日: 2011.11.09</p>
-     <p>更新日: 2011.12.23</p>
+     <p>更新日: 2011.12.27</p>
 	</div>
 
   <div class=head> <!--begin-logo-->
@@ -429,7 +429,7 @@
 
   <h3 id=terms><span class=secno>1.3. </span> 用語について</h3>
 
-  <p id=grapheme-cluster>A <dfn id=grapheme-cluster0>書記素クラスタ(grapheme cluster)</dfn>は、言語の使用者が文字かスクリプトの基本的な単位と考えているものである。この用語については Unicode Technical Report: Text Boundaries <a href="#UAX29" rel=biblioentry>[UAX29]<!--{{!UAX29}}--></a> にて詳細が記述されている。本仕様では <a href="#UAX29" rel=biblioentry>[UAX29]<!--{{!UAX29}}--></a> で定義されている <em>拡張書記素クラスタ(extended grapheme cluster)</em> を使用する(<em>legacy grapheme cluster</em> ではない)。ユーザーエージェントはUnicodeで許容されている定義をさらに調整してもよい。本仕様においては、<dfn id=character>文字(character)</dfn> という曖昧な用語が、<a href="#grapheme-cluster0"><i>書記素クラスタ(grapheme cluster)</i></a> の親しみやすい同義語として使用されている。文字の Unicode プロパティ決定方法は <a href="http://dev.w3.org/csswg/css3-writing-modes/#character-properties">Characters and Properties</a> を参照のこと。
+  <p id=grapheme-cluster>A <dfn id=grapheme-cluster0>書記素クラスタ(grapheme cluster)</dfn>は、言語の使用者が文字かスクリプトの基本的な単位と考えているものである。この用語については Unicode Technical Report: Text Boundaries <a href="#UAX29" rel=biblioentry>[UAX29]<!--{{!UAX29}}--></a> にて詳細が記述されている。本仕様では <a href="#UAX29" rel=biblioentry>[UAX29]<!--{{!UAX29}}--></a> で定義されている <em>拡張書記素クラスタ(extended grapheme cluster)</em> を使用する(<em>legacy grapheme cluster</em> ではない)。ユーザエージェントはUnicodeで許容されている定義をさらに調整してもよい。本仕様においては、<dfn id=character>文字(character)</dfn> という曖昧な用語が、<a href="#grapheme-cluster0"><i>書記素クラスタ(grapheme cluster)</i></a> の親しみやすい同義語として使用されている。文字の Unicode プロパティ決定方法は <a href="http://dev.w3.org/csswg/css3-writing-modes/#character-properties">Characters and Properties</a> を参照のこと。
 
   <p id=letter>本仕様における <dfn id=letter0>letter</dfn> は、Unicodeの 一般的にカテゴリにおける Letter か Number の1つに属する文字である。<a href="#UAX44" rel=biblioentry>[UAX44]<!--{{!UAX44}}--></a>
 
@@ -520,9 +520,9 @@
    <dd>小さいカナ文字を通常のカナに置き換える。この値は通常、ルビの注釈テキストに使用される。そこでは、全ての小さいカナ文字が大きなカナ文字として描画されるべきである。
   </dl>
 
-  <p>Unicode Standard で指定された文字レパートリーのケースマッピング(大文字小文字の変換)ルールは、Unicode Consortium Web site<a href="#UNICODE" rel=biblioentry>[UNICODE]<!--{{!UNICODE}}--></a> で見つけることができる。ユーザーエージェントはDefault Case Algorithm のセクションで定義されている条件付きケースマッピングを含む、Unicode文字に対する完全なケースマッピングを使用する必要がある。もし(そしてそのときに限り)、要素のコンテンツの言語が既知のものである場合、該当する言語固有のルールも同様に使用する必要がある(<a href="http://www.unicode.org/Public/UNIDATA/SpecialCasing.txt">SpecialCasing.txt</a> を参照のこと)。
+  <p>Unicode Standard で指定された文字レパートリーのケースマッピング(大文字小文字の変換)ルールは、Unicode Consortium Web site<a href="#UNICODE" rel=biblioentry>[UNICODE]<!--{{!UNICODE}}--></a> で見つけることができる。ユーザエージェントはDefault Case Algorithm のセクションで定義されている条件付きケースマッピングを含む、Unicode文字に対する完全なケースマッピングを使用する必要がある。もし(そしてそのときに限り)、要素のコンテンツの言語が既知のものである場合、該当する言語固有のルールも同様に使用する必要がある(<a href="http://www.unicode.org/Public/UNIDATA/SpecialCasing.txt">SpecialCasing.txt</a> を参照のこと)。
 
-  <p>&lsquo;<code class=css>capitalize</code>&rsquo; で使用される "word" の定義はユーザーエージェント依存である<a href="#UAX29" rel=biblioentry>[UAX29]<!--{{!UAX29}}--></a>。これはこのような単語の境界を決定するために示されている(しかし必要ではない)。制作者は、言語固有の titlecase 規則(例えば、英語ではarticleをスキップする)をフォローするために、&lsquo;<code class=css>capitalize</code>&rsquo; に期待すべきではない。
+  <p>&lsquo;<code class=css>capitalize</code>&rsquo; で使用される "word" の定義はユーザエージェント依存である<a href="#UAX29" rel=biblioentry>[UAX29]<!--{{!UAX29}}--></a>。これはこのような単語の境界を決定するために示されている(しかし必要ではない)。制作者は、言語固有の titlecase 規則(例えば、英語ではarticleをスキップする)をフォローするために、&lsquo;<code class=css>capitalize</code>&rsquo; に期待すべきではない。
 
    <!-- www-style notes that UAX29 won't work for 'Tis and similar, so
       the UA might want to use UAX29 to split into words, but skip forward
@@ -567,9 +567,9 @@
 
   <p>CSSの空白処理は、空白文字をレンダリングのためだけに解釈する。内在するドキュメントデータへの影響はない。
 
-  <p class=note>ドキュメントのパーサはセグメント分割をノーマライズするだけでなく、他の空白文字と結合させたり、マークアップのルールに従って空白を処理することがあることに注意すること。CSSの処理はパースの<em>後</em>に行われるので、スタイリングのための文字を元に戻すことはできない。よって、後ほど定義される振る舞いのいくつかは、これらの制限に影響されうるし、ユーザーエージェントに依存することもある。
+  <p class=note>ドキュメントのパーサはセグメント分割をノーマライズするだけでなく、他の空白文字と結合させたり、マークアップのルールに従って空白を処理することがあることに注意すること。CSSの処理はパースの<em>後</em>に行われるので、スタイリングのための文字を元に戻すことはできない。よって、後ほど定義される振る舞いのいくつかは、これらの制限に影響されうるし、ユーザエージェントに依存することもある。
 
-  <p>tab(タブ) (U+0009)、line feed(改行) (U+000A)、space(空白) (U+0020)、バイダイのフォーマット用文字 (U+202<var>x</var>) 以外の制御文字(Unicode class Cc) は幅ゼロの見えない文字としてレンダリングされるべきである。ユーザーエージェントはそれらを見える文字として扱うことができる(しかし、これは通常見えない文字が行方不明のグリフとしてレンダリングされる結果となることに注意すること)。<span class=issue>改行の振る舞いとは何か？結合の影響は？いくつかのゼロ幅のUnicode文字の振る舞いをコピーすることはできるのか？</span>
+  <p>tab(タブ) (U+0009)、line feed(改行) (U+000A)、space(空白) (U+0020)、バイダイのフォーマット用文字 (U+202<var>x</var>) 以外の制御文字(Unicode class Cc) は幅ゼロの見えない文字としてレンダリングされるべきである。ユーザエージェントはそれらを見える文字として扱うことができる(しかし、これは通常見えない文字が行方不明のグリフとしてレンダリングされる結果となることに注意すること)。<span class=issue>改行の振る舞いとは何か？結合の影響は？いくつかのゼロ幅のUnicode文字の振る舞いをコピーすることはできるのか？</span>
 
   <h3 id=white-space-collapsing><span class=secno>3.1. </span> 空白文字の結合: &lsquo;<a href="#text-space-collapse"><code
    class=property>text-space-collapse</code></a>&rsquo; プロパティ</h3>
@@ -628,7 +628,7 @@
    <dt><dfn id=collapse0 title="white-space:collapse">&lsquo;<code
     class=css>collapse</code>&rsquo;</dfn>
 
-   <dd>この値は、空白の列を1文字(<a href="#line-break-transform">あるケースでは</a>文字なし)に結合するようユーザーエージェントへ指示する。
+   <dd>この値は、空白の列を1文字(<a href="#line-break-transform">あるケースでは</a>文字なし)に結合するようユーザエージェントへ指示する。
 
    <dt><dfn id=preserve title="white-space:preserve">&lsquo;<code
     class=css>preserve</code>&rsquo;</dfn>
@@ -644,22 +644,22 @@
    <dt><dfn id=discard title="white-space:discard">&lsquo;<code
     class=css>discard</code>&rsquo;</dfn>
 
-   <dd>この値は、要素内の全空白を"discard(捨てる)"ようユーザーエージェントへ指示する。
+   <dd>この値は、要素内の全空白を"discard(捨てる)"ようユーザエージェントへ指示する。
 
    <dt><dfn id=trim-inner title="white-space:trim-inner">&lsquo;<code
     class=css>trim-inner</code>&rsquo;</dfn>
 
-   <dd>ブロックコンテナにおいてこの値は、要素開始点の手前と、要素内の最初の非空白文字の前にある最後の改行を含む全空白を捨てるようユーザーエージェントへ指示する。また、要素内の最後の非空白文字の後に続く最初の改行で始まる要素の終わりの全空白も捨てるようユーザーエージェントへ指示する。その他の要素においてこの値は、要素の開始点と終了点の全空白を捨てるようユーザーエージェントへ指示する。
+   <dd>ブロックコンテナにおいてこの値は、要素開始点の手前と、要素内の最初の非空白文字の前にある最後の改行を含む全空白を捨てるようユーザエージェントへ指示する。また、要素内の最後の非空白文字の後に続く最初の改行で始まる要素の終わりの全空白も捨てるようユーザエージェントへ指示する。その他の要素においてこの値は、要素の開始点と終了点の全空白を捨てるようユーザエージェントへ指示する。
 
    <dt><dfn id=consume-before title="white-space:consume-before">&lsquo;<code
     class=css>consume-before</code>&rsquo;</dfn>
 
-   <dd>この値は、要素開始点の直前にある結合可能な全ての空白を結合するようユーザーエージェントへ指示する。
+   <dd>この値は、要素開始点の直前にある結合可能な全ての空白を結合するようユーザエージェントへ指示する。
 
    <dt><dfn id=consume-after title="white-space:consume-after">&lsquo;<code
     class=css>consume-after</code>&rsquo;</dfn>
 
-   <dd>この値は、要素終了点の直後にある結合可能な全ての空白を結合するようユーザーエージェントへ指示する。
+   <dd>この値は、要素終了点の直後にある結合可能な全ての空白を結合するようユーザエージェントへ指示する。
 
   </dl>
 
@@ -770,7 +770,7 @@
 
    <li>行の最後の連続する結合スペースは削除される。
 
-   <li>行最後のスペースかタブが結合不可だが、&lsquo;<a href="#text-wrap0"><code class=property>text-wrap</code></a>&rsquo; が  &lsquo;<code class=property>normal</code>&rsquo; か &lsquo;<code class=property>avoid</code>&rsquo; に設定されている場合、ユーザーエージェントはそれらの幅を視覚的に結合することがある。
+   <li>行最後のスペースかタブが結合不可だが、&lsquo;<a href="#text-wrap0"><code class=property>text-wrap</code></a>&rsquo; が  &lsquo;<code class=property>normal</code>&rsquo; か &lsquo;<code class=property>avoid</code>&rsquo; に設定されている場合、ユーザエージェントはそれらの幅を視覚的に結合することがある。
 
   </ol>
 
@@ -1001,151 +1001,129 @@
 
   <p class=issue>このセクションにて、東南アジアの文章をうまく扱えるかどうかははっきりしていない。辞書がないときに東アジアの文章をどう改行するか/しないかのガイダンスが提供されるべきである。
 
-  <h3 id=line-break><span class=secno>4.1. </span> Line Breaking Strictness:
-   the &lsquo;<a href="#line-break0"><code
-   class=property>line-break</code></a>&rsquo; property</h3>
+  <h3 id=line-break><span class=secno>4.1. </span> 改行の厳密さ: 
+   &lsquo;<a href="#line-break0"><code
+   class=property>line-break</code></a>&rsquo; プロパティ</h3>
 
   <table class=propdef>
    <tbody>
     <tr>
-     <th>Name:
+     <th>名称:
 
      <td><dfn id=line-break0>line-break</dfn>
 
     <tr>
-     <th>Value:
+     <th>値:
 
      <td>auto | loose | normal | strict
 
     <tr>
-     <th>Initial:
+     <th>初期値:
 
      <td>auto
 
     <tr>
-     <th>Applies to:
+     <th>適用対象:
 
-     <td>all elements
-
-    <tr>
-     <th>Inherited:
-
-     <td>yes
+     <td>全ての要素
 
     <tr>
-     <th>Percentages:
+     <th>継承:
+
+     <td>される
+
+    <tr>
+     <th>パーセンテージ:
 
      <td>N/A
 
     <tr>
-     <th>Media:
+     <th>メディア:
 
      <td>visual
 
     <tr>
-     <th>Computed&#160;value:
+     <th>算出値:
 
-     <td>specified value
+     <td>指定された値
   </table>
 
-  <p>This property specifies the strictness of line-breaking rules applied
-   within an element: particularly how line-breaking interacts with
-   punctuation. Values have the following meanings:
+  <p>このプロパティは要素内に適用される改行ルールの厳密さ: 特に句読点とあわせてどう作用するかを指定する。値の意味を以下に示す:
 
   <dl>
    <dt><dfn id=auto title="line-break:auto">&lsquo;<code
     class=css>auto</code>&rsquo;</dfn>
 
-   <dd>The UA determines the set of line-breaking restrictions to use, and it
-    may vary the restrictions based on the length of the line; e.g., use a
-    less restrictive set of line-break rules for short lines.
+   <dd>ユーザエージェントが使用する改行制限のセットを決定し、行の長さに基づいてその制限を変更することができる。例えば、短い行向けに改行ルール制限の少ないセットを使用する、などである。
 
    <dt><dfn id=loose title="line-break:loose">&lsquo;<code
     class=css>loose</code>&rsquo;</dfn>
 
-   <dd>Breaks text using the least restrictive set of line-breaking rules.
-    Typically used for short lines, such as in newspapers.
+   <dd>最も制限が少ない改行ルールセットを使ってテキストを改行する。一般的に新聞のような短い行で使用される。
 
    <dt><dfn id=normal0 title="line-break:normal">&lsquo;<code
     class=css>normal</code>&rsquo;</dfn>
 
-   <dd>Breaks text using the most common set of line-breaking rules.
+   <dd>最も一般的な改行ルールセットを使ってテキストを改行する。
 
    <dt><dfn id=strict title="line-break:strict">&lsquo;<code
     class=css>strict</code>&rsquo;</dfn>
 
-   <dd>Breaks text using the most stringent set of line-breaking rules.
+   <dd>最も厳しい改行ルールセットを使ってテキストを改行する。
+
   </dl>
 
-  <p>CSS distinguishes between three levels of strictness in the rules for
-   implicit line breaking. The precise set of rules in effect for each level
-   is up to the UA and should follow language conventions. However, this
-   specification does recommend that:
+  <p>CSSは暗黙的改行ルールにおける3レベルの厳密さを区別している。各レベルの効果における正確なルールセットは、UAの責任であり、言語の規則に従う必要がある。しかし、本仕様は以下を推奨している:
 
   <ul>
-   <li>Following breaks be forbidden in &lsquo;<code
-    class=css>strict</code>&rsquo; line breaking and allowed in &lsquo;<code
-    class=css>normal</code>&rsquo; and &lsquo;<code
-    class=css>loose</code>&rsquo;:
+   <li>以下の改行は &lsquo;<code class=css>strict</code>&rsquo; では禁止され、&lsquo;<code class=css>normal</code>&rsquo; と &lsquo;<code class=css>loose</code>&rsquo; では許可される:
     <ul>
-     <li>breaks before Japanese <a href="#small-kana">small kana</a>
+     <li>日本語の <a href="#small-kana">small kana</a> の前にある改行
 
-     <li>breaks before the Katakana-Hiragana prolonged sound mark:
-      &#x30FC;&nbsp;U+30FC
+     <li>breaks before the カタカナひらがなの長音記号 (&#x30FC;&nbsp;U+30FC) の前にある改行
+      
     </ul>
-    If the language is known to be Chinese or Japanese, then additionally:
+    言語が中国語か日本語と判明している場合は、さらに以下を追加:
     <ul>
-     <li>breaks before before hyphens:<br>
-      &#x2010;&nbsp;U+2010, &#x2013;&nbsp;U+2013, &#x301C;&nbsp;U+301C,
-      &#x30A0;&nbsp;U+30A0
+     <li>ハイフン (&#x2010;&nbsp;U+2010, &#x2013;&nbsp;U+2013, &#x301C;&nbsp;U+301C, &#x30A0;&nbsp;U+30A0) の前にある改行
     </ul>
 
-   <li>Following breaks be forbidden in &lsquo;<code
-    class=css>normal</code>&rsquo; and &lsquo;<code
-    class=css>strict</code>&rsquo; line breaking and allowed in &lsquo;<code
-    class=css>loose</code>&rsquo;:
+   <li>以下の改行は &lsquo;<code
+    class=css>normal</code>&rsquo; と &lsquo;<code
+    class=css>strict</code>&rsquo; では禁止され、&lsquo;<code class=css>loose</code>&rsquo;では許可される:
     <ul>
-     <li>breaks before iteration marks:<br>
-      &#x3005;&nbsp;U+3005, &#x303B;&nbsp;U+303B, &#x309D;&nbsp;U+309D,
-      &#x309E;&nbsp;U+309E, &#x30FD;&nbsp;U+30FD, &#x30FE;&nbsp;U+30FE
+     <li>繰り返し符号 (&#x3005;&nbsp;U+3005, &#x303B;&nbsp;U+303B, &#x309D;&nbsp;U+309D,
+      &#x309E;&nbsp;U+309E, &#x30FD;&nbsp;U+30FD, &#x30FE;&nbsp;U+30FE) の前にある改行
+      
 
-     <li>breaks between some inseparable characters:<br>
-      &#x2025;&nbsp;U+2025, &#x2026;&nbsp;U+2026
+     <li>いくつかの不可分文字 (&#x2025;&nbsp;U+2025, &#x2026;&nbsp;U+2026) の前にある改行
+      
     </ul>
-    If the language is known to be Chinese or Japanese, then additionally:
+    言語が中国語か日本語と判明している場合は、さらに以下を追加:
     <ul>
-     <li>breaks before certain centered punctuation marks:<br>
-      &#x003A;&nbsp;U+003A, &#x003B;&nbsp;U+003B, &#x30FB;&nbsp;U+30FB,
+     <li>特定のセンタリングされた句読点 (&#x003A;&nbsp;U+003A, &#x003B;&nbsp;U+003B, &#x30FB;&nbsp;U+30FB,
       &#xFF1A;&nbsp;U+FF1A, &#xFF1B;&nbsp;U+FF1B, &#xFF65;&nbsp;U+FF65,
       &#x0021;&nbsp;U+0021, &#x003F;&nbsp;U+003F, &#x203C;&nbsp;U+203C,
       &#x2047;&nbsp;U+2047, &#x2048;&nbsp;U+2048, &#x2049;&nbsp;U+2049,
-      &#xFF01;&nbsp;U+FF01, &#xFF1F;&nbsp;U+FF1F
-
-     <li>breaks before postfixes:<br>
-      &#x0025;&nbsp;U+0025, &#x00A2;&nbsp;U+00A2, &#x00B0;&nbsp;U+00B0,
+      &#xFF01;&nbsp;U+FF01, &#xFF1F;&nbsp;U+FF1F) の前にある改行
+      
+     <li>接尾語 (&#x0025;&nbsp;U+0025, &#x00A2;&nbsp;U+00A2, &#x00B0;&nbsp;U+00B0,
       &#x2030;&nbsp;U+2030, &#x2032;&nbsp;U+2032, &#x2033;&nbsp;U+2033,
-      &#x2103;&nbsp;U+2103, &#xFF05;&nbsp;U+FF05, &#xFFE0;&nbsp;U+FFE0
+      &#x2103;&nbsp;U+2103, &#xFF05;&nbsp;U+FF05, &#xFFE0;&nbsp;U+FFE0) の前にある改行
+      
 
-     <li>breaks after prefixes:<br>
-      &#x0024;&nbsp;U+0024, &#x00A3;&nbsp;U+00A3, &#x00A5;&nbsp;U+00A5,
+     <li>接頭語 (&#x0024;&nbsp;U+0024, &#x00A3;&nbsp;U+00A3, &#x00A5;&nbsp;U+00A5,
       &#x20AC;&nbsp;U+20AC, &#x2116;&nbsp;U+2116, &#xFF04;&nbsp;U+FF04,
-      &#xFFE1;&nbsp;U+FFE1, &#xFFE5;&nbsp;U+FFE5
+      &#xFFE1;&nbsp;U+FFE1, &#xFFE5;&nbsp;U+FFE5) の前にある改行
+      
     </ul>
   </ul>
 
-  <p class=note>In CSS3 no distinction is made among the levels of strictness
-   in non-CJK text: only CJK codepoints are affected, unless the text is
-   marked as Chinese or Japanese, in which case some additional common
-   codepoints are affected. However a future level of CSS may add behaviors
-   affecting non-CJK text.
+  <p class=note>CSS3では、CJKではないテキストにおいて、厳密さのレベルの区別がない。CJKのコードポイントだけが影響を受けるが、テキストが中国語か日本語とマークアップされている場合には、追加でいくつかの一般的なコードポイントも影響を受ける。しかし将来のCSSではCJKではないテキストに影響を与える振る舞いも追加されるかもしれない。
 
-  <p>Support for this property is <em>optional</em>. It is recommended for
-   UAs that wish to support CJK typography and strongly recommended for UAs
-   in the Japanese market.
+  <p>このプロパティのサポートは<em>optional(任意)</em>である。ユーザエージェントにはCJKの組版をサポートしたいと考えている人に推奨する。日本マーケットのユーザエージェントには強く推奨する。
 
-  <p class=note>The CSSWG recognizes that in a future edition of the
-   specification finer control over line breaking may be necessary to satisfy
-   high-end publishing requirements.
+  <p class=note>CSSWGは、将来において改行をより細かく制御する仕様がハイエンドの出版要件を満たすために必要となることを認識している。
 
   <h3 id=word-break><span class=secno>4.2. </span> Word Breaking Rules: the
    &lsquo;<a href="#word-break0"><code
