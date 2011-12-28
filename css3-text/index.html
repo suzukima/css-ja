@@ -1192,18 +1192,13 @@
   <p>アラビア語のような文章整形において、&lsquo;<code class=css>break-all</code>&rsquo;により単語内での改行が許容されている場合、単語が分割されていなかったかのように文字が整形される必要がある。
 
 
-  <h2 id=hyphenation><span class=secno>5. </span>Hyphenation</h2>
+  <h2 id=hyphenation><span class=secno>5. </span>ハイフネーション</h2>
 
-  <p>Hyphenation allows the controlled splitting of words to improve the
-   layout of paragraphs. CSS3 Text does not define the exact rules for
-   hyphenation, but defines six properties and an at-rule that influence
-   hyphenation.
+  <p>ハイフネーションは、段落のレイアウトを改善するために単語分割を制御することができる。CSS3 Textはハイフネーションに対する正確なルールを提示していないが、6つのプロパティとハイフネーションの影響力を定義している。
 
-  <p>Whether hyphenation is applied can controlled with the &lsquo;<a
-   href="#hyphens0"><code class=property>hyphens</code></a>&rsquo; property.
+  <p>ハイフネーションが適用されているかどうかは、 &lsquo;<a href="#hyphens0"><code class=property>hyphens</code></a>&rsquo; プロパティで制御できる。
 
-  <p>The following author controls are not required to be supported for the
-   UA to claim conformance to CSS Text Level 3:
+  <p>以下の作者による制御は、ユーザエージェントが CSS Text Level 3 への適合を主張するためにサポートされる必要はない:
 
   <ul>
    <li>&lsquo;<a href="#hyphenate-limit-zone"><code
@@ -1216,18 +1211,11 @@
     class=property>hyphenate-limit-lines</code></a>&rsquo;
   </ul>
 
-  <p>Nonetheless, UAs are strongly encouraged to optimize their line-breaking
-   implementation to choose good break points and appropriate hyphenation
-   points.
+  <p>とはいえ、ユーザエージェントは、良好な改行ポイントと適切なハイフネーションポイントを選択するための、これら改行の実装を最適化することを強く推奨する。
 
-  <p class=note>These controls are optional because for a low-end
-   implementation of hyphenation, they are not critical enough; and for a
-   high-end implementation of paragraph breaking (such as in T<span
-   style="font-variant: small-caps">e</span>&chi;) they are not considered
-   especially useful.
+  <p class=note>ハイフネーションのローエンド実装においてはこれらはそれほど重要ではなく、また段落分割のハイエンド実装(例えば T<span style="font-variant: small-caps">e</span>&chi;)においては特に有用とは見なされないため、これらの制御はオプション扱いとなっている。
 
-  <p>Hyphenation opportunities are not considered when calculating
-   &lsquo;<code class=css>min-content</code>&rsquo; intrinsic sizes.
+  <p>&lsquo;<code class=css>min-content</code>&rsquo; の本質的サイズを算出するときには、ハイフネーションの機会は考慮されない。
 
   <h3 id=hyphens><span class=secno>5.1. </span>Hyphenation Control: the
    &lsquo;<a href="#hyphens0"><code class=property>hyphens</code></a>&rsquo;
