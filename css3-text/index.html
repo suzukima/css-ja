@@ -1296,72 +1296,63 @@
 
   <p>アラビア語のような文章整形において、ハイフネーションにより単語内での改行が許容されている場合、単語が分割されていなかったかのように文字が整形される必要がある。
 
-  <h3 id=hyphenate-character><span class=secno>5.2. </span> Hyphens: the
-   &lsquo;<a href="#hyphenate-character0"><code
-   class=property>hyphenate-character</code></a>&rsquo; property</h3>
+  <h3 id=hyphenate-character><span class=secno>5.2. </span> ハイフン: &lsquo;<a href="#hyphenate-character0"><code
+   class=property>hyphenate-character</code></a>&rsquo; プロパティ</h3>
 
   <table class=propdef>
    <tbody>
     <tr>
-     <th>Name:
+     <th>名称:
 
      <td><dfn id=hyphenate-character0>hyphenate-character</dfn>
 
     <tr>
-     <th>Value:
+     <th>値:
 
      <td>auto | &lt;string>
 
     <tr>
-     <th>Initial:
+     <th>初期値:
 
      <td>auto
 
     <tr>
-     <th>Applies to:
+     <th>適用対象:
 
-     <td>all elements
-
-    <tr>
-     <th>Inherited:
-
-     <td>yes
+     <td>全ての要素
 
     <tr>
-     <th>Percentages:
+     <th>継承:
+
+     <td>される
+
+    <tr>
+     <th>パーセンテージ:
 
      <td>N/A
 
     <tr>
-     <th>Media:
+     <th>メディア:
 
      <td>visual
 
     <tr>
-     <th>Computed&nbsp;value:
+     <th>算出値:
 
-     <td>specified value
+     <td>指定された値
   </table>
 
-  <p>This property specifies strings that are shown between parts of
-   hyphenated words. The &lsquo;<code class=property>auto</code>&rsquo; value
-   means that the user agent should find an appropriate value. If a string is
-   specified, it appears at the end of the line before a hyphenation break.
+  <p>このプロパティは、ハイフンネーションされたパーツの間にある文字を指定する。値 &lsquo;<code class=property>auto</code>&rsquo; は、ユーザエージェントが適切な値を見つける必要があることを意味している。文字が指定されている場合、その文字はハイフネーションで分割された前の行の末尾に表示される。
 
   <div class=example>
-   <p>In Latin scripts, the hyphen character (U+2010) is often used to
-    indicate that a word has been split. Normally, it will not be necessary
-    to set it explicitly. However, this can easily be done:
-
+   <p>ラテン文字のスクリプトにおいて、ハイフン文字 (U+2010) はよく単語が分割されていることを示すために用いられる。通常、それは明示的に設定することはない。しかし、これは簡単に設定することができる:
    <pre>article { hyphenate-character: "\2010" }</pre>
   </div>
 
-  <p class=note>Both hyphens triggered by automatic hyphenation and hyphens
-   triggered by soft hyphens are rendered according to &lsquo;<a
-   href="#hyphenate-character0"><code
-   class=property>hyphenate-character</code></a>&rsquo;.
+  <p class=note>自動ハイフネーションによるハイフンと、ソフトハイフンによるハイフンは両方とも、&lsquo;<a href="#hyphenate-character0"><code
+   class=property>hyphenate-character</code></a>&rsquo; に基づいてレンダリングされる。
 
-  <p class=issue>Can we point to CLDR for hyphenation character data?
+  <p class=issue>ハイフンネーションの文字データとして、CLDRを使うことはできるか？
 
   <h3 id=hyphenate-size-limits><span class=secno>5.3. </span> Hyphenation
    Size Limit: the &lsquo;<a href="#hyphenate-limit-zone"><code
