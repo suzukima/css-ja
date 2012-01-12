@@ -1354,61 +1354,57 @@
 
   <p class=issue>ハイフンネーションの文字データとして、CLDRを使うことはできるか？
 
-  <h3 id=hyphenate-size-limits><span class=secno>5.3. </span> Hyphenation
-   Size Limit: the &lsquo;<a href="#hyphenate-limit-zone"><code
-   class=property>hyphenate-limit-zone</code></a>&rsquo; property</h3>
+  <h3 id=hyphenate-size-limits><span class=secno>5.3. </span> ハイフネーションのサイズ制限: &lsquo;<a href="#hyphenate-limit-zone"><code
+   class=property>hyphenate-limit-zone</code></a>&rsquo; プロパティ</h3>
 
   <table class=propdef>
    <tbody>
     <tr>
-     <th>Name:
+     <th>名称:
 
      <td><dfn id=hyphenate-limit-zone>hyphenate-limit-zone</dfn>
 
     <tr>
-     <th>Value:
+     <th>値:
 
      <td>&lt;percentage> | &lt;length>
 
     <tr>
-     <th>Initial:
+     <th>初期値:
 
      <td>0
 
     <tr>
-     <th>Applies to:
+     <th>適用対象:
 
-     <td>block containers
-
-    <tr>
-     <th>Inherited:
-
-     <td>yes
+     <td>ブロックコンテナ
 
     <tr>
-     <th>Percentages:
+     <th>継承:
 
-     <td>refers to width of the line box
+     <td>される
 
     <tr>
-     <th>Media:
+     <th>パーセンテージ:
+
+     <td>ラインボックスの幅を参照
+
+    <tr>
+     <th>メディア:
 
      <td>visual
 
     <tr>
-     <th>Computed&nbsp;value:
+     <th>算出値:
 
-     <td>specified value
+     <td>指定された値
   </table>
 
-  <p class=issue>Is &lsquo;<a href="#hyphenate-limit-zone"><code
-   class=property>hyphenate-limit-zone</code></a>&rsquo; a good name?
-   Comments/suggestions?
+  <p class=issue>&lsquo;<a href="#hyphenate-limit-zone"><code
+   class=property>hyphenate-limit-zone</code></a>&rsquo; はよい名称か？
+   コメント/提案求む。
 
-  <p>This property specifies the maximum amount of unfilled space (before
-   justification) that may be left in the line box before hyphenation is
-   triggered to pull part of a word from the next line back up into the
-   current line.
+  <p>このプロパティは、ハイフネーションが次の行から現在の行へ単語の一部を持ってくるトリガとなる前に、ラインボックスの中に残されるかもしれない埋められていないスペース(両端揃え前)の最大値を指定する。
 
   <h3 id=hyphenate-char-limits><span class=secno>5.4. </span> Hyphenation
    Character Limits: the &lsquo;<code
