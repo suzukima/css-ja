@@ -30,7 +30,7 @@
 		<p>文中では日本語組版の用語を用いております。日本語組版については<a href="http://www.w3.org/TR/jlreq/ja/">日本語組版処理の要件（日本語版）</a>に目を通しておくことをおすすめいたします。</p>
 		<p>その他の仕様書の翻訳は、<a href="../">CSS 日本語レイアウト関連仕様 日本語翻訳</a>からご覧下さい。</p>
 		<p>公開開始日: 2011.11.09</p>
-     <p>更新日: 2012.01.12</p>
+     <p>更新日: 2012.01.13</p>
 	</div>
 
   <div class=head> <!--begin-logo-->
@@ -1406,78 +1406,61 @@
 
   <p>このプロパティは、ハイフネーションが次の行から現在の行へ単語の一部を持ってくるトリガとなる前に、ラインボックスの中に残されるかもしれない埋められていないスペース(両端揃え前)の最大値を指定する。
 
-  <h3 id=hyphenate-char-limits><span class=secno>5.4. </span> Hyphenation
-   Character Limits: the &lsquo;<code
-   class=property>hyphenate-limit-word</code>&rsquo; property</h3>
+  <h3 id=hyphenate-char-limits><span class=secno>5.4. </span> ハイフネーション文字の制限: &lsquo;<code
+   class=property>hyphenate-limit-word</code>&rsquo; プロパティ</h3>
 
   <table class=propdef>
    <tbody>
     <tr>
-     <th>Name:
+     <th>名称:
 
      <td><dfn id=hyphenate-limit-chars>hyphenate-limit-chars</dfn>
 
     <tr>
-     <th>Value:
+     <th>値:
 
      <td>auto | &lt;integer&gt;{1,3}
 
     <tr>
-     <th>Initial:
+     <th>初期値:
 
      <td>auto
 
     <tr>
-     <th>Applies to:
+     <th>適用対象:
 
-     <td>all elements
-
-    <tr>
-     <th>Inherited:
-
-     <td>yes
+     <td>全ての要素
 
     <tr>
-     <th>Percentages:
+     <th>継承:
+
+     <td>される
+
+    <tr>
+     <th>パーセンテージ:
 
      <td>N/A
 
     <tr>
-     <th>Media:
+     <th>メディア:
 
      <td>visual
 
     <tr>
-     <th>Computed&nbsp;value:
+     <th>算出値:
 
-     <td>specified value
+     <td>指定された値
   </table>
 
-  <p>This property specifies the minimum number of characters in a hyphenated
-   word. If the word does not meet the required minimum number of characters
-   in the word / before the hyphen / after the hyphen, then the word must not
-   be hyphenated. Nonspacing combining marks (<span class=issue>Unicode
-   class</span>) and intra-word punctuation (Unicode classes P*) do not count
-   towards the minimum.
+  <p>このプロパティは、ハイフン付き単語の最小文字数を指定するものである。単語にて、ハイフン前/後の文字数が必要最小文字数を満たさない場合には、その単語にハイフンを使用しない。非空白の結合文字(<span class=issue>Unicode class</span>)と単語内句読点(Unicode classes P*)は最小値にカウントされない。
 
-  <p>If three values are specified, the first value is the required minimum
-   for the total characters in a word, the second value is the minimum for
-   characters before the hyphenation point, and the third value is the
-   minimum for characters after the hyphenation point. If the third value is
-   missing, it is the same as the second. If the second value is missing,
-   then it is &lsquo;<code class=css>auto</code>&rsquo;. The &lsquo;<code
-   class=css>auto</code>&rsquo; value means that the UA chooses a value that
-   adapts to the current layout.
+  <p>3つの値が指定された場合、1つめの値は1単語トータルの必要最小文字数、2つめの値はハイフネーション箇所の前の最小文字数、3つめの値はハイフネーション箇所の後ろの最小文字数となる。3つめの値がない場合は、2つめの値が用いられる。2つめの値がない場合は &lsquo;<code class=css>auto</code>&rsquo; となる。値 &lsquo;<code
+   class=css>auto</code>&rsquo; はユーザエージェントが現在のレイアウトに適合した値を選択するということを意味する。
 
-  <p class=note>Unless the UA is able to calculate a better value, it is
-   suggested that &lsquo;<code class=css>auto</code>&rsquo; means 2 for
-   before and after, and 5 for the word total.
+  <p class=note>ユーザエージェントがよい値を算出できる場合を除き、&lsquo;<code class=css>auto</code>&rsquo; はハイフン前後の最小値を2、単語トータルで5文字となる提案がされている。
 
   <div class=example>
-   <p>In the example below, the minimum size of a hyphenated word is left to
-    the UA (which means it may vary depending on the language, the length of
-    the line, or other factors), but the minimum number of characters before
-    and after the hyphenation point is set to 3.
+   <p>以下の例では、ハイフン付き単語の最小サイズはユーザエージェントに委ねられている(これは言語、行の長さ、その他の要員によって異なる場合があることを意味している)。しかし、ハイフン前後の文字の最小数は3に設定されている。
 
    <pre>p { hyphenate-limit-chars: auto 3; }</pre>
   </div>
