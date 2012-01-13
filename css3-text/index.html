@@ -1513,15 +1513,9 @@
      <td>指定された値
   </table>
 
-  <p>This property indicates the maximum number of successive hyphenated
-   lines in an element. The &lsquo;<code class=css>no-limit</code>&rsquo;
-   value means that there is no limit.
+  <p>このプロパティは、要素内のハイフン付き行の最大値を指定する。値 &lsquo;<code class=css>no-limit</code>&rsquo; は制限無しを意味する。
 
-  <p>In some cases, user agents may not be able to honor the specified value.
-   (See &lsquo;<a href="#overflow-wrap0"><code
-   class=property>overflow-wrap</code></a>&rsquo;.) It is not defined whether
-   hyphenation introduced by such emergency breaking influences nearby
-   hyphenation points.
+  <p>いくつかのケースで、ユーザエージェントが指定した値を履行できないことがある(&lsquo;<a href="#overflow-wrap0"><code class=property>overflow-wrap</code></a>&rsquo; を参照)。このような突然の改行によってもたらされたハイフネーションがハイフンネーションポイント近くに影響を及ぼすかどうかは定義されていない。
 
   <table class=propdef>
    <tbody>
@@ -1566,34 +1560,31 @@
      <td>指定された値
   </table>
 
-  <p>This property indicates hyphenation behavior at the end of elements,
-   column, pages and spreads. A spread is a set of two pages that are visible
-   to the reader at the same time. Values are:
+  <p>このプロパティは要素や行、ページ、見開きの終わりにおけるハイフネーションの振る舞いを指定する。見開きは読者から同時に見える2つのページのセットである。値を以下に示す:
 
   <dl>
    <dt><dfn id=none1>&lsquo;<code class=css>none</code>&rsquo;</dfn>
 
-   <dd>No restrictions imposed.
+   <dd>制限無し。
 
    <dt><dfn id=always>&lsquo;<code class=css>always</code>&rsquo;</dfn>
 
-   <dd>The last full line of the element, or the last line before any column,
-    page, or spread break inside the element should not be hyphenated.
+   <dd>要素の最後の行、任意の列やページ、要素内で改行する見開き前の最後の行にはハイフンが付かない。
 
    <dt><dfn id=column>&lsquo;<code class=css>column</code>&rsquo;</dfn>
 
-   <dd>The last line before any column, page, or spread break inside the
-    element should not be hyphenated.
+   <dd>任意の列やページ、要素内で改行する見開き前の最後の行にはハイフンが付かない。
 
    <dt><dfn id=page>&lsquo;<code class=css>page</code>&rsquo;</dfn>
 
-   <dd>The last line before page or spread break inside the element should
+   <dd>任意のページ、要素内で改行する見開き前の最後の行にはハイフンが付かない。
+
+The last line before page or spread break inside the element should
     not be hyphenated.
 
    <dt><dfn id=spread>&lsquo;<code class=css>spread</code>&rsquo;</dfn>
 
-   <dd>The last line before any spread break inside the element should not be
-    hyphenated.
+   <dd>要素内で改行する見開き前の最後の行にはハイフンが付かない。
   </dl>
 
   <div class=example>
@@ -1603,8 +1594,7 @@
   </div>
 
   <div class=example>
-   <p>A paragraph may be formatted like this when &lsquo;<code
-    class=css>hyphenate-limit-last: none</code>&rsquo; is set:
+   <p>このパラグラフは &lsquo;<code class=css>hyphenate-limit-last: none</code>&rsquo; と設定されることでこのように整形される:
 
    <pre>
 <!-- -->This is just a
@@ -1613,8 +1603,7 @@
 <!-- -->tica.
       </pre>
 
-   <p>With &lsquo;<code class=css>hyphenate-limit-last: always</code>&rsquo;
-    one would get:
+   <p>&lsquo;<code class=css>hyphenate-limit-last: always</code>&rsquo; だとこうなる:
 
    <pre>
 <!-- -->This is just a
