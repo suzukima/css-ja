@@ -30,7 +30,7 @@
 		<p>文中では日本語組版の用語を用いております。日本語組版については<a href="http://www.w3.org/TR/jlreq/ja/">日本語組版処理の要件（日本語版）</a>に目を通しておくことをおすすめいたします。</p>
 		<p>その他の仕様書の翻訳は、<a href="../">CSS 日本語レイアウト関連仕様 日本語翻訳</a>からご覧下さい。</p>
 		<p>公開開始日: 2011.11.09</p>
-     <p>更新日: 2012.01.13</p>
+     <p>更新日: 2012.01.14</p>
 	</div>
 
   <div class=head> <!--begin-logo-->
@@ -1612,122 +1612,99 @@ The last line before page or spread break inside the element should
       </pre>
   </div>
 
-  <h2 id=wrapping><span class=secno>6. </span> Text Wrapping</h2>
+  <h2 id=wrapping><span class=secno>6. </span> テキストの折り返し</h2>
 
-  <p>Text wrapping is controlled by the &lsquo;<a href="#text-wrap0"><code
-   class=property>text-wrap</code></a>&rsquo; and &lsquo;<a
+  <p>テキストの折り返しは &lsquo;<a href="#text-wrap0"><code
+   class=property>text-wrap</code></a>&rsquo; プロパティと &lsquo;<a
    href="#overflow-wrap0"><code
-   class=property>overflow-wrap</code></a>&rsquo; properties:
+   class=property>overflow-wrap</code></a>&rsquo; プロパティで制御される:
 
-  <h3 id=text-wrap><span class=secno>6.1. </span> Text Wrap Settings: the
-   &lsquo;<a href="#text-wrap0"><code
-   class=property>text-wrap</code></a>&rsquo; property</h3>
+  <h3 id=text-wrap><span class=secno>6.1. </span> テキスト折り返しの設定: &lsquo;<a href="#text-wrap0"><code
+   class=property>text-wrap</code></a>&rsquo; プロパティ</h3>
 
   <table class=propdef>
    <tbody>
     <tr>
-     <th>Name:
+     <th>名称:
 
      <td><dfn id=text-wrap0>text-wrap</dfn>
 
     <tr>
-     <th>Value:
+     <th>値:
 
      <td>normal | none | avoid
 
     <tr>
-     <th>Initial:
+     <th>初期値:
 
      <td>normal
 
     <tr>
-     <th>Applies to:
+     <th>適用対象:
 
-     <td>all elements
-
-    <tr>
-     <th>Inherited:
-
-     <td>yes
+     <td>全ての要素
 
     <tr>
-     <th>Percentages:
+     <th>継承:
+
+     <td>される
+
+    <tr>
+     <th>パーセンテージ:
 
      <td>N/A
 
     <tr>
-     <th>Media:
+     <th>メディア:
 
      <td>visual
 
     <tr>
-     <th>Computed&#160;value:
+     <th>算出値:
 
-     <td>specified value
+     <td>指定された値
   </table>
 
-  <p>This property specifies the mode for text wrapping. Possible values:
+  <p>このプロパティはテキスト折り返しのモードを指定する。指定可能な値は以下:
 
   <dl>
    <dt><dfn id=normal2 title="text-wrap:normal">&lsquo;<code
     class=css>normal</code>&rsquo;</dfn>
 
-   <dd>Lines may break at allowed break points, as determined by the
-    line-breaking rules in effect. Line breaking behavior defined for the WJ,
-    ZW, and GL line-breaking classes in <a href="#UAX14"
-    rel=biblioentry>[UAX14]<!--{{!UAX14}}--></a> must be honored.
+   <dd>事実上の改行ルールで決定された改行可能なポイントで改行される。WJ, ZW, GL の改行クラス <a href="#UAX14"
+    rel=biblioentry>[UAX14]<!--{{!UAX14}}--></a> に対して定義された改行の振る舞いを守らなければならない。
 
    <dt><dfn id=none2 title="text-wrap:none">&lsquo;<code
     class=css>none</code>&rsquo;</dfn>
 
-   <dd>Lines may not break; text that does not fit within the block container
-    overflows it.
+   <dd>改行しない; ブロックコンテナ内に収まらないテキストはオーバーフローする。
 
    <dt><dfn id=avoid title="text-wrap:avoid">&lsquo;<code
     class=css>avoid</code>&rsquo;</dfn>
 
-   <dd>Line breaking is suppressed within the element: the UA may only break
-    within the element if there are no other valid break points in the line.
-    If the text breaks, line-breaking restrictions are honored as for
-    &lsquo;<code class=property>normal</code>&rsquo;.
+   <dd>要素内の改行が抑制される: 行中に他の有効な改行ポイントが無い場合、ユーザエージェントは要素内のみで改行する。テキストが改行する場合、改行の制限は &lsquo;<code class=property>normal</code>&rsquo; と同じになる。
   </dl>
 
-  <p>Regardless of the &lsquo;<a href="#text-wrap0"><code
-   class=property>text-wrap</code></a>&rsquo; value, lines always break at
-   forced breaks: for all values, line-breaking behavior defined for the BK,
-   CR, LF, CM NL, and SG line breaking classes in <a href="#UAX14"
-   rel=biblioentry>[UAX14]<!--{{!UAX14}}--></a> must be honored.
+  <p>&lsquo;<a href="#text-wrap0"><code class=property>text-wrap</code></a>&rsquo; の値に関わらず、行は常に強制改行で改行する: 全ての値において、<a href="#UAX14" rel=biblioentry>[UAX14]<!--{{!UAX14}}--></a> にある BK, CR, LF, CM NL, SG の改行クラスで定義されている改行の振る舞いは遵守される必要がある。
 
-  <p>When <span class=property>&lsquo;<a href="#text-wrap0"><code
-   class=property>text-wrap</code></a>&rsquo;</span> is set to &lsquo;<code
-   class=property>normal</code>&rsquo; or &lsquo;<code
-   class=property>avoid</code>&rsquo;, UAs that allow breaks at punctuation
-   other than spaces should prioritize breakpoints. For example, if breaks
-   after slashes have a lower priority than spaces, the sequence "check /etc"
-   will never break between the &lsquo;<code class=css>/</code>&rsquo; and
-   the &lsquo;<code class=property>e</code>&rsquo;. The UA may use the width
-   of the containing block, the text's language, and other factors in
-   assigning priorities. As long as care is taken to avoid such awkward
-   breaks, allowing breaks at appropriate punctuation other than spaces is
-   recommended, as it results in more even-looking margins, particularly in
-   narrow measures.</p>
+  <p><span class=property>&lsquo;<a href="#text-wrap0"><code
+   class=property>text-wrap</code></a>&rsquo;</span> が &lsquo;<code
+   class=property>normal</code>&rsquo; か &lsquo;<code
+   class=property>avoid</code>&rsquo; に設定されている場合、空白以外の句読点で改行可能とするユーザエージェントは、改行ポイントの優先順位をつけるべきである。例えば、スラッシュ後の改行はスペースよりも優先順位が低い場合、"check /etc" の文字列では、&lsquo;<code class=css>/</code>&rsquo; と &lsquo;<code class=property>e</code>&rsquo; の間で改行されない。ユーザエージェントは包含ブロックの幅、テキストの言語、割り当て優先順位の他の要因を使用することができる。やっかいな改行を避けるために注意するなら、スペース以外の適切な句読点での改行許可が推奨であり、それが結果として、特に狭い箇所においては、等しい見た目のマージンとなる。</p>
   <!-- add a sample prioritization algorithm -->
 
-  <h4 id=example-avoid><span class=secno>6.1.1. </span> Example of using
-   &lsquo;<code class=css>text-wrap: avoid</code>&rsquo; in presenting a
-   footer</h4>
+  <h4 id=example-avoid><span class=secno>6.1.1. </span> フッタ表示に&lsquo;<code class=css>text-wrap: avoid</code>&rsquo; を使用した例</h4>
 
   <div class=example>
-   <p>The priority of breakpoints can be set to reflect the intended grouping
-    of text.</p>
+   <p>改行の優先順位は、テキストのグルーピング意図を反映するよう設定することができる。</p>
 
-   <p>Given the rules</p>
+   <p>ルールを与え</p>
 
    <pre>
 <!-- -->footer { text-wrap: avoid; /* inherits to all descendants */ }
       </pre>
 
-   <p>and the following markup:</p>
+   <p>そして以下のマークアップを行う:</p>
 
    <pre>
 <!-- -->&lt;footer>
@@ -1737,14 +1714,14 @@ The last line before page or spread break inside the element should
 <!-- -->&lt;/footer>
       </pre>
 
-   <p>In a narrow window the footer could be broken as</p>
+   <p>狭いウィンドウにて、フッタは以下のように改行されうる</p>
 
    <pre>
 <!-- -->27th Internationalization and Unicode Conference &#8226;
 <!-- -->April 7, 2005 &#8226; Berlin, Germany
       </pre>
 
-   <p>or in a narrower window as</p>
+   <p>さらに狭いウィンドウでは</p>
 
    <pre>
 <!-- -->27th Internationalization and Unicode
@@ -1752,7 +1729,7 @@ The last line before page or spread break inside the element should
 <!-- -->Berlin, Germany
       </pre>
 
-   <p>but not as</p>
+   <p>しかしこのようにはならない</p>
 
    <pre>
 <!-- -->27th Internationalization and Unicode Conference &#8226; April
