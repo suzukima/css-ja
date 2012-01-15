@@ -4,7 +4,7 @@
 <html lang=en>
  <head><meta content="text/html; charset=utf-8" http-equiv=Content-Type>
 
-  <title>CSS Text Level 3 �����ܒ���ݒ��</title>
+  <title>CSS Text Level 3 日本語翻訳</title>
   <link href=default.css rel=stylesheet type="text/css">
 
   <style type="text/css">
@@ -25,12 +25,12 @@
 
  <body>
 	<div class=headernotes>
-		<p>�����Βʸ��ϒ�ϒ��<a href="http://www.w3.org/TR/2011/WD-css3-text-20110901/">CSS Text Level 3(W3C Working Draft 1 September 2011)</a>��򒡢��Ȓ����˒�ݒ����������⒤Β�ǒ�����</p>
-		<p>�����Β�Œ�͒��Β�������ʒ�⒤Β�� W3C ��Β�������Ȓ�˒����뒱ђ���ǒ�ǒ����꒡������Β�������� W3C �����ݒͭ�����ƒ����ޒ�������ޒ�������ݒ����˒�풤꒤������뒲Ēǽ�����˒α��Ւ����ƒ����������������ޒ�������ɒ�ߒ�䒤�������͒θ�����ƒ�������������뒤䒥쒥���������Ȓ���ђ�������ƒ����뒲Ւ�꒤������꒤ޒ����������풰Ւ�����������</p>
-		<p>�ʸ��撤ǒ�ϒ����ܒ���Ȓ�ǒ�Β�ђ�쒤��ђ����ƒ����꒤ޒ����������ܒ���Ȓ�ǒ�˒�Ē����ƒ��<a href="http://www.w3.org/TR/jlreq/ja/">�����ܒ���Ȓ�ǒ������Β�ג�ʒ����ܒ���ǒ��</a>��˒�ܒ���̒����ƒ����������Ȓ�򒤪��������ᒤ���������ޒ�����</p>
-		<p>�����Β¾��Β�Œ�͒��Β�ݒ����ϒ��<a href="../">CSS �����ܒ�쒥쒥���������Ȓ�ؒϢ��Œ�� �����ܒ���ݒ��</a>�����钤����������������</p>
-		<p>�����������ϒ��: 2011.11.09</p>
-     <p>���������: 2011.12.28</p>
+		<p>この文章は、<a href="http://www.w3.org/TR/2011/WD-css3-text-20110901/">CSS Text Level 3(W3C Working Draft 1 September 2011)</a>を、独自に翻訳したものです。</p>
+		<p>この仕様書の正式なものは W3C のサイトにある英語版であり、その著作権は W3C が保有しています。また、翻訳に誤りがある可能性に留意してください。また、読みやすさを考慮して、スタイルやレイアウトを変更している箇所があります。ご注意下さい。</p>
+		<p>文中では日本語組版の用語を用いております。日本語組版については<a href="http://www.w3.org/TR/jlreq/ja/">日本語組版処理の要件（日本語版）</a>に目を通しておくことをおすすめいたします。</p>
+		<p>その他の仕様書の翻訳は、<a href="../">CSS 日本語レイアウト関連仕様 日本語翻訳</a>からご覧下さい。</p>
+		<p>公開開始日: 2011.11.09</p>
+     <p>更新日: 2012.01.14</p>
 	</div>
 
   <div class=head> <!--begin-logo-->
@@ -97,128 +97,127 @@
 
   <h2 class="no-num no-toc" id=abstract>Abstract</h2>
 
-  <p>������CSS3��⒥���咡���뒤ϒ�ƒ�������Ȓ����Β�ג�풥ђ�ƒ������꒵������������쒤钤Β������⒥ǒ�뒤�Œ�͒�������뒡������Ԓ���ξ�ü�·�����Ȓ����󒡢������Β���������ƒ�������Ȓ�Β�������Ȓ�ƒ�������Ȓ�Β�ђ����򒥫��В�������ƒ����뒡�
+  <p>このCSS3モジュールはテキスト操作のプロパティを定義し、それらの処理モデルを仕様化する。改行、両端揃えと整列、空白の処理、テキストの装飾とテキストの変換をカバーしている。
 
-  <h2 class="no-num no-toc" id=status>�����Βʸ���Β�̒�֒�Ւ��</h2>
+  <h2 class="no-num no-toc" id=status>この文書の位置付け</h2>
 
-  <p><em>�����Β����������璥�ϒ����������������ǒ�Β����Βʸ���Β�̒�֒�Ւ����˒�Ē����ƒ�Ғ�ْ�ƒ����뒡��¾��Βʸ��񒤬�����Βʸ�����֒����������뒤���Ȓ�������뒡�W3C��������ߒ����������ƒ����뒥꒥���Ȓ�Ȓ�ƒ����˒����뒥쒥ݒ����Ȓ�Β�ǒ����ǒ�ϒ��<a href="http://www.w3.org/TR/">W3C technical reports
-   index (http://www.w3.org/TR/)</a>��ǒ����Ē����뒤���Ȓ����ǒ����뒡�</em>
+  <p><em>このセクションは、公開時点でのこの文書の位置付けについて述べている。他の文書がこの文書を置き換えることがある。W3Cが現在公開しているリストとテクニカルレポートの最新版は、<a href="http://www.w3.org/TR/">W3C technical reports
+   index (http://www.w3.org/TR/)</a>で見つけることができる。</em>
 
-  <p>Working Draft��ǒ�Β�������� W3C��ᒥ�В����Β�ْ�����Ւ̣�����뒤⒤Β�ǒ�ϒ�ʒ����������񒤭��Β�ɒ����咥ᒥ�Ȓ�ǒ����꒡������Ē�ǒ�Ⓓ��������¾��Β�ɒ����咥ᒥ�Ȓ�˒�蒤��֒������������ђ�ߒ�������˒����쒤���뒡������쒤ϒ����ʒ�Ԓ�撤Β�Ȓ�ʒ����Β�⒤Β�Ȓ����ƒ����Β�ɒ����咥ᒥ�Ȓ�����ђ����뒤���Ȓ�ϒ�ԒŬ��ڒ�ǒ����뒡�
+  <p>Working Draftでの公開は W3Cメンバーの支持を意味するものではない。下書きのドキュメントであり、いつでも更新、他のドキュメントによる置き換えや廃止扱いにされうる。これは、進行中の作業以外のものとしてこのドキュメントを引用することは不適切である。
 
-  <p>������CSS��⒥���咡���뒤ϒ��<a href="http://www.w3.org/International/Activity">W3C Internationalization Activity</a> ��� <a href="http://www.w3.org/Style/Activity">Style Activity</a> ��Β����ϒ�˒�蒤Ò�ƒ���������쒤���⒤Β�ǒ����꒡�<a href="http://www.w3.org/Style/CSS/members">CSS Working Group</a> ��˒�蒤Ò�ƒ�ᒥ�ƒ�ʒ�󒥹�����쒤뒡���ޒ�����<a href="http://www.w3.org/Style/XSL/Group/">XSL Working Group</a> (<a href="http://cgi.w3.org/MemberAccess/AccessRequest">members only</a>) ��ؒ�Β����Ò�Ԓ�˒�蒤뒹ג����⒴ޒ�ޒ�쒤ƒ����뒡�
+  <p>このCSSモジュールは、<a href="http://www.w3.org/International/Activity">W3C Internationalization Activity</a> と <a href="http://www.w3.org/Style/Activity">Style Activity</a> の協力によって作成されたものであり、<a href="http://www.w3.org/Style/CSS/members">CSS Working Group</a> によってメンテナンスされる。また、<a href="http://www.w3.org/Style/XSL/Group/">XSL Working Group</a> (<a href="http://cgi.w3.org/MemberAccess/AccessRequest">members only</a>) への参加者による貢献も含まれている。
 
-  <p>�����Β�ɒ����咥ᒥ�Ȓ��<a href="http://www.w3.org/Consortium/Patent-Policy-20040205/">2004�ǯ2���t���6������W3C��Ò����ݒ�꒥����</a>��˒����������뒡���ג�˒�蒤Ò�ƒ�������쒤����W3C��ϒ����뒡���ג�Β����̒��뒤Ӓ�Ē����ƒ�钤쒤�<a href="http://www.w3.org/2004/01/pp-impl/32061/status" rel=disclosure>�����钤撤뒳������Ò����Β�������꒥����</a>���ɒ�������ƒ����꒡���������˒�ϒ�Ò����������Β�ؒ����⒴ޒ�ޒ�쒤ƒ����뒡�<a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">��ܒ���Ū��ʒ�Ò�������ᒤΒ�ϒ��</a>��˒�ޒ�ޒ�쒤뒤Ȓ�ג�쒤��Ò����˒�Ē����ƒ��ݒ�Β�Β��������Ò�ƒ����뒿͒�ϒ��<a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">W3C��Ò����ݒ�꒥������Β��6���</a>��˒�����������������������ʒ����쒤В�ʒ�钤ʒ�����
+  <p>このドキュメントは<a href="http://www.w3.org/Consortium/Patent-Policy-20040205/">2004年2がtう6日のW3C特許ポリシー</a>に従うグループによって製作された。W3Cはグループの成果を結びつけて作られた<a href="http://www.w3.org/2004/01/pp-impl/32061/status" rel=disclosure>あらゆる開示特許の公開リスト</a>を管理しており、ここには特許開示の指示も含まれている。<a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">本質的な特許請求の範囲</a>に含まれると思われる特許について実際の知識を持っている人は、<a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">W3C特許ポリシーの第6章</a>に従い、情報を公開しなければならない。
 
-  <p><strong>��ܒ�ɒ�钥Ւ�Ȓ�ؒ�Β�Ւ�������ɒ�В�Ò����� (<a href="http://lists.w3.org/Archives/Public/www-style/">��������������֒����쒤ƒ�����</a>) ��������ᒡ���꒥󒥰��꒥���� <a
+  <p><strong>本ドラフトへのフィードバックは (<a href="http://lists.w3.org/Archives/Public/www-style/">アーカイブされている</a>) 公開メーリングリスト <a
    href="mailto:www-style@w3.org">www-style@w3.org</a></strong> (<a
-   href="http://www.w3.org/Mail/Request">�����Ò�꒽璤ϒ��������</a>) ��ؒ��<strong> 
-   �����֒����������Ȓ�� <kbd>[css3-text]</kbd> ����Ւ����ƒ����뒤蒤���˒��</strong> ��ܒ�ɒ�钥Ւ�Ȓ�˒����������ʒ�꒤򒸫��Ē�������钡��ʸ��璤����������Ȓ����������䒾������쒤ƒ����뒡������ǒ����������ϒ����ƒ�Β�Ւ�������ɒ�В�Ò����˒�������钤쒤뒤蒤���ǒ�����Ԓ��������
+   href="http://www.w3.org/Mail/Request">参加手順はこちら</a>) へ、<strong> 
+   サブジェクトに <kbd>[css3-text]</kbd> を付けて送るように。</strong> 本ドラフトにおかしな所を見つけたら、文句を言うことが強く推奨されている。エディターは全てのフィードバックに応えられるよう最善を尽くす。
 
-  <p><strong>��⒤� <a href="http://www.w3.org/TR/2003/CR-css3-text-20030514/">May 2003 CSS3 Text CR</a></strong> ����������ƒ����뒤Β�ǒ����쒤В�� ��Œ�͒�Β�񒤭�ľ������͒θ�����뒤���Ȓ����ǒ����뒤Β�ǒ��<em>��ɒ�����</em>��Β�钤���ƒ�ߒ��������<a href="http://lists.w3.org/Archives/Public/www-style/">www-style</a>(������)���<a href="http://lists.w3.org/Archives/Member/w3c-css-wg/">CSS WG mailing list</a> (<a href="http://cgi.w3.org/MemberAccess/AccessRequest">��ᒥ�В������</a>)���<a href="http://fantasai.inkedblade.net/contact">email fantasai directly</a> (��Ē�͒��)��ޒ�ǒ��
+  <p><strong>もし <a href="http://www.w3.org/TR/2003/CR-css3-text-20030514/">May 2003 CSS3 Text CR</a></strong> を実装しているのであれば、 仕様の書き直しを考慮することができるので、<em>どうか</em>知らせて欲しい。<a href="http://lists.w3.org/Archives/Public/www-style/">www-style</a>(公開)、<a href="http://lists.w3.org/Archives/Member/w3c-css-wg/">CSS WG mailing list</a> (<a href="http://cgi.w3.org/MemberAccess/AccessRequest">メンバー限定</a>)、<a href="http://fantasai.inkedblade.net/contact">email fantasai directly</a> (個人宛)まで。
 
-  <p>��ʒ����Β���ǽ��ϒ����뒲Ēǽ�����Β����뒤⒤Β�ǒ��(���������)�������1��Ē�⒤ʒ����쒹璡�CR��ޒ�ǒ�˒�ڒ�钤쒤뒤���⒤���쒤ʒ�����
+  <p>以下の機能は落ちる可能性のあるもので、(正しい)実装が1つもない場合、CRまでに切られるかもしれない。
 
   <ul>
    <li>&lsquo;<a href="#tab-size0"><code
-    class=property>tab-size</code></a>&rsquo; ��ג�풥ђ�ƒ�� ��Β�� &lt;length> 
+    class=property>tab-size</code></a>&rsquo; プロパティ の値 &lt;length> 
 
    <li>&lsquo;<a href="#hanging-punctuation0"><code
-    class=property>hanging-punctuation</code></a>&rsquo; ��ג�풥ђ�ƒ��
+    class=property>hanging-punctuation</code></a>&rsquo; プロパティ
 
-   <li>&lsquo;<a href="#letter-spacing0"><code class=property>letter-spacing</code></a>&rsquo; ��� &lsquo;<a href="#word-spacing0"><code class=property>word-spacing</code></a>&rsquo; ��Β�ђ��������ƒ�������Β��
+   <li>&lsquo;<a href="#letter-spacing0"><code class=property>letter-spacing</code></a>&rsquo; と &lsquo;<a href="#word-spacing0"><code class=property>word-spacing</code></a>&rsquo; のパーセンテージの値
 
-   <li>&lsquo;<code class=css>hyphenate-limit-*</code>&rsquo; ��ג�풥ђ�ƒ��
+   <li>&lsquo;<code class=css>hyphenate-limit-*</code>&rsquo; プロパティ
 
-   <li>&lsquo;<a href="#text-spacing"><code class=property>text-spacing</code></a>&rsquo; ��ג�풥ђ�ƒ��
+   <li>&lsquo;<a href="#text-spacing"><code class=property>text-spacing</code></a>&rsquo; プロパティ
 
    <li>&lsquo;<a href="#text-decoration-skip0"><code
-    class=property>text-decoration-skip</code></a>&rsquo; ��ג�풥ђ�ƒ�� /
-    ��� &lsquo;<code class=css>ink</code>&rsquo; 
+    class=property>text-decoration-skip</code></a>&rsquo; プロパティ /
+    値 &lsquo;<code class=css>ink</code>&rsquo; 
 
    <li>&lsquo;<a href="#text-emphasis-skip0"><code
-    class=property>text-emphasis-skip</code></a>&rsquo; ��ג�풥ђ�ƒ��
+    class=property>text-emphasis-skip</code></a>&rsquo; プロパティ
 
-   <li><span class=issue>��ɒ�钥Ւ�Ȓ��ƒ�������������钤˒�������ؒ�ɒ�Ò�����</span>
+   <li><span class=issue>ドラフトを監査し、さらにここへ追加する</span>
   </ul>
 
-  <h2 class="no-num no-toc" id=contents>��ܒ��</h2>
+  <h2 class="no-num no-toc" id=contents>目次</h2>
   <!--begin-toc-->
 
   <ul class=toc>
-   <li><a href="#intro"><span class=secno>1. </span> �Ƴ���</a>
+   <li><a href="#intro"><span class=secno>1. </span> 導入</a>
     <ul class=toc>
-     <li><a href="#placement"><span class=secno>1.1. </span> ��⒥���咡���뒤Β����</a>
+     <li><a href="#placement"><span class=secno>1.1. </span> モジュールの作用</a>
 
-     <li><a href="#values"><span class=secno>1.2. </span> ��͒�˒�Ē�����</a>
+     <li><a href="#values"><span class=secno>1.2. </span> 値について</a>
 
-     <li><a href="#terms"><span class=secno>1.3. </span> ��ђ�쒤˒�Ē�����</a>
+     <li><a href="#terms"><span class=secno>1.3. </span> 用語について</a>
     </ul>
 
-   <li><a href="#transforming"><span class=secno>2. </span> ��ƒ�������Ȓ�Β�ђ��</a>
+   <li><a href="#transforming"><span class=secno>2. </span> テキストの変換</a>
     <ul class=toc>
      <li><a href="#text-transform"><span class=secno>2.1. </span>
-      ��ƒ�������Ȓ�Β�ђ��: &lsquo;<code
-      class=property>text-transform</code>&rsquo; ��ג�풥ђ�ƒ��</a>
+      テキストの変換: &lsquo;<code
+      class=property>text-transform</code>&rsquo; プロパティ</a>
     </ul>
 
-   <li><a href="#white-space-processing"><span class=secno>3. </span> ������Β����</a>
+   <li><a href="#white-space-processing"><span class=secno>3. </span> 空白の処理</a>
     <ul class=toc>
      <li><a href="#white-space-collapsing"><span class=secno>3.1. </span>
-      ������ʸ�����Β�뒹�: &lsquo;<code
-      class=property>text-space-collapse</code>&rsquo; ��ג�풥ђ�ƒ��</a>
+      空白文字の結合: &lsquo;<code
+      class=property>text-space-collapse</code>&rsquo; プロパティ</a>
 
-     <li><a href="#tab-size"><span class=secno>3.2. </span> �����֒ʸ�����Β��������: &lsquo;<code class=property>tab-size</code>&rsquo;
-      ��ג�풥ђ�ƒ��</a>
+     <li><a href="#tab-size"><span class=secno>3.2. </span> タブ文字のサイズ: &lsquo;<code class=property>tab-size</code>&rsquo;
+      プロパティ</a>
 
-     <li><a href="#white-space-rules"><span class=secno>3.3. </span> �����������Β�뒡����</a>
+     <li><a href="#white-space-rules"><span class=secno>3.3. </span> 空白処理のルール</a>
       <ul class=toc>
        <li><a href="#egbidiwscollapse"><span class=secno>3.3.1. </span>
-        �����ڒ�������뒹璤Β������В����������Β��</a>
+        スペース結合のある双方向性の例</a>
 
        <li><a href="#line-break-transform"><span class=secno>3.3.2. </span>
-        �����Ԓ�ђ����Β�뒡����</a>
+        改行変換のルール</a>
 
        <li><a href="#white-space-summary"><span class=secno>3.3.3. </span>
-        ������뒹璤˒�蒤뒱ƒ����Β�ג��</a>
+        空白結合による影響の要約</a>
       </ul>
 
-     <li><a href="#white-space"><span class=secno>3.4. </span> ������ʸ������
-      ��ƒ�������Ȓ�ޒ���֒����Β�ʒά�ɽ���: &lsquo;<code
-      class=property>white-space</code>&rsquo; ��ג�풥ђ�ƒ��</a>
+     <li><a href="#white-space"><span class=secno>3.4. </span> 空白文字と
+      テキスト折り返しの簡略表記: &lsquo;<code
+      class=property>white-space</code>&rsquo; プロパティ</a>
     </ul>
 
-   <li><a href="#line-breaking"><span class=secno>4. </span> �����Ԓ�Ȓñ��쒤Β�����</a>
+   <li><a href="#line-breaking"><span class=secno>4. </span> 改行と単語の境界</a>
     <ul class=toc>
-     <li><a href="#line-break"><span class=secno>4.1. </span> �����Ԓ�Β���̩���: &lsquo;<code class=property>line-break</code>&rsquo;
-      ��ג�풥ђ�ƒ��</a>
+     <li><a href="#line-break"><span class=secno>4.1. </span> 改行の厳密さ: &lsquo;<code class=property>line-break</code>&rsquo;
+      プロパティ</a>
 
-     <li><a href="#word-break"><span class=secno>4.2. </span> �ñ���ʬ��䒥뒡����: &lsquo;<code class=property>word-break</code>&rsquo;
-      ��ג�풥ђ�ƒ��</a>
+     <li><a href="#word-break"><span class=secno>4.2. </span> 単語分割ルール: &lsquo;<code class=property>word-break</code>&rsquo;
+      プロパティ</a>
     </ul>
 
-   <li><a href="#hyphenation"><span class=secno>5. </span>Hyphenation</a>
+   <li><a href="#hyphenation"><span class=secno>5. </span>ハイフネーション</a>
     <ul class=toc>
-     <li><a href="#hyphens"><span class=secno>5.1. </span>Hyphenation
-      Control: the &lsquo;<code class=property>hyphens</code>&rsquo;
-      property</a>
+     <li><a href="#hyphens"><span class=secno>5.1. </span>ハイフネーションの制御: &lsquo;<code class=property>hyphens</code>&rsquo;
+      プロパティ</a>
 
      <li><a href="#hyphenate-character"><span class=secno>5.2. </span>
-      Hyphens: the &lsquo;<code
-      class=property>hyphenate-character</code>&rsquo; property</a>
+      ハイフン: &lsquo;<code
+      class=property>hyphenate-character</code>&rsquo; プロパティ</a>
 
      <li><a href="#hyphenate-size-limits"><span class=secno>5.3. </span>
-      Hyphenation Size Limit: the &lsquo;<code
-      class=property>hyphenate-limit-zone</code>&rsquo; property</a>
+      ハイフネーションのサイズ制限: &lsquo;<code
+      class=property>hyphenate-limit-zone</code>&rsquo; プロパティ</a>
 
      <li><a href="#hyphenate-char-limits"><span class=secno>5.4. </span>
-      Hyphenation Character Limits: the &lsquo;<code
-      class=property>hyphenate-limit-word</code>&rsquo; property</a>
+     ハイフネーション文字の制限: &lsquo;<code
+      class=property>hyphenate-limit-word</code>&rsquo; プロパティ</a>
 
      <li><a href="#hyphenate-line-limits"><span class=secno>5.5. </span>
-      Hyphenation Line Limits: the &lsquo;<code
-      class=property>hyphenate-limit-lines</code>&rsquo; and &lsquo;<code
-      class=property>hyphenate-limit-last</code>&rsquo; properties</a>
+      ハイフネーション行の制限: &lsquo;<code
+      class=property>hyphenate-limit-lines</code>&rsquo; プロパティと &lsquo;<code
+      class=property>hyphenate-limit-last</code>&rsquo; プロパティ</a>
     </ul>
 
    <li><a href="#wrapping"><span class=secno>6. </span> Text Wrapping</a>
@@ -407,130 +406,130 @@
   </ul>
   <!--end-toc-->
 
-  <h2 id=intro><span class=secno>1. </span> �Ƴ���</h2>
+  <h2 id=intro><span class=secno>1. </span> 導入</h2>
 
-  <p>[��������˒ʸ��ϒ��]
+  <p>[ここに文章を]
 
-  <p class=issue>��ܒ�ɒ�钥Ւ�Ȓ�ϒ�Ò�꒤Β�������꒥ג�Ȓ�ǒͭ��Β���ǽ��˒�Ē����ƒ���������ƒ����뒡������쒤钤Β���ǽ����°�����ƒ����뒲Ւ�꒤ǒ�ϒ�ђ³�Ū��ʒ�Ē����������쒤ƒ�����: ����¸���CSS��ג�풥ђ�ƒ�����������CSS��ג�풥ђ�ƒ�������⒤���������뒤Ȓ¾��Β�Œ�͒�˒�������ƒ�⒡�
+  <p class=issue>本ドラフトは特定のスクリプト固有の機能について説明している。これらの機能が属している箇所では継続的な議論がされている: 既存のCSSプロパティ、新規CSSプロパティ、もしかすると他の仕様においても。
 
-  <h3 id=placement><span class=secno>1.1. </span> ��⒥���咡���뒤Β����</h3>
+  <h3 id=placement><span class=secno>1.1. </span> モジュールの作用</h3>
 
-  <p>��ܒ�⒥���咡���뒤� <a href="#CSS21" rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a> chapter 16 ��� text-level ����ǽ����֒�������������Ȓĥ�����뒤⒤Β�ǒ����뒡�
+  <p>本モジュールは <a href="#CSS21" rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a> chapter 16 の text-level 機能を置き換え、拡張するものである。
 
-  <h3 id=values><span class=secno>1.2. </span> ��͒�˒�Ē�����</h3>
+  <h3 id=values><span class=secno>1.2. </span> 値について</h3>
 
-  <p>��ܒ�Œ�͒�ϒ��<a href="#CSS21" rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a> ��� <a href="http://www.w3.org/TR/CSS21/about.html#property-defs">CSS property
-   definition conventions(CSS��ג�풥ђ�ƒ����Β�꒵�����§)</a> ��˒����������ܒ�Œ�͒�ǒ�������꒵������쒤ƒ����ʒ����͒�ϒ��CSS Level��2 Revision��1 <a href="#CSS21" rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a> ��ǒ�꒵������쒤ƒ����뒡��¾���CSS��⒥���咡���뒤ϒ����쒤��͒�Β����Β�꒵����Ȓĥ�����ƒ�����: ��㒤����<a href="#CSS3COLOR" rel=biblioentry>[CSS3COLOR]<!--{{CSS3COLOR}}--></a>��ϒ�������Β�⒥���咡���뒤Ȓ�Ȓ�ߒ�璤������쒹璡�&lt;color&gt; ��Β�͒�Β����򒤳��Β�Œ�͒�ǒ�Ȓ�쒤ƒ����뒤蒤���˒�Ȓĥ�����뒡�
+  <p>本仕様は、<a href="#CSS21" rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a> の <a href="http://www.w3.org/TR/CSS21/about.html#property-defs">CSS property
+   definition conventions(CSSプロパティの定義規則)</a> に従う。本仕様で型が定義されていない値は、CSS Level 2 Revision 1 <a href="#CSS21" rel=biblioentry>[CSS21]<!--{{!CSS21}}--></a> で定義されている。他のCSSモジュールはこれら値の型の定義を拡張している: 例えば<a href="#CSS3COLOR" rel=biblioentry>[CSS3COLOR]<!--{{CSS3COLOR}}--></a>は、このモジュールと組み合わせた場合、&lt;color&gt; の値の型をこの仕様で使われているように拡張する。
 
-  <p>�����쒤钤Β�꒵���˒����ܒ����쒤ƒ����뒥ג�풥ђ�ƒ����ǒͭ��Β�͒�˒�Ò����ƒ����ܒ�Œ�͒�ǒ�꒵������쒤ƒ���������ג�풥ђ�ƒ����ϒ�������쒤钥ג�풥ђ�ƒ����Β�͒�Β�蒤���˒��������������<a href="http://www.w3.org/TR/CSS21/cascade.html#value-def-inherit">��ђ��</a>������������쒤뒡���ɒ�ߒ�䒤�������͒θ�����ƒ����ܒ�ϒ������Ū��˒������֒����ʒ�����
+  <p>これらの定義に記載されているプロパティ固有の値に加えて、本仕様で定義されている全プロパティは、これらプロパティの値のように、キーワード<a href="http://www.w3.org/TR/CSS21/cascade.html#value-def-inherit">継承</a>を受け入れる。読みやすさを考慮して、本件は明示的に繰り返さない。
 
-  <h3 id=terms><span class=secno>1.3. </span> ��ђ�쒤˒�Ē�����</h3>
+  <h3 id=terms><span class=secno>1.3. </span> 用語について</h3>
 
-  <p id=grapheme-cluster>A <dfn id=grapheme-cluster0>��񒵭��ǒ����钥����(grapheme cluster)</dfn>��ϒ�������쒤Β�Ȓ�ђ�Ԓ���ʸ��������������꒥ג�Ȓ�Β���ܒŪ��ʒñ��̒�Ȓ�͒����ƒ����뒤⒤Β�ǒ����뒡������Β�ђ�쒤˒�Ē����ƒ�� Unicode Technical Report: Text Boundaries <a href="#UAX29" rel=biblioentry>[UAX29]<!--{{!UAX29}}--></a> ��˒�ƒ�ܒ�ْ�������Ғ����쒤ƒ����뒡���ܒ�Œ�͒�ǒ�� <a href="#UAX29" rel=biblioentry>[UAX29]<!--{{!UAX29}}--></a> ��ǒ�꒵������쒤ƒ����� <em>��Ȓĥ��񒵭��ǒ����钥����(extended grapheme cluster)</em> ���Ȓ�ђ�����(<em>legacy grapheme cluster</em> ��ǒ�ϒ�ʒ��)�����撡�������������������Ȓ��Unicode��ǒ����ƒ����쒤ƒ������꒵���򒤵��钤˒Ĵ��������ƒ�⒤蒤������ܒ�Œ�͒�˒�������ƒ�ϒ��<dfn id=character>�ʸ���(character)</dfn> ��Ȓ������ۣ��撤ʒ�ђ�쒤����<a href="#grapheme-cluster0"><i>��񒵭��ǒ����钥����(grapheme cluster)</i></a> ��Β�ƒ����ߒ�䒤�����Ʊ�����쒤Ȓ����ƒ�Ȓ�ђ����쒤ƒ����뒡��ʸ������ Unicode ��ג�풥ђ�ƒ����������ˡ��� <a href="http://dev.w3.org/csswg/css3-writing-modes/#character-properties">Characters and Properties</a> ��򒻲��Ȓ�Β����Ȓ��
+  <p id=grapheme-cluster>A <dfn id=grapheme-cluster0>書記素クラスタ(grapheme cluster)</dfn>は、言語の使用者が文字かスクリプトの基本的な単位と考えているものである。この用語については Unicode Technical Report: Text Boundaries <a href="#UAX29" rel=biblioentry>[UAX29]<!--{{!UAX29}}--></a> にて詳細が記述されている。本仕様では <a href="#UAX29" rel=biblioentry>[UAX29]<!--{{!UAX29}}--></a> で定義されている <em>拡張書記素クラスタ(extended grapheme cluster)</em> を使用する(<em>legacy grapheme cluster</em> ではない)。ユーザエージェントはUnicodeで許容されている定義をさらに調整してもよい。本仕様においては、<dfn id=character>文字(character)</dfn> という曖昧な用語が、<a href="#grapheme-cluster0"><i>書記素クラスタ(grapheme cluster)</i></a> の親しみやすい同義語として使用されている。文字の Unicode プロパティ決定方法は <a href="http://dev.w3.org/csswg/css3-writing-modes/#character-properties">Characters and Properties</a> を参照のこと。
 
-  <p id=letter>��ܒ�Œ�͒�˒�������� <dfn id=letter0>letter</dfn> ��ϒ��Unicode��� ����̒Ū��˒����ƒ����꒤˒�������� Letter ��� Number ���1��Ē�˒°������ʸ�����ǒ����뒡�<a href="#UAX44" rel=biblioentry>[UAX44]<!--{{!UAX44}}--></a>
+  <p id=letter>本仕様における <dfn id=letter0>letter</dfn> は、Unicodeの 一般的にカテゴリにおける Letter か Number の1つに属する文字である。<a href="#UAX44" rel=biblioentry>[UAX44]<!--{{!UAX44}}--></a>
 
 
-  <h2 id=transforming><span class=secno>2. </span> ��ƒ�������Ȓ�Β�ђ��</h2>
+  <h2 id=transforming><span class=secno>2. </span> テキストの変換</h2>
 
   <h3 id=text-transform><span class=secno>2.1. </span> <a name=caps-prop></a>
-   ��ƒ�������Ȓ�Β�ђ��: the &lsquo;<a href="#text-transform0"><code
-   class=property>text-transform</code></a>&rsquo; ��ג�풥ђ�ƒ��</h3>
+   テキストの変換: the &lsquo;<a href="#text-transform0"><code
+   class=property>text-transform</code></a>&rsquo; プロパティ</h3>
 
   <table class=propdef>
    <tbody>
     <tr>
-     <th>�̾���:
+     <th>名称:
 
      <td><dfn id=text-transform0>text-transform</dfn>
 
     <tr>
-     <th>���:
+     <th>値:
 
      <td>none | [ [ capitalize | uppercase | lowercase ] || full-width ||
       full-size-kana ]
 
     <tr>
-     <th>��钴����:
+     <th>初期値:
 
      <td>none
 
     <tr>
-     <th>�Ŭ��ђ�В��:
+     <th>適用対象:
 
-     <td>�����ƒ�Β�ג��
-
-    <tr>
-     <th>��ђ��:
-
-     <td>�����쒤�
+     <td>全ての要素
 
     <tr>
-     <th>��ђ��������ƒ�����:
+     <th>継承:
+
+     <td>される
+
+    <tr>
+     <th>パーセンテージ:
 
      <td>N/A
 
     <tr>
-     <th>��ᒥǒ�����:
+     <th>メディア:
 
      <td>visual
 
     <tr>
-     <th>�����В��:
+     <th>算出値:
 
-     <td>��ؒ�꒤���쒤���Ȓ�����
+     <td>指定されたとおり
   </table>
 
-  <p>�����Β�ג�풥ђ�ƒ����ϒ����������꒥󒥰��ܒŪ��ǒ�ƒ�������Ȓ���ђ�������뒡���͒�˒�ϒ�ʒ����Β�Ւ̣���������:
+  <p>このプロパティはスタイリング目的でテキストを変換する。値には以下の意味がある:
 
 
   <dl>
    <dt><dfn id=none title="text-transform:none">&lsquo;<code
     class=css>none</code>&rsquo;</dfn>
 
-   <dd>��ƒ����ʒ�����
+   <dd>影響なし。
 
    <dt><dfn id=capitalize title="text-transform:capitalize">&lsquo;<code
     class=css>capitalize</code>&rsquo;</dfn>
 
-   <dd> ��ƒñ��쒤Β�ǒ�钤�<a href="#character"><i>�ʸ���</i></a>���titlecase(���Ƭ�����ʸ�����˒����뒽񒤭���)��Ȓ����������쒰ʒ����Βʸ�����˒�ϒ�ƒ����ʒ�����
+   <dd> 各単語の最初の<a href="#character"><i>文字</i></a>をtitlecase(先頭を大文字にする書き方)とし、それ以外の文字には影響なし。
 
    <dt><dfn id=uppercase title="text-transform:uppercase">&lsquo;<code
     class=css>uppercase</code>&rsquo;</dfn>
 
-   <dd>�����ƒ�Βʸ��������ʸ�����˒����뒡�
+   <dd>全ての文字を大文字にする。
 
    <dt><dfn id=lowercase title="text-transform:lowercase">&lsquo;<code
     class=css>lowercase</code>&rsquo;</dfn>
 
-   <dd>�����ƒ�Βʸ�����򒾮�ʸ�����˒����뒡�
+   <dd>全ての文字を小文字にする。
 
    <dt><dfn id=full-width title="text-transform:full-width">&lsquo;<code
     class=css>full-width</code>&rsquo;</dfn>
 
-   <dd>�����ƒ�Βʸ����������ђ�˒����뒡��ʸ�����˒�В������������ђʸ�������̵�����쒹璤ϒ�������Β�ޒ�ޒ�Ē����쒤뒡������Β�͒�ϒ�̒���ɽ��Ւʸ�����Β�蒤���ʒ�钥ƒ��ʸ�����Ȓ�������Β�Ȓ�ǒ�ǒ�Ȓ�ђ����쒤뒡�
+   <dd>全ての文字を全角にする。文字に対応する全角文字が無い場合は、そのまま残される。この値は通常、表意文字のようなラテン文字と数字の組版で使用される。
 
    <dt><dfn id=full-size-kana
     title="text-transform:full-size-kana">&lsquo;<code
     class=css>full-size-kana</code>&rsquo;</dfn>
 
-   <dd>��������������ʒʸ�������̒�Β����ʒ�˒�֒����������뒡������Β�͒�ϒ�̒����뒥Ӓ�Β�풼ᒥƒ�������Ȓ�˒�Ȓ�ђ����쒤뒡���������ǒ�ϒ�������ƒ�Β�������������ʒʸ��������璤���ʒ����ʒʸ�����Ȓ����ƒ����蒤���쒤뒤ْ����ǒ����뒡�
+   <dd>小さいカナ文字を通常のカナに置き換える。この値は通常、ルビの注釈テキストに使用される。そこでは、全ての小さいカナ文字が大きなカナ文字として描画されるべきである。
   </dl>
 
-  <p>Unicode Standard ��ǒ�ؒ�꒤���쒤��ʸ�����쒥ђ����Ȓ�꒡���Β����������ޒ�Ò�Ԓ�󒥰(���ʸ�������ʸ�����Β�ђ��)��뒡���뒤ϒ��Unicode Consortium Web site<a href="#UNICODE" rel=biblioentry>[UNICODE]<!--{{!UNICODE}}--></a> ��ǒ����Ē����뒤���Ȓ����ǒ����뒡���撡�������������������Ȓ��Default Case Algorithm ��Β����������璥�ǒ�꒵������쒤ƒ����뒾���Ւ�������������ޒ�Ò�Ԓ�󒥰���ޒ�����Unicode�ʸ�����˒�В����뒴������ʒ����������ޒ�Ò�Ԓ�󒥰���Ȓ�ђ�����ɬ��ג�������뒡���⒤�(��������ƒ����Β�Ȓ����˒���)�����ג�ǒ�Β�����ƒ��Ē�Β����쒤������Β�Β�⒤Β�ǒ����뒾쒹璡������������뒸���쒸ǒͭ��Β�뒡���뒤�Ʊ��͒�˒�Ȓ�ђ�����ɬ��ג��������(<a href="http://www.unicode.org/Public/UNIDATA/SpecialCasing.txt">SpecialCasing.txt</a> ��򒻲��Ȓ�Β�����)���
+  <p>Unicode Standard で指定された文字レパートリーのケースマッピング(大文字小文字の変換)ルールは、Unicode Consortium Web site<a href="#UNICODE" rel=biblioentry>[UNICODE]<!--{{!UNICODE}}--></a> で見つけることができる。ユーザエージェントはDefault Case Algorithm のセクションで定義されている条件付きケースマッピングを含む、Unicode文字に対する完全なケースマッピングを使用する必要がある。もし(そしてそのときに限り)、要素のコンテンツの言語が既知のものである場合、該当する言語固有のルールも同様に使用する必要がある(<a href="http://www.unicode.org/Public/UNIDATA/SpecialCasing.txt">SpecialCasing.txt</a> を参照のこと)。
 
-  <p>&lsquo;<code class=css>capitalize</code>&rsquo; ��ǒ�Ȓ�ђ����쒤� "word" ��Β�꒵���ϒ�撡�������������������Ȓ�͒¸��ǒ�����<a href="#UAX29" rel=biblioentry>[UAX29]<!--{{!UAX29}}--></a>��������쒤ϒ����Β�蒤���ʒñ��쒤Β����������꒤���뒤���ᒤ˒�������쒤ƒ�����(����������ɬ��ג�ǒ�ϒ�ʒ��)��������Ԓ�ϒ�������쒸ǒͭ��� titlecase ����§(��㒤���В����ђ�쒤ǒ��article��򒥹�����Ò�ג�����)���Ւ����풡������뒤���ᒤ˒��&lsquo;<code class=css>capitalize</code>&rsquo; ��˒����Ԓ����ْ����ǒ�ϒ�ʒ�����
+  <p>&lsquo;<code class=css>capitalize</code>&rsquo; で使用される "word" の定義はユーザエージェント依存である<a href="#UAX29" rel=biblioentry>[UAX29]<!--{{!UAX29}}--></a>。これはこのような単語の境界を決定するために示されている(しかし必要ではない)。制作者は、言語固有の titlecase 規則(例えば、英語ではarticleをスキップする)をフォローするために、&lsquo;<code class=css>capitalize</code>&rsquo; に期待すべきではない。
 
    <!-- www-style notes that UAX29 won't work for 'Tis and similar, so
       the UA might want to use UAX29 to split into words, but skip forward
       past any starting non-letters (as an example of why UAX29 is not ideal) -->
    
 
-  <p>�����ђ�ȒȾ��ђ�Β�꒵���� Unicode consortium ���Web���������<a href="#UAX11" rel=biblioentry>[UAX11]<!--{{!UAX11}}--></a> ��˒����뒡������ђ�ؒ�Β�ޒ�Ò�Ԓ�󒥰��ϒ��<a href="#UAX44" rel=biblioentry>[UAX44]<!--{{!UAX44}}--></a> ��˒�ƒ�������Βʸ������ Decomposition_Mapping(�ʬ���ޒ�Ò�Ԓ�󒥰) ��˒����� &lt;wide&gt; ��������Ւ����������ɒ�ݒ�����Ȓ����������뒤���Ȓ�Ȓ���ʬ��򒤷�����⒤�( &lt;wide&gt; ���������蒤꒽���������⒤�)��򒸵��Β�������ɒ�ݒ�����Ȓ�˒�ᒤ���ޒ�Ò�Ԓ�󒥰��˒�蒤��꒵������쒤ƒ����뒡�
+  <p>全角と半角の定義は Unicode consortium のWebサイト<a href="#UAX11" rel=biblioentry>[UAX11]<!--{{!UAX11}}--></a> にある。全角へのマッピングは、<a href="#UAX44" rel=biblioentry>[UAX44]<!--{{!UAX44}}--></a> にて、その文字の Decomposition_Mapping(分解マッピング) にある &lt;wide&gt; タグ付きコードポイントを取得することと、分解したもの( &lt;wide&gt; タグを取り除いたもの)を元のコードポイントに戻すマッピングにより定義されている。
 
-  <p>��������������ʒʸ����������̒�Β����ʒʸ�����ؒ�Β�ޒ�Ò�Ԓ�󒥰��� <a href="#small-kana">Small Kana Mappings</a> ��ǒ�꒵������쒤ƒ����뒡�
+  <p>小さいカナ文字から通常のカナ文字へのマッピングは <a href="#small-kana">Small Kana Mappings</a> で定義されている。
 
-  <p>�ʣ�����Β�͒����ؒ�꒤���쒡��ʣ�����Β�ђ������Ŭ��ђ����쒤�ɬ��ג�Β����뒾쒹璡���ʒ����Β���֒�ǒŬ��ђ����쒤�:
+  <p>複数の値が指定され、複数の変換が適用される必要のある場合、以下の順番で適用される:
 
   <ol>
    <li>&lsquo;<code class=css>capitalize</code>&rsquo;, &lsquo;<code
@@ -542,126 +541,126 @@
    <li>&lsquo;<code class=css>full-size-kana</code>&rsquo;
   </ol>
 
-  <p>��ƒ�������Ȓ�ђ����ϒ�� U+0020 ��Β������ U+3000 ��ؒ�ݒ¸�����뒤������� &lsquo;<code class=css>full-width</code>&rsquo; ��ђ����ǒ�����<a href="#white-space-rules">���������</a>��Β�咤˒�Ԓ�����
+  <p>テキスト変換は、 U+0020 の空白を U+3000 へ保存するだけの &lsquo;<code class=css>full-width</code>&rsquo; 変換である<a href="#white-space-rules">空白処理</a>の後に行う。
 
   <div class=example>
-   <p>��ʒ����ϒ����쒥���������Ȓ�Ȓ����Ԓ���ɽ��Ւʸ�����Β�蒤���˒�ʒ�뒤蒤���˒�������ܒ�쒤Βά����撤�ASCII�ʸ����������ђ�Β�ے�Β����ؒ�ђ���������㒤ǒ�����:
+   <p>以下は、レイアウトと改行が表意文字のようになるように、日本語の略語中のASCII文字を全角の異体字へ変換する例である:
 
    <pre>abbr:lang(ja) { text-transform: full-width; }</pre>
   </div>
 
-  <p class=issue>�����ƒ��ʸ�����Β�ƒ�������Ȓ�˒�ϒ����Ò�̒�ʒ�������ݒ����钥Ւ�������Β�͒θ��������������뒡���㒤���В������ɒ����Ȓ�������Β����꒥Ւ�� "center of gravity" (OpenType ��� <a href="http://www.microsoft.com/typography/otspec/features_ae.htm#case">case</a> ����ǽ��򒻲���)�����⒤���̒�֒�˒Ĵ��������쒤뒤���Ȓ�������뒡���撡���ϒ�������˒�񒤫��쒤ƒ����뒤蒤���˒�������쒤�ǒ�Ւ����뒥Ȓ�ǒ�����˒����뒤ْ����ʒ�Β�������ޒ����ϒ����򒤬�����꒥Ւ�Β�뒳ВŪ�����̒�Β����ᒤ˒Ĵ��������쒤뒤���Ȓ��������(OpenType��� <a href="http://www.microsoft.com/typography/otspec/features_ae.htm#cpsp">cpsp</a> ����ǽ��򒻲���)�����撡���� &lsquo;<a href="#letter-spacing0"><code class=property>letter-spacing</code></a>&rsquo; ��� &lsquo;<code class=css>normal</code>&rsquo; ��Β����������쒤򒥪���˒����ْ����ʒ�Β�����
+  <p class=issue>全て大文字のテキストには、特別なタイポグラフィーの考慮事項がある。例えば、句読点と数字のグリフは "center of gravity" (OpenType の <a href="http://www.microsoft.com/typography/otspec/features_ae.htm#case">case</a> 機能を参照)が高い位置に調整されることがある。我々はここに書かれているように、これをデフォルトでオンにするべきなのか？または空白がグリフの視覚的増量のために調整されることがある(OpenTypeの <a href="http://www.microsoft.com/typography/otspec/features_ae.htm#cpsp">cpsp</a> 機能を参照)。我々は &lsquo;<a href="#letter-spacing0"><code class=property>letter-spacing</code></a>&rsquo; が &lsquo;<code class=css>normal</code>&rsquo; の時、それをオンにすべきなのか？
 
-  <p class=issue>�����钤˒ʣ�����ʒ���꒤ϒ�����ݒ�˒ȯ�������̒����撤��ђ��������<a href="http://blogs.msdn.com/b/michkap/archive/2006/08/18/706383.aspx">�����꒥����ʸ�����Β��ʸ��������뒡����</a>��ǒ����뒡���撡���ϒ����쒤�ɒ����������В�������Β�����
+  <p class=issue>さらに複雑な問題は、実際に発音区別記号を変更する<a href="http://blogs.msdn.com/b/michkap/archive/2006/08/18/706383.aspx">ギリシャ文字の大文字化ルール</a>である。我々はこれをどう扱えばいいのか？
 
-  <p class=note>�����蒤�CSS��ǒ�ϒ��<a href="#CSS3LIST" rel=biblioentry>[CSS3LIST]<!--{{CSS3LIST}}--></a>��˒����� &lsquo;<code class=css>@counter-style</code>&rsquo; ��˒�������뒡���뒤ǒ�����&lsquo;<a href="#text-transform0"><code class=css>@text-transform</code></a>&rsquo; ��Β�蒤���˒�������ޒ�꒰��̒Ū��ǒ�ϒ�ʒ����ƒ�������Ȓ�ђ����������������ޒ�Ò�Ԓ�󒥰��ƒ����֒�뒤�뒵��ǽ����Ƴ��������쒤뒤���⒤���쒤ʒ�����
+  <p class=note>将来のCSSでは、<a href="#CSS3LIST" rel=biblioentry>[CSS3LIST]<!--{{CSS3LIST}}--></a>にある &lsquo;<code class=css>@counter-style</code>&rsquo; に似たルールである&lsquo;<a href="#text-transform0"><code class=css>@text-transform</code></a>&rsquo; のように、あまり一般的ではないテキスト変換カスタムマッピングテーブルを作る機能が導入されるかもしれない。
 
-  <h2 id=white-space-processing><span class=secno>3. </span> ������Β����</h2>
+  <h2 id=white-space-processing><span class=secno>3. </span> 空白の処理</h2>
 
-  <p>��ɒ����咥ᒥ�Ȓ�Β����Ȓ�ʒ�뒥ƒ�������Ȓ�˒�ϒ���¿�����Β�쒹璡���ǒ���Ū��ʒ�쒥����꒥󒥰��˒�ؒ�꒤Β�ʒ����Ւ�������ޒ�Ò�Ȓ����ޒ�ޒ�쒤ƒ����뒡���㒤���В�������������������ɒ�򒥤���ǒ��Ȓ����뒥���֒�䒥���ڒ�������Β�蒤���˒�����ʸ�����Β�Ԓ������ɒ�Ò���ƒ�ג�˒����뒤���ᒡ������Β�ƒ�������Ȓ�򒥻�����ᒥ��(�ʣ������)�����Ȓ�˒ʬ��䒤���뒤ʒ�ɒ�ǒ����뒡�CSS��Β����������ǒ�ϒ����ɒ����咥ᒥ�Ȓ�Β�쒥����꒥󒥰�����˒�����򒤽��Β�ޒ�ޒ�˒�������꒷뒹璤������꒤���뒤���Ȓ�ǒ�������Ԓ�������쒤钤Β�Ւ�������ޒ�Ò�Ȓ�Β��ᒤ�����撤���뒤���Ȓ����ǒ����뒡�
+  <p>ドキュメントの元となるテキストには、多くの場合、最終的なレンダリングに関わりのないフォーマットが含まれている。例えば、ソースコードをインデントするタブやスペースのように空白文字の編集や追加を容易にするため、元のテキストをセグメント(複数行)ごとに分割するなどである。CSSの空白処理では、ドキュメントのレンダリング時に空白をそのままにしたり結合したりすることで、制作者がそれらのフォーマットの解釈を制御することができる。
 
-  <p id=segment-normalization>��ɒ����咥ᒥ�Ȓ�Β����ƒ�������Ȓ�ǒ�ϒ����������ᒥ�Ȓ�� carriage returns(��ԒƬ������) (U+000D)���linefeeds(������) (U+000A)���combination(���2��Ē�Β�Ȓ�ߒ�璤�) (U+000D U+000A) ��䒡�SGML ��� RECORD-START ��� RECORD-END ��Ȓ���������Ȓ����蒤���ʒ����Β¾��Β�ᒥ���˒�������ǒ���ڒ�钤쒤ƒ����뒡���⒤���ɒ����咥ᒥ�Ȓ����쒤˒�������ᒥ�Ȓ����ڒ�뒥뒡���뒤���ؒ�꒤���쒤ƒ����ʒ����쒹璡���ƒ�������Ȓ�� line feed (U+000A)���carriage return���(U+000D)���CRLF (U+000D U+000A)�����������ᒥ�Ȓ��ʬ�����뒤⒤Β�Ȓ����ƒ����ʒ����쒤�(�����Β�ǒ�Ւ����뒥Ȓ�뒡���뒤ϒ����������쒤�������ƒ��Ē�˒Ŭ��ђ����쒤�)���CSS��ǒ�ϒ�������쒤钥������ᒥ�Ȓ��ʬ��䒤���뒤⒤Β��1��Ē�Β����Ԓʸ���(U+000A)��Ȓ����ƒ����쒤뒡�
+  <p id=segment-normalization>ドキュメントの元テキストでは、セグメントは carriage returns(行頭復帰) (U+000D)、linefeeds(改行) (U+000A)、combination(前2つの組み合わせ) (U+000D U+000A) や、SGML の RECORD-START と RECORD-END トークンを使うようなその他のメカニズムで区切られている。もしドキュメント言語にセグメントを区切るルールが指定されていない場合、テキストの line feed (U+000A)、carriage return、(U+000D)、CRLF (U+000D U+000A)がセグメントを分けるものとして見なされる(このデフォルトルールは生成されたコンテンツに適用される)。CSSでは、これらセグメントを分割するものは1つの改行文字(U+000A)として扱われる。
 
-  <p>CSS��Β����������ϒ��������ʸ������쒥����꒥󒥰��Β����ᒤ������˒��ᒤ���뒡���Ⓔߒ����뒥ɒ����咥ᒥ�Ȓ�ǒ�������ؒ�Β�ƒ����ϒ�ʒ�����
+  <p>CSSの空白処理は、空白文字をレンダリングのためだけに解釈する。内在するドキュメントデータへの影響はない。
 
-  <p class=note>��ɒ����咥ᒥ�Ȓ�Β�ђ�������ϒ�������ᒥ�Ȓʬ��䒤�Β����ޒ�钥���������뒤������ǒ�ʒ������¾��Β�����ʸ�����Ȓ�뒹璤���������꒡���ޒ����������Ò�ג�Β�뒡���뒤˒����Ò�ƒ��������������뒤���Ȓ�������뒤���Ȓ�˒�풰Ւ����뒤���Ȓ��CSS��Β������ϒ�ђ��������<em>���</em>��˒�Ԓ�쒤뒤Β�ǒ�������������꒥󒥰��Β����ᒤΒʸ�����򒸵��˒�ᒤ������Ȓ�ϒ�ǒ����ʒ�������蒤Ò�ƒ����咤ے�ɒ�꒵������쒤뒿�����񒤤��Β�������Ē����ϒ�������쒤钤Β�����˒�ƒ�������쒤���뒤������撡�������������������Ȓ�˒�͒¸�����뒤���Ȓ�⒤���뒡�
+  <p class=note>ドキュメントのパーサはセグメント分割をノーマライズするだけでなく、他の空白文字と結合させたり、マークアップのルールに従って空白を処理することがあることに注意すること。CSSの処理はパースの<em>後</em>に行われるので、スタイリングのための文字を元に戻すことはできない。よって、後ほど定義される振る舞いのいくつかは、これらの制限に影響されうるし、ユーザエージェントに依存することもある。
 
-  <p>tab(������) (U+0009)���line feed(������) (U+000A)���space(������) (U+0020)�����В����������Β�Ւ�������ޒ�Ò�Ȓ�ђʸ��� (U+202<var>x</var>) ��ʒ����Β�����ʸ���(Unicode class Cc) ��ϒ�������풤Β�������ʒ���ʸ�����Ȓ����ƒ�쒥����꒥󒥰�����쒤뒤ْ����ǒ����뒡���撡�������������������Ȓ�ϒ����쒤钤򒸫������ʸ�����Ȓ����ƒ����������Ȓ����ǒ�����(�����������������쒤ϒ�̒�������ʒ���ʸ��������Ԓ����Ԓ����Β����꒥Ւ�Ȓ����ƒ�쒥����꒥󒥰�����쒤뒷뒲̒�Ȓ�ʒ�뒤���Ȓ�˒�풰Ւ����뒤����)���<span class=issue>�����Ԓ�Β������񒤤��Ȓ�ϒ����������뒹璤Β�ƒ����ϒ����������Ē����Β����������Unicode�ʸ�����Β������񒤤��򒥳��Ԓ�������뒤���Ȓ�ϒ�ǒ����뒤Β�����</span>
+  <p>tab(タブ) (U+0009)、line feed(改行) (U+000A)、space(空白) (U+0020)、バイダイのフォーマット用文字 (U+202<var>x</var>) 以外の制御文字(Unicode class Cc) は幅ゼロの見えない文字としてレンダリングされるべきである。ユーザエージェントはそれらを見える文字として扱うことができる(しかし、これは通常見えない文字が行方不明のグリフとしてレンダリングされる結果となることに注意すること)。<span class=issue>改行の振る舞いとは何か？結合の影響は？いくつかのゼロ幅のUnicode文字の振る舞いをコピーすることはできるのか？</span>
 
-  <h3 id=white-space-collapsing><span class=secno>3.1. </span> ������ʸ�����Β�뒹�: &lsquo;<a href="#text-space-collapse"><code
-   class=property>text-space-collapse</code></a>&rsquo; ��ג�풥ђ�ƒ��</h3>
+  <h3 id=white-space-collapsing><span class=secno>3.1. </span> 空白文字の結合: &lsquo;<a href="#text-space-collapse"><code
+   class=property>text-space-collapse</code></a>&rsquo; プロパティ</h3>
 
-  <p class=issue>�����Β����������璥�ϒ�Ē����撤ǒ����꒡������蒤Β�ɒ�钥Ւ�Ȓ�ǒ�ђ����Β�Ēǽ�����������뒡�
+  <p class=issue>このセクションは議論中であり、将来のドラフトで変更の可能性がある。
 
   <table class=propdef>
    <tbody>
     <tr>
-     <th>�̾���:
+     <th>名称:
 
      <td><dfn id=text-space-collapse>text-space-collapse</dfn>
 
     <tr>
-     <th>���:
+     <th>値:
 
      <td>collapse | discard | [ [preserve | preserve-breaks] && [ trim-inner
       || consume-before || consume-after ]
 
     <tr>
-     <th>��钴����:
+     <th>初期値:
 
      <td>collapse
 
     <tr>
-     <th>�Ŭ��ђ�В��:
+     <th>適用対象:
 
-     <td>�����ƒ�Β�ג��
-
-    <tr>
-     <th>��ђ��:
-
-     <td>�����쒤�
+     <td>全ての要素
 
     <tr>
-     <th>��ђ��������ƒ�����:
+     <th>継承:
+
+     <td>される
+
+    <tr>
+     <th>パーセンテージ:
 
      <td>N/A
 
     <tr>
-     <th>��ᒥǒ�����:
+     <th>メディア:
 
      <td>visual
 
     <tr>
-     <th>�����В��:
+     <th>算出値:
 
-     <td>��ؒ�꒤���쒤���Ȓ�����
+     <td>指定されたとおり
   </table>
 
-  <p class=issue>��ג�풥ђ�ƒ���̾����ɬ���
+  <p class=issue>プロパティ名が必要
 
-  <p>�����Β�ג�풥ђ�ƒ����ϒ�ג�ǒ�⒤�<a href="#white-space-processing">������</a>�����뒹璤���쒤뒤���ݒ�������������ƒ�ɒ�Β�蒤���˒�뒹璤���뒤Β������뒸������뒡���͒�˒�ϒ��<a href="#white-space-rules">white space processing rules(�����������Β�뒡����)</a> ��˒����Ò�ƒ��ᒤ���쒤ʒ����쒤В�ʒ�钤ʒ�������ʒ����Β�Ւ̣���������:
+  <p>このプロパティは要素内の<a href="#white-space-processing">空白</a>が結合されるか否か、そしてどのように結合するのかを宣言する。値には、<a href="#white-space-rules">white space processing rules(空白処理のルール)</a> に従って解釈されなければならない、以下の意味がある:
 
   <dl>
    <dt><dfn id=collapse0 title="white-space:collapse">&lsquo;<code
     class=css>collapse</code>&rsquo;</dfn>
 
-   <dd>�����Β�͒�ϒ��������Β���1�ʸ���(<a href="#line-break-transform">�����뒥���������ǒ��</a>�ʸ�����ʒ��)��˒�뒹璤���뒤蒤���撡�������������������Ȓ�ؒ�ؒ�������뒡�
+   <dd>この値は、空白の列を1文字(<a href="#line-break-transform">あるケースでは</a>文字なし)に結合するようユーザエージェントへ指示する。
 
    <dt><dfn id=preserve title="white-space:preserve">&lsquo;<code
     class=css>preserve</code>&rsquo;</dfn>
 
-   <dd>�����Β�͒�ϒ����撡�������������������Ȓ�����������뒹璤ǒ����ʒ����蒤���˒����뒡������Ԓ�ϒ����������Ԓ�Ȓ����ƒ�ݒ�������쒤뒡�
+   <dd>この値は、ユーザエージェントが空白列を結合できないようにする。改行は強制改行として保持される。
 
    <dt><dfn id=preserve-breaks
     title="white-space:preserve-breaks">&lsquo;<code
     class=css>preserve-breaks</code>&rsquo;</dfn>
 
-   <dd>�����Β�͒�ϒ��&lsquo;<code class=css>collapse</code>&rsquo; ��Β�蒤���˒������뒹璤���뒡������������������Ԓ�ϒ����������Ԓ�Ȓ����ƒ�ݒ�������뒡�
+   <dd>この値は、&lsquo;<code class=css>collapse</code>&rsquo; のように空白を結合する。しかし、改行は強制改行として保持する。
 
    <dt><dfn id=discard title="white-space:discard">&lsquo;<code
     class=css>discard</code>&rsquo;</dfn>
 
-   <dd>�����Β�͒�ϒ����ג�ǒ�⒤Β���������"discard(��Β�ƒ��)"��蒤���撡�������������������Ȓ�ؒ�ؒ�������뒡�
+   <dd>この値は、要素内の全空白を"discard(捨てる)"ようユーザエージェントへ指示する。
 
    <dt><dfn id=trim-inner title="white-space:trim-inner">&lsquo;<code
     class=css>trim-inner</code>&rsquo;</dfn>
 
-   <dd>��֒�풥Ò��������ƒ�ʒ�˒�������ƒ����Β�͒�ϒ����ג�ǒ����ϒ����Β������Ȓ����ג�ǒ�⒤Β�ǒ�钤Β������ʸ�����Β����˒����뒺ǒ�咤Β����Ԓ��ޒ������������Β�ƒ�뒤蒤���撡�������������������Ȓ�ؒ�ؒ�������뒡���ޒ�������ג�ǒ�⒤Β�ǒ�咤Β������ʸ�����Β�咤˒³�����ǒ�钤Β����Ԓ�ǒ�ϒ�ޒ���ג�ǒ�Β����꒤Β��������ⒼΒ�ƒ�뒤蒤���撡�������������������Ȓ�ؒ�ؒ�������뒡������Β¾��Β�ג�ǒ�˒�������ƒ����Β�͒�ϒ����ג�ǒ�Β����ϒ����Ȓ���λ�����Β���������Β�ƒ�뒤蒤���撡�������������������Ȓ�ؒ�ؒ�������뒡�
+   <dd>ブロックコンテナにおいてこの値は、要素開始点の手前と、要素内の最初の非空白文字の前にある最後の改行を含む全空白を捨てるようユーザエージェントへ指示する。また、要素内の最後の非空白文字の後に続く最初の改行で始まる要素の終わりの全空白も捨てるようユーザエージェントへ指示する。その他の要素においてこの値は、要素の開始点と終了点の全空白を捨てるようユーザエージェントへ指示する。
 
    <dt><dfn id=consume-before title="white-space:consume-before">&lsquo;<code
     class=css>consume-before</code>&rsquo;</dfn>
 
-   <dd>�����Β�͒�ϒ����ג�ǒ����ϒ����Βľ�����˒����뒷뒹璲Ēǽ��ʒ����ƒ�Β������뒹璤���뒤蒤���撡�������������������Ȓ�ؒ�ؒ�������뒡�
+   <dd>この値は、要素開始点の直前にある結合可能な全ての空白を結合するようユーザエージェントへ指示する。
 
    <dt><dfn id=consume-after title="white-space:consume-after">&lsquo;<code
     class=css>consume-after</code>&rsquo;</dfn>
 
-   <dd>�����Β�͒�ϒ����ג�ǒ���λ�����Βľ��咤˒����뒷뒹璲Ēǽ��ʒ����ƒ�Β������뒹璤���뒤蒤���撡�������������������Ȓ�ؒ�ؒ�������뒡�
+   <dd>この値は、要素終了点の直後にある結合可能な全ての空白を結合するようユーザエージェントへ指示する。
 
   </dl>
 
   <div class=example>
-   <p>��ʒ����˒����������������뒥뒡���뒤ϒ��MathML��Β������������������ƒ�����:
+   <p>以下に示すスタイルルールは、MathMLの空白処理を実装している:
 
    <pre>
 <!-- -->@namespace m "http://www.w3.org/1998/Math/MathML";
@@ -673,247 +672,247 @@
 <!-- -->}</pre>
   </div>
 
-  <p class=issue>&lsquo;<a href="#text-space-collapse"><code class=property>text-space-collapse</code></a>&rsquo; �����ђ�������쒤뒤���ᒡ�&lsquo;<code class=css>trim-inner</code>&rsquo;, &lsquo;<code
-   class=css>consume-before</code>&rsquo;, &lsquo;<code class=css>consume-after</code>&rsquo; ��������ޒ������ǽ�����ʒ�������Ȓ����ؒŦ�����쒤ƒ����뒡������쒤�&lt;span> or &lt;div> ����ޒ�������뒤Ȓ����������ǒ�ʒ����쒹璤Ȓ�撳Ӓ����ƒ¿�����Β����򒤬��������쒤���뒤���Ȓ��Ւ̣�����ƒ����뒡�
+  <p class=issue>&lsquo;<a href="#text-space-collapse"><code class=property>text-space-collapse</code></a>&rsquo; が継承されるため、&lsquo;<code class=css>trim-inner</code>&rsquo;, &lsquo;<code
+   class=css>consume-before</code>&rsquo;, &lsquo;<code class=css>consume-after</code>&rsquo; がうまく機能しないことが指摘されている。これは&lt;span> or &lt;div> を挿入すると、そうでない場合と比較して多くの空白が削除されうることを意味している。
 
-  <h3 id=tab-size><span class=secno>3.2. </span>�����֒ʸ�����Β��������: &lsquo;<a href="#tab-size0"><code class=property>tab-size</code></a>&rsquo; ��ג�풥ђ�ƒ��</h3>
+  <h3 id=tab-size><span class=secno>3.2. </span>タブ文字のサイズ: &lsquo;<a href="#tab-size0"><code class=property>tab-size</code></a>&rsquo; プロパティ</h3>
 
   <table class=propdef>
    <tbody>
     <tr>
-     <th>�̾���:
+     <th>名称:
 
      <td><dfn id=tab-size0>tab-size</dfn>
 
     <tr>
-     <th>���:
+     <th>値:
 
      <td>&lt;integer&gt; | &lt;length&gt;
 
     <tr>
-     <th>��钴����:
+     <th>初期値:
 
      <td>8
 
     <tr>
-     <th>�Ŭ��ђ�В��:
+     <th>適用対象:
 
-     <td>��֒�풥Ò��������ƒ��
-
-    <tr>
-     <th>��ђ��:
-
-     <td>�����쒤�
+     <td>ブロックコンテナ
 
     <tr>
-     <th>��ђ��������ƒ�����:
+     <th>継承:
+
+     <td>される
+
+    <tr>
+     <th>パーセンテージ:
 
      <td>N/A
 
     <tr>
-     <th>��ᒥǒ�����:
+     <th>メディア:
 
      <td>visual
 
     <tr>
-     <th>�����В��:
+     <th>算出値:
 
-     <td>��ؒ�꒤���쒤���Ȓ�����
+     <td>指定されたとおり
   </table>
 
-  <p>�����Β�ג�풥ђ�ƒ����ϒ����蒻���Β����֒ʸ���(U+0009)��Β�������꒤���뒡���������͒�ϒ�����ʸ���(U+0020)��Β����ǒɽ�����쒤뒡���钤Β�������͒�ϒ�ؒ�ߒ����쒤ƒ����뒡�
+  <p>このプロパティは描画時のタブ文字(U+0009)の幅を決定する。整数値は空白文字(U+0020)の幅で表される。負の整数値は禁止されている。
 
-  <h3 id=white-space-rules><span class=secno>3.3. </span> �����������Β�뒡����</h3>
+  <h3 id=white-space-rules><span class=secno>3.3. </span> 空白処理のルール</h3>
 
-  <p>�����������ϒ����ڒ�����(U+0020)���������(U+0009)���(<a href="#segment-normalization">post-normalization</a>) line feeds (U+00A0) ��Β�ߒ�˒���ђ����뒡�
+  <p>空白処理はスペース(U+0020)、タブ(U+0009)、(<a href="#segment-normalization">post-normalization</a>) line feeds (U+00A0) のみに作用する。
 
-  <p>������钥����Β�Ւ�������ޒ�Ò�ƒ����󒥰�����쒤�������ƒ�������Ȓ�˒�ޒ�ޒ�쒤뒳ƒ�����钥�����ג��(�ƿ�̾��Β�����钥�����ޒ��)��Β����ᒤ˒��������ʸ�����ϒ�ʒ����Β�蒤���˒����쒡���В����������Β�Ւ�������ޒ�Ò�ƒ����󒥰�ʸ�������¸��ߒ����ʒ����Β����Β�蒤���˒̵��뒤���뒡�
+  <p>インラインのフォーマッティングされたコンテキストに含まれる各インライン要素(匿名のインラインを含む)のために、空白文字は以下のように扱われ、バイダイのフォーマッティング文字が存在しないのかのように無視する。
 
   <ul>
    <li id=collapse>
-    <p>&lsquo;<a href="#text-space-collapse"><code class=property>text-space-collapse</code></a>&rsquo; ��� &lsquo;<code class=css>collapse</code>&rsquo; ��� &lsquo;<code class=css>preserve-breaks</code>&rsquo; ��˒�ߒ�꒤���쒤ƒ����뒾쒹璤ϒ��������ʸ������ <dfn id=collapsible>collapsible(�����̒�Ēǽ)</dfn>��Ȓ�ߒ�ʒ����쒡���ʒ����Β����ƒ�Ò�ג�ǒ���������쒤�:
+    <p>&lsquo;<a href="#text-space-collapse"><code class=property>text-space-collapse</code></a>&rsquo; が &lsquo;<code class=css>collapse</code>&rsquo; か &lsquo;<code class=css>preserve-breaks</code>&rsquo; に設定されている場合は、空白文字は <dfn id=collapsible>collapsible(圧縮可能)</dfn>とみなされ、以下のステップで処理される:
 
     <ol>
-     <li>�����Ԓʸ�����Βľ�����⒤������ϒľ��咤˒���������ƒ�Β����ڒ�������Ȓ����֒�ϒ�蒤꒽������쒤뒡�
+     <li>改行文字の直前もしくは直後にある全てのスペースとタブは取り除かれる。
 
-     <li>&lsquo;<a href="#text-space-collapse"><code class=property>text-space-collapse</code></a>&rsquo; ��� &lsquo;<code class=css>preserve-breaks</code>&rsquo; ��ǒ�ʒ����쒤В�������Ԓʸ�����ϒ�쒥����꒥󒥰��Β����ᒤ�<a href="#line-break-transform">line feed transformation rules</a>��˒����Ò�ƒ�ђ�������쒤뒡�
+     <li>&lsquo;<a href="#text-space-collapse"><code class=property>text-space-collapse</code></a>&rsquo; が &lsquo;<code class=css>preserve-breaks</code>&rsquo; でなければ、改行文字はレンダリングのために<a href="#line-break-transform">line feed transformation rules</a>に従って変換される。
 
-     <li>�����ƒ�Β����֒�ϒ����ڒ�����(U+0020)��˒�ђ�������쒤뒡�
+     <li>全てのタブはスペース(U+0020)に変換される。
 
-     <li>�¾��Β�뒹璤���쒤������ڒ�������Βľ��咤˒����뒶����&mdash;������钥����Βξ���������1��Ē���¦&mdash;��˒����뒶����ϒ�������쒤뒡�������������������Β����˒�蒤꒥ƒ�������Ȓ�Β����Ԓ����񒤬�����쒤뒾쒹璤ϒ�������Β����Ԓ����񒤬�����Β�ޒ�ޒ¸��ߒ����뒤⒤Β�Ȓ�ߒ�ʒ����쒤뒡�
+     <li>他の結合されたスペースの直後にある空白&mdash;インラインの両境界の1つ外側&mdash;にある空白は除去される。しかし、空白の除去によりテキストの改行機会が失われる場合は、この改行機会がそのまま存在するものとみなされる。
 
-     <li>&lsquo;<code class=css>consume-before</code>&rsquo; ��ǒ������ג�ǒ�Βľ�����˒����뒷뒹璲Ēǽ��ʒ����ڒ�������ϒ�������쒤뒡���������쒤������ڒ����������ƒ�������Ȓ�˒�������ƒ����Ԓ�����򒼨��������Ȓ�ϒ�ʒ�����
+     <li>&lsquo;<code class=css>consume-before</code>&rsquo; である要素の直前にある結合可能なスペースは除去される。除去されたスペースがテキストにおいて改行機会を示すことはない。
 
-     <li> &lsquo;<code class=css>consume-after</code>&rsquo; ��ǒ������ג�ǒ�Β����꒤Β�咤풤˒����뒷뒹璲Ēǽ��ʒ����ڒ�������ϒ�蒤꒽������쒤뒡���������쒤������ڒ����������ƒ�������Ȓ�˒�������ƒ����Ԓ�����򒼨��������Ȓ�ϒ�ʒ�����
+     <li> &lsquo;<code class=css>consume-after</code>&rsquo; である要素の終わりの後ろにある結合可能なスペースは取り除かれる。除去されたスペースがテキストにおいて改行機会を示すことはない。
 
     </ol>
 
    <li>
-    <p>&lsquo;<a href="#text-space-collapse"><code class=property>text-space-collapse</code></a>&rsquo; ��� &lsquo;<code class=css>preserve</code>&rsquo; ��˒�ߒ�꒤���쒤ƒ����뒾쒹璡���ג�ǒ�Β�������ǒʬ��䒤���쒤ʒ�������ڒ��������� non-breaking spaces(��Β����֒�쒡���������ڒ�����)��Ȓ����ƒ����쒤뒡������������������Ԓ�����ϒ����ڒ��������Β����꒤˒¸��ߒ����뒡�
+    <p>&lsquo;<a href="#text-space-collapse"><code class=property>text-space-collapse</code></a>&rsquo; が &lsquo;<code class=css>preserve</code>&rsquo; に設定されている場合、要素の境界で分割されないスペース列は non-breaking spaces(ノーブレークスペース)として扱われる。しかし、改行機会はスペース列の終わりに存在する。
 
    <li>
-    <p>&lsquo;<a href="#text-space-collapse"><code class=property>text-space-collapse</code></a>&rsquo; ��� &lsquo;<code class=css>discard</code>&rsquo; ��˒�ߒ�꒤���쒤ƒ����뒾쒹璡������ƒ�Β�������˒�������뒺ǒ�钤Β�����ʸ������ zero width non-joiner(������������ܒ�璻�) (U+200C)��˒�֒����������钤쒡���Ē�꒤Β�������ϒ�������쒤뒡�</p>
+    <p>&lsquo;<a href="#text-space-collapse"><code class=property>text-space-collapse</code></a>&rsquo; が &lsquo;<code class=css>discard</code>&rsquo; に設定されている場合、全ての空白列における最初の空白文字が zero width non-joiner(ゼロ幅非接合子) (U+200C)に置き換えられ、残りの空白列は除去される。</p>
 
   </ul>
 
-  <p>�����Β�뒲̒����֒�풥Ò�������Β����쒥����꒥󒥰�����쒤뒡�������钥����ϒ�В����������Β�ƒ�ے�֒��͒θ������ &lsquo;<a href="#text-wrap0"><code class=property>text-wrap</code></a>&rsquo; ��ג�풥ђ�ƒ����Β�ؒ���̒�꒤˒�钥Ò�Ԓ�󒥰�����뒤蒤���˒�쒥���������Ȓ����쒤뒡�
+  <p>その結果、ブロック全体がレンダリングされる。インラインはバイダイの再配置を考慮し、 &lsquo;<a href="#text-wrap0"><code class=property>text-wrap</code></a>&rsquo; プロパティの指定通りにラッピングするようにレイアウトされる。
 
-  <p>��ƒ�Ԓ����쒥���������Ȓ����쒤뒤���ᒡ�
+  <p>各行がレイアウトされるため、
 
   <ol>
-   <li>��Ԓ�ΒƬ������Ϣ�³�����뒷뒹璥���ڒ�������ϒ�������쒤뒡�
+   <li>行の頭から連続する結合スペースは削除される。
 
-   <li>��ƒ����֒�ϒ�������Β����꒥Ւ�Β����ϒ����Ȓ�ʒ�뒼���Β����֒����Ȓ�Ò�ג�ޒ�ǒ����꒥Ւ��ʿ�����Ւ�Ȓ�Ȓ����ƒ�쒥����꒥󒥰�����쒤뒡������֒����Ȓ�Ò�ג�ϒ����֒�풥Ò����Β�����ƒ��Ē����ϒü�����钡���֒�풥Ò����ǒ�Ȓ�쒤ƒ����뒥Ւ�����Ȓ�ǒ�쒥����꒥󒥰�����쒤뒥���ڒ����� (U+0020) ��Β����Β�ܒ����Ȓ�ʒ�뒥ݒ�����Ȓ�ǒȯ��������뒡� ��������Ē�Β����ڒ����������˒�ʒ�뒤���ϒ��&lsquo;<a href="#tab-size0"><code class=property>tab-size</code></a>&rsquo; ��ג�풥ђ�ƒ����ǒ�ؒ�꒤���쒤뒡�
+   <li>各タブは、次のグリフの開始点となる次のタブストップまでグリフ水平シフトとしてレンダリングされる。タブストップは、ブロックのコンテンツ開始端から、ブロックで使われているフォントでレンダリングされるスペース (U+0020) の幅の倍数となるポイントで発生する。 いくつのスペース幅になるかは、&lsquo;<a href="#tab-size0"><code class=property>tab-size</code></a>&rsquo; プロパティで指定される。
 
-   <li>��Ԓ�Β�ǒ�咤ΒϢ�³�����뒷뒹璥���ڒ�������ϒ�������쒤뒡�
+   <li>行の最後の連続する結合スペースは削除される。
 
-   <li>��Ԓ�ǒ�咤Β����ڒ�������������֒����뒹��Ԓ�Ē��������&lsquo;<a href="#text-wrap0"><code class=property>text-wrap</code></a>&rsquo; ���  &lsquo;<code class=property>normal</code>&rsquo; ��� &lsquo;<code class=property>avoid</code>&rsquo; ��˒�ߒ�꒤���쒤ƒ����뒾쒹璡���撡�������������������Ȓ�ϒ����쒤钤Β�����뒳ВŪ��˒�뒹璤���뒤���Ȓ�������뒡�
+   <li>行最後のスペースかタブが結合不可だが、&lsquo;<a href="#text-wrap0"><code class=property>text-wrap</code></a>&rsquo; が  &lsquo;<code class=property>normal</code>&rsquo; か &lsquo;<code class=property>avoid</code>&rsquo; に設定されている場合、ユーザエージェントはそれらの幅を視覚的に結合することがある。
 
   </ol>
 
-  <p>��������������ƒ�Ò�ג�ǒ�������쒤ʒ����Ò��������ϒ�� <dfn id=preserved>preserved</dfn> white space ��Ȓ�ƒ�В�쒤뒡�
+  <p>空白処理ステップで除去されなかった空白は、 <dfn id=preserved>preserved</dfn> white space と呼ばれる。
 
   <div class=example>
-   <h4 id=egbidiwscollapse><span class=secno>3.3.1. </span> �����ڒ�������뒹璤Β������В����������Β��</h4>
+   <h4 id=egbidiwscollapse><span class=secno>3.3.1. </span> スペース結合のある双方向性の例</h4>
 
-   <p>�����ڒ���������Ò�̒�˒�뒳В��(����Ĵ�����蒤Ӓ����̒�򒤹��뒤���ᒤ˒���¿��͒�ʒ�ؒ�ʒ����Ȓ�Ȓ�����Ȓ��)�����ƒ����ʒ����Β�ޒ����������Ò�ג�˒�Ē����ƒ�͒�����:</p>
+   <p>スペースを特別に視覚化(強調および識別をするために、多様な背景色と枠線を使用)して、以下のマークアップについて考える:</p>
 
    <pre><code>&lt;ltr&gt;A<span class=egbidiwsaA>&#160;</span>&lt;rtl&gt;<span class=egbidiwsbB>&#160;</span>B<span class=egbidiwsaB>&#160;</span>&lt;/rtl&gt;<span class=egbidiwsbC>&#160;</span>C&lt;/ltr&gt;</code></pre>
 
-   <p>��ג�� <code>&lt;ltr&gt;</code> ��ϒ�������钱���˒�ʒ�Ԓ����뒤���Ȓ��ɽ��������ג�� <code>&lt;rtl&gt;</code> ��ϒ�������钺���ؒ�ʒ�Ԓ����뒤���Ȓ��ɽ������ &lsquo;<a href="#text-space-collapse"><code class=property>text-space-collapse</code></a>&rsquo; ��ג�풥ђ�ƒ����� &lsquo;<code class=css>collapse</code>&rsquo; ��˒�ߒ�꒤���쒤ƒ����뒾쒹璡������Ғ�Β������Β�뒲̒����ʒ����Β�蒤���˒�ʒ��:</p>
+   <p>要素 <code>&lt;ltr&gt;</code> は左から右に進行することを表し、要素 <code>&lt;rtl&gt;</code> は右から左へ進行することを表す。 &lsquo;<a href="#text-space-collapse"><code class=property>text-space-collapse</code></a>&rsquo; プロパティが &lsquo;<code class=css>collapse</code>&rsquo; に設定されている場合、前述の処理の結果、以下のようになる:</p>
 
    <ul style="line-height:1.3">
-    <li>B��Β����˒����뒥���ڒ����� (<span class=egbidiwsbB>&#160;</span>) ��ϒ��A��Β�咤풤˒����뒥���ڒ����� (<span class=egbidiwsaA>&#160;</span>) ��Ȓ�뒹璤���쒤뒡�
+    <li>Bの前にあるスペース (<span class=egbidiwsbB>&#160;</span>) は、Aの後ろにあるスペース (<span class=egbidiwsaA>&#160;</span>) と結合される。
 
-    <li>C��Β����˒����뒥���ڒ����� (<span class=egbidiwsbC>&#160;</span>) ��ϒ��B��Β�咤풤˒����뒥���ڒ����� (<span class=egbidiwsaB>&#160;</span>) ��Ȓ�뒹璤���쒤뒡�
+    <li>Cの前にあるスペース (<span class=egbidiwsbC>&#160;</span>) は、Bの後ろにあるスペース (<span class=egbidiwsaB>&#160;</span>) と結合される。
    </ul>
 
-   <p>�����쒤�2��Ē�Β����ڒ����������Ē�뒡�1��Ē�ϒ�������钱���˒�ʒ�Ԓ����뒲Ւ�꒤˒�ޒ�ޒ�쒤�A��Β�咤풤Β����ڒ�����������1��Ē�ϒ�������钺���ؒ�ʒ�Ԓ����뒲Ւ�꒤˒�ޒ�ޒ�쒤�B��Β�咤풤Β����ڒ�������ǒ����뒡������쒤�Unicode��В�������������뒥���꒥������˒�蒤Ò�ƒ��Ӓ�ؒ����钤쒡���뒲̒�ʒ����Β�蒤���˒�ʒ��:</p>
+   <p>これで2つのスペースが残る。1つは左から右に進行する箇所に含まれるAの後ろのスペース、網1つは右から左へ進行する箇所に含まれるBの後ろのスペースである。これがUnicode双方向性アルゴリズムによって並び替えられ、結果以下のようになる:</p>
 
    <pre>A<span class=egbidiwsaA>&#160;</span><span class=egbidiwsaB>&#160;</span>BC</pre>
 
-   <p>A���B��Ȓ�Β�֒�˒��2��Ē�Β����ڒ�������������뒤����B���C��Ȓ�Β�֒�˒�ϒ����ڒ����������ʒ�������Ȓ�˒�풰Ւ����뒤���Ȓ�������쒤ϒ����ϒ�������Ȓ���λ��������Β��¦��˒����ڒ���������֒����咤꒤˒����ג�ǒ�Β���¦��ؒ����ڒ���������ے�֒����뒤���Ȓ����������������뒤Ȓ���������Ū��ʒ�䒤ᒹ���ߒ�쒥ْ�뒤˒�꒤��咤꒤˒����Œ�ے�Β�В����������򒤢��ƒ�˒����뒤���Ȓ����������В��Β�������ǒ����뒡�</p>
+   <p>AとBとの間には2つのスペースがあるが、BとCとの間にはスペースがないことに注意すること。これは開始タグと終了タグの内側にスペースを置く代わりに、要素の外側へスペースを配置すること、言い換えると、明示的な埋め込みレベルに頼る代わりに、暗黙の双方向性をあてにすることがいちばんの回避策である。</p>
   </div>
 
-  <h4 id=line-break-transform><span class=secno>3.3.2. </span> �����Ԓ�ђ����Β�뒡����</h4>
+  <h4 id=line-break-transform><span class=secno>3.3.2. </span> 改行変換のルール</h4>
 
-  <p>�����Ԓ��<a href="#collapse">collapsible(��뒹璲Ēǽ)</a>��ǒ����뒾쒹璡������Ԓ����咤Β�����ƒ�������Ȓ�˒�������ƒ��space(�����ڒ�����) (U+0020)��ؒ�ђ�������쒤뒤������������쒤뒡�
+  <p>改行が<a href="#collapse">collapsible(結合可能)</a>である場合、改行前後のコンテキストに応じて、space(スペース) (U+0020)へ変換されるか、削除される。
 
-  <p class=note>�����쒤钤Β�������Ò�������Ԓ�쒤�����˒�������������Β�뒡���뒤������Ԓʸ�����Β�咤풤˒����뒥���֒�Ȓ����ڒ�����������ђ�ߒ�ǒ����뒤���Ȓ�˒�풰Ւ����뒤���Ȓ��
-
-  <ul>
-   <li>�����Ԓľ�����⒤������ϒ����Ԓľ��咤Βʸ������zero width space character(��������풤Β�����ʸ���)  (U+200B) ��ǒ����뒾쒹璡������Ԓ�ϒ�������쒤뒡�
-
-   <li>��������ǒ�ʒ����쒤В�������Ԓľ��������蒤Ӓ����Ԓľ��咤Βʸ������East Asian Width ��ג�풥ђ�ƒ�� <a href="#UAX11" rel=biblioentry>[UAX11]<!--{{!UAX11}}--></a> ��� F ��� W ��� H (A��ǒ�ϒ�ʒ��)��ǒ����꒡������Ē�ɒ����钤⒥ϒ�󒥰���ʸ�����ǒ����뒾쒹璡������Ԓʸ�����ϒ�������쒤뒡�
-
-   <li>��������ǒ�ʒ����쒤В�������Ԓʸ������ space(�����ڒ�����) (U+0020)��˒�ђ�������쒤뒡�
-  </ul>
-
-  <p class=issue>�����쒤ϒ��ݒ�˒�ɒ�Β����ْ����ޒ���ư�����ƒ����뒤���Ȓ����������ᒥ�Ȓ����Ò�˒����������蒤Ӓ����쒤ȒƱ��͒�Βʸ������Ȓ�Ò�ƒƯ�����ƒ����뒿͒����钤Β�⒤Β�ϒ��˒����꒤����������
-
-  <h4 id=white-space-summary><span class=secno>3.3.3. </span>������뒹璤˒�蒤뒱ƒ����Β�ג��</h4>
+  <p class=note>これらのチェックが行われる前に、空白処理のルールが改行文字の後ろにあるタブとスペースを削除済みであることに注意すること。
 
   <ul>
-   <li>�Ϣ�³�����뒶�����1��Ē�Β�����˒�̒�������쒤뒡�
+   <li>改行直前もしくは改行直後の文字がzero width space character(幅ゼロの空白文字)  (U+200B) である場合、改行は削除される。
 
-   <li>2��Ē�Β�撹��ʸ�����������ܒ��ʸ�����������쒤Βʸ�����Β�֒�˒�����Ϣ�³�����뒲���Ԓ�Ȓ�����ϒ�������⒤ʒ���ʸ�����˒�뒹璤���쒤뒡�
+   <li>そうでなければ、改行直前および改行直後の文字のEast Asian Width プロパティ <a href="#UAX11" rel=biblioentry>[UAX11]<!--{{!UAX11}}--></a> が F か W か H (Aではない)であり、かつどちらもハングル文字である場合、改行文字は削除される。
 
-   <li>�����Ԓ��ޒ����Ϣ�³�����뒶����ʸ�����Β�������咤˒����� zero width space ��ϒ���Ϣ�³�����뒶����ʸ��������Β�� zero width space ��ؒ�뒹璤���뒡�
+   <li>そうでなければ、改行文字は space(スペース) (U+0020)に変換される。
   </ul>
 
-  <h3 id=white-space><span class=secno>3.4. </span> ������ʸ�����Ȓ�ƒ�������Ȓ�ޒ���֒����Β�ʒά�ɽ���: &lsquo;<a href="#white-space0"><code
-   class=property>white-space</code></a>&rsquo; ��ג�풥ђ�ƒ��</h3>
+  <p class=issue>これは実際にどの程度うまく動いているかというコメント、特にタイおよびそれと同様の文字を使って働いている人からのものは非常にありがたい。
+
+  <h4 id=white-space-summary><span class=secno>3.3.3. </span>空白結合による影響の要約</h4>
+
+  <ul>
+   <li>連続する空白は1つの空白に縮小される。
+
+   <li>2つの中国語文字、日本語文字、イ語の文字の間にある連続する改行と空白は、何もない文字に結合される。
+
+   <li>改行を含んだ連続する空白文字の前か後にある zero width space は、連続する空白文字全体を zero width space へ結合する。
+  </ul>
+
+  <h3 id=white-space><span class=secno>3.4. </span> 空白文字とテキスト折り返しの簡略表記: &lsquo;<a href="#white-space0"><code
+   class=property>white-space</code></a>&rsquo; プロパティ</h3>
 
   <table class=propdef>
    <tbody>
     <tr>
-     <th>�̾���:
+     <th>名称:
 
      <td><dfn id=white-space0>white-space</dfn>
 
     <tr>
-     <th>���:
+     <th>値:
 
      <td>normal | pre | nowrap | pre-wrap | pre-line
 
     <tr>
-     <th>��钴����:
+     <th>初期値:
 
-     <td>shorthand��ג�풥ђ�ƒ����˒�ϒ�꒵������쒤ƒ����ʒ��
-
-    <tr>
-     <th>�Ŭ��ђ�В��:
-
-     <td>�����ƒ�Β�ג��
+     <td>shorthandプロパティには定義されていない
 
     <tr>
-     <th>��ђ��:
+     <th>適用対象:
 
-     <td>�����쒤�
+     <td>全ての要素
 
     <tr>
-     <th>��ђ��������ƒ�����:
+     <th>継承:
+
+     <td>される
+
+    <tr>
+     <th>パーセンテージ:
 
      <td>N/A
 
     <tr>
-     <th>��ᒥǒ�����:
+     <th>メディア:
 
      <td>visual
 
     <tr>
-     <th>�����В��:
+     <th>算出値:
 
-     <td>��Ē����Β�Ò����򒻲���
+     <td>個々の特性を参照
   </table>
 
   <p>&lsquo;<a href="#white-space0"><code
-   class=property>white-space</code></a>&rsquo; ��ג�풥ђ�ƒ����� &lsquo;<a href="#text-space-collapse"><code class=property>text-space-collapse</code></a>&rsquo; ��ג�풥ђ�ƒ����� &lsquo;<a href="#text-wrap0"><code class=property>text-wrap</code></a>&rsquo; ��ג�풥ђ�ƒ����Β�ʒά�ɽ�����ǒ����뒡������ƒ�Β�Ȓ�ߒ�璤�����ɽ�����ǒ����뒤���ǒ�ϒ�ʒ�������͒�Β�Ւ̣���ʒ����˒�����:
+   class=property>white-space</code></a>&rsquo; プロパティは &lsquo;<a href="#text-space-collapse"><code class=property>text-space-collapse</code></a>&rsquo; プロパティと &lsquo;<a href="#text-wrap0"><code class=property>text-wrap</code></a>&rsquo; プロパティの簡略表記である。全ての組み合わせが表現できるわけではない。値の意味を以下に示す:
   
   <dl>
    <dt><dfn id=normal title="white-space:normal">&lsquo;<code
     class=css>normal</code>&rsquo;</dfn>
 
    <dd> &lsquo;<a href="#text-space-collapse"><code
-    class=property>text-space-collapse</code></a>&rsquo; ��� &lsquo;<code class=css>collapse</code>&rsquo; ��˒��&lsquo;<a href="#text-wrap0"><code class=property>text-wrap</code></a>&rsquo; ��� &lsquo;<code class=css>normal</code>&rsquo; ��˒�ߒ�꒤���뒡�
+    class=property>text-space-collapse</code></a>&rsquo; を &lsquo;<code class=css>collapse</code>&rsquo; に、&lsquo;<a href="#text-wrap0"><code class=property>text-wrap</code></a>&rsquo; を &lsquo;<code class=css>normal</code>&rsquo; に設定する。
 
    <dt><dfn id=pre title="white-space:pre">&lsquo;<code
     class=css>pre</code>&rsquo;</dfn>
 
-   <dd>&lsquo;<a href="#text-space-collapse"><code class=property>text-space-collapse</code></a>&rsquo; ��� &lsquo;<code
-    class=css>preserve</code>&rsquo; ��˒��&lsquo;<a href="#text-wrap0"><code
-    class=property>text-wrap</code></a>&rsquo; ��� &lsquo;<code
-    class=css>none</code>&rsquo; ��˒�ߒ�꒤���뒡�
+   <dd>&lsquo;<a href="#text-space-collapse"><code class=property>text-space-collapse</code></a>&rsquo; を &lsquo;<code
+    class=css>preserve</code>&rsquo; に、&lsquo;<a href="#text-wrap0"><code
+    class=property>text-wrap</code></a>&rsquo; を &lsquo;<code
+    class=css>none</code>&rsquo; に設定する。
 
    <dt><dfn id=nowrap title="white-space:nowrap">&lsquo;<code
     class=css>nowrap</code>&rsquo;</dfn>
 
    <dd>&lsquo;<a href="#text-space-collapse"><code
-    class=property>text-space-collapse</code></a>&rsquo; ��� &lsquo;<code
-    class=css>collapse</code>&rsquo; ��˒�� &lsquo;<a href="#text-wrap0"><code
-    class=property>text-wrap</code></a>&rsquo; ��� &lsquo;<code
-    class=css>none</code>&rsquo; ��˒�ߒ�꒤���뒡�
+    class=property>text-space-collapse</code></a>&rsquo; を &lsquo;<code
+    class=css>collapse</code>&rsquo; に、 &lsquo;<a href="#text-wrap0"><code
+    class=property>text-wrap</code></a>&rsquo; を &lsquo;<code
+    class=css>none</code>&rsquo; に設定する。
 
    <dt><dfn id=pre-wrap title="white-space:pre-wrap">&lsquo;<code
     class=css>pre-wrap</code>&rsquo;</dfn>
 
    <dd>&lsquo;<a href="#text-space-collapse"><code
-    class=property>text-space-collapse</code></a>&rsquo; ��� &lsquo;<code
-    class=css>preserve</code>&rsquo; ��˒��&lsquo;<a href="#text-wrap0"><code
-    class=property>text-wrap</code></a>&rsquo; ��� &lsquo;<code
-    class=css>normal</code>&rsquo; ��˒�ߒ�꒤���뒡�
+    class=property>text-space-collapse</code></a>&rsquo; を &lsquo;<code
+    class=css>preserve</code>&rsquo; に、&lsquo;<a href="#text-wrap0"><code
+    class=property>text-wrap</code></a>&rsquo; を &lsquo;<code
+    class=css>normal</code>&rsquo; に設定する。
 
    <dt><dfn id=pre-line title="white-space:pre-line">&lsquo;<code
     class=css>pre-line</code>&rsquo;</dfn>
 
    <dd>&lsquo;<a href="#text-space-collapse"><code
-    class=property>text-space-collapse</code></a>&rsquo; ��� &lsquo;<code
-    class=css>preserve-breaks</code>&rsquo; ��˒��&lsquo;<a
-    href="#text-wrap0"><code class=property>text-wrap</code></a>&rsquo; ���
-    &lsquo;<code class=css>normal</code>&rsquo; ��˒�ߒ�꒤���뒡�
+    class=property>text-space-collapse</code></a>&rsquo; を &lsquo;<code
+    class=css>preserve-breaks</code>&rsquo; に、&lsquo;<a
+    href="#text-wrap0"><code class=property>text-wrap</code></a>&rsquo; を
+    &lsquo;<code class=css>normal</code>&rsquo; に設定する。
   </dl>
 
-  <p>��ʒ����˒����͒�Ȓ����ƒ������ɽ��ϒ��&lsquo;<a href="#white-space0"><code class=property>white-space</code></a>&rsquo; ��Β�͒�˒���������������񒤤����ג�󒤷�����⒤Β�ǒ�����:
+  <p>以下に参考として示す表は、&lsquo;<a href="#white-space0"><code class=property>white-space</code></a>&rsquo; の値に応じた振る舞いを要約したものである:
 
   <table class=data>
    <colgroup class=header></colgroup>
@@ -924,281 +923,281 @@
     <tr>
      <th>
 
-     <th>������
+     <th>改行
 
-     <th>�����ڒ�������Ȓ�����
+     <th>スペースとタブ
 
-     <th>��ƒ�������Ȓ�Β�ޒ���֒��
+     <th>テキストの折り返し
 
    <tbody>
     <tr>
      <th>normal
 
-     <td>��뒹璤���쒤�
+     <td>結合される
 
-     <td>��뒹璤���쒤�
+     <td>結合される
 
-     <td>��ޒ���֒����쒤�
+     <td>折り返される
 
     <tr>
      <th>pre
 
-     <td>��ݒ����쒤�
+     <td>保たれる
 
-     <td>��ݒ����쒤�
+     <td>保たれる
 
-     <td>��ʒ��
+     <td>なし
 
     <tr>
      <th>nowrap
 
-     <td>��뒹璤���쒤�
+     <td>結合される
 
-     <td>��뒹璤���쒤�
+     <td>結合される
 
-     <td>��ʒ��
+     <td>なし
 
     <tr>
      <th>pre-wrap
 
-     <td>��ݒ����쒤�
+     <td>保たれる
 
-     <td>��ݒ����쒤�
+     <td>保たれる
 
-     <td>��ޒ���֒����쒤�
+     <td>折り返される
 
     <tr>
      <th>pre-line
 
-     <td>��ݒ����쒤�
+     <td>保たれる
 
-     <td>��뒹璤���쒤�
+     <td>結合される
 
-     <td>��ޒ���֒����쒤�
+     <td>折り返される
   </table>
 
-  <h2 id=line-breaking><span class=secno>4. </span> �����Ԓ�Ȓñ��쒤Β�����</h2>
+  <h2 id=line-breaking><span class=secno>4. </span> 改行と単語の境界</h2>
 
-  <p>��ے�Ȓ��ɒ�Β�񒵭��Β�ϒ�˒�������ƒ����ϒ����Ւ�󒤬�̵�����쒹璡������Ԓ�ϒñ��쒤Β�������ǒȯ��������뒡��¿�����Βɮ�����Β�ϒ�ǒ�ϒ���ñ��쒤Βʬ�������ܒ���������������뒤���ᒤ˒����ڒ�������䒶��ɒ������ђ����������Ԓ�Ēǽ�����ɒ�������ΒȽ��ǒ�⒡������쒤钤Βʸ�����ǒ����̒�Ēǽ��ǒ����뒡���������������������쒡���钥���쒡������ᒡ���뒸쒤Βʸ��ϒ�˒�������ƒ�ϒ���ñ��쒤Βʬ�������ܒ�Ȓ����ƒ����ڒ�������䒶��ɒ������ђ����ƒ����ʒ���������������Β����ڒ����� (U+200B)��򒤳��쒤钤Βʸ��ϒ�˒��������ñ��쒤Β������ʸ�����Ȓ����ƒ�ђ����뒤���Ȓ�⒤ǒ����뒤���������Β���ˡ��ϒ���̒Ū��ǒ�ϒ�ʒ�������蒤Ò�ƒ�������쒤钤Β�ƒ�������Ȓ�˒�������ƒ���������ʬ��䒥ݒ�����Ȓ�򒼱��̒����뒤���ᒤ˒�ϒ������Ò�Β�꒥�����������ɬ��ג�Ȓ�ʒ�뒡�
+  <p>ほとんどの書記体系において、ハイフンが無い場合、改行は単語の境界で発生する。多くの筆記体系では、単語の分かれ目を明示化するためにスペースや句読点を用い、改行可能かどうかの判断も、これらの文字で識別可能である。しかし、タイ語、ラオ語、クメール語の文章においては、単語の分かれ目としてスペースや句読点を用いていない。ゼロ幅のスペース (U+200B)をこれらの文章における単語の境界文字として用いることもできるが、この方法は一般的ではない。よって、これらのテキストにおいて正しい分割ポイントを識別するためには、語彙のリソースが必要となる。
 
-  <p>�����Β¾��������Ē����Βɮ�����Β��(��撹�쒡������ܒ�쒡������쒡������˒�ϒ�ڒ���)��˒�������ƒ�ϒ�������Ԓ�Β�����ϒñ��쒤Β�������ǒ�ϒ�ʒ������ʸ�����Β�������˒��Œ����ƒ����뒡������쒤钤Βɮ�����Β�ϒ�˒�������ƒ����Ò��ʸ���������Ӓ�Β�֒�������Ǥ��Ւ�Β�쒽꒤ǒ����Ԓ����뒤���Ȓ����ǒ����뒡���Ò����ƒ�������쒤钤Β�����Β���̩�����ϒ�Ȓ�ǒ�Β����������뒤˒�蒤Ò�ƒ�ђ�������뒤���Ȓ����ǒ����뒡�
+  <p>その他いくつかの筆記体系(中国語、日本語、イ語、時には韓国語)においては、改行の機会は単語の境界ではなく、文字の境界に基づいている。これらの筆記体系において、特定文字コンビの間を除く任意の場所で改行することができる。加えて、これらの制約の厳密さは組版のスタイルによって変更することができる。
 
-  <p>CSS��ϒ����Ԓ�����Β�В����쒽꒤˒�Ē����ƒ�������ʒ�꒵���򒤷��ƒ����ʒ������������������̒Ū��ʒ�В�꒥���������璥�򒼱��̒����뒤���ᒤΒ�������Ē����Β��������ˡ����󒶡�����ƒ����뒡�
+  <p>CSSは改行機会の出現場所について完全な定義をしていない。しかし一般的なバリエーションを識別するためのいくつかの制御方法を提供している。
 
-  <p class=note>�����Ԓ�Β���§��˒�Ē����ƒ�Β�ܒ�ْ����ϒ�������ܒ�쒤˒�Ē����ƒ�� <a href="#JLREQ" rel=biblioentry>[JLREQ]<!--{{JLREQ}}--></a> ��� <a href="#JIS4051" rel=biblioentry>[JIS4051]<!--{{JIS4051}}--></a> ��ǒ����撹�쒤˒�Ē����ƒ��  <a href="#ZHMARK" rel=biblioentry>[ZHMARK]<!--{{ZHMARK}}--></a> ��ǒ��Unicode �����В�ݒ�Ȓ��������ʸ��ϒ�˒�Ē����ƒ�� <a href="#UAX14" rel=biblioentry>[UAX14]<!--{{!UAX14}}--></a> ��ǒ����뒤���Ȓ����ǒ����뒡�
+  <p class=note>改行の規則についての詳細情報は、日本語については <a href="#JLREQ" rel=biblioentry>[JLREQ]<!--{{JLREQ}}--></a> と <a href="#JIS4051" rel=biblioentry>[JIS4051]<!--{{JIS4051}}--></a> で、中国語については  <a href="#ZHMARK" rel=biblioentry>[ZHMARK]<!--{{ZHMARK}}--></a> で、Unicode が対象とする全文章については <a href="#UAX14" rel=biblioentry>[UAX14]<!--{{!UAX14}}--></a> で見ることができる。
    <!-- The CSS Working Group notes that although UAX 14 contains a wealth of
       information about line breaking conventions, a literal implementation
       of its algorithm has been found to be inadequate in multiple situations. -->
 
-  <p class=issue>�Ŭ��ڒ�ʒ�꒥Ւ����쒥󒥹��򒶵�����ƒ�������������뒤Ȓ��˒����꒤����������
+  <p class=issue>適切なリファレンスを教えていただけると非常にありがたい。
 
-  <p class=issue><a href="http://lists.w3.org/Archives/Public/www-style/2011Feb/0126.html">��������쒤˒��</a>�����񒤬�̵�����쒹璤˒����Ԓ��ɒ�������뒤Β����Β���󒡣
+  <p class=issue><a href="http://lists.w3.org/Archives/Public/www-style/2011Feb/0126.html">タイ語にて</a>辞書が無い場合に改行をどうするのかの情報。
 
-  <p>��Ւ�풡���Ȓ�����В�̒�֒�ؒ�꒤��ђ�������ג�ǒ�˒�ϒ����Ԓ����񒤬�Ƴ��������쒤ʒ�������֒����������钤쒤���ג�ǒ�˒�������뒲���Ԓ�Β�Ւ�뒤ޒ����ϒ����钥ƒ��ʸ�����Β�Ւ�뒤ޒ����ȒƱ�����˒�ʒ�뒡�
+  <p>フロートや絶対位置指定を用いた要素には改行機会が導入されない。置き換えられた要素における改行のふるまいは、ラテン文字のふるまいと同等になる。
 
-  <p class=issue>�����Β����������璥�˒�ƒ���������������Βʸ��ϒ�򒤦��ޒ����������뒤���ɒ�������ϒ�ϒ�Ò����꒤���ƒ����ʒ����������񒤬��ʒ����Ȓ����˒�쒥���������Βʸ��ϒ��ɒ�������Ԓ����뒤�/�����ʒ�������Β����������󒥹�����󒶡�����쒤뒤ْ����ǒ����뒡�
+  <p class=issue>このセクションにて、東南アジアの文章をうまく扱えるかどうかははっきりしていない。辞書がないときに東アジアの文章をどう改行するか/しないかのガイダンスが提供されるべきである。
 
-  <h3 id=line-break><span class=secno>4.1. </span> �����Ԓ�Β���̩���: 
+  <h3 id=line-break><span class=secno>4.1. </span> 改行の厳密さ: 
    &lsquo;<a href="#line-break0"><code
-   class=property>line-break</code></a>&rsquo; ��ג�풥ђ�ƒ��</h3>
+   class=property>line-break</code></a>&rsquo; プロパティ</h3>
 
   <table class=propdef>
    <tbody>
     <tr>
-     <th>�̾���:
+     <th>名称:
 
      <td><dfn id=line-break0>line-break</dfn>
 
     <tr>
-     <th>���:
+     <th>値:
 
      <td>auto | loose | normal | strict
 
     <tr>
-     <th>��钴����:
+     <th>初期値:
 
      <td>auto
 
     <tr>
-     <th>�Ŭ��ђ�В��:
+     <th>適用対象:
 
-     <td>�����ƒ�Β�ג��
-
-    <tr>
-     <th>��ђ��:
-
-     <td>�����쒤�
+     <td>全ての要素
 
     <tr>
-     <th>��ђ��������ƒ�����:
+     <th>継承:
+
+     <td>される
+
+    <tr>
+     <th>パーセンテージ:
 
      <td>N/A
 
     <tr>
-     <th>��ᒥǒ�����:
+     <th>メディア:
 
      <td>visual
 
     <tr>
-     <th>�����В��:
+     <th>算出値:
 
-     <td>��ؒ�꒤���쒤����
+     <td>指定された値
   </table>
 
-  <p>�����Β�ג�풥ђ�ƒ����ϒ�ג�ǒ�⒤˒Ŭ��ђ����쒤뒲���Ԓ�뒡���뒤Β���̩���: ��Ò�˒���ɒ����Ȓ�������ƒ�ɒ������ђ����뒤����ؒ�꒤���뒡���͒�Β�Ւ̣���ʒ����˒�����:
+  <p>このプロパティは要素内に適用される改行ルールの厳密さ: 特に句読点とあわせてどう作用するかを指定する。値の意味を以下に示す:
 
   <dl>
    <dt><dfn id=auto title="line-break:auto">&lsquo;<code
     class=css>auto</code>&rsquo;</dfn>
 
-   <dd>��撡�������������������Ȓ����Ȓ�ђ����뒲���Ԓ�����Β����Ò�Ȓ����꒤������Ԓ�ΒĹ�����˒��Œ����ƒ����Β�������ђ�������뒤���Ȓ����ǒ����뒡���㒤���В���û�����Ԓ�������˒����Ԓ�뒡���������Β����ʒ�������Ò�Ȓ��Ȓ�ђ����뒡���ʒ�ɒ�ǒ����뒡�
+   <dd>ユーザエージェントが使用する改行制限のセットを決定し、行の長さに基づいてその制限を変更することができる。例えば、短い行向けに改行ルール制限の少ないセットを使用する、などである。
 
    <dt><dfn id=loose title="line-break:loose">&lsquo;<code
     class=css>loose</code>&rsquo;</dfn>
 
-   <dd>��ǒ�������������ʒ�������Ԓ�뒡���뒥���Ò�Ȓ��Ȓ�Ò�ƒ�ƒ�������Ȓ�����Ԓ����뒡�����̒Ū��˒���ʹ��Β�蒤���ʒû�����Ԓ�ǒ�Ȓ�ђ����쒤뒡�
+   <dd>最も制限が少ない改行ルールセットを使ってテキストを改行する。一般的に新聞のような短い行で使用される。
 
    <dt><dfn id=normal0 title="line-break:normal">&lsquo;<code
     class=css>normal</code>&rsquo;</dfn>
 
-   <dd>��ǒ�⒰��̒Ū��ʒ����Ԓ�뒡���뒥���Ò�Ȓ��Ȓ�Ò�ƒ�ƒ�������Ȓ�����Ԓ����뒡�
+   <dd>最も一般的な改行ルールセットを使ってテキストを改行する。
 
    <dt><dfn id=strict title="line-break:strict">&lsquo;<code
     class=css>strict</code>&rsquo;</dfn>
 
-   <dd>��ǒ�Ⓒ������������Ԓ�뒡���뒥���Ò�Ȓ��Ȓ�Ò�ƒ�ƒ�������Ȓ�����Ԓ����뒡�
+   <dd>最も厳しい改行ルールセットを使ってテキストを改行する。
 
   </dl>
 
-  <p>CSS��ϒ�Œ�ےŪ�����Ԓ�뒡���뒤˒��������3��쒥ْ�뒤Β���̩��������̒����ƒ����뒡���ƒ�쒥ْ�뒤Β����̒�˒������������Β�ʒ�뒡���뒥���Ò�Ȓ�ϒ��UA��Β�ՒǤ��ǒ����꒡������쒤Β���§��˒������ɬ��ג�������뒡���������������ܒ�Œ�͒�ϒ�ʒ�����䒾������ƒ�����:
+  <p>CSSは暗黙的改行ルールにおける3レベルの厳密さを区別している。各レベルの効果における正確なルールセットは、UAの責任であり、言語の規則に従う必要がある。しかし、本仕様は以下を推奨している:
 
   <ul>
-   <li>��ʒ����Β����Ԓ�� &lsquo;<code class=css>strict</code>&rsquo; ��ǒ�ϒ�ؒ�ߒ����쒡�&lsquo;<code class=css>normal</code>&rsquo; ��� &lsquo;<code class=css>loose</code>&rsquo; ��ǒ�ϒ����Ē����쒤�:
+   <li>以下の改行は &lsquo;<code class=css>strict</code>&rsquo; では禁止され、&lsquo;<code class=css>normal</code>&rsquo; と &lsquo;<code class=css>loose</code>&rsquo; では許可される:
     <ul>
-     <li>�����ܒ�쒤� <a href="#small-kana">small kana</a> ��Β����˒����뒲����
+     <li>日本語の <a href="#small-kana">small kana</a> の前にある改行
 
-     <li>breaks before the �����������ʒ�Ғ�钤���ʒ�ΒĹ��������� (&#x30FC;&nbsp;U+30FC) ��Β����˒����뒲����
+     <li>breaks before the カタカナひらがなの長音記号 (&#x30FC;&nbsp;U+30FC) の前にある改行
       
     </ul>
-    �����쒤���撹�쒤������ܒ�쒤ȒȽ��������ƒ����뒾쒹璤ϒ�������钤˒�ʒ������ɒ��:
+    言語が中国語か日本語と判明している場合は、さらに以下を追加:
     <ul>
-     <li>��ϒ����Ւ�� (&#x2010;&nbsp;U+2010, &#x2013;&nbsp;U+2013, &#x301C;&nbsp;U+301C, &#x30A0;&nbsp;U+30A0) ��Β����˒����뒲����
+     <li>ハイフン (&#x2010;&nbsp;U+2010, &#x2013;&nbsp;U+2013, &#x301C;&nbsp;U+301C, &#x30A0;&nbsp;U+30A0) の前にある改行
     </ul>
 
-   <li>��ʒ����Β����Ԓ�� &lsquo;<code
-    class=css>normal</code>&rsquo; ��� &lsquo;<code
-    class=css>strict</code>&rsquo; ��ǒ�ϒ�ؒ�ߒ����쒡�&lsquo;<code class=css>loose</code>&rsquo;��ǒ�ϒ����Ē����쒤�:
+   <li>以下の改行は &lsquo;<code
+    class=css>normal</code>&rsquo; と &lsquo;<code
+    class=css>strict</code>&rsquo; では禁止され、&lsquo;<code class=css>loose</code>&rsquo;では許可される:
     <ul>
-     <li>�������֒����䒹� (&#x3005;&nbsp;U+3005, &#x303B;&nbsp;U+303B, &#x309D;&nbsp;U+309D,
-      &#x309E;&nbsp;U+309E, &#x30FD;&nbsp;U+30FD, &#x30FE;&nbsp;U+30FE) ��Β����˒����뒲����
+     <li>繰り返し符号 (&#x3005;&nbsp;U+3005, &#x303B;&nbsp;U+303B, &#x309D;&nbsp;U+309D,
+      &#x309E;&nbsp;U+309E, &#x30FD;&nbsp;U+30FD, &#x30FE;&nbsp;U+30FE) の前にある改行
       
 
-     <li>��������Ē����Β�Ԓ�Ēʬ�ʸ��� (&#x2025;&nbsp;U+2025, &#x2026;&nbsp;U+2026) ��Β����˒����뒲����
+     <li>いくつかの不可分文字 (&#x2025;&nbsp;U+2025, &#x2026;&nbsp;U+2026) の前にある改行
       
     </ul>
-    �����쒤���撹�쒤������ܒ�쒤ȒȽ��������ƒ����뒾쒹璤ϒ�������钤˒�ʒ������ɒ��:
+    言語が中国語か日本語と判明している場合は、さらに以下を追加:
     <ul>
-     <li>��Ò�꒤Β����󒥿��꒥󒥰�����쒤�����ɒ�� (&#x003A;&nbsp;U+003A, &#x003B;&nbsp;U+003B, &#x30FB;&nbsp;U+30FB,
+     <li>特定のセンタリングされた句読点 (&#x003A;&nbsp;U+003A, &#x003B;&nbsp;U+003B, &#x30FB;&nbsp;U+30FB,
       &#xFF1A;&nbsp;U+FF1A, &#xFF1B;&nbsp;U+FF1B, &#xFF65;&nbsp;U+FF65,
       &#x0021;&nbsp;U+0021, &#x003F;&nbsp;U+003F, &#x203C;&nbsp;U+203C,
       &#x2047;&nbsp;U+2047, &#x2048;&nbsp;U+2048, &#x2049;&nbsp;U+2049,
-      &#xFF01;&nbsp;U+FF01, &#xFF1F;&nbsp;U+FF1F) ��Β����˒����뒲����
+      &#xFF01;&nbsp;U+FF01, &#xFF1F;&nbsp;U+FF1F) の前にある改行
       
-     <li>��ܒ����� (&#x0025;&nbsp;U+0025, &#x00A2;&nbsp;U+00A2, &#x00B0;&nbsp;U+00B0,
+     <li>接尾語 (&#x0025;&nbsp;U+0025, &#x00A2;&nbsp;U+00A2, &#x00B0;&nbsp;U+00B0,
       &#x2030;&nbsp;U+2030, &#x2032;&nbsp;U+2032, &#x2033;&nbsp;U+2033,
-      &#x2103;&nbsp;U+2103, &#xFF05;&nbsp;U+FF05, &#xFFE0;&nbsp;U+FFE0) ��Β����˒����뒲����
+      &#x2103;&nbsp;U+2103, &#xFF05;&nbsp;U+FF05, &#xFFE0;&nbsp;U+FFE0) の前にある改行
       
 
-     <li>��ܒƬ��� (&#x0024;&nbsp;U+0024, &#x00A3;&nbsp;U+00A3, &#x00A5;&nbsp;U+00A5,
+     <li>接頭語 (&#x0024;&nbsp;U+0024, &#x00A3;&nbsp;U+00A3, &#x00A5;&nbsp;U+00A5,
       &#x20AC;&nbsp;U+20AC, &#x2116;&nbsp;U+2116, &#xFF04;&nbsp;U+FF04,
-      &#xFFE1;&nbsp;U+FFE1, &#xFFE5;&nbsp;U+FFE5) ��Β����˒����뒲����
+      &#xFFE1;&nbsp;U+FFE1, &#xFFE5;&nbsp;U+FFE5) の前にある改行
       
     </ul>
   </ul>
 
-  <p class=note>CSS3��ǒ�ϒ��CJK��ǒ�ϒ�ʒ����ƒ�������Ȓ�˒�������ƒ������̩�����Β�쒥ْ�뒤Β���̒����ʒ�����CJK��Β�������ɒ�ݒ�����Ȓ����������ƒ�����������뒤������ƒ�������Ȓ����撹�쒤������ܒ�쒤Ȓ�ޒ����������Ò�ג����쒤ƒ����뒾쒹璤˒�ϒ����ɒ�Ò�ǒ�������Ē����Β���̒Ū��ʒ�������ɒ�ݒ�����Ȓ�⒱ƒ�����������뒡���������������蒤�CSS��ǒ��CJK��ǒ�ϒ�ʒ����ƒ�������Ȓ�˒�ƒ�����Ϳ�����뒿�����񒤤����ɒ�Ò����쒤뒤���⒤���쒤ʒ�����
+  <p class=note>CSS3では、CJKではないテキストにおいて、厳密さのレベルの区別がない。CJKのコードポイントだけが影響を受けるが、テキストが中国語か日本語とマークアップされている場合には、追加でいくつかの一般的なコードポイントも影響を受ける。しかし将来のCSSではCJKではないテキストに影響を与える振る舞いも追加されるかもしれない。
 
-  <p>�����Β�ג�풥ђ�ƒ����Β����ݒ����Ȓ��<em>optional(�Ǥ���)</em>��ǒ����뒡���撡�������������������Ȓ�˒��CJK��Β�Ȓ�ǒ�򒥵��ݒ����Ȓ����������Ȓ�͒����ƒ����뒿͒�˒�䒾������뒡������ܒ�ޒ�������Ò�Ȓ�Β�撡�������������������Ȓ�˒�ϒ�������䒾������뒡�
+  <p>このプロパティのサポートは<em>optional(任意)</em>である。ユーザエージェントにはCJKの組版をサポートしたいと考えている人に推奨する。日本マーケットのユーザエージェントには強く推奨する。
 
-  <p class=note>CSSWG��ϒ�������蒤˒�������ƒ����Ԓ��蒤꒺ْ����������撤���뒻Œ�͒����ϒ��������ɒ�Β�В�ǒ�ג���������������ᒤ˒ɬ��ג�Ȓ�ʒ�뒤���Ȓ��ǧ��������ƒ����뒡�
+  <p class=note>CSSWGは、将来において改行をより細かく制御する仕様がハイエンドの出版要件を満たすために必要となることを認識している。
 
-  <h3 id=word-break><span class=secno>4.2. </span> �ñ���ʬ��䒥뒡����: &lsquo;<a href="#word-break0"><code
-   class=property>word-break</code></a>&rsquo; ��ג�풥ђ�ƒ��</h3>
+  <h3 id=word-break><span class=secno>4.2. </span> 単語分割ルール: &lsquo;<a href="#word-break0"><code
+   class=property>word-break</code></a>&rsquo; プロパティ</h3>
 
   <table class=propdef>
    <tbody>
     <tr>
-     <th>�̾���:
+     <th>名称:
 
      <td><dfn id=word-break0>word-break</dfn>
 
     <tr>
-     <th>���:
+     <th>値:
 
      <td>normal | keep-all | break-all
 
     <tr>
-     <th>��钴����:
+     <th>初期値:
 
      <td>normal
 
     <tr>
-     <th>�Ŭ��ђ�В��:
+     <th>適用対象:
 
-     <td>�����ƒ�Β�ג��
-
-    <tr>
-     <th>��ђ��:
-
-     <td>�����쒤�
+     <td>全ての要素
 
     <tr>
-     <th>��ђ��������ƒ�����:
+     <th>継承:
+
+     <td>される
+
+    <tr>
+     <th>パーセンテージ:
 
      <td>N/A
 
     <tr>
-     <th>��ᒥǒ�����:
+     <th>メディア:
 
      <td>visual
 
     <tr>
-     <th>�����В��:
+     <th>算出値:
 
-     <td>��ؒ�꒤���쒤����
+     <td>指定された値
   </table>
 
-  <p>�����Β�ג�풥ђ�ƒ����ϒñ����撤Β����Ԓ������ؒ�꒤���뒡���͒�Β�Ւ̣���ʒ����˒�����:
+  <p>このプロパティは単語中の改行機会を指定する。値の意味を以下に示す:
 
 
   <dl>
    <dt><dfn id=normal1 title="word-break:normal">&lsquo;<code
     class=css>normal</code>&rsquo;</dfn>
 
-   <dd>����̒Ū��ʒ�뒡���뒤˒����������Ԓ����뒡�
+   <dd>一般的なルールに従い改行する。
 
    <dt><dfn id=break-all title="word-break:break-all">&lsquo;<code
     class=css>break-all</code>&rsquo;</dfn>
 
-   <dd>�ñ����⒤ΒǤ��Ւ��2�ʸ�����Β�֒�ǒ����Ԓ����쒤뒤���Ȓ�������뒡���ϒ����Ւ��˒�ϒŬ��ђ����쒤ʒ����������Β����ג����璥�ϒ�璤�CJK��Βʸ������Ȓ����ʒ����钡�CJK��ʒ����Βʸ�����򒾯��������ђ����뒤蒤���ʒ�ƒ�������Ȓ�Β����뒥����ƒ�������Ȓ�ǒ�璤˒�Ȓ�쒤ƒ����꒡���ƒ�������Ȓ����ƒ�Ԓ�˒����ޒ���ʬ��ے����쒤뒤Β���˾��ޒ��������
+   <dd>単語内の任意の2文字の間で改行されることがある。ハイフンには適用されない。このオプションは主にCJKの文字を使いながら、CJK以外の文字を少し引用するようなテキストのあるコンテキストで主に使われており、テキストが各行にうまく分配されるのが望ましい。
 
    <dt><dfn id=keep-all title="word-break:keep-all">&lsquo;<code
     class=css>keep-all</code>&rsquo;</dfn>
 
-   <dd><a href="#word-separator">word separators</a>�����蒤Ӓ����Β�ʒ����Ԓ�����Β�Ւ�꒤Β�ߒ�ǒ����Ԓ����쒤뒤���Ȓ�������뒡���������ǒ�ʒ����쒤В�������Β����ג����璥�� &lsquo;<code class=css>normal</code>&rsquo; ��ȒƱ�����ǒ����뒡������Β����ג����璥�ϒ�ڒ��쒤Β�蒤���˒���ñ���ʬ���ʸ�����Β¸��ߒ�������Ԓ������꒽В����ƒ����뒤蒤���ʒ�Ȓ����풤ǒ�璤˒�Ȓ�쒤ƒ����뒡�
+   <dd><a href="#word-separator">word separators</a>および明確な改行機会の箇所のみで改行されることがある。そうでなければ、このオプションは &lsquo;<code class=css>normal</code>&rsquo; と同等である。このオプションは韓国語のように、単語分割文字の存在が改行機会を作り出しているようなところで主に使われている。
 
   </dl>
 
-  <p>�����钥Ӓ����쒤Β�蒤���ʒʸ��ϒ�������˒�������ƒ��&lsquo;<code class=css>break-all</code>&rsquo;��˒�蒤�ñ����⒤ǒ�Β����Ԓ�������ƒ����쒤ƒ����뒾쒹璡��ñ��쒤��ʬ��䒤���쒤ƒ����ʒ����Ò�������Β�蒤���˒ʸ�����������������쒤�ɬ��ג�������뒡�
+  <p>アラビア語のような文章整形において、&lsquo;<code class=css>break-all</code>&rsquo;により単語内での改行が許容されている場合、単語が分割されていなかったかのように文字が整形される必要がある。
 
 
-  <h2 id=hyphenation><span class=secno>5. </span>��ϒ����Ւ�͒�������璥�</h2>
+  <h2 id=hyphenation><span class=secno>5. </span>ハイフネーション</h2>
 
-  <p>��ϒ����Ւ�͒�������璥�ϒ����ʒ�Β�쒥���������Ȓ�����������뒤���ᒤ˒ñ���ʬ��䒤�����撤���뒤���Ȓ����ǒ����뒡�CSS3 Text��ϒ�ϒ����Ւ�͒�������璥�˒�В���������Β�ʒ�뒡���뒤��󒼨�����ƒ����ʒ��������6��Ē�Β�ג�풥ђ�ƒ����Ȓ�ϒ����Ւ�͒�������璥�Β�ƒ����ϒ���꒵������ƒ����뒡�
+  <p>ハイフネーションは、段落のレイアウトを改善するために単語分割を制御することができる。CSS3 Textはハイフネーションに対する正確なルールを提示していないが、6つのプロパティとハイフネーションの影響力を定義している。
 
-  <p>��ϒ����Ւ�͒�������璥󒤬�Ŭ��ђ����쒤ƒ����뒤���ɒ�������ϒ�� &lsquo;<a href="#hyphens0"><code class=property>hyphens</code></a>&rsquo; ��ג�풥ђ�ƒ����ǒ����撤ǒ����뒡�
+  <p>ハイフネーションが適用されているかどうかは、 &lsquo;<a href="#hyphens0"><code class=property>hyphens</code></a>&rsquo; プロパティで制御できる。
 
-  <p>��ʒ����Β�Ԓ�˒�蒤�����撤ϒ����撡�������������������Ȓ�� CSS Text Level 3 ��ؒ�ΒŬ��璤��ĥ�����뒤���ᒤ˒����ݒ����Ȓ����쒤�ɬ��ג�ϒ�ʒ��:
+  <p>以下の作者による制御は、ユーザエージェントが CSS Text Level 3 への適合を主張するためにサポートされる必要はない:
 
   <ul>
    <li>&lsquo;<a href="#hyphenate-limit-zone"><code
@@ -1211,431 +1210,380 @@
     class=property>hyphenate-limit-lines</code></a>&rsquo;
   </ul>
 
-  <p>��Ȓ�ϒ����������撡�������������������Ȓ�ϒ����ɒ����ʒ����Ԓ�ݒ�����Ȓ�ȒŬ��ڒ�ʒ�ϒ����Ւ�͒�������璥�ݒ�����Ȓ������򒤹��뒤���ᒤΒ�������쒤钲���Ԓ�Β������ǒŬ��������뒤���Ȓ�򒶯�����䒾������뒡�
+  <p>とはいえ、ユーザエージェントは、良好な改行ポイントと適切なハイフネーションポイントを選択するための、これら改行の実装を最適化することを強く推奨する。
 
-  <p class=note>��ϒ����Ւ�͒�������璥�Β�풡�������ɒ�����˒�������ƒ�ϒ����쒤钤ϒ����쒤ے�ɒ�Œ�ג�ǒ�ϒ�ʒ�������ޒ����ʒ��ʬ��䒤Β�ϒ��������ɒ���(��㒤���� T<span style="font-variant: small-caps">e</span>&chi;)��˒�������ƒ�ϒ�Ò�˒ͭ��ђ�Ȓ�ϒ����ʒ����쒤ʒ�������ᒡ������쒤钤Β����撤ϒ����ג����璥󒰷�����Ȓ�ʒ�Ò�ƒ����뒡�
+  <p class=note>ハイフネーションのローエンド実装においてはこれらはそれほど重要ではなく、また段落分割のハイエンド実装(例えば T<span style="font-variant: small-caps">e</span>&chi;)においては特に有用とは見なされないため、これらの制御はオプション扱いとなっている。
 
-  <p>&lsquo;<code class=css>min-content</code>&rsquo; ��Β�ܒ���Ū�����������򒻻��В����뒤Ȓ����˒�ϒ����ϒ����Ւ�͒�������璥�Β�����ϒ�͒θ�����쒤ʒ�����
+  <p>&lsquo;<code class=css>min-content</code>&rsquo; の本質的サイズを算出するときには、ハイフネーションの機会は考慮されない。
 
-  <h3 id=hyphens><span class=secno>5.1. </span>��ϒ����Ւ�͒�������璥�Β�����: &lsquo;<a href="#hyphens0"><code class=property>hyphens</code></a>&rsquo;
-   ��ג�풥ђ�ƒ��</h3>
+  <h3 id=hyphens><span class=secno>5.1. </span>ハイフネーションの制御: &lsquo;<a href="#hyphens0"><code class=property>hyphens</code></a>&rsquo;
+   プロパティ</h3>
 
   <table class=propdef>
    <tbody>
     <tr>
-     <td>�̾���:
+     <td>名称:
 
      <td><dfn id=hyphens0>hyphens</dfn>
 
     <tr>
-     <th>���:
+     <th>値:
 
      <td>none | manual | auto
 
     <tr>
-     <th>��钴����:
+     <th>初期値:
 
      <td>manual
 
     <tr>
-     <th>�Ŭ��ђ�В��:
+     <th>適用対象:
 
-     <td>�����ƒ�Β�ג��
-
-    <tr>
-     <th>��ђ��:
-
-     <td>�����쒤�
+     <td>全ての要素
 
     <tr>
-     <th>��ђ��������ƒ�����:
+     <th>継承:
+
+     <td>される
+
+    <tr>
+     <th>パーセンテージ:
 
      <td>N/A
 
     <tr>
-     <th>��ᒥǒ�����:
+     <th>メディア:
 
      <td>visual
 
     <tr>
-     <th>�����В��:
+     <th>算出値:
 
-     <td>��ؒ�꒤���쒤����
+     <td>指定された値
   </table>
 
-  <p>�����Β�ג�풥ђ�ƒ����ϒ����ϒ����Ւ�͒�������璥󒤬��ƒ�������Ȓ�Β�Ԓ�撤ǒ�蒤�¿�����Β����Ԓ������쒤뒤���ɒ������������撤���뒡���͒�Β�Ւ̣���ʒ����˒�����:
+  <p>このプロパティは、ハイフネーションがテキストの行中でより多くの改行機会を作れるかどうかを制御する。値の意味を以下に示す:
 
   <dl>
    <dt><dfn id=none0 title="hyphens:none">&lsquo;<code
     class=css>none</code>&rsquo;</dfn>
 
-   <dd>�ñ��쒤ϒ���ñ����⒤Βʸ�����������Ԓ�ݒ�����Ȓ�򒼨��������ƒ����뒾쒹璤ǒ�⒡������Ԓ�˒�蒤Ò�ƒʬ��䒤���쒤ʒ�����
+   <dd>単語は、単語内の文字が改行ポイントを示唆している場合でも、改行によって分割されない。
 
    <dt><dfn id=manual title="hyphens:manual">&lsquo;<code
     class=css>manual</code>&rsquo;</dfn>
 
-   <dd>�ñ��쒤ϒ���ñ����⒤Βʸ�����������Ԓ�ݒ�����Ȓ�򒼨��������뒾쒽꒤Β����Ԓ�ǒ�Β�ߒʬ��䒤���쒤뒡��ʸ�����ϒ������Ū��⒤������ϒ����Ւ����˒����뒤���Ȓ����ǒ����뒡�
+   <dd>単語は、単語内の文字が改行ポイントを示唆する場所の改行でのみ分割される。文字は明示的もしくは条件付きにすることができる。
 
     <div class=example>
-     <p>Unicode��ǒ��, U+00AD ��ϒ����Ւ�� "soft hyphen" ��ǒ�� U+2010 ��ϒ������Ū��ے�ے�ǒ����뒡�Unicode Standard Annex #14 ��ǒ��Unicode��˒�������뒲���Ԓ��<a href="http://unicode.org/reports/tr14/#SoftHyphen">soft hyphen��Β���</a>��˒�Ē����ƒ�񒤤��ƒ�����<a href="#UAX14" rel=biblioentry>[UAX14]<!--{{!UAX14}}--></a>���
+     <p>Unicodeでは, U+00AD は条件付き "soft hyphen" で、 U+2010 は明示的配布である。Unicode Standard Annex #14 ではUnicodeにおける改行の<a href="http://unicode.org/reports/tr14/#SoftHyphen">soft hyphenの役割</a>について書いている<a href="#UAX14" rel=biblioentry>[UAX14]<!--{{!UAX14}}--></a>。
     </div>
 
     <div class=example>
-     <p>HTML��ǒ�ϒ��&amp;shy; ��ϒ����Ԓ�����򒼨��������� soft hyphen �ʸ������ɽ������
+     <p>HTMLでは、&amp;shy; は改行機会を示唆する soft hyphen 文字を表す。
      <pre>ex&amp;shy;ample</pre>
     </div>
      
    <dt><dfn id=auto0 title="hyphens:auto">&lsquo;<code
     class=css>auto</code>&rsquo;</dfn>
 
-   <dd>�ñ��쒤ϒ���ñ����⒤Β�ϒ����Ւ�͒�������璥�ʸ�����˒�蒤Ò�ƒ���꒤���쒤뒤���������쒤ΒŬ��ڒ�ʒ�ϒ����Ւ�͒�������璥�꒥������� (��㒤���� &lsquo;<code class=css>@hyphenation-resource</code>&rsquo;) ��˒�蒤Ò�ƒ���ư�Ū��˒���꒤���쒤뒤��������Ŭ��ڒ�ʒ�ϒ����Ւ�͒�������璥�ݒ�����Ȓ�ǒʬ��䒤���뒤���Ȓ����ǒ����뒡���⒤��ñ����⒤Β����Ւ����ϒ����Ւ�͒�������璥�ʸ�������¸��ߒ����뒤ʒ�钡��ñ����⒤ǒ�ϒ����Ւ�͒�������璥�ݒ�����Ȓ����꒤���뒺ݒ�˒���ư��꒥���������蒤꒤�ͥ��蒤���뒡�
+   <dd>単語は、単語内のハイフネーション文字によって決定されるか、言語の適切なハイフネーションリソース (例えば &lsquo;<code class=css>@hyphenation-resource</code>&rsquo;) によって自動的に決定されるかした適切なハイフネーションポイントで分割することができる。もし単語内の条件付きハイフネーション文字が存在するなら、単語内でハイフネーションポイントを決定する際に自動リソースよりも優先する。
 
-    those provided via &lsquo;<code
-    class=css>@hyphenation-resource</code>&rsquo;). Conditional hyphenation
-    characters inside a word, if present, take priority over automatic
-    resources when determining hyphenation points within the word.
   </dl>
 
-  <p>Correct automatic hyphenation requires a hyphenation resource
-   appropriate to the language of the text being broken. The UA is therefore
-   only required to automatically hyphenate text for which the author has
-   declared a language (e.g. via HTML <code>lang</code> or XML
-   <code>xml:lang</code>) and for which it has an appropriate hyphenation
-   resource.
+  <p>正しい自動ハイフネーションには、分割されるテキストの言語に対する適切なハイフネーションリソースが必要となる。したがってユーザエージェントは、作成者が言語宣言 (例: HTML の <code>lang</code> や XML の <code>xml:lang</code>) をし、適切なハイフネーションリソースをもつテキストを自動ハイフネーションすれば十分である。
 
-  <p>When shaping scripts such as Arabic are allowed to break within words
-   due to hyphenation, the characters must still be shaped as if the word
-   were not broken.
+  <p>アラビア語のような文章整形において、ハイフネーションにより単語内での改行が許容されている場合、単語が分割されていなかったかのように文字が整形される必要がある。
 
-  <h3 id=hyphenate-character><span class=secno>5.2. </span> Hyphens: the
-   &lsquo;<a href="#hyphenate-character0"><code
-   class=property>hyphenate-character</code></a>&rsquo; property</h3>
+  <h3 id=hyphenate-character><span class=secno>5.2. </span> ハイフン: &lsquo;<a href="#hyphenate-character0"><code
+   class=property>hyphenate-character</code></a>&rsquo; プロパティ</h3>
 
   <table class=propdef>
    <tbody>
     <tr>
-     <th>Name:
+     <th>名称:
 
      <td><dfn id=hyphenate-character0>hyphenate-character</dfn>
 
     <tr>
-     <th>Value:
+     <th>値:
 
      <td>auto | &lt;string>
 
     <tr>
-     <th>Initial:
+     <th>初期値:
 
      <td>auto
 
     <tr>
-     <th>Applies to:
+     <th>適用対象:
 
-     <td>all elements
-
-    <tr>
-     <th>Inherited:
-
-     <td>yes
+     <td>全ての要素
 
     <tr>
-     <th>Percentages:
+     <th>継承:
+
+     <td>される
+
+    <tr>
+     <th>パーセンテージ:
 
      <td>N/A
 
     <tr>
-     <th>Media:
+     <th>メディア:
 
      <td>visual
 
     <tr>
-     <th>Computed&nbsp;value:
+     <th>算出値:
 
-     <td>specified value
+     <td>指定された値
   </table>
 
-  <p>This property specifies strings that are shown between parts of
-   hyphenated words. The &lsquo;<code class=property>auto</code>&rsquo; value
-   means that the user agent should find an appropriate value. If a string is
-   specified, it appears at the end of the line before a hyphenation break.
+  <p>このプロパティは、ハイフンネーションされたパーツの間にある文字を指定する。値 &lsquo;<code class=property>auto</code>&rsquo; は、ユーザエージェントが適切な値を見つける必要があることを意味している。文字が指定されている場合、その文字はハイフネーションで分割された前の行の末尾に表示される。
 
   <div class=example>
-   <p>In Latin scripts, the hyphen character (U+2010) is often used to
-    indicate that a word has been split. Normally, it will not be necessary
-    to set it explicitly. However, this can easily be done:
-
+   <p>ラテン文字のスクリプトにおいて、ハイフン文字 (U+2010) は単語が分割されていることを示すために多く用いられる。通常、それは明示的に設定することはない。しかし、これは簡単に設定することができる:
    <pre>article { hyphenate-character: "\2010" }</pre>
   </div>
 
-  <p class=note>Both hyphens triggered by automatic hyphenation and hyphens
-   triggered by soft hyphens are rendered according to &lsquo;<a
-   href="#hyphenate-character0"><code
-   class=property>hyphenate-character</code></a>&rsquo;.
+  <p class=note>自動ハイフネーションによるハイフンと、ソフトハイフンによるハイフンは両方とも、&lsquo;<a href="#hyphenate-character0"><code
+   class=property>hyphenate-character</code></a>&rsquo; に基づいてレンダリングされる。
 
-  <p class=issue>Can we point to CLDR for hyphenation character data?
+  <p class=issue>ハイフンネーションの文字データとして、CLDRを使うことはできるか？
 
-  <h3 id=hyphenate-size-limits><span class=secno>5.3. </span> Hyphenation
-   Size Limit: the &lsquo;<a href="#hyphenate-limit-zone"><code
-   class=property>hyphenate-limit-zone</code></a>&rsquo; property</h3>
+  <h3 id=hyphenate-size-limits><span class=secno>5.3. </span> ハイフネーションのサイズ制限: &lsquo;<a href="#hyphenate-limit-zone"><code
+   class=property>hyphenate-limit-zone</code></a>&rsquo; プロパティ</h3>
 
   <table class=propdef>
    <tbody>
     <tr>
-     <th>Name:
+     <th>名称:
 
      <td><dfn id=hyphenate-limit-zone>hyphenate-limit-zone</dfn>
 
     <tr>
-     <th>Value:
+     <th>値:
 
      <td>&lt;percentage> | &lt;length>
 
     <tr>
-     <th>Initial:
+     <th>初期値:
 
      <td>0
 
     <tr>
-     <th>Applies to:
+     <th>適用対象:
 
-     <td>block containers
-
-    <tr>
-     <th>Inherited:
-
-     <td>yes
+     <td>ブロックコンテナ
 
     <tr>
-     <th>Percentages:
+     <th>継承:
 
-     <td>refers to width of the line box
+     <td>される
 
     <tr>
-     <th>Media:
+     <th>パーセンテージ:
+
+     <td>ラインボックスの幅を参照
+
+    <tr>
+     <th>メディア:
 
      <td>visual
 
     <tr>
-     <th>Computed&nbsp;value:
+     <th>算出値:
 
-     <td>specified value
+     <td>指定された値
   </table>
 
-  <p class=issue>Is &lsquo;<a href="#hyphenate-limit-zone"><code
-   class=property>hyphenate-limit-zone</code></a>&rsquo; a good name?
-   Comments/suggestions?
+  <p class=issue>&lsquo;<a href="#hyphenate-limit-zone"><code
+   class=property>hyphenate-limit-zone</code></a>&rsquo; はよい名称か？
+   コメント/提案求む。
 
-  <p>This property specifies the maximum amount of unfilled space (before
-   justification) that may be left in the line box before hyphenation is
-   triggered to pull part of a word from the next line back up into the
-   current line.
+  <p>このプロパティは、ハイフネーションが次の行から現在の行へ単語の一部を持ってくるトリガとなる前に、ラインボックスの中に残されるかもしれない埋められていないスペース(両端揃え前)の最大値を指定する。
 
-  <h3 id=hyphenate-char-limits><span class=secno>5.4. </span> Hyphenation
-   Character Limits: the &lsquo;<code
-   class=property>hyphenate-limit-word</code>&rsquo; property</h3>
+  <h3 id=hyphenate-char-limits><span class=secno>5.4. </span> ハイフネーション文字の制限: &lsquo;<code
+   class=property>hyphenate-limit-word</code>&rsquo; プロパティ</h3>
 
   <table class=propdef>
    <tbody>
     <tr>
-     <th>Name:
+     <th>名称:
 
      <td><dfn id=hyphenate-limit-chars>hyphenate-limit-chars</dfn>
 
     <tr>
-     <th>Value:
+     <th>値:
 
      <td>auto | &lt;integer&gt;{1,3}
 
     <tr>
-     <th>Initial:
+     <th>初期値:
 
      <td>auto
 
     <tr>
-     <th>Applies to:
+     <th>適用対象:
 
-     <td>all elements
-
-    <tr>
-     <th>Inherited:
-
-     <td>yes
+     <td>全ての要素
 
     <tr>
-     <th>Percentages:
+     <th>継承:
+
+     <td>される
+
+    <tr>
+     <th>パーセンテージ:
 
      <td>N/A
 
     <tr>
-     <th>Media:
+     <th>メディア:
 
      <td>visual
 
     <tr>
-     <th>Computed&nbsp;value:
+     <th>算出値:
 
-     <td>specified value
+     <td>指定された値
   </table>
 
-  <p>This property specifies the minimum number of characters in a hyphenated
-   word. If the word does not meet the required minimum number of characters
-   in the word / before the hyphen / after the hyphen, then the word must not
-   be hyphenated. Nonspacing combining marks (<span class=issue>Unicode
-   class</span>) and intra-word punctuation (Unicode classes P*) do not count
-   towards the minimum.
+  <p>このプロパティは、ハイフン付き単語の最小文字数を指定するものである。単語にて、ハイフン前/後の文字数が必要最小文字数を満たさない場合には、その単語にハイフンを使用しない。非空白の結合文字(<span class=issue>Unicode class</span>)と単語内句読点(Unicode classes P*)は最小値にカウントされない。
 
-  <p>If three values are specified, the first value is the required minimum
-   for the total characters in a word, the second value is the minimum for
-   characters before the hyphenation point, and the third value is the
-   minimum for characters after the hyphenation point. If the third value is
-   missing, it is the same as the second. If the second value is missing,
-   then it is &lsquo;<code class=css>auto</code>&rsquo;. The &lsquo;<code
-   class=css>auto</code>&rsquo; value means that the UA chooses a value that
-   adapts to the current layout.
+  <p>3つの値が指定された場合、1つめの値は1単語トータルの必要最小文字数、2つめの値はハイフネーション箇所の前の最小文字数、3つめの値はハイフネーション箇所の後ろの最小文字数となる。3つめの値がない場合は、2つめの値が用いられる。2つめの値がない場合は &lsquo;<code class=css>auto</code>&rsquo; となる。値 &lsquo;<code
+   class=css>auto</code>&rsquo; はユーザエージェントが現在のレイアウトに適合した値を選択するということを意味する。
 
-  <p class=note>Unless the UA is able to calculate a better value, it is
-   suggested that &lsquo;<code class=css>auto</code>&rsquo; means 2 for
-   before and after, and 5 for the word total.
+  <p class=note>ユーザエージェントがよい値を算出できる場合を除き、&lsquo;<code class=css>auto</code>&rsquo; はハイフン前後の最小値を2、単語トータルで5文字となる提案がされている。
 
   <div class=example>
-   <p>In the example below, the minimum size of a hyphenated word is left to
-    the UA (which means it may vary depending on the language, the length of
-    the line, or other factors), but the minimum number of characters before
-    and after the hyphenation point is set to 3.
+   <p>以下の例では、ハイフン付き単語の最小サイズはユーザエージェントに委ねられている(これは言語、行の長さ、その他の要員によって異なる場合があることを意味している)。しかし、ハイフン前後の文字の最小数は3に設定されている。
 
    <pre>p { hyphenate-limit-chars: auto 3; }</pre>
   </div>
 
-  <h3 id=hyphenate-line-limits><span class=secno>5.5. </span> Hyphenation
-   Line Limits: the &lsquo;<a href="#hyphenate-limit-lines"><code
-   class=property>hyphenate-limit-lines</code></a>&rsquo; and &lsquo;<a
+  <h3 id=hyphenate-line-limits><span class=secno>5.5. </span> ハイフネーション行の制限: &lsquo;<a href="#hyphenate-limit-lines"><code
+   class=property>hyphenate-limit-lines</code></a>&rsquo; プロパティと &lsquo;<a
    href="#hyphenate-limit-last"><code
-   class=property>hyphenate-limit-last</code></a>&rsquo; properties</h3>
+   class=property>hyphenate-limit-last</code></a>&rsquo; プロパティ</h3>
 
   <table class=propdef>
    <tbody>
     <tr>
-     <th>Name:
+     <th>名称:
 
      <td><dfn id=hyphenate-limit-lines>hyphenate-limit-lines</dfn>
 
     <tr>
-     <th>Value:
+     <th>値:
 
      <td>no-limit | &lt;integer>
 
     <tr>
-     <th>Initial:
+     <th>初期値:
 
      <td>no-limit
 
     <tr>
-     <th>Applies to:
+     <th>適用対象:
 
-     <td>block containers
-
-    <tr>
-     <th>Inherited:
-
-     <td>yes
+     <td>ブロックコンテナ
 
     <tr>
-     <th>Percentages:
+     <th>継承:
+
+     <td>される
+
+    <tr>
+     <th>パーセンテージ:
 
      <td>N/A
 
     <tr>
-     <th>Media:
+     <th>メディア:
 
      <td>visual
 
     <tr>
-     <th>Computed&nbsp;value:
+     <th>算出値:
 
-     <td>specified value
+     <td>指定された値
   </table>
 
-  <p>This property indicates the maximum number of successive hyphenated
-   lines in an element. The &lsquo;<code class=css>no-limit</code>&rsquo;
-   value means that there is no limit.
+  <p>このプロパティは、要素内のハイフン付き行の最大値を指定する。値 &lsquo;<code class=css>no-limit</code>&rsquo; は制限無しを意味する。
 
-  <p>In some cases, user agents may not be able to honor the specified value.
-   (See &lsquo;<a href="#overflow-wrap0"><code
-   class=property>overflow-wrap</code></a>&rsquo;.) It is not defined whether
-   hyphenation introduced by such emergency breaking influences nearby
-   hyphenation points.
+  <p>いくつかのケースで、ユーザエージェントが指定した値を履行できないことがある(&lsquo;<a href="#overflow-wrap0"><code class=property>overflow-wrap</code></a>&rsquo; を参照)。このような突然の改行によってもたらされたハイフネーションがハイフンネーションポイント近くに影響を及ぼすかどうかは定義されていない。
 
   <table class=propdef>
    <tbody>
     <tr>
-     <th>Name:
+     <th>名称:
 
      <td><dfn id=hyphenate-limit-last>hyphenate-limit-last</dfn>
 
     <tr>
-     <th>Value:
+     <th>値:
 
      <td>none | always | column | page | spread
 
     <tr>
-     <th>Initial:
+     <th>初期値:
 
      <td>none
 
     <tr>
-     <th>Applies to:
+     <th>適用対象:
 
-     <td>block containers
-
-    <tr>
-     <th>Inherited:
-
-     <td>yes
+     <td>ブロックコンテナ
 
     <tr>
-     <th>Percentages:
+     <th>継承:
+
+     <td>される
+
+    <tr>
+     <th>パーセンテージ:
 
      <td>N/A
 
     <tr>
-     <th>Media:
+     <th>メディア:
 
      <td>visual
 
     <tr>
-     <th>Computed&nbsp;value:
+     <th>算出値:
 
-     <td>specified value
+     <td>指定された値
   </table>
 
-  <p>This property indicates hyphenation behavior at the end of elements,
-   column, pages and spreads. A spread is a set of two pages that are visible
-   to the reader at the same time. Values are:
+  <p>このプロパティは要素や行、ページ、見開きの終わりにおけるハイフネーションの振る舞いを指定する。見開きは読者から同時に見える2つのページのセットである。値を以下に示す:
 
   <dl>
    <dt><dfn id=none1>&lsquo;<code class=css>none</code>&rsquo;</dfn>
 
-   <dd>No restrictions imposed.
+   <dd>制限無し。
 
    <dt><dfn id=always>&lsquo;<code class=css>always</code>&rsquo;</dfn>
 
-   <dd>The last full line of the element, or the last line before any column,
-    page, or spread break inside the element should not be hyphenated.
+   <dd>要素の最後の行、任意の列やページ、要素内で改行する見開き前の最後の行にはハイフンが付かない。
 
    <dt><dfn id=column>&lsquo;<code class=css>column</code>&rsquo;</dfn>
 
-   <dd>The last line before any column, page, or spread break inside the
-    element should not be hyphenated.
+   <dd>任意の列やページ、要素内で改行する見開き前の最後の行にはハイフンが付かない。
 
    <dt><dfn id=page>&lsquo;<code class=css>page</code>&rsquo;</dfn>
 
-   <dd>The last line before page or spread break inside the element should
+   <dd>任意のページ、要素内で改行する見開き前の最後の行にはハイフンが付かない。
+
+The last line before page or spread break inside the element should
     not be hyphenated.
 
    <dt><dfn id=spread>&lsquo;<code class=css>spread</code>&rsquo;</dfn>
 
-   <dd>The last line before any spread break inside the element should not be
-    hyphenated.
+   <dd>要素内で改行する見開き前の最後の行にはハイフンが付かない。
   </dl>
 
   <div class=example>
@@ -1645,8 +1593,7 @@
   </div>
 
   <div class=example>
-   <p>A paragraph may be formatted like this when &lsquo;<code
-    class=css>hyphenate-limit-last: none</code>&rsquo; is set:
+   <p>このパラグラフは &lsquo;<code class=css>hyphenate-limit-last: none</code>&rsquo; と設定されることでこのように整形される:
 
    <pre>
 <!-- -->This is just a
@@ -1655,8 +1602,7 @@
 <!-- -->tica.
       </pre>
 
-   <p>With &lsquo;<code class=css>hyphenate-limit-last: always</code>&rsquo;
-    one would get:
+   <p>&lsquo;<code class=css>hyphenate-limit-last: always</code>&rsquo; だとこうなる:
 
    <pre>
 <!-- -->This is just a
@@ -1666,122 +1612,99 @@
       </pre>
   </div>
 
-  <h2 id=wrapping><span class=secno>6. </span> Text Wrapping</h2>
+  <h2 id=wrapping><span class=secno>6. </span> テキストの折り返し</h2>
 
-  <p>Text wrapping is controlled by the &lsquo;<a href="#text-wrap0"><code
-   class=property>text-wrap</code></a>&rsquo; and &lsquo;<a
+  <p>テキストの折り返しは &lsquo;<a href="#text-wrap0"><code
+   class=property>text-wrap</code></a>&rsquo; プロパティと &lsquo;<a
    href="#overflow-wrap0"><code
-   class=property>overflow-wrap</code></a>&rsquo; properties:
+   class=property>overflow-wrap</code></a>&rsquo; プロパティで制御される:
 
-  <h3 id=text-wrap><span class=secno>6.1. </span> Text Wrap Settings: the
-   &lsquo;<a href="#text-wrap0"><code
-   class=property>text-wrap</code></a>&rsquo; property</h3>
+  <h3 id=text-wrap><span class=secno>6.1. </span> テキスト折り返しの設定: &lsquo;<a href="#text-wrap0"><code
+   class=property>text-wrap</code></a>&rsquo; プロパティ</h3>
 
   <table class=propdef>
    <tbody>
     <tr>
-     <th>Name:
+     <th>名称:
 
      <td><dfn id=text-wrap0>text-wrap</dfn>
 
     <tr>
-     <th>Value:
+     <th>値:
 
      <td>normal | none | avoid
 
     <tr>
-     <th>Initial:
+     <th>初期値:
 
      <td>normal
 
     <tr>
-     <th>Applies to:
+     <th>適用対象:
 
-     <td>all elements
-
-    <tr>
-     <th>Inherited:
-
-     <td>yes
+     <td>全ての要素
 
     <tr>
-     <th>Percentages:
+     <th>継承:
+
+     <td>される
+
+    <tr>
+     <th>パーセンテージ:
 
      <td>N/A
 
     <tr>
-     <th>Media:
+     <th>メディア:
 
      <td>visual
 
     <tr>
-     <th>Computed&#160;value:
+     <th>算出値:
 
-     <td>specified value
+     <td>指定された値
   </table>
 
-  <p>This property specifies the mode for text wrapping. Possible values:
+  <p>このプロパティはテキスト折り返しのモードを指定する。指定可能な値は以下:
 
   <dl>
    <dt><dfn id=normal2 title="text-wrap:normal">&lsquo;<code
     class=css>normal</code>&rsquo;</dfn>
 
-   <dd>Lines may break at allowed break points, as determined by the
-    line-breaking rules in effect. Line breaking behavior defined for the WJ,
-    ZW, and GL line-breaking classes in <a href="#UAX14"
-    rel=biblioentry>[UAX14]<!--{{!UAX14}}--></a> must be honored.
+   <dd>事実上の改行ルールで決定された改行可能なポイントで改行される。WJ, ZW, GL の改行クラス <a href="#UAX14"
+    rel=biblioentry>[UAX14]<!--{{!UAX14}}--></a> に対して定義された改行の振る舞いを守らなければならない。
 
    <dt><dfn id=none2 title="text-wrap:none">&lsquo;<code
     class=css>none</code>&rsquo;</dfn>
 
-   <dd>Lines may not break; text that does not fit within the block container
-    overflows it.
+   <dd>改行しない; ブロックコンテナ内に収まらないテキストはオーバーフローする。
 
    <dt><dfn id=avoid title="text-wrap:avoid">&lsquo;<code
     class=css>avoid</code>&rsquo;</dfn>
 
-   <dd>Line breaking is suppressed within the element: the UA may only break
-    within the element if there are no other valid break points in the line.
-    If the text breaks, line-breaking restrictions are honored as for
-    &lsquo;<code class=property>normal</code>&rsquo;.
+   <dd>要素内の改行が抑制される: 行中に他の有効な改行ポイントが無い場合、ユーザエージェントは要素内のみで改行する。テキストが改行する場合、改行の制限は &lsquo;<code class=property>normal</code>&rsquo; と同じになる。
   </dl>
 
-  <p>Regardless of the &lsquo;<a href="#text-wrap0"><code
-   class=property>text-wrap</code></a>&rsquo; value, lines always break at
-   forced breaks: for all values, line-breaking behavior defined for the BK,
-   CR, LF, CM NL, and SG line breaking classes in <a href="#UAX14"
-   rel=biblioentry>[UAX14]<!--{{!UAX14}}--></a> must be honored.
+  <p>&lsquo;<a href="#text-wrap0"><code class=property>text-wrap</code></a>&rsquo; の値に関わらず、行は常に強制改行で改行する: 全ての値において、<a href="#UAX14" rel=biblioentry>[UAX14]<!--{{!UAX14}}--></a> にある BK, CR, LF, CM NL, SG の改行クラスで定義されている改行の振る舞いは遵守される必要がある。
 
-  <p>When <span class=property>&lsquo;<a href="#text-wrap0"><code
-   class=property>text-wrap</code></a>&rsquo;</span> is set to &lsquo;<code
-   class=property>normal</code>&rsquo; or &lsquo;<code
-   class=property>avoid</code>&rsquo;, UAs that allow breaks at punctuation
-   other than spaces should prioritize breakpoints. For example, if breaks
-   after slashes have a lower priority than spaces, the sequence "check /etc"
-   will never break between the &lsquo;<code class=css>/</code>&rsquo; and
-   the &lsquo;<code class=property>e</code>&rsquo;. The UA may use the width
-   of the containing block, the text's language, and other factors in
-   assigning priorities. As long as care is taken to avoid such awkward
-   breaks, allowing breaks at appropriate punctuation other than spaces is
-   recommended, as it results in more even-looking margins, particularly in
-   narrow measures.</p>
+  <p><span class=property>&lsquo;<a href="#text-wrap0"><code
+   class=property>text-wrap</code></a>&rsquo;</span> が &lsquo;<code
+   class=property>normal</code>&rsquo; か &lsquo;<code
+   class=property>avoid</code>&rsquo; に設定されている場合、空白以外の句読点で改行可能とするユーザエージェントは、改行ポイントの優先順位をつけるべきである。例えば、スラッシュ後の改行はスペースよりも優先順位が低い場合、"check /etc" の文字列では、&lsquo;<code class=css>/</code>&rsquo; と &lsquo;<code class=property>e</code>&rsquo; の間で改行されない。ユーザエージェントは包含ブロックの幅、テキストの言語、割り当て優先順位の他の要因を使用することができる。やっかいな改行を避けるために注意するなら、スペース以外の適切な句読点での改行許可が推奨であり、それが結果として、特に狭い箇所においては、等しい見た目のマージンとなる。</p>
   <!-- add a sample prioritization algorithm -->
 
-  <h4 id=example-avoid><span class=secno>6.1.1. </span> Example of using
-   &lsquo;<code class=css>text-wrap: avoid</code>&rsquo; in presenting a
-   footer</h4>
+  <h4 id=example-avoid><span class=secno>6.1.1. </span> フッタ表示に&lsquo;<code class=css>text-wrap: avoid</code>&rsquo; を使用した例</h4>
 
   <div class=example>
-   <p>The priority of breakpoints can be set to reflect the intended grouping
-    of text.</p>
+   <p>改行の優先順位は、テキストのグルーピング意図を反映するよう設定することができる。</p>
 
-   <p>Given the rules</p>
+   <p>ルールを与え</p>
 
    <pre>
 <!-- -->footer { text-wrap: avoid; /* inherits to all descendants */ }
       </pre>
 
-   <p>and the following markup:</p>
+   <p>そして以下のマークアップを行う:</p>
 
    <pre>
 <!-- -->&lt;footer>
@@ -1791,14 +1714,14 @@
 <!-- -->&lt;/footer>
       </pre>
 
-   <p>In a narrow window the footer could be broken as</p>
+   <p>狭いウィンドウにて、フッタは以下のように改行されうる</p>
 
    <pre>
 <!-- -->27th Internationalization and Unicode Conference &#8226;
 <!-- -->April 7, 2005 &#8226; Berlin, Germany
       </pre>
 
-   <p>or in a narrower window as</p>
+   <p>さらに狭いウィンドウでは</p>
 
    <pre>
 <!-- -->27th Internationalization and Unicode
@@ -1806,7 +1729,7 @@
 <!-- -->Berlin, Germany
       </pre>
 
-   <p>but not as</p>
+   <p>しかしこのようにはならない</p>
 
    <pre>
 <!-- -->27th Internationalization and Unicode Conference &#8226; April
@@ -1814,75 +1737,67 @@
       </pre>
   </div>
 
-  <h3 id=overflow-wrap><span class=secno>6.2. </span> Emergency Wrapping: the
-   &lsquo;<a href="#overflow-wrap0"><code
-   class=property>overflow-wrap</code></a>&rsquo; property</h3>
+  <h3 id=overflow-wrap><span class=secno>6.2. </span> 応急の折り返し: &lsquo;<a href="#overflow-wrap0"><code
+   class=property>overflow-wrap</code></a>&rsquo; プロパティ</h3>
 
   <table class=propdef>
    <tbody>
     <tr>
-     <th>Name:
+     <th>名称:
 
      <td><dfn id=overflow-wrap0>overflow-wrap</dfn>
 
     <tr>
-     <th>Value:
+     <th>値:
 
      <td>normal | [ break-word || hyphenate ]
 
     <tr>
-     <th>Initial:
+     <th>初期値:
 
      <td>normal
 
     <tr>
-     <th>Applies to:
+     <th>適用対象:
 
-     <td>all elements
-
-    <tr>
-     <th>Inherited:
-
-     <td>yes
+     <td>全ての要素
 
     <tr>
-     <th>Percentages:
+     <th>継承:
+
+     <td>される
+
+    <tr>
+     <th>パーセンテージ:
 
      <td>N/A
 
     <tr>
-     <th>Media:
+     <th>メディア:
 
      <td>visual
 
     <tr>
-     <th>Computed&#160;value:
+     <th>算出値:
 
-     <td>specified value
+     <td>指定された値
   </table>
 
-  <p>This property specifies whether the UA may break within a word to
-   prevent overflow when an otherwise-unbreakable string is too long to fit
-   within the line box. It only has an effect when &lsquo;<a
-   href="#text-wrap0"><code class=property>text-wrap</code></a>&rsquo; is
-   either &lsquo;<code class=property>normal</code>&rsquo; or &lsquo;<code
-   class=property>avoid</code>&rsquo;. Possible values:
+  <p>このプロパティは、改行できない文字列がラインボックス内に収まらないほど長いときに、オーバーフローを防ぐためにユーザエージェントが単語内で改行するかどうかを指定する。 &lsquo;<a href="#text-wrap0"><code class=property>text-wrap</code></a>&rsquo; が &lsquo;<code class=property>normal</code>&rsquo; か &lsquo;<code
+   class=property>avoid</code>&rsquo; の場合だけ効果がある。指定できる値は以下:
 
   <dl>
    <dt><dfn id=normal3 title="overflow-wrap:normal">&lsquo;<code
     class=css>normal</code>&rsquo;</dfn>
 
-   <dd>Lines may break only at allowed break points. However, the
-    restrictions introduced by &lsquo;<code class=css>word-break:
-    keep-all</code>&rsquo; may be relaxed to match &lsquo;<code
-    class=css>word-break: normal</code>&rsquo; and the various hyphenation
-    limit properties may be ignored if there are no otherwise-acceptable
-    break points in the line.
+   <dd>改行可能なポイントでのみ改行することができる。しかし、他に改行ポイントが無い場合は、&lsquo;<code class=css>word-break: keep-all</code>&rsquo; でもたらされた制限事項は &lsquo;<code class=css>word-break: normal</code>&rsquo; に適合するよう緩和され、様々なハイフネーション制限プロパティは無視される。
 
    <dt><dfn id=hyphenate title="overflow-wrap:hyphenate">&lsquo;<code
     class=css>hyphenate</code>&rsquo;</dfn>
 
-   <dd>An unbreakable "word" may be hyphenated if there are no
+   <dd>
+
+An unbreakable "word" may be hyphenated if there are no
     otherwise-acceptable break points in the line even if hyphenation is
     turned off or otherwise restricted. Hyphenation controls may influence
     where the word breaks, but cannot forbid the word from hyphenating to
@@ -3080,7 +2995,7 @@
    Punctuation Collapsing</h4>
 
   <p>Typically fullwidth characters have glyphs with the same advance width
-   as a standard Han character (e.g. ��� U+6C34). However, many fullwidth
+   as a standard Han character (e.g. 水 U+6C34). However, many fullwidth
    punctuation glyphs only take up part of the fullwidth design space. Thus
    such punctuation are not always set fullwidth. Several values of &lsquo;<a
    href="#text-spacing"><code class=property>text-spacing</code></a>&rsquo;
@@ -3105,12 +3020,12 @@
   <p class=note>The advance width of a standard Han character can be
    determined either from font metrics such as the OpenType <code>ideo</code>
    and <code>idtp</code> baselines for the opposite writing mode, or by
-   taking the advance width of a Han character such as ��� U+6C34. (The
+   taking the advance width of a Han character such as 水 U+6C34. (The
    opposite writing mode must be used because some fonts are compressed so
    that the characters are not square.) More information on OpenType metrics
    can be found <a
    href="http://www.microsoft.com/typography/otspec/baselinetags.htm#ideoembox">in
-   the OpenType spec</a>. Note that if ��� U+6C34, ��� U+535C, and ��� U+4E00
+   the OpenType spec</a>. Note that if 水 U+6C34, 卜 U+535C, and 一 U+4E00
    do not all have the same advance width, the font has proportional
    ideographs and the fullwidth advance width cannot be reliably determined
    by measuring glyphs.
@@ -3166,22 +3081,22 @@
      <tr>
       <td scope=row>Opening&#8212;Opening
 
-      <td><tt class=char lang=ja>���</tt>+<tt class=char lang=ja>���</tt>
+      <td><tt class=char lang=ja>〔</tt>+<tt class=char lang=ja>（</tt>
 
-      <td><tt class=char lang=ja>���</tt><tt class="char half-r"
+      <td><tt class=char lang=ja>〔</tt><tt class="char half-r"
        lang=ja>(</tt>
 
      <tr>
       <td scope=row>Middle Dot&#8212;Opening
 
-      <td><tt class=char lang=ja>���</tt>+<tt class=char lang=ja>���</tt>
+      <td><tt class=char lang=ja>・</tt>+<tt class=char lang=ja>（</tt>
 
-      <td><tt class=char lang=ja>���</tt><tt class=char lang=ja>(</tt>
+      <td><tt class=char lang=ja>・</tt><tt class=char lang=ja>(</tt>
 
      <tr>
       <td scope=row>Closing&#8212;Opening
 
-      <td><tt class=char lang=ja>���</tt>+<tt class=char lang=ja>���</tt>
+      <td><tt class=char lang=ja>〕</tt>+<tt class=char lang=ja>（</tt>
 
       <td><tt class=char lang=ja>)<span class=quarter>&#x3000;</span></tt><tt
        class=char lang=ja><span class=quarter>&#x3000;</span>(</tt>
@@ -3189,30 +3104,30 @@
      <tr>
       <td scope=row>Ideographic Space&#8212;Opening
 
-      <td><tt class=char lang=ja>���</tt>+<tt class=char lang=ja>���</tt>
+      <td><tt class=char lang=ja>　</tt>+<tt class=char lang=ja>（</tt>
 
-      <td><tt class=char lang=ja>���</tt><tt class=char lang=ja>(</tt>
+      <td><tt class=char lang=ja>　</tt><tt class=char lang=ja>(</tt>
 
      <tr>
       <td scope=row>Closing&#8212;Closing
 
-      <td><tt class=char lang=ja>���</tt>+<tt class=char lang=ja>���</tt>
+      <td><tt class=char lang=ja>）</tt>+<tt class=char lang=ja>〕</tt>
 
-      <td><tt class=char lang=ja>)</tt><tt class=char lang=ja>���</tt>
+      <td><tt class=char lang=ja>)</tt><tt class=char lang=ja>〕</tt>
 
      <tr>
       <td scope=row>Closing&#8212;Middle Dot
 
-      <td><tt class=char lang=ja>���</tt>+<tt class=char lang=ja>���</tt>
+      <td><tt class=char lang=ja>）</tt>+<tt class=char lang=ja>・</tt>
 
-      <td><tt class=char lang=ja>)</tt><tt class=char lang=ja>���</tt>
+      <td><tt class=char lang=ja>)</tt><tt class=char lang=ja>・</tt>
 
      <tr>
       <td scope=row>Closing&#8212;Ideographic Space
 
-      <td><tt class=char lang=ja>���</tt>+<tt class=char lang=ja>���</tt>
+      <td><tt class=char lang=ja>）</tt>+<tt class=char lang=ja>　</tt>
 
-      <td><tt class=char lang=ja>)</tt><tt class=char lang=ja>���</tt>
+      <td><tt class=char lang=ja>)</tt><tt class=char lang=ja>　</tt>
    </table>
   </div>
 
@@ -4953,9 +4868,9 @@
   <h3 id=conventions><span class=secno>11.1. </span> Document Conventions</h3>
 
   <p>Conformance requirements are expressed with a combination of descriptive
-   assertions and RFC 2119 terminology. The key words ����MUST����, ����MUST
-   NOT����, ����REQUIRED����, ����SHALL����, ����SHALL NOT����, ����SHOULD����,
-   ����SHOULD NOT����, ����RECOMMENDED����, ����MAY����, and ����OPTIONAL���� in the
+   assertions and RFC 2119 terminology. The key words “MUST”, “MUST
+   NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”,
+   “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” in the
    normative parts of this document are to be interpreted as described in RFC
    2119. However, for readability, these words do not appear in all uppercase
    letters in this specification.
@@ -4964,15 +4879,15 @@
    explicitly marked as non-normative, examples, and notes. <a
    href="#RFC2119" rel=biblioentry>[RFC2119]<!--{{!RFC2119}}--></a>
 
-  <p>Examples in this specification are introduced with the words ����for
-   example���� or are set apart from the normative text with
+  <p>Examples in this specification are introduced with the words “for
+   example” or are set apart from the normative text with
    <code>class="example"</code>, like this:
 
   <div class=example>
    <p>This is an example of an informative example.</p>
   </div>
 
-  <p>Informative notes begin with the word ����Note���� and are set apart from
+  <p>Informative notes begin with the word “Note” and are set apart from
    the normative text with <code>class="note"</code>, like this:
 
   <p class=note>Note, this is an informative note.
@@ -5107,7 +5022,7 @@
 
      <li>is available to the general public. The implementation may be a
       shipping product or other publicly available version (i.e., beta
-      version, preview release, or ����nightly build����). Non-shipping product
+      version, preview release, or “nightly build”). Non-shipping product
       releases must have implemented the feature(s) for a period of at least
       one month in order to demonstrate stability.
 
@@ -5122,10 +5037,10 @@
   <h2 class=no-num id=acknowledgements> Appendix A: Acknowledgements</h2>
 
   <p>This specification would not have been possible without the help from:
-   Ayman Aldahleh, Bert Bos, Tantek ��elik, Stephen Deach, John Daggett,
-   Martin D��rst, Laurie Anna Edlund, Ben Errez, Yaniv Feinberg, Arye
+   Ayman Aldahleh, Bert Bos, Tantek Çelik, Stephen Deach, John Daggett,
+   Martin Dürst, Laurie Anna Edlund, Ben Errez, Yaniv Feinberg, Arye
    Gittelman, Ian Hickson, Martin Heijdra, Richard Ishida, Masayasu Ishikawa,
-   Michael Jochimsen, Eric LeVine, Ambrose Li, H��kon Wium Lie, Chris Lilley,
+   Michael Jochimsen, Eric LeVine, Ambrose Li, Håkon Wium Lie, Chris Lilley,
    Ken Lunde, Nat McCully, Shinyu Murakami, Paul Nelson, Chris Pratley,
    Marcin Sawicki, Arnold Schrijver, Rahul Sonnad, Michel Suignard, Takao
    Suzuki, Frank Tang, Chris Thrasher, Etan Wexler, Chris Wilson, Masafumi

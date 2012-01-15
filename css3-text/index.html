@@ -30,7 +30,7 @@
 		<p>文中では日本語組版の用語を用いております。日本語組版については<a href="http://www.w3.org/TR/jlreq/ja/">日本語組版処理の要件（日本語版）</a>に目を通しておくことをおすすめいたします。</p>
 		<p>その他の仕様書の翻訳は、<a href="../">CSS 日本語レイアウト関連仕様 日本語翻訳</a>からご覧下さい。</p>
 		<p>公開開始日: 2011.11.09</p>
-     <p>更新日: 2012.01.14</p>
+     <p>更新日: 2012.01.15</p>
 	</div>
 
   <div class=head> <!--begin-logo-->
@@ -220,20 +220,16 @@
       class=property>hyphenate-limit-last</code>&rsquo; プロパティ</a>
     </ul>
 
-   <li><a href="#wrapping"><span class=secno>6. </span> Text Wrapping</a>
+   <li><a href="#wrapping"><span class=secno>6. </span> テキストの折り返し</a>
     <ul class=toc>
-     <li><a href="#text-wrap"><span class=secno>6.1. </span> Text Wrap
-      Settings: the &lsquo;<code class=property>text-wrap</code>&rsquo;
-      property</a>
+     <li><a href="#text-wrap"><span class=secno>6.1. </span> テキスト折り返しの設定: &lsquo;<code class=property>text-wrap</code>&rsquo;
+      プロパティ</a>
       <ul class=toc>
-       <li><a href="#example-avoid"><span class=secno>6.1.1. </span> Example
-        of using &lsquo;<code class=css>text-wrap: avoid</code>&rsquo; in
-        presenting a footer</a>
+       <li><a href="#example-avoid"><span class=secno>6.1.1. </span> フッタ表示に &lsquo;<code class=css>text-wrap: avoid</code>&rsquo; を使用した例</a>
       </ul>
 
-     <li><a href="#overflow-wrap"><span class=secno>6.2. </span> Emergency
-      Wrapping: the &lsquo;<code class=property>overflow-wrap</code>&rsquo;
-      property</a>
+     <li><a href="#overflow-wrap"><span class=secno>6.2. </span> 応急時の折り返し: &lsquo;<code class=property>overflow-wrap</code>&rsquo;
+      プロパティ</a>
     </ul>
 
    <li><a href="#justification"><span class=secno>7. </span> Alignment and
@@ -1737,100 +1733,76 @@ The last line before page or spread break inside the element should
       </pre>
   </div>
 
-  <h3 id=overflow-wrap><span class=secno>6.2. </span> Emergency Wrapping: the
-   &lsquo;<a href="#overflow-wrap0"><code
-   class=property>overflow-wrap</code></a>&rsquo; property</h3>
+  <h3 id=overflow-wrap><span class=secno>6.2. </span> 応急時の折り返し: &lsquo;<a href="#overflow-wrap0"><code
+   class=property>overflow-wrap</code></a>&rsquo; プロパティ</h3>
 
   <table class=propdef>
    <tbody>
     <tr>
-     <th>Name:
+     <th>名称:
 
      <td><dfn id=overflow-wrap0>overflow-wrap</dfn>
 
     <tr>
-     <th>Value:
+     <th>値:
 
      <td>normal | [ break-word || hyphenate ]
 
     <tr>
-     <th>Initial:
+     <th>初期値:
 
      <td>normal
 
     <tr>
-     <th>Applies to:
+     <th>適用対象:
 
-     <td>all elements
-
-    <tr>
-     <th>Inherited:
-
-     <td>yes
+     <td>全ての要素
 
     <tr>
-     <th>Percentages:
+     <th>継承:
+
+     <td>される
+
+    <tr>
+     <th>パーセンテージ:
 
      <td>N/A
 
     <tr>
-     <th>Media:
+     <th>メディア:
 
      <td>visual
 
     <tr>
-     <th>Computed&#160;value:
+     <th>算出値:
 
-     <td>specified value
+     <td>指定された値
   </table>
 
-  <p>This property specifies whether the UA may break within a word to
-   prevent overflow when an otherwise-unbreakable string is too long to fit
-   within the line box. It only has an effect when &lsquo;<a
-   href="#text-wrap0"><code class=property>text-wrap</code></a>&rsquo; is
-   either &lsquo;<code class=property>normal</code>&rsquo; or &lsquo;<code
-   class=property>avoid</code>&rsquo;. Possible values:
+  <p>このプロパティは、改行できない文字列がラインボックス内に収まらないほど長いときに、オーバーフローを防ぐためにユーザエージェントが単語内で改行するかどうかを指定する。 &lsquo;<a href="#text-wrap0"><code class=property>text-wrap</code></a>&rsquo; が &lsquo;<code class=property>normal</code>&rsquo; か &lsquo;<code
+   class=property>avoid</code>&rsquo; の場合だけ効果がある。指定できる値は以下:
 
   <dl>
    <dt><dfn id=normal3 title="overflow-wrap:normal">&lsquo;<code
     class=css>normal</code>&rsquo;</dfn>
 
-   <dd>Lines may break only at allowed break points. However, the
-    restrictions introduced by &lsquo;<code class=css>word-break:
-    keep-all</code>&rsquo; may be relaxed to match &lsquo;<code
-    class=css>word-break: normal</code>&rsquo; and the various hyphenation
-    limit properties may be ignored if there are no otherwise-acceptable
-    break points in the line.
+   <dd>改行可能なポイントでのみ改行することができる。しかし、他に改行ポイントが無い場合は、&lsquo;<code class=css>word-break: keep-all</code>&rsquo; でもたらされた制限事項は &lsquo;<code class=css>word-break: normal</code>&rsquo; に適合するよう緩和され、様々なハイフネーション制限プロパティは無視される。
 
    <dt><dfn id=hyphenate title="overflow-wrap:hyphenate">&lsquo;<code
     class=css>hyphenate</code>&rsquo;</dfn>
 
-   <dd>An unbreakable "word" may be hyphenated if there are no
-    otherwise-acceptable break points in the line even if hyphenation is
-    turned off or otherwise restricted. Hyphenation controls may influence
-    where the word breaks, but cannot forbid the word from hyphenating to
-    prevent overflow.
+   <dd>ハイフネーションがオフになっているか制限されていたとしても、行内に他の改行可能なポイントが無い場合、改行不可能な単語はハイフン付きになる。ハイフネーション制御はどこで改行するかに影響するが、オーバーフローを防ぐために単語のハイフネーションを禁止することはできない。
 
    <dt><dfn id=break-word title="overflow-wrap:break-word">&lsquo;<code
     class=css>break-word</code>&rsquo;</dfn>
 
-   <dd>An unbreakable "word" may be broken at an arbitrary point if there are
-    no otherwise-acceptable break points in the line. Shaping characters are
-    still shaped as if the word were not broken, and grapheme clusters must
-    together stay as one unit. If specified together with &lsquo;<code
-    class=css>hyphenate</code>&rsquo;, valid hyphenation takes precedence
-    over &lsquo;<code class=css>break-word</code>&rsquo; breaking.
+   <dd>行内に他の改行可能なポイントが無い場合、改行不可能な単語は任意のポイントで改行される。整形された文字は単語が改行されていないかのようにそのままで、書記素クラスタは1つの単位のようにまとまってとどまっている。&lsquo;<code class=css>hyphenate</code>&rsquo; と一緒に指定されている場合は、有効なハイフネーションが &lsquo;<code class=css>break-word</code>&rsquo; の改行に優先する。
   </dl>
 
-  <p>Break opportunities not part of &lsquo;<code class=css>overflow-wrap:
-   normal</code>&rsquo; line breaking are not considered when calculating
-   &lsquo;<code class=css>min-content</code>&rsquo; intrinsic sizes.
+  <p> &lsquo;<code class=css>overflow-wrap: normal</code>&rsquo; による改行に含まれない改行機会は、&lsquo;<code class=css>min-content</code>&rsquo; の本質的なサイズ算出時には考慮されない。
 
-  <p>For legacy reasons, UAs may also accept &lsquo;<code
-   class=property>word-wrap</code>&rsquo; as an alternate name for the
-   &lsquo;<a href="#overflow-wrap0"><code
-   class=property>overflow-wrap</code></a>&rsquo; property. However this
-   syntax not valid.
+  <p>レガシーシステムのため、ユーザエージェントは &lsquo;<code class=property>word-wrap</code>&rsquo;、別名 &lsquo;<a href="#overflow-wrap0"><code
+   class=property>overflow-wrap</code></a>&rsquo; プロパティも許容することになる。しかしこの構文は正しくない。
 
   <h2 id=justification><span class=secno>7. </span> Alignment and
    Justification</h2>
