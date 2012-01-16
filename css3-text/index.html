@@ -1804,22 +1804,20 @@ The last line before page or spread break inside the element should
   <p>レガシーシステムのため、ユーザエージェントは &lsquo;<code class=property>word-wrap</code>&rsquo;、別名 &lsquo;<a href="#overflow-wrap0"><code
    class=property>overflow-wrap</code></a>&rsquo; プロパティも許容することになる。しかしこの構文は正しくない。
 
-  <h2 id=justification><span class=secno>7. </span> Alignment and
-   Justification</h2>
+  <h2 id=justification><span class=secno>7. </span> 配置と両端揃え</h2>
 
-  <h3 id=text-align><span class=secno>7.1. </span> Text Alignment: the
-   &lsquo;<a href="#text-align0"><code
-   class=property>text-align</code></a>&rsquo; property</h3>
+  <h3 id=text-align><span class=secno>7.1. </span> テキストの配置: &lsquo;<a href="#text-align0"><code
+   class=property>text-align</code></a>&rsquo; プロパティ</h3>
 
   <table class=propdef>
    <tbody>
     <tr>
-     <th>Name:
+     <th>名称:
 
      <td><dfn id=text-align0>text-align</dfn>
 
     <tr>
-     <th>Value:
+     <th>値:
 
      <td>[ start | <a class=noxref
       href="http://www.w3.org/TR/CSS21/syndata.html#value-def-string"><span
@@ -1827,103 +1825,81 @@ The last line before page or spread break inside the element should
       left | right | center | justify | match-parent ]
 
     <tr>
-     <th>Initial:
+     <th>初期値:
 
      <td>start
 
     <tr>
-     <th>Applies to:
+     <th>適用対象:
 
-     <td>block containers
-
-    <tr>
-     <th>Inherited:
-
-     <td>yes
+     <td>ブロックコンテナ
 
     <tr>
-     <th>Percentages:
+     <th>継承:
+
+     <td>される
+
+    <tr>
+     <th>パーセンテージ:
 
      <td>N/A
 
     <tr>
-     <th>Media:
+     <th>メディア:
 
      <td>visual
 
     <tr>
-     <th>Computed&#160;value:
+     <th>算出値:
 
-     <td>specified value, except for &lsquo;<code
-      class=property>match-parent</code>&rsquo; (see prose)
+     <td>&lsquo;<code class=property>match-parent</code>&rsquo; を除く指定された値 (説明を参照)
   </table>
 
-  <p>This property describes how inline contents of a block are horizontally
-   aligned if the contents do not completely fill the line box. Values have
-   the following meanings:
+  <p>このプロパティは、コンテンツが完全にラインボックスを埋めていない場合、ブロックのインラインコンテンツが水平方向にどう配置されるかを説明している。値の意味は以下:
 
   <dl>
    <dt><dfn id=start title="text-align:start">&lsquo;<code
     class=css>start</code>&rsquo;</dfn>
 
-   <dd>The inline contents are aligned to the start edge of the line box.
+   <dd>インラインコンテンツはラインボックスの開始端に配置される。
 
    <dt><dfn id=end title="text-align:end">&lsquo;<code
     class=css>end</code>&rsquo;</dfn>
 
-   <dd>The inline contents are aligned to the end edge of the line box.
+   <dd>インラインコンテンツはラインボックスの終了端に配置される。
 
    <dt><dfn id=left title="text-align:left">&lsquo;<code
     class=css>left</code>&rsquo;</dfn>
 
-   <dd>The inline contents are aligned to the left edge of the line box. In
-    vertical text, &lsquo;<code class=property>left</code>&rsquo; aligns to
-    the edge of the line box that would be the start edge for left-to-right
-    text.
+   <dd>インラインコンテンツはラインボックスの左側に配置される。縦書きのテキストにおいては、&lsquo;<code class=property>left</code>&rsquo; は左から右へのテキスト(left-to-right text)の開始端となるラインボックスの端に配置する。
 
    <dt><dfn id=right title="text-align:right">&lsquo;<code
     class=css>right</code>&rsquo;</dfn>
 
-   <dd>The inline contents are aligned to the right edge of the line box. In
-    vertical text, &lsquo;<code class=property>right</code>&rsquo; aligns to
-    the edge of the line box that would be the end edge for left-to-right
-    text.
+   <dd>インラインコンテンツはラインボックスの右側に配置される。縦書きのテキストにおいては、&lsquo;<code class=property>right</code>&rsquo; は左から右へのテキスト(left-to-right text)の終了端となるラインボックスの端に配置する。
 
    <dt><dfn id=center title="text-align:center">&lsquo;<code
     class=css>center</code>&rsquo;</dfn>
 
-   <dd>The inline contents are centered within the line box.
+   <dd>インラインコンテンツはラインボックスの中央に配置される。
 
    <dt><dfn id=justify title="text-align:justify">&lsquo;<code
     class=css>justify</code>&rsquo;</dfn>
 
-   <dd>The text is justified according to the method specified by the <a
-    class=property href="#text-justify">&lsquo;<code
-    class=property>text-justify</code>&rsquo;</a> property.
+   <dd>テキストは <a class=property href="#text-justify">&lsquo;<code
+    class=property>text-justify</code>&rsquo;</a> プロパティで指定された方法に従って両端揃えされる。
 
    <dt><dfn id=ltstringgt title="text-align:&lt;string>">&lsquo;<code
     class=css><span title="&lt;string&gt;"><a class=noxref
     href="http://www.w3.org/TR/CSS21/syndata.html#value-def-string"><span
     class=value-inst-string>&lt;string&gt;</span></a></span></code>&rsquo;</dfn>
 
-   <dd>The string must be a single character; otherwise the declaration must
-    be <a href="http://www.w3.org/TR/CSS21/conform.html#ignore">ignored</a>.
-    When applied to a table cell, specifies the <dfn
-    id=alignment-character>alignment character</dfn> around which the cell's
-    contents will align. See <a href="#character-alignment">below</a> for
-    further details.
+   <dd>stringは1文字でなくてはならない; そうでなければ宣言は <a href="http://www.w3.org/TR/CSS21/conform.html#ignore">無視</a>されなくてはならない。表のセルに適用された場合、並べられるセルのコンテンツがその周りに配置される <dfn id=alignment-character>alignment character</dfn> を指定する。詳細は <a href="#character-alignment">以下</a>参照。
 
    <dt><dfn id=match-parent title="text-align:match-parent">&lsquo;<code
     class=css>match-parent</code>&rsquo;</dfn>
 
-   <dd>This value behaves the same as &lsquo;<code
-    class=property>inherit</code>&rsquo; except that an inherited
-    &lsquo;<code class=property>start</code>&rsquo; or &lsquo;<code
-    class=property>end</code>&rsquo; keyword is calculated against its
-    parent's &lsquo;<code class=property>direction</code>&rsquo; value and
-    results in a computed value of either &lsquo;<code
-    class=property>left</code>&rsquo; or &lsquo;<code
-    class=property>right</code>&rsquo;.
+   <dd>この値は、継承された&lsquo;<code class=property>start</code>&rsquo; か &lsquo;<code class=property>end</code>&rsquo; のキーワードは、親の &lsquo;<code class=property>direction</code>&rsquo; の値に反して算出され、結果算出値が &lsquo;<code class=property>left</code>&rsquo; か &lsquo;<code class=property>right</code>&rsquo; となる場合を除き、&lsquo;<code class=property>inherit</code>&rsquo; と同様に振る舞う。
   </dl>
 
   <p>If two keywords are given in combination, then the first value specifies
