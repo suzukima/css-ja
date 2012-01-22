@@ -30,7 +30,7 @@
 		<p>文中では日本語組版の用語を用いております。日本語組版については<a href="http://www.w3.org/TR/jlreq/ja/">日本語組版処理の要件（日本語版）</a>に目を通しておくことをおすすめいたします。</p>
 		<p>その他の仕様書の翻訳は、<a href="../">CSS 日本語レイアウト関連仕様 日本語翻訳</a>からご覧下さい。</p>
 		<p>公開開始日: 2011.11.09</p>
-     <p>更新日: 2012.01.15</p>
+     <p>更新日: 2012.01.22</p>
 	</div>
 
   <div class=head> <!--begin-logo-->
@@ -1902,24 +1902,28 @@ The last line before page or spread break inside the element should
    <dd>この値は、継承された&lsquo;<code class=property>start</code>&rsquo; か &lsquo;<code class=property>end</code>&rsquo; のキーワードは、親の &lsquo;<code class=property>direction</code>&rsquo; の値に反して算出され、結果算出値が &lsquo;<code class=property>left</code>&rsquo; か &lsquo;<code class=property>right</code>&rsquo; となる場合を除き、&lsquo;<code class=property>inherit</code>&rsquo; と同様に振る舞う。
   </dl>
 
-  <p>If two keywords are given in combination, then the first value specifies
-   the alignment of the first line and any line immediately after a forced
-   line break; and the second value specifies the alignment of any remaining
-   lines.
+  <p>2つのキーワードが組み合わせて与えられた場合、1つめの値は、最初の行と強制改行直後の行の配置方法を指定する。2つめの値は残りの行の配置方法を指定する。
 
-  <p>A block of text is a stack of <a
-   href="http://www.w3.org/TR/CSS21/visuren.html#line-box">line boxes</a>. In
-   the case of &lsquo;<code class=property>start</code>&rsquo;, &lsquo;<code
+  <p>テキストのブロックは <a
+   href="http://www.w3.org/TR/CSS21/visuren.html#line-box">ラインボックス</a>のスタックとなる。プロパティの値が &lsquo;<code class=property>start</code>&rsquo;, &lsquo;<code
    class=property>end</code>&rsquo;, &lsquo;<code
    class=property>left</code>&rsquo;, &lsquo;<code
-   class=property>right</code>&rsquo; and &lsquo;<code
-   class=property>center</code>&rsquo;, this property specifies how the
-   inline-level boxes within each line box align with respect to the start
-   and end sides of the line box: alignment is not with respect to the <a
-   href="http://www.w3.org/TR/CSS21/visuren.html#viewport">viewport</a> or
-   containing block.
+   class=property>right</code>&rsquo;,  &lsquo;<code
+   class=property>center</code>&rsquo; の場合、このプロパティは、各ラインボックス内のインラインレベルボックスを、ラインボックスの開始側および終了側を基準にして配置する: 配置は <a
+   href="http://www.w3.org/TR/CSS21/visuren.html#viewport">viewport</a> や 包含ブロックを基準にしない。
 
-  <p>In the case of &lsquo;<code class=property>justify</code>&rsquo;, the UA
+  <p>プロパティの値が &lsquo;<code class=property>justify</code>&rsquo; の場合、ユーザエージェントはインラインボックスの位置をシフトするだけでなく<a
+   href="#text-justify">調整する</a>ことによって、インラインボックスを拡大または縮小することがある(&lsquo;<a href="#text-justify0"><code
+   class=property>text-justify</code></a>&rsquo;, &lsquo;<a
+   href="#letter-spacing0"><code
+   class=property>letter-spacing</code></a>&rsquo;, and &lsquo;<a
+   href="#word-spacing0"><code
+   class=property>word-spacing</code></a>&rsquo; を参照)。要素の空白が <a href="#collapse">結合可能</a>に設定されている場合、ユーザエージェントは両端揃えの目的のためにテキストを調整する必要はなく、代わりに拡張の機会がないもとしてテキストを扱うことができる。ユーザエージェントがテキストの調整を選んだ場合、タブストップは
+ <a href="http://dev.w3.org/csswg/css3-text/#white-space-rules">white space
+   processing rules</a> の要求通りに整列させることを保証しなければならない。
+
+
+In the case of &lsquo;<code class=property>justify</code>&rsquo;, the UA
    may stretch or shrink any inline boxes by <a
    href="#text-justify">adjusting</a> their text in addition to shifting
    their positions. (See also &lsquo;<a href="#text-justify0"><code
