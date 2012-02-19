@@ -33,7 +33,7 @@
 		<p>文中では日本語組版の用語を用いております。日本語組版については<a href="http://www.w3.org/TR/jlreq/ja/">日本語組版処理の要件（日本語版）</a>に目を通しておくことをおすすめいたします。</p>
 		<p>その他の仕様書の翻訳は、<a href="../">CSS 日本語レイアウト関連仕様 日本語翻訳</a>からご覧下さい。</p>
 		<p>公開開始日: 2011.11.09</p>
-     <p>更新日: 2012.02.05</p>
+     <p>更新日: 2012.02.19</p>
 	</div>
 
   <div class=head> <!--begin-logo-->
@@ -164,12 +164,11 @@
      <li><a href="#terms"><span class=secno>1.3. </span> 用語について</a>
     </ul>
 
-   <li><a href="#transforming"><span class=secno>2. </span> Transforming
-    Text</a>
+   <li><a href="#transforming"><span class=secno>2. </span> テキストの変換</a>
     <ul class=toc>
      <li><a href="#text-transform"><span class=secno>2.1. </span>
-      Transforming Text: the &lsquo;<code
-      class=property>text-transform</code>&rsquo; property</a>
+      テキストの変換: &lsquo;<code
+      class=property>text-transform</code>&rsquo; プロパティ</a>
     </ul>
 
    <li><a href="#white-space-processing"><span class=secno>3. </span> White
@@ -409,120 +408,96 @@
 
   <p>要素の境界で分割された<a href="#character"><i>character(文字)</i></a>のレンダリング特性は定義されていない: 境界のどちら側に属して、もしくは両方に属するとした近似値としてレンダリングされることがある。作者は、要素の境界で分割される書記素クラスタが矛盾した、もしくは望ましくない結果となる可能性があることに、予め注意すること。
 
-  <h2 id=transforming><span class=secno>2. </span> Transforming Text</h2>
+  <h2 id=transforming><span class=secno>2. </span> テキストの変換</h2>
 
   <h3 id=text-transform><span class=secno>2.1. </span> <a name=caps-prop></a>
-   Transforming Text: the &lsquo;<a href="#text-transform0"><code
-   class=property>text-transform</code></a>&rsquo; property</h3>
+   テキストの変換: &lsquo;<a href="#text-transform0"><code
+   class=property>text-transform</code></a>&rsquo; プロパティ</h3>
 
   <table class=propdef>
    <tbody>
     <tr>
-     <th>Name:
+     <th>名称:
 
      <td><dfn id=text-transform0>text-transform</dfn>
 
     <tr>
-     <th><a href="#values">Value</a>:
+     <th><a href="#values">値</a>:
 
      <td>none | [ [ capitalize | uppercase | lowercase ] || full-width ||
       full-size-kana ]
 
     <tr>
-     <th>Initial:
+     <th>初期値:
 
      <td>none
 
     <tr>
-     <th>Applies to:
+     <th>適用対象:
 
-     <td>all elements
-
-    <tr>
-     <th>Inherited:
-
-     <td>yes
+     <td>全ての要素
 
     <tr>
-     <th>Percentages:
+     <th>継承:
+
+     <td>される
+
+    <tr>
+     <th>パーセンテージ:
 
      <td>N/A
 
     <tr>
-     <th>Media:
+     <th>メディア:
 
      <td>visual
 
     <tr>
-     <th>Computed&#160;value:
+     <th>算出値:
 
-     <td>as specified
+     <td>指定されたとおり
   </table>
 
-  <p>This property transforms text for styling purposes. Values have the
-   following meanings:
+  <p>このプロパティはスタイリング目的でテキストを変換する。値には以下の意味がある:
 
   <dl>
    <dt><dfn id=none title="text-transform:none">&lsquo;<code
     class=css>none</code>&rsquo;</dfn>
 
-   <dd>No effects.
+   <dd>影響なし。
 
    <dt><dfn id=capitalize title="text-transform:capitalize">&lsquo;<code
     class=css>capitalize</code>&rsquo;</dfn>
 
-   <dd>Puts the first <a href="#letter0"><i>letter</i></a> of each word in
-    titlecase; other characters are unaffected.
+   <dd>各単語の最初の <a href="#letter0"><i>文字</i></a>をtitlecase(先頭を大文字にする書き方)とし、それ以外の文字には影響なし。
 
    <dt><dfn id=uppercase title="text-transform:uppercase">&lsquo;<code
     class=css>uppercase</code>&rsquo;</dfn>
 
-   <dd>Puts all characters in uppercase.
+   <dd>全ての文字を大文字にする。
 
    <dt><dfn id=lowercase title="text-transform:lowercase">&lsquo;<code
     class=css>lowercase</code>&rsquo;</dfn>
 
-   <dd>Puts all characters in lowercase.
+   <dd>全ての文字を小文字にする。
 
    <dt><dfn id=full-width title="text-transform:full-width">&lsquo;<code
     class=css>full-width</code>&rsquo;</dfn>
 
-   <dd>Puts all characters in fullwidth form. If the character does not have
-    a corresponding fullwidth form, it is left as is. This value is typically
-    used to typeset Latin characters and digits like ideographic characters.
+   <dd>全ての文字を全角にする。文字に対応する全角文字が無い場合は、そのまま残される。この値は通常、表意文字のようなラテン文字と数字の組版で使用される。
 
    <dt><dfn id=full-size-kana
     title="text-transform:full-size-kana">&lsquo;<code
     class=css>full-size-kana</code>&rsquo;</dfn>
 
-   <dd>Converts all small Kana characters to normal Kana. This value is
-    typically used for ruby annotation text, where all small Kana should be
-    drawn as large Kana.
+   <dd>小さいカナ文字を通常のカナに置き換える。この値は通常、ルビの注釈テキストに使用される。そこでは、全ての小さいカナ文字が大きなカナ文字として描画されるべきである。
   </dl>
 
-  <p>The case mapping rules for the character repertoire specified by the
-   Unicode Standard can be found on the Unicode Consortium Web site <a
-   href="#UNICODE" rel=biblioentry>[UNICODE]<!--{{!UNICODE}}--></a>. The UA
-   must use the full case mappings for Unicode characters, including any
-   conditional casing rules, as defined in Default Case Algorithm section. If
-   (and only if) the content language of the element is, according to the
-   rules of the document language, known, then any appropriate
-   language-specific rules must be applied as well. These minimally include,
-   but are not limited to, the language-specific rules in Unicode's <a
-   href="http://www.unicode.org/Public/UNIDATA/SpecialCasing.txt">SpecialCasing.txt</a>.
-   
+  <p>Unicode Standard で指定された文字レパートリーのケースマッピング(大文字小文字の変換)ルールは、Unicode Consortium Web site<a href="#UNICODE" rel=biblioentry>[UNICODE]<!--{{!UNICODE}}--></a> で見つけることができる。ユーザエージェントはDefault Case Algorithm のセクションで定義されている条件付きケースマッピングを含む、Unicode文字に対する完全なケースマッピングを使用する必要がある。もし(そしてそのときに限り)要素のコンテンツの言語が既知の言語のルールに従っている場合、該当する言語固有のルールも同様に適用される必要がある。これらはUnicodeの言語固有のルールである <a
+   href="http://www.unicode.org/Public/UNIDATA/SpecialCasing.txt">SpecialCasing.txt</a> を最低限含んでいるが、これだけに限定されない。
 
   <div class=example>
-   <p>For example, in Turkish there are two &ldquo;i&rdquo;s, one with a
-    dot&mdash;&ldquo;İ&rdquo; and &ldquo;i&rdquo;&mdash; and one
-    without&mdash;&ldquo;I&rdquo; and &ldquo;ı&rdquo;. Thus the usual case
-    mappings between &ldquo;I&rdquo; and &ldquo;i&rdquo; are replaced with a
-    different set of mappings to their respective undotted/dotted
-    counterparts, which do not exist in English. This mapping must only take
-    effect if the language is known to be Turkish or Azeri; in other
-    languages, the usual mapping of &ldquo;I&rdquo; and &ldquo;i&rdquo; is
-    required. This rule is thus conditionally defined in Unicode's
-    SpecialCasing.txt file.
+   <p>例えば、トルコ語には2つの&ldquo;i&rdquo;がある。1つはドットありの &mdash;&ldquo;İ&rdquo; と &ldquo;i&rdquo;&mdash;、もう1つはドットなしの &mdash;&ldquo;I&rdquo; と &ldquo;ı&rdquo; である。従って、 &ldquo;I&rdquo; と &ldquo;i&rdquo; の間の通常のケースマッピングは、ドットあり/なしに対応した,英語には存在しない異なるマッピングセットに置き換えられる。言語がトルコ語かアゼルバイジャン語であることが明らかである場合のみ、このマッピングは効力を生じるべきである。他の言語では、&ldquo;I&rdquo; と &ldquo;i&rdquo; の通常のマッピングが要求される。このルールは、このように条件付きで SpecialCasing.txt のファイルに定義されている。
   </div>
   <!--
     <div class="example">
@@ -533,31 +508,14 @@
     </div>
 -->
 
-  <p>The definition of "word" used for &lsquo;<code
-   class=css>capitalize</code>&rsquo; is UA-dependent; <a href="#UAX29"
-   rel=biblioentry>[UAX29]<!--{{!UAX29}}--></a> is suggested (but not
-   required) for determining such word boundaries. Authors should not expect
-   &lsquo;<code class=css>capitalize</code>&rsquo; to follow
-   language-specific titlecasing conventions (such as skipping articles in
-   English).
+  <p>&lsquo;<code class=css>capitalize</code>&rsquo; で使用される "word" の定義はユーザエージェント依存である<a href="#UAX29"
+   rel=biblioentry>[UAX29]<!--{{!UAX29}}--></a>。これはこのような単語の境界を決定するために示されている(しかし必要ではない)。制作者は、言語固有の titlecase 規則(例えば、英語ではarticleをスキップする)をフォローするために、&lsquo;<code class=css>capitalize</code>&rsquo; に期待すべきではない。
 
-  <p>The definition of fullwidth and halfwidth forms can be found on the
-   Unicode consortium web site at <a href="#UAX11"
-   rel=biblioentry>[UAX11]<!--{{!UAX11}}--></a>. The mapping to fullwidth
-   form is defined by taking code points with the &lt;wide&gt; or the
-   &lt;narrow&gt; tag in their Decomposition_Mapping in <a href="#UAX44"
-   rel=biblioentry>[UAX44]<!--{{!UAX44}}--></a>. For the &lt;narrow&gt; tag,
-   the mapping is from the code point to the decomposition (minus
-   &lt;narrow&gt; tag), and for the &lt;wide&gt; tag, the mapping is from the
-   decomposition (minus the &lt;wide&gt; tag) back to the original code
-   point.
+  <p>全角と半角の定義は Unicode consortium のWebサイト<a href="#UAX11" rel=biblioentry>[UAX11]<!--{{!UAX11}}--></a> にある。全角へのマッピングは、<a href="#UAX44" rel=biblioentry>[UAX44]<!--{{!UAX44}}--></a> にて、その文字の Decomposition_Mapping(分解マッピング) にある &lt;wide&gt; もしくは &lt;narrow&gt; タグ付きコードポイントを取得することで定義されている。&lt;narrow&gt; タグの場合、マッピングはコードポイントから分解したもの(&lt;narrow&gt; タグを取り除いたもの)になり、&lt;wide&gt; タグの場合、マッピングは分解したもの(&lt;wide&gt; タグを取り除いたもの)から元のコードポイントに戻すものとなる。
 
-  <p>The mappings for small Kana to normal Kana are defined in <a
-   href="#small-kana">Small Kana Mappings</a>.
+  <p>小さいカナ文字から通常のカナ文字へのマッピングは <a href="#small-kana">Small Kana Mappings</a> で定義されている。
 
-  <p>When multiple values are specified and therefore multiple
-   transformations need to be applied, they are applied in the following
-   order:
+  <p>複数の値が指定され、複数の変換が適用される必要のある場合、以下の順番で適用される:
 
   <ol>
    <li>&lsquo;<code class=css>capitalize</code>&rsquo;, &lsquo;<code
@@ -569,27 +527,18 @@
    <li>&lsquo;<code class=css>full-size-kana</code>&rsquo;
   </ol>
 
-  <p>Text transformation happens after <a href="#white-space-rules">white
-   space processing</a>, which means that &lsquo;<code
-   class=css>full-width</code>&rsquo; transforms only preserved U+0020 spaces
-   to U+3000.
+  <p>テキスト変換は、U+0020 の空白を U+3000 へ保存するだけの &lsquo;<code
+   class=css>full-width</code>&rsquo; 変換である<a href="#white-space-rules">空白処理</a>の後に行う。
 
   <div class=example>
-   <p>The following example converts the ASCII characters in abbreviations in
-    Japanese to their fullwidth variants so that they lay out and line break
-    like ideographs:
+   <p>以下は、レイアウトと改行が表意文字のようになるように、日本語の略語中のASCII文字を全角の異体字へ変換する例である:
 
    <pre>abbr:lang(ja) { text-transform: full-width; }</pre>
   </div>
 
-  <p class=issue>CSS may introduce the ability to create custom mapping
-   tables for less common text transforms, such as by an &lsquo;<a
-   href="#text-transform0"><code class=css>@text-transform</code></a>&rsquo;
-   rule similar to &lsquo;<code class=css>@counter-style</code>&rsquo; from
-   <a href="#CSS3LIST" rel=biblioentry>[CSS3LIST]<!--{{CSS3LIST}}--></a>, and
-   this mechanism may be used to replace &lsquo;<code
-   class=css>full-size-kana</code>&rsquo;.
-
+  <p class=issue>CSSでは、<a href="#CSS3LIST" rel=biblioentry>[CSS3LIST]<!--{{CSS3LIST}}--></a> の &lsquo;<code class=css>@counter-style</code>&rsquo; に似たルールである &lsquo;<a href="#text-transform0"><code class=css>@text-transform</code></a>&rsquo; のように、あまり一般的ではないテキスト変換用のカスタムマッピングテーブルを作る機能が導入されるかもしれない。そしてこのメカニズムは &lsquo;<code
+   class=css>full-size-kana</code>&rsquo; を置き換えるかもしれない。
+   
   <h2 id=white-space-processing><span class=secno>3. </span> White Space
    Processing</h2>
 
