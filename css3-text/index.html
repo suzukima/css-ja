@@ -33,7 +33,7 @@
 		<p>文中では日本語組版の用語を用いております。日本語組版については<a href="http://www.w3.org/TR/jlreq/ja/">日本語組版処理の要件（日本語版）</a>に目を通しておくことをおすすめいたします。</p>
 		<p>その他の仕様書の翻訳は、<a href="../">CSS 日本語レイアウト関連仕様 日本語翻訳</a>からご覧下さい。</p>
 		<p>公開開始日: 2011.11.09</p>
-     <p>更新日: 2012.02.19</p>
+     <p>更新日: 2012.02.26</p>
 	</div>
 
   <div class=head> <!--begin-logo-->
@@ -539,43 +539,18 @@
   <p class=issue>CSSでは、<a href="#CSS3LIST" rel=biblioentry>[CSS3LIST]<!--{{CSS3LIST}}--></a> の &lsquo;<code class=css>@counter-style</code>&rsquo; に似たルールである &lsquo;<a href="#text-transform0"><code class=css>@text-transform</code></a>&rsquo; のように、あまり一般的ではないテキスト変換用のカスタムマッピングテーブルを作る機能が導入されるかもしれない。そしてこのメカニズムは &lsquo;<code
    class=css>full-size-kana</code>&rsquo; を置き換えるかもしれない。
    
-  <h2 id=white-space-processing><span class=secno>3. </span> White Space
-   Processing</h2>
+  <h2 id=white-space-processing><span class=secno>3. </span> 空白の処理</h2>
 
-  <p>The source text of a document often contains formatting that is not
-   relevant to the final rendering: for example, breaking the source into
-   segments (lines) for ease of editing or adding white space characters such
-   as tabs and spaces to indent the source code. CSS white space processing
-   allows the author to control interpretation of such formatting: to
-   preserve or collapse it away when rendering the document. Note that white
-   space processing in CSS interprets white space characters only for
-   rendering: it has no effect on the underlying document data.
+  <p>ドキュメントの元となるテキストには、多くの場合、最終的なレンダリングに関わりのないフォーマットが含まれている。例えば、ソースコードをインデントするタブやスペースのように空白文字の編集や追加を容易にするため、元のテキストをセグメント(複数行)ごとに分割するなどである。CSSの空白処理では、ドキュメントのレンダリング時に空白をそのままにしたり結合したりすることで、制作者がそれらのフォーマットの解釈を制御することができる。CSSにおける空白の処理はレンダリングのためだけに空白文字を解釈することに注意すること。そこに存在するドキュメントデータには何の影響も及ぼさない。
 
-  <p id=segment-normalization> CSS does not define document segmentation
-   rules. Segments could be separated by a particular newline seqence (such
-   as a line feed or CRLF pair), or delimited by some other mechanism, such
-   as the SGML RECORD-START and RECORD-END tokens. For CSS processing, each
-   document-defined segment break, CRLF sequence (U+000D U+000A), carriage
-   return (U+000D), and line feed (U+000A) in the text is treated as a
-   segment break, which is then interpreted for rendering as defined below.
+  <p id=segment-normalization>CSSはドキュメント分割ルールを定義していない。セグメントは、特定の改行シーケンス(line feed や CRLFペアなど)で分割したり、SGMLのRECORD-STARTトークンとRECORD-ENDトークンのようなその他のメカニズムによって区切ることができた。CSSの処理用に、各ドキュメントに定義されたセグメント分割、CRLFシーケンス(U+000D U+000A)、キャリッジリターン(U+000D)、テキスト内のline feed(U+000A)は以下の定義のようにレンダリングされるよう解釈されるセグメント分割として扱われる。
 
-  <p class=note>Note that the document parser may have not only normalized
-   segment breaks, but also collapsed other space characters or otherwise
-   processed white space according to markup rules. Because CSS processing
-   occurs <em>after</em> the parsing stage, it is not possible to restore
-   these characters for styling. Therefore, some of the behavior specified
-   below can be affected by these limitations and may be user agent
-   dependent.
+  <p class=note>ドキュメントのパーサはセグメント分割をノーマライズするだけでなく、他の空白文字と結合させたり、マークアップのルールに従って空白を処理することがあることに注意すること。CSSの処理はパースの<em>後</em>に行われるので、スタイリングのための文字を元に戻すことはできない。よって、後ほど定義される振る舞いのいくつかは、これらの制限に影響されうるし、ユーザエージェントに依存することもある。
 
-  <p class=note>Note that anonymous inlines consisting entirely of <a
-   href="#collapsible"><i>collapsible</i></a> white space are removed from
-   the rendering tree. See <a href="#CSS21"
-   rel=biblioentry>[CSS21]<!--{{CSS21}}--></a> section <a
-   href="http://www.w3.org/TR/CSS21/visuren.html#anonymous">9.2.2.1</a>
 
-  <p>Control characters (Unicode class Cc) other than tab (U+0009), line feed
-   (U+000A), and carriage return (U+000D) are ignored for the purpose of
-   rendering.
+  <p class=note><a href="#collapsible"><i>結合可能</i></a>な空白文字のみで構成されている匿名のインラインはレンダリングツリーから除去されることに注意すること。<a href="#CSS21" rel=biblioentry>[CSS21]<!--{{CSS21}}--></a> section <a href="http://www.w3.org/TR/CSS21/visuren.html#anonymous">9.2.2.1</a> を参照。
+
+  <p>タブ(U+0009)、line feed(U+000A)、キャリッジリターン(U+000D)以外の制御文字(Unicode class Cc)はレンダリング目的では無視される。
 
   <h3 id=white-space-collapsing><span class=secno>3.1. </span> White Space
    Collapsing: the &lsquo;<a href="#text-space-collapse"><code
