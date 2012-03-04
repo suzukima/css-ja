@@ -33,7 +33,7 @@
 		<p>文中では日本語組版の用語を用いております。日本語組版については<a href="http://www.w3.org/TR/jlreq/ja/">日本語組版処理の要件（日本語版）</a>に目を通しておくことをおすすめいたします。</p>
 		<p>その他の仕様書の翻訳は、<a href="../">CSS 日本語レイアウト関連仕様 日本語翻訳</a>からご覧下さい。</p>
 		<p>公開開始日: 2011.11.09</p>
-     <p>更新日: 2012.02.26</p>
+     <p>更新日: 2012.03.04</p>
 	</div>
 
   <div class=head> <!--begin-logo-->
@@ -552,147 +552,131 @@
 
   <p>タブ(U+0009)、line feed(U+000A)、キャリッジリターン(U+000D)以外の制御文字(Unicode class Cc)はレンダリング目的では無視される。
 
-  <h3 id=white-space-collapsing><span class=secno>3.1. </span> White Space
-   Collapsing: the &lsquo;<a href="#text-space-collapse"><code
-   class=property>text-space-collapse</code></a>&rsquo; property</h3>
+  <h3 id=white-space-collapsing><span class=secno>3.1. </span> 空白文字の結合: &lsquo;<a href="#text-space-collapse"><code
+   class=property>text-space-collapse</code></a>&rsquo; プロパティ</h3>
 
   <table class=propdef>
    <tbody>
     <tr>
-     <th>Name:
+     <th>名称:
 
      <td><dfn id=text-space-collapse>text-space-collapse</dfn>
 
     <tr>
-     <th><a href="#values">Value</a>:
+     <th><a href="#values">値</a>:
 
      <td>collapse | preserve | preserve-breaks
 
     <tr>
-     <th>Initial:
+     <th>初期値:
 
      <td>collapse
 
     <tr>
-     <th>Applies to:
+     <th>適用対象:
 
-     <td>all elements
-
-    <tr>
-     <th>Inherited:
-
-     <td>yes
+     <td>全ての要素
 
     <tr>
-     <th>Percentages:
+     <th>継承:
+
+     <td>される
+
+    <tr>
+     <th>パーセンテージ:
 
      <td>N/A
 
     <tr>
-     <th>Media:
+     <th>メディア:
 
      <td>visual
 
     <tr>
-     <th>Computed&#160;value:
+     <th>算出値:
 
-     <td>specified value
+     <td>指定された値
   </table>
 
-  <p>This property declares whether and how <a
-   href="#white-space-processing">white space</a> inside the element is
-   collapsed. Values have the following meanings, which must be interpreted
-   according to the <a href="#white-space-rules">white space processing
-   rules</a>:
+  <p>このプロパティは要素内の<a href="#white-space-processing">空白</a>が結合されるか否か、そしてどのように結合するのかを宣言する。値には、<a href="#white-space-rules">white space processing rules(空白処理のルール)</a>に従って解釈されなければならない、以下の意味がある
 
   <dl>
    <dt><dfn id=collapse0 title="white-space:collapse">&lsquo;<code
     class=css>collapse</code>&rsquo;</dfn>
 
-   <dd>This value directs user agents to collapse sequences of white space
-    into a single character (or <a href="#line-break-transform">in some
-    cases</a>, no character).
+   <dd>この値は、空白の列を1文字(<a href="#line-break-transform">あるケースでは</a>文字なし)に結合するようユーザエージェントへ指示する。
 
    <dt><dfn id=preserve title="white-space:preserve">&lsquo;<code
     class=css>preserve</code>&rsquo;</dfn>
 
-   <dd>This value prevents user agents from collapsing sequences of white
-    space. Segment breaks such as line feeds and carriage returns are
-    preserved as forced line breaks.
+   <dd>この値は、ユーザエージェントが空白列を結合できないようにする。改行やキャリッジリターンのようなセグメント分割は強制改行として保持される。
 
    <dt><dfn id=preserve-breaks
     title="white-space:preserve-breaks">&lsquo;<code
     class=css>preserve-breaks</code>&rsquo;</dfn>
 
-   <dd>This value collapses consecutive spaces, but renders segment breaks as
-    forced line breaks.
+   <dd>この値は、連続したスペースを結合するが、セグメント分割は強制改行として描画する。
+
   </dl>
 
-  <p>See <a href="#white-space-processing">White Space Processing Rules</a>
-   for details on how white space collapses. An informative summary of
-   &lsquo;<code class=css>collapse</code>&rsquo; is presented below:
+  <p>空白の結合方法の詳細は、<a href="#white-space-processing">White Space Processing Rules(空白処理のルール)</a>を参照のこと。&lsquo;<code class=css>結合</code>&rsquo;に関する要約を以下に示す。
 
   <ul>
-   <li>A sequence of segment breaks and other white space between two
-    Chinese, Japanese, or Yi characters collapses into nothing.
+   <li>連続するセグメント分割と2つの中国語、日本語、イ語の文字の間にある空白は何もない状態に結合される。
 
-   <li>A zero width space before or after a white space sequence containing a
-    segment break causes the entire sequence of white space to collapse into
-    a zero width space.
+   <li>セグメント分割を含み、空白の前後にある連続した幅ゼロのスペースがあると、連続する空白全体が幅ゼロのスペースに結合される。
 
-   <li>Otherwise, consecutive white space collapses into a single space.
+   <li>それ以外では、連続した空白は1つのスペースに結合される。
+
   </ul>
 
-  <h3 id=tab-size><span class=secno>3.2. </span> Tab Character Size: the
-   &lsquo;<a href="#tab-size0"><code
-   class=property>tab-size</code></a>&rsquo; property</h3>
+  <h3 id=tab-size><span class=secno>3.2. </span> タブ文字のサイズ: &lsquo;<a href="#tab-size0"><code
+   class=property>tab-size</code></a>&rsquo; プロパティ</h3>
 
   <table class=propdef>
    <tbody>
     <tr>
-     <th>Name:
+     <th>名称:
 
      <td><dfn id=tab-size0>tab-size</dfn>
 
     <tr>
-     <th><a href="#values">Value</a>:
+     <th><a href="#values">値</a>:
 
      <td>&lt;integer&gt; | &lt;length&gt;
 
     <tr>
-     <th>Initial:
+     <th>初期値:
 
      <td>8
 
     <tr>
-     <th>Applies to:
+     <th>適用対象:
 
-     <td>block containers
-
-    <tr>
-     <th>Inherited:
-
-     <td>yes
+     <td>ブロックコンテナ
 
     <tr>
-     <th>Percentages:
+     <th>継承:
+
+     <td>される
+
+    <tr>
+     <th>パーセンテージ:
 
      <td>N/A
 
     <tr>
-     <th>Media:
+     <th>メディア:
 
      <td>visual
 
     <tr>
-     <th>Computed&#160;value:
+     <th>算出値:
 
-     <td>specified value
+     <td>指定された値
   </table>
 
-  <p>This property determines the measure of the tab character (U+0009) when
-   rendered. Integers represent the measure in space characters (U+0020).
-   Negative integers are not allowed.
+  <p>このプロパティは描画時のタブ文字(U+0009)の幅を決定する。整数値は空白文字(U+0020)の幅で表される。負の整数値は禁止されている。
 
   <h3 id=white-space-rules><span class=secno>3.3. </span> The White Space
    Processing Rules</h3>
